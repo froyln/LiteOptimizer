@@ -56,6 +56,29 @@
   "client": [
     "dev.parity.GuiMainMenuMixin",
     "dev.bench.MinecraftLoopMixin",
-    "dev.nopause.MinecraftNoPauseMixin"
+    "dev.bench.EntityRendererFlickerMixin",
+    "dev.bench.ProfilerAccessor",
+    "dev.nopause.MinecraftNoPauseMixin",
+    "render.sodium.core.frustum.MixinFrustum",
+    "render.sodium.core.MixinCrashReportSection",
+    "render.sodium.core.MixinDirection",
+    "render.sodium.core.model.MixinBlockColors",
+    "render.sodium.core.pipeline.AccessorAmbientOcclusionFace",
+    "render.sodium.core.pipeline.InvokerBlockModelRenderer",
+    "render.sodium.core.pipeline.MixinBakedQuad",
+    "render.sodium.core.pipeline.MixinBufferBuilder",
+    "render.sodium.core.pipeline.MixinVertexFormat",
+    "render.sodium.features.block.MixinWorldRenderer",
+    "render.sodium.features.buffer_builder.fast_advance.MixinVertexFormat",
+    "render.sodium.features.buffer_builder.fast_sort.MixinBufferBuilder",
+    "render.sodium.features.chunk_rendering.AccessorActiveRenderInfo",
+    "render.sodium.features.chunk_rendering.AccessorEntityRenderer",
+    "render.sodium.features.chunk_rendering.MixinBiomeColorHelper",
+    "render.sodium.features.chunk_rendering.MixinChunkBuilder",
+    "render.sodium.features.chunk_rendering.MixinClientChunkManager",
+    "render.sodium.features.chunk_rendering.MixinClientWorld",
+    "render.sodium.features.chunk_rendering.MixinRenderGlobal",
+    "render.sodium.features.chunk_rendering.MixinWorldRenderer",
+    "render.sodium.features.particle.cull.MixinParticleManager"
   ]
 }

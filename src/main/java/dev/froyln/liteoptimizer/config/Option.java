@@ -12,6 +12,9 @@ public enum Option {
     AI("ai", null, true, "Lithium pillar: mob AI and pathfinding"),
     MEMORY("memory", null, true, "FerriteCore pillar: heap reductions"),
 
+    // 0.3 Sodium I
+    SODIUM("sodium", RENDER, true, "Sodium terrain renderer (ported Vintagium): chunk-graph culling, worker meshing, region VBOs, GL20/GL43 backends, particle culling"),
+
     // 0.2 Lithium I (keys exist before the code so the file is stable across versions)
     TILE_ENTITY_REMOVAL("tile_entity_removal", WORLD, true, "O(n) instead of O(n*m) tile entity list removal"),
     PENDING_TICKS_CHUNK_LOOKUP("pending_ticks_chunk_lookup", WORLD, true, "per-chunk index for scheduled ticks on chunk save/unload"),

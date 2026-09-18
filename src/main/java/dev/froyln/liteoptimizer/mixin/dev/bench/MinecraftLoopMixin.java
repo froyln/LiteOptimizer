@@ -15,4 +15,9 @@ public abstract class MinecraftLoopMixin {
     private void liteoptimizer$frame(CallbackInfo ci) {
         BenchRecorder.onFrame((Minecraft) (Object) this);
     }
+
+    @Inject(method = "runGameLoop", at = @At("RETURN"))
+    private void liteoptimizer$frameEnd(CallbackInfo ci) {
+        BenchRecorder.afterFrame((Minecraft) (Object) this);
+    }
 }
