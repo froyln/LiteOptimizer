@@ -5,6 +5,33 @@
   "plugin": "dev.froyln.liteoptimizer.config.MixinPlugin",
   "refmap": "mixins.liteoptimizer.refmap.json",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [],
-  "client": []
+  "mixins": [
+    "dev.parity.WorldServerAccessor",
+    "dev.parity.WorldRandomMixin",
+    "dev.parity.EntityRandomMixin",
+    "dev.parity.ExplosionRandomMixin",
+    "dev.parity.MinecraftServerRandomMixin",
+    "dev.parity.BlockDispenserRandomMixin",
+    "dev.parity.MathHelperRandomMixin",
+    "dev.parity.ItemRandomMixin",
+    "dev.parity.InventoryHelperRandomMixin",
+    "dev.parity.TileEntityDispenserRandomMixin",
+    "dev.parity.TileEntityLockableLootRandomMixin",
+    "dev.parity.EntityMinecartContainerRandomMixin",
+    "dev.parity.MinecraftServerTickMixin",
+    "dev.parity.MinecraftServerWorldTickMixin",
+    "dev.parity.PlayerChunkMapMixin",
+    "dev.parity.PlayerChunkMapAccessor",
+    "dev.parity.EntityLivingBaseMathMixin",
+    "dev.parity.EntityItemMathMixin",
+    "dev.parity.EntityXPOrbMathMixin",
+    "dev.parity.EntityTNTPrimedMathMixin",
+    "dev.parity.WorldEntitySpawnerMathMixin",
+    "dev.parity.SlotFurnaceOutputMathMixin"
+  ],
+  "client": [
+    "dev.parity.GuiMainMenuMixin",
+    "dev.bench.MinecraftLoopMixin",
+    "dev.nopause.MinecraftNoPauseMixin"
+  ]
 }

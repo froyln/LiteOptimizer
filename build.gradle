@@ -56,3 +56,7 @@ jar {
     baseName = archivesBaseName
     from litemod.outputs
 }
+
+mixin {
+    defaultObfuscationEnv notch
+}

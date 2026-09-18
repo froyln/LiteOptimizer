@@ -16,7 +16,26 @@ Vanilla 1.12.2 is not reproducible run-to-run: `World.rand`, every `Entity.rand`
 runs of the same world already diverge. So the harness must first make vanilla deterministic,
 then compare mod-on vs mod-off under that determinism.
 
-### Harness design (dev-only, off unless `-Dliteoptimizer.parity=<seed>`)
+### Harness (implemented in 0.1; `tools/parity.sh <world-dir> [ticks] [--only <key>] [--vanilla]`)
+
+Runtime flags (all under `mixin/dev/*`, applied only when the matching `-Dliteoptimizer.<pkg>`
+property is set, never from the config file):
+
+| property | effect |
+|---|---|
+| `liteoptimizer.parity=<seed>` | seeds every `new Random()` listed below (`ParitySeeds`), counts server ticks, dumps the overworld at tick N (`ParityDump` → `<game dir>/parity/<label>.txt`) and exits |
+| `liteoptimizer.parity.world=<save>` | main menu loads this save immediately (`GuiMainMenuMixin`) |
+| `liteoptimizer.parity.ticks=<n>`, `.label=<name>`, `.pose=x,y,z,yaw,pitch` | run length, dump name, `/tp` at tick 0 |
+| `liteoptimizer.nopause=1` | `Minecraft.displayInGameMenu` cancelled — an unfocused window would otherwise pause the integrated server and freeze the tick count |
+| `liteoptimizer.bench=<label>[,warmup_s[,seconds]]` (+ `.quit`) | `BenchRecorder`: frame durations + integrated MSPT → `<game dir>/bench/<label>.csv` |
+
+`tools/parity.sh` copies the world into the instance as `saves/_parity`, sets the JVM args in
+`instance.cfg`, writes `liteoptimizer.json` all-off / all-on (or `--only <key>`), launches the
+instance twice via `prismlauncher --launch`, diffs the two dumps, and restores everything (trap).
+`--vanilla` runs off vs off — the determinism check that must pass before the harness means
+anything. Dumps land in `run/parity/`.
+
+### Harness design
 
 - **Seed everything.** A mixin package `mixin/dev/parity/` redirects every `new Random()`
   that feeds game state to `new Random(seed + counter++)`, counter advanced in construction
@@ -31,8 +50,20 @@ then compare mod-on vs mod-off under that determinism.
   `NoiseGenerator*` no-arg constructors, `DragonFightManager`/`DragonSpawnManager`/
   `TileEntityEndGateway` locals, `CommandWeather`. (`Block` has no own Random in 1.12.2 — it
   uses `world.rand`.) `Random`
-  instances created with `new Random(seed)` are already deterministic; `ThreadLocalRandom` and
-  `Math.random()` need their own grep.
+  instances created with `new Random(seed)` are already deterministic.
+  **`Math.random()`** (a global unseeded `Random` inside the JDK) is used by vanilla for state:
+  `EntityLivingBase.<init>` (spawn yaw), `attackEntityFrom` (knockback direction),
+  `EntityItem.<init>` (drop motion + rotation), `EntityXPOrb.<init>`, `EntityTNTPrimed.<init>`
+  (primed-TNT push direction), `WorldEntitySpawner.findChunksForSpawning` (attempts per pack),
+  `SlotFurnaceOutput.onCrafting` (XP rounding). Each call site is redirected to a per-thread seeded
+  Random. `ThreadLocalRandom` only appears in `AttributeModifier` (UUID) and client sound code.
+- **Wall-clock budgets.** `PlayerChunkMap.tick` loads player chunks until 49 are done *or 50 ms
+  passed* — which chunks exist at tick N then depends on disk speed. The harness pins that clock
+  (`PlayerChunkMapMixin`) so the loop is bounded by the counter only.
+- **World ticks are held until the player is in** (`MinecraftServerWorldTickMixin`): the join
+  takes a variable number of server ticks, and ticking the world during it consumed RNG.
+- **The pause menu is disabled** (`-Dliteoptimizer.nopause`): an unfocused window pauses the
+  integrated server.
 - **Fixed input.** Player does nothing; harness `/tp`s them to a fixed pose on world load,
   render distance fixed, `doDaylightCycle false`, `randomTickSpeed` at the world's value.
 - **Fixed length.** Count integrated-server ticks from the first tick after the world finishes
@@ -53,6 +84,17 @@ then compare mod-on vs mod-off under that determinism.
   and without; `compare -metric AE` (ImageMagick) must be 0 for anything claiming
   "identical output" (culling, batching, texture animation). Things that legitimately change
   pixels (none planned) would need an explicit exception in the catalog.
+
+### What the harness proved (2026-09-17, world B3 "50 furnace Array", seed 1)
+
+Vanilla-vs-vanilla, two separate game launches, 600 ticks: all 625 chunks, every entity and
+tile entity, the scheduled-tick list, world time **and** `World.rand`'s internal seed identical;
+the per-call-site histogram of `World.rand` consumption (verbose mode, `TracingRandom`) identical
+too. Before the fixes above, runs diverged in (1) world time (join delay), (2) one chunk
+(chunk-load timing), (3) `World.rand` only (`Math.random()` in the spawner). Each was found
+with the verbose dump: `PARITY_VERBOSE=1 tools/parity.sh …` writes `<label>.detail.txt` with
+every entity/TE NBT, a per-tick series (loaded/sent chunks, rand calls, player pos, entity
+count) and the rand call-site histogram — diff those to name the culprit.
 
 ### Parity-argument checklist (write it in `docs/catalog.md` before coding)
 
