@@ -11,7 +11,8 @@ import net.minecraft.server.integrated.IntegratedServer;
 import dev.froyln.liteoptimizer.config.Config;
 
 /**
- * {@code -Dliteoptimizer.bench=<label>[,<warmupSeconds>=30[,<seconds>=60]]}: once a world is loaded,
+ * {@code -Dliteoptimizer.bench=<label> [-Dliteoptimizer.bench.warmup=30] [-Dliteoptimizer.bench.seconds=60]}
+ * (no commas anywhere — PrismLauncher splits JvmArgs on commas): once a world is loaded,
  * waits the warm-up, then records every frame's duration and, when an integrated server is running,
  * its last tick time, to {@code bench/<label>.csv}; then quits if {@code -Dliteoptimizer.bench.quit}
  * is set. Combine with {@code -Dliteoptimizer.parity.world=<save>} to auto-load the world.
@@ -30,14 +31,9 @@ public final class BenchRecorder {
 
     static {
         if (SPEC != null) {
-            String[] p = SPEC.split(",");
-            label = p[0];
-            if (p.length > 1) {
-                warmupNs = (long) (Double.parseDouble(p[1]) * 1e9);
-            }
-            if (p.length > 2) {
-                durationNs = (long) (Double.parseDouble(p[2]) * 1e9);
-            }
+            label = SPEC;
+            warmupNs = (long) (Double.parseDouble(System.getProperty("liteoptimizer.bench.warmup", "30")) * 1e9);
+            durationNs = (long) (Double.parseDouble(System.getProperty("liteoptimizer.bench.seconds", "60")) * 1e9);
         }
     }
 

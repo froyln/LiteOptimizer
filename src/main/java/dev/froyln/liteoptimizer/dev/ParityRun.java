@@ -12,7 +12,7 @@ import dev.froyln.liteoptimizer.config.Config;
 
 /**
  * Drives one parity run: {@code -Dliteoptimizer.parity=<seed> -Dliteoptimizer.parity.world=<save>
- * -Dliteoptimizer.parity.ticks=<n> -Dliteoptimizer.parity.label=<name> [-Dliteoptimizer.parity.pose="x y z yaw pitch"]}.
+ * -Dliteoptimizer.parity.ticks=<n> -Dliteoptimizer.parity.label=<name> [-Dliteoptimizer.parity.pose=x_y_z_yaw_pitch] (underscores: PrismLauncher splits JvmArgs on commas and spaces)}.
  * The main menu loads the world; once a player is in, ticks are counted; at tick 0 the player is
  * teleported to the pose; at tick n the overworld is dumped and the game exits.
  */
@@ -65,7 +65,7 @@ public final class ParityRun {
         if (tick == 0) {
             if (POSE != null) {
                 String name = server.getPlayerList().getPlayers().get(0).getName();
-                server.getCommandManager().executeCommand(server, "tp " + name + " " + POSE.replace(',', ' '));
+                server.getCommandManager().executeCommand(server, "tp " + name + " " + POSE.replace('_', ' '));
             }
             Config.LOG.info("[LiteOptimizer] parity run '{}' started: {} ticks", LABEL, TICKS);
         }

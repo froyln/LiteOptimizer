@@ -12,6 +12,8 @@
     "world.item_merging.EntityItemMixin",
     "world.block_collisions.WorldMixin",
     "world.furnace_recipe_cache.FurnaceRecipesMixin",
+    "world.entity_fluid_checks.ExtendedBlockStorageMixin",
+    "world.entity_fluid_checks.WorldMixin",
     "world.entity_type_counts.EntityLivingMixin",
     "world.entity_type_counts.EntityMixin",
     "world.entity_type_counts.WorldMixin",

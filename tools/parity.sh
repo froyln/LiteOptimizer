@@ -66,7 +66,7 @@ run_once() {  # $1 = label
   remove_save; cp -r "$WORLD_DIR" "$MC/saves/$SAVE"
   rm -f "$MC/parity/$label.txt"
   local jvm="-Dliteoptimizer.nopause=1 ${PARITY_VERBOSE:+-Dliteoptimizer.parity.verbose=1 -Dliteoptimizer.parity.trace=1} -Dliteoptimizer.parity=$SEED -Dliteoptimizer.parity.world=$SAVE -Dliteoptimizer.parity.ticks=$TICKS -Dliteoptimizer.parity.label=$label"
-  [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' ',')"
+  [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' '_')"
   python3 - "$CFG" "$jvm" <<'PY'
 import sys, re
 path, jvm = sys.argv[1], sys.argv[2]
