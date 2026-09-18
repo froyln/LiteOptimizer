@@ -377,7 +377,7 @@ at the benchmark poses** (screenshot diff), **Litematica/MiniHUD overlays still 
 
 ## Task: 0.4 FerriteCore — memory batch
 
-**Status:** in progress (started 2026-09-18) — scope reduced to 2 of 5 rows (reasons below); code, numbers, review done; awaiting commit
+**Status:** done (fa01f54, 983a636, 656c29f, b318415) — 2 of 5 rows shipped, 3 dropped with measurements (below). Not tagged: 0.4.0 release waits for the owner's by-eye checklist (`docs/compat/checklist.md`) at B1, still owed for 0.2/0.3 too.
 
 `memory/blockstate_property_storage` (VintageFix/FoamFix code), `memory/baked_quad_dedup`,
 `memory/model_dedup` + `model_part_dedup`, `memory/sprite_frames_release`, `memory/resource_location_intern`.
