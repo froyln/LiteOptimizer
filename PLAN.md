@@ -336,7 +336,14 @@ the invocation a foreign `@Redirect` targets, or document the incompatibility. K
 
 ## Task: 0.3b Sodium I — port Vintagium to LiteLoader (oneshot backend)
 
-**Status:** in progress
+**Status:** done (0.3.0) — port report in `docs/compat/sodium.md`; render-parity protocol in
+`docs/methodology.md` §1. Delivered: 0 differing pixels vs vanilla at the B1, B3 and B6 poses
+(vanilla-vs-vanilla control also 0); B6 flight frame −36 % / 1 % low −27 % uncapped; B1 −5 %.
+Steps as planned except: the parity draw path is a **fixed-function backend** (vanilla's own
+GL calls per section), not Sodium's oneshot shader backend — the shader transform is a
+sub-pixel off vanilla and `glMultiDrawArrays` costs ~10× a plain draw on NVIDIA; multidraw
+and the compact vertex format stay opt-in. Left for 0.6: the options screen, entity/TE
+occlusion, chunk light cache, the by-eye overlay checklist (owner).
 
 **Constraints in bold:** **Mixin 0.7.5 only**, **no Forge classes**, **pixels identical to vanilla
 at the benchmark poses** (screenshot diff), **Litematica/MiniHUD overlays still render**.

@@ -137,7 +137,8 @@ public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkR
                                     }
 
                                 } else if (WorldUtil.toFluidBlock(block) != null) {
-                                    if (cache.getFluidRenderer().render(cache.getLocalSlice(), blockState, pos, buffers.get(layer))) {
+                                    buffers.setRenderOffset(0, 0, 0); // the fluid renderer writes render-relative floats itself
+                                    if (cache.getFluidRenderer().render(cache.getLocalSlice(), blockState, pos, buffers.get(layer), renderOffset)) {
                                         bounds.addBlock(relX, relY, relZ);
                                     }
                                 }
@@ -151,7 +152,14 @@ public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkR
                                 TileEntitySpecialRenderer<TileEntity> renderer = TileEntityRendererDispatcher.instance.getRenderer(entity);
 
                                 if (renderer != null) {
-                                    renderData.addBlockEntity(entity, !renderer.isGlobalRenderer(entity));
+                                    // vanilla RenderChunk.rebuildChunk: every renderable block entity goes into
+                                    // the section's list, and a global one (beacon, end gateway) into the global
+                                    // set as well — so vanilla draws a beacon beam twice per frame (the additive
+                                    // glow is brighter); same here, or the pixels differ
+                                    renderData.addBlockEntity(entity, true);
+                                    if (renderer.isGlobalRenderer(entity)) {
+                                        renderData.addBlockEntity(entity, false);
+                                    }
 
                                     bounds.addBlock(relX, relY, relZ);
                                 }
@@ -178,6 +186,9 @@ public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkR
             ChunkMeshData mesh = buffers.createMesh(pass, (float)camera.x - offset.getX(), (float)camera.y - offset.getY(), (float)camera.z - offset.getZ(), this.translucencySorting);
 
             if (mesh != null) {
+                if (dev.froyln.liteoptimizer.dev.VertexDump.ENABLED) {
+                    dev.froyln.liteoptimizer.dev.VertexDump.dump(this.render.getOriginX(), this.render.getOriginY(), this.render.getOriginZ(), pass.getLayer().name(), mesh.getVertexData().buffer);
+                }
                 renderData.setMesh(pass, mesh);
                 if(this.translucencySorting && pass.isTranslucent())
                     render.setRebuildForTranslucents(true);

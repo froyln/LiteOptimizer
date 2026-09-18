@@ -28,9 +28,15 @@ changing vanilla behaviour, bisect with these and report it with the world.
 
 ## Status
 
-0.2 (Lithium I): 11 game-logic and memory optimizations, all parity-proven on item, hopper,
-furnace and mob-farm worlds. Measured so far: hopper world MSPT −14 %. See `docs/catalog.md`
-for every row and `docs/bench/README.md` for numbers.
+0.3 (Sodium I): the Sodium/Vintagium terrain renderer (`render/sodium`), pixel-identical to
+vanilla at a fixed pose — terrain flight frame time −36 %, 1 % low −27 % with the frame cap
+off; plus 0.2's 12 game-logic and memory optimizations, all parity-proven on item, hopper,
+furnace and mob-farm worlds (hopper hall MSPT −14 %, item farm −39 %, witch farm −30 %). See
+`docs/catalog.md` for every row, `docs/bench/README.md` for numbers, `docs/compat/sodium.md`
+for what the render pillar changes and what it keeps.
+
+Sodium's own switches live in `liteconfig/common/liteoptimizer-sodium.json`; the defaults are
+the parity ones. `use_chunk_multidraw: true` is faster still but a sub-pixel off vanilla.
 
 ## Build
 

@@ -36,7 +36,9 @@ public class SodiumGameOptions {
         public boolean useFogOcclusion = true;
         // LiteOptimizer: off = vanilla's BLOCK vertex layout (needed by the fixed-function backend)
         public boolean useCompactVertexFormat = false;
-        public boolean useBlockFaceCulling = true;
+        // LiteOptimizer: off = one buffer per pass in vanilla's block order (pixel parity: z-fights
+        // between coplanar quads resolve as in vanilla); on = per-face slices, back faces skipped
+        public boolean useBlockFaceCulling = false;
         public boolean allowDirectMemoryAccess = true;
         public boolean ignoreDriverBlacklist = false;
         // LiteOptimizer: vanilla sorts translucent quads back-to-front on every rebuild/resort

@@ -117,8 +117,8 @@ public class ChunkGraphNode {
         float y = this.getOriginY();
         float z = this.getOriginZ();
 
-        return !frustum.fastAabbTest(x - FRUSTUM_EPSILON, y - FRUSTUM_EPSILON, z - FRUSTUM_EPSILON,
-                x + 16.0f + FRUSTUM_EPSILON, y + 16.0f + FRUSTUM_EPSILON, z + 16.0f + FRUSTUM_EPSILON);
+        // LiteOptimizer: vanilla tests RenderChunk.boundingBox exactly (no margin)
+        return !frustum.fastAabbTest(x, y, z, x + 16.0f, y + 16.0f, z + 16.0f);
     }
 
     /**

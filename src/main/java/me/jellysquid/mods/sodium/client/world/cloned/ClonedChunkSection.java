@@ -21,6 +21,8 @@ public class ClonedChunkSection {
     private static final ExtendedBlockStorage EMPTY_SECTION = new ExtendedBlockStorage(0, false);
 
     private final AtomicInteger referenceCount = new AtomicInteger(0);
+    private boolean nullSection;
+    private int[] heightMap;
     private final ClonedChunkSectionCache backingCache;
 
     private final Short2ObjectMap<TileEntity> blockEntities;
@@ -51,8 +53,18 @@ public class ClonedChunkSection {
 
         ExtendedBlockStorage section = getChunkSection(chunk, pos);
 
-        if (section == Chunk.NULL_BLOCK_STORAGE/*ChunkSection.isEmpty(section)*/) {
+        // LiteOptimizer: vanilla Chunk.getLightFor answers for a missing section from the heightmap
+        // (sky light only above it); outside the build height (ChunkCache.getLightForExt) and in the
+        // blank unloaded chunk (EmptyChunk.getLightFor) it is the type's default light everywhere
+        this.heightMap = null;
+        this.nullSection = section == Chunk.NULL_BLOCK_STORAGE;
+
+        if (this.nullSection) {
             section = EMPTY_SECTION;
+
+            if (!chunk.isEmpty() && !isOutsideBuildHeight(ChunkSectionPos.getBlockCoord(pos.getY()))) {
+                this.heightMap = chunk.getHeightMap().clone();
+            }
         }
 
         this.pos = pos;
@@ -104,6 +116,14 @@ public class ClonedChunkSection {
     }
 
     public int getLightLevel(int x, int y, int z, EnumSkyBlock type) {
+        if (this.nullSection) {
+            if (this.heightMap == null) {
+                return type.defaultLightValue; // EmptyChunk.getLightFor
+            }
+
+            return this.pos.getMinY() + y >= this.heightMap[z << 4 | x] ? type.defaultLightValue : 0; // Chunk.canSeeSky
+        }
+
         NibbleArray lightArray = type == EnumSkyBlock.BLOCK ? this.data.getBlockLight() : this.data.getSkyLight();
         return lightArray != null ? lightArray.get(x, y, z) : type.defaultLightValue;
     }

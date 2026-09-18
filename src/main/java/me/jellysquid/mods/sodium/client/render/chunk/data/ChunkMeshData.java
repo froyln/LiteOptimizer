@@ -13,6 +13,10 @@ public class ChunkMeshData {
     private final EnumMap<ModelQuadFacing, BufferSlice> parts = new EnumMap<>(ModelQuadFacing.class);
     private VertexData vertexData;
 
+    public VertexData getVertexData() {
+        return this.vertexData;
+    }
+
     public void setVertexData(VertexData vertexData) {
         this.vertexData = vertexData;
     }

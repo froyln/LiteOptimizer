@@ -115,6 +115,42 @@ count) and the rand call-site histogram — diff those to name the culprit.
 - Threading: does anything move off the main thread? Then results must be consumed at the
   same point vanilla would have computed them.
 
+### Render parity (the Sodium pillar): same pixels, same mesh bytes
+
+The render pillar cannot be checked with the world-state hash: its output is the frame. The
+check is a screenshot diff at a fixed pose, and it only works once everything that vanilla
+itself renders non-deterministically is pinned. `tools/bench.sh <world> [warmup] [seconds]
+[--no-entities] --profile` does all of it, for the vanilla run and the mod run alike:
+
+- **Fixed tick, not wall clock.** The screenshot is taken on the frame after client world tick
+  `⌈(join + warm-up) / 100⌉ · 100` — an *absolute* tick, so two runs whose join tick differs by
+  a few ticks still shoot the same one (beacon beams and end portals animate per tick).
+- **Partial tick 0.** Every frame of a screenshot run renders at `partialTicks = 0`
+  (`MinecraftLoopMixin`), because where inside a tick the frame lands is wall-clock jitter.
+- **Torch flicker frozen, lightmap still rebuilt** (`EntityRendererFlickerMixin`): the flicker
+  is a `Math.random()` walk per client tick. (Cancelling `updateTorchFlicker` outright leaves
+  the lightmap black — it is what sets `lightmapUpdateNeeded`.)
+- **Animated sprites frozen** (`TextureAtlasSpriteFreezeMixin`): water, lava, fire, sea lantern,
+  prismarine, magma advance per client tick since the atlas was loaded.
+- **Pose baked into the save** (`level.dat` `Player.Pos/Rotation`, `abilities.flying`), not
+  `/tp` at tick 0: chunks built before a teleport are sorted for the old camera.
+- **`doDaylightCycle`/`doWeatherCycle` off, `raining`/`thundering` 0** in the world: rain streaks
+  are random per frame, the sky colour moves with the time of day.
+- **`--no-entities`** hides entities (`RenderManager.shouldRender` false): a dropped item spins
+  from an unseeded client `Math.random()` and differs between any two runs, vanilla or not.
+  Block entities (chests, beacons…) stay: they are deterministic.
+
+Vanilla-vs-vanilla under this protocol is 0 differing pixels on B1 (a base with beacons, water
+streams, sea lanterns, glass) — that is the control; a mod-vs-vanilla diff then means the mod.
+
+When pixels differ, the second tool tells *what* differs: with `--profile`, both runs dump
+every built section's vertex bytes (vanilla's `BufferBuilder` after `postRenderBlocks`, Sodium's
+mesh after `createMesh`; same 28-byte `BLOCK` layout) to `run/bench/<world>-vtx-{off,on}/`, and
+`tools/vtx-diff.py` reports, per section and layer, vertex-count differences, differing fields
+(position / colour / uv / light) and whether a difference is order-only. That is how the
+outer-ring build rule, the empty-section sky light, the fluid position rounding and the double
+draw of global block entities were found (see `docs/compat/sodium.md`).
+
 ## 2. Measurement
 
 ### Benchmark worlds (`~/Dev/OptimizationMod-1.12.2-worlds/`, outside the repo, built once)
@@ -131,6 +167,12 @@ count) and the rand call-site histogram — diff those to name the culprit.
 ### What we record
 
 - **Client:** average frame time and 1% low over a 60 s window after 30 s warm-up, fixed pose.
+  `tools/bench.sh` sets `maxFps:260` (uncapped) in `options.txt` for the run and restores the
+  file after; the instance's own cap (140) would hide every client-side gain. `--fly <blocks/tick>`
+  moves the player straight ahead during the window (B6). `--profile` also dumps vanilla's
+  section profiler (`run/bench/<world>-<label>.profile.txt`: ms per frame per section, and the
+  rendered-section list) — JFR barely samples the client thread (LWJGL native calls), so this
+  is the client-side profiler; `--jfr` remains for the server thread.
 - **Server (integrated):** average and max MSPT over the same window.
 - **Memory:** heap after a forced GC (`jcmd <pid> GC.run` then `GC.heap_info`), and the
   `Chunk`/model object counts from `jcmd <pid> GC.class_histogram | head -40`.

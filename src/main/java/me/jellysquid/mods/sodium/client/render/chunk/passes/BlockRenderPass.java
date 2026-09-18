@@ -20,6 +20,10 @@ public enum BlockRenderPass {
         this.translucent = translucent;
     }
 
+    public BlockRenderLayer getLayer() {
+        return this.layer;
+    }
+
     public boolean isTranslucent() {
         return this.translucent;
     }

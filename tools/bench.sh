@@ -2,7 +2,9 @@
 # Benchmark: load a world, wait, record frame times + integrated-server MSPT with the
 # optimizations OFF, then ON (docs/methodology.md §2), and print the summary + deltas.
 #
-#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only] [--profile] [--jfr]
+#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only] [--profile] [--jfr] [--fly <blocks/tick>] [--keep] [--no-entities]
+#
+# --keep: leave the played copy at <instance>/saves/_bench (to copy generated chunks back into the world dir)
 #
 # --profile: keep vanilla's section profiler running for the recording window and copy
 #            bench/<label>.profile.txt (ms per frame per section, rendered chunk count) next to the csv.
@@ -16,7 +18,7 @@
 set -euo pipefail
 
 WORLD_DIR=${1:?world dir}; shift
-WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"; PROFILE=0; JFR=0
+WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"; PROFILE=0; JFR=0; FLY=0; KEEP=0; NOENT=0
 while [ $# -gt 0 ]; do
   case "$1" in
     --only) ONLY=$2; shift 2 ;;
@@ -24,6 +26,9 @@ while [ $# -gt 0 ]; do
     --on-only) MODES="on"; shift ;;
     --profile) PROFILE=1; shift ;;
     --jfr) JFR=1; shift ;;
+    --fly) FLY=$2; shift 2 ;;
+    --keep) KEEP=1; shift ;;
+    --no-entities) NOENT=1; shift ;;  # screenshot parity: entities are per-run random
     *) if [ "$WARMUP" = 30 ] && [ -z "${W_SET:-}" ]; then WARMUP=$1; W_SET=1; else SECONDS_=$1; fi; shift ;;
   esac
 done
@@ -33,6 +38,7 @@ INSTANCE_DIR="$HOME/.local/share/PrismLauncher/instances/$INSTANCE"
 MC="$INSTANCE_DIR/minecraft"
 CFG="$INSTANCE_DIR/instance.cfg"
 OPT="$MC/liteconfig/common/liteoptimizer.json"
+GAMEOPT="$MC/options.txt"
 SAVE="_bench"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/run/bench"; mkdir -p "$OUT"
@@ -42,12 +48,16 @@ NAME=$(basename "$WORLD_DIR")
 POSE=""; [ -f "$WORLD_DIR/pose.txt" ] && POSE=$(cat "$WORLD_DIR/pose.txt")
 
 cp "$CFG" "$CFG.bench-backup"
+cp "$GAMEOPT" "$GAMEOPT.bench-backup"
+# uncapped frame rate for the recording (260 = "unlimited"); restored with the backup after
+sed -i 's/^maxFps:.*/maxFps:260/' "$GAMEOPT"
 [ -f "$OPT" ] && cp "$OPT" "$OPT.bench-backup" || true
 remove_save() { [ -d "$MC/saves/$SAVE" ] && rm -r "$MC/saves/$SAVE" || true; }
 cleanup() {
   mv -f "$CFG.bench-backup" "$CFG"
+  mv -f "$GAMEOPT.bench-backup" "$GAMEOPT"
   [ -f "$OPT.bench-backup" ] && mv -f "$OPT.bench-backup" "$OPT" || true
-  remove_save
+  [ $KEEP = 1 ] || remove_save
 }
 trap cleanup EXIT
 
@@ -65,10 +75,12 @@ PY
 run_once() {  # $1 = label
   local label=$1
   remove_save; cp -r "$WORLD_DIR" "$MC/saves/$SAVE"
-  rm -f "$MC/bench/$label.csv"
+  rm -f "$MC/bench/$label.csv"; [ -d "$MC/bench/vtx-$label" ] && rm -r "$MC/bench/vtx-$label" || true
   # parity=1 only for the main-menu auto-load / no-pause / tick gate; the seeding is harmless
   local jvm="-Dliteoptimizer.nopause=1 -Dliteoptimizer.parity=1 -Dliteoptimizer.parity.world=$SAVE -Dliteoptimizer.parity.ticks=999999999 -Dliteoptimizer.bench=$label -Dliteoptimizer.bench.warmup=$WARMUP -Dliteoptimizer.bench.seconds=$SECONDS_ -Dliteoptimizer.bench.quit=1 -Dliteoptimizer.screenshot=$NAME-$label"
   [ $PROFILE = 1 ] && jvm="$jvm -Dliteoptimizer.bench.profile=1"
+  [ "$FLY" != 0 ] && jvm="$jvm -Dliteoptimizer.bench.fly=$FLY"
+  [ $NOENT = 1 ] && jvm="$jvm -Dliteoptimizer.bench.noentities=1"
   [ -n "${EXTRA_JVM:-}" ] && jvm="$jvm $EXTRA_JVM"  # experiments, e.g. EXTRA_JVM=-Dliteoptimizer.dev.x=1
   [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' '_')"
   python3 - "$CFG" "$jvm" "$JFR" <<'PY'
@@ -110,6 +122,8 @@ PY
   [ -f "$MC/bench/$label.csv" ] || { echo "[bench] no csv for $label — check $MC/logs/latest.log"; exit 3; }
   cp "$MC/bench/$label.csv" "$OUT/$NAME-$label.csv"
   [ -f "$MC/bench/$label.profile.txt" ] && cp "$MC/bench/$label.profile.txt" "$OUT/$NAME-$label.profile.txt" || true
+  [ -f "$MC/bench/$label.chunks.txt" ] && cp "$MC/bench/$label.chunks.txt" "$OUT/$NAME-$label.chunks.txt" || true
+  if [ -d "$MC/bench/vtx-$label" ]; then rm -r "$OUT/$NAME-vtx-$label" 2>/dev/null || true; mv "$MC/bench/vtx-$label" "$OUT/$NAME-vtx-$label"; fi
 }
 
 for mode in $MODES; do write_config $mode; run_once $mode; done

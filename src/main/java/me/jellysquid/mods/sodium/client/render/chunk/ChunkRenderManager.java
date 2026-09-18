@@ -119,7 +119,9 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
 
         this.culler = new ChunkGraphCuller(world, renderDistance);
         this.translucencySorting = SodiumClientMod.options().advanced.translucencySorting;
-        this.translucencyBlockRenderDistance = Math.min(9216, (renderDistance << 4) * (renderDistance << 4));
+        // LiteOptimizer: vanilla re-sorts every translucent section in view when the camera moved a
+        // block (15 per frame until done) — no 96-block cap, or far sections keep a stale order
+        this.translucencyBlockRenderDistance = Integer.MAX_VALUE;
 
         this.useBlockFaceCulling = SodiumClientMod.options().advanced.useBlockFaceCulling;
     }
@@ -172,7 +174,7 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
             }
         }
 
-        IntList list = this.culler.computeVisible(new Vec3d(cameraX, cameraY, cameraZ), frustum, frame, spectator);
+        IntList list = this.culler.computeVisible(this.builder.getCameraPosition(), frustum, frame, spectator);
         IntIterator it = list.iterator();
 
         while (it.hasNext()) {
@@ -442,6 +444,20 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
         render.setId(this.renders.add(render));
 
         return render;
+    }
+
+    /** LiteOptimizer (bench): the sections of the solid pass render list, in render order, as "x y z" */
+    public java.util.List<String> debugRenderList() {
+        java.util.List<String> out = new java.util.ArrayList<>();
+        for (int pass = 0; pass < this.chunkRenderLists.length; pass++) {
+            ChunkRenderListIterator<T> it = this.chunkRenderLists[pass].iterator(false);
+            while (it.hasNext()) {
+                T s = it.getGraphicsState();
+                out.add(BlockRenderPass.VALUES[pass].name() + " " + s.getX() + " " + s.getY() + " " + s.getZ());
+                it.advance();
+            }
+        }
+        return out;
     }
 
     public void renderLayer(BlockRenderPass pass, double x, double y, double z) {

@@ -63,9 +63,11 @@ public class ChunkBuildBuffers {
                 writers[facing.ordinal()] = new ChunkModelVertexTransformer(this.vertexType.createBufferWriter(this.buffersByLayer[i][facing.ordinal()], SodiumClientMod.isDirectMemoryAccessEnabled()), this.offset);
             }
 
-            // LiteOptimizer: the translucent pass is one buffer in block order, as vanilla's, so the
-            // back-to-front sort (stable) breaks distance ties exactly as vanilla does
-            if (SodiumClientMod.options().advanced.translucencySorting && BlockRenderPass.VALUES[i].isTranslucent()) {
+            // LiteOptimizer: without block-face culling every pass is one buffer in block order, as
+            // vanilla's — the draw order decides z-fights between coplanar opaque quads, and the stable
+            // back-to-front sort of the translucent pass breaks distance ties by input order
+            if (!SodiumClientMod.options().advanced.useBlockFaceCulling
+                    || (SodiumClientMod.options().advanced.translucencySorting && BlockRenderPass.VALUES[i].isTranslucent())) {
                 java.util.Arrays.fill(writers, writers[ModelQuadFacing.UNASSIGNED.ordinal()]);
             }
 

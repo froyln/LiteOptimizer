@@ -64,3 +64,44 @@ Port rules derived from this (task 0.3b):
 - Our config already registers first (file name); do not raise `priority` — raising it would
   make foreign injects apply *before* our overwrites and be erased.
 - Mixin 0.7.5: drop `@Dynamic`, `conformVisibility`, set `minVersion 0.7.4`.
+
+---
+
+# Port report (task 0.3b, 2026-09-18)
+
+Vintagium (`me.jellysquid.mods.sodium.{client,common}` + `repack.joml`) ported to LiteLoader /
+Mixin 0.7.5, mixins under `dev.froyln.liteoptimizer.mixin.render.sodium.*`, gated by
+`render/sodium`. What Sodium keeps: the section graph, worker-thread meshing (`ChunkBuilder`,
+cloned world slices), one VBO per section, particle culling, the fast buffer-builder sort and
+vertex-format init. What is replaced so the frame is vanilla's, bit for bit:
+
+| vanilla behaviour | Sodium/Vintagium did | what ships |
+|---|---|---|
+| block meshing: `BlockModelRenderer` smooth/flat + `AmbientOcclusionFace`, `BlockFluidRenderer` | own light pipelines, per-vertex biome blending, quad re-orientation, own fluid renderer | vanilla's algorithms verbatim into Sodium's buffers (`pipeline/BlockRenderer`, `pipeline/FluidRenderer`); vanilla's own `AmbientOcclusionFace` class via an inner-class mixin; positions rounded once as `BufferBuilder.putPosition`/`pos` (block pos + offset as doubles) |
+| vertex layout `DefaultVertexFormats.BLOCK` (28 B: pos 3f, colour 4ub, uv 2f, light 2s) | compact half-float format, encoded lightmap coords | the same 28-byte layout (`SFPModelVertexType`), raw lightmap shorts — every section's bytes equal vanilla's (`tools/vtx-diff.py`: 485/485 sections identical on B1) |
+| draw: `VboRenderList` — matrix stack, `RenderChunk`'s 1.000001 seam matrix, client arrays, one `glDrawArrays` per section | GLSL program, VAOs, `glMultiDrawArrays`, region multidraw | `ChunkRenderBackendFixedFunction`: vanilla's draw path per section (`glMultiDrawArrays` was ~10× a plain draw per range on NVIDIA; the multidraw backend stays opt-in) |
+| one buffer per layer in `getAllInBoxMutable` order (x, y, z); translucent sorted back-to-front, stable, centroid distance, resorted after a 1-block move | per-face slices, unstable sort, resort only within 96 blocks, block-face culling | block order, one buffer per pass (`use_block_face_culling` off by default), the same sort, resort everywhere |
+| `setupTerrain` graph search: first parent wins, `EnumFacing` order, closed-pocket rule, wrapped root enumeration above/below the world, exact AABB frustum test | culling state merged from every parent, sorted roots, 1.125-block frustum margin | vanilla's search (`ChunkGraphCuller`): same section set, same order |
+| sections built as soon as their chunk loads; unloaded neighbours are the blank chunk (air, sky 15, plains) | wait for the 8 neighbours | build immediately (`ChunkRenderContainer.canRebuild`) — otherwise the outer ring of the render distance is missing |
+| `Chunk.getLightFor` in a missing section: sky light above the heightmap only; `ChunkCache` outside the build height: default light | default light everywhere | `ClonedChunkSection` carries the heightmap for missing sections |
+| a global block entity (beacon, end gateway) is in the section list **and** the global set — drawn twice per frame | once | twice (the additive beam glow is brighter that way) |
+| `BlockRendererDispatcher.getModelForState` | `BlockModelShapes` directly | the dispatcher (Tweakeroo/LiteTweaker model tweaks keep working) |
+
+Result: **0 differing pixels** vanilla-vs-mod at the B1 (base: beacons, water streams, sea
+lanterns, stained glass, 300 sections) and B3 poses under the protocol in `docs/methodology.md`
+§ render parity, with the vanilla-vs-vanilla control also at 0.
+
+Known, documented deviations (none of them change a pixel at a fixed pose):
+
+- Sodium's meshing runs on worker threads and uploads when done; vanilla builds nearest
+  sections on the main thread (`updateChunkNow`). A moving camera can see a section appear a
+  frame earlier or later than in vanilla.
+- The vanilla renderer's `renderInfos`, `ChunkRenderDispatcher`, `ViewFrustum` and
+  `RenderChunk`s are idle; mods that read them see empty structures (compat matrix above).
+- Opt-in, not parity: `use_chunk_multidraw` (GL 4.3 region multidraw, shader transform: a
+  sub-pixel off), `use_compact_vertex_format`, `use_block_face_culling`, `use_fog_occlusion`.
+
+Performance (uncapped, `docs/bench/README.md`): B6 flight over ocean/islands at RD 10, frame
+1.66 → 1.06 ms (−36 %), 1 % low 8.22 → 6.00 ms (−27 %), client-thread root 1.35 → 0.73
+ms/frame; B1 base pose −2 % avg / −13 % 1 % low (block entities dominate);
+B3 (15 sections) unchanged.

@@ -316,8 +316,15 @@ public class ChunkRenderContainer<T extends ChunkGraphicsState> {
         return this.data.getFacesWithData();
     }
 
+    /**
+     * LiteOptimizer: vanilla builds every section of its grid as soon as its own chunk is loaded,
+     * reading unloaded neighbours as the blank chunk (air, full sky light, plains); the faces
+     * toward them are drawn and the section is rebuilt when the neighbour arrives
+     * (markBlockRangeForRenderUpdate's ±1 reaches it). Waiting for the neighbours would leave the
+     * outermost ring of the render distance unbuilt — a different picture.
+     */
     public boolean canRebuild() {
-        return this.column.areNeighborsPresent();
+        return true;
     }
 
     public void setId(int id) {

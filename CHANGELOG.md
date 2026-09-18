@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.3.0 — Sodium I (2026-09-18)
+
+The render pillar: Vintagium (Sodium 0.4 for 1.12) ported to LiteLoader, no Forge, switch
+`render/sodium`. Sodium's section graph, worker-thread meshing and one-VBO-per-section renderer,
+but every frame is **pixel-identical to vanilla** at a fixed pose (screenshot diff, 0 differing
+pixels on a large base, a redstone array and a terrain flight; `docs/methodology.md` § render
+parity): vanilla's own meshing algorithms and vertex layout, vanilla's draw path per section
+(fixed-function, matrix stack, seam matrix), vanilla's chunk graph search including its quirks
+(first-path culling, off-centre `ViewFrustum` grid, double-drawn beacon beams).
+
+Measured, uncapped frame rate: terrain flight (B6, RD 10) frame 1.66 → 1.06 ms (−36 %), 1 % low
+8.22 → 6.00 ms (−27 %), client-thread work per frame halved (1.35 → 0.73 ms); base pose (B1, block
+entities dominate) −5 %; 15-section redstone world unchanged. Opt-in in
+`liteconfig/common/liteoptimizer-sodium.json`: `use_chunk_multidraw` (GL 4.3 backend, faster,
+a sub-pixel off), `use_compact_vertex_format`, `use_block_face_culling`, `use_fog_occlusion`.
+
+Also: `render/particle_culling` (frustum), `render/translucency_sort` (fast stable sort for
+`BufferBuilder`), `render/frustum_fast_test`, `render/vertex_format_init`. Bench harness:
+screenshot at a fixed tick, uncapped FPS, `--fly`, `--no-entities`, section profiler and
+per-section vertex dumps (`tools/vtx-diff.py`).
+
+
 ## 0.2.0 — Lithium I (2026-09-18)
 
 Twelve game-logic / memory optimizations, every one proven bit-identical to vanilla by the

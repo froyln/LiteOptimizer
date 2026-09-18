@@ -16,6 +16,8 @@ import dev.froyln.liteoptimizer.config.Config;
  * waits the warm-up, then records every frame's duration and, when an integrated server is running,
  * its last tick time, to {@code bench/<label>.csv}; then quits if {@code -Dliteoptimizer.bench.quit}
  * is set. Combine with {@code -Dliteoptimizer.parity.world=<save>} to auto-load the world.
+ * {@code -Dliteoptimizer.bench.fly=<blocks per tick>} moves the player straight ahead (creative flight)
+ * during the recording window — the chunk loading/meshing benchmark (B6).
  * {@code -Dliteoptimizer.bench.profile=1} also keeps vanilla's section profiler running for the
  * recording window and writes {@code bench/<label>.profile.txt} (ms per frame per section).
  */
@@ -33,6 +35,10 @@ public final class BenchRecorder {
     private static Writer out;
     private static boolean done;
     private static final boolean PROFILE = System.getProperty("liteoptimizer.bench.profile") != null;
+    /** blocks per tick flown straight ahead (along the yaw, level) during the recording window; 0 = static pose */
+    private static final double FLY = Double.parseDouble(System.getProperty("liteoptimizer.bench.fly", "0"));
+    private static int lastPlayerTick = -1;
+    public static final boolean SCREENSHOT = System.getProperty("liteoptimizer.screenshot") != null;
     private static int frames;
 
     static {
@@ -53,6 +59,16 @@ public final class BenchRecorder {
         }
     }
 
+    /** one tick of level flight along the yaw; the integrated server's owner is exempt from the speed check */
+    private static void fly(net.minecraft.client.entity.EntityPlayerSP player) {
+        double yaw = Math.toRadians(player.rotationYaw);
+        player.capabilities.isFlying = true;
+        player.motionX = 0;
+        player.motionY = 0;
+        player.motionZ = 0;
+        player.setPosition(player.posX - Math.sin(yaw) * FLY, player.posY, player.posZ + Math.cos(yaw) * FLY);
+    }
+
     private static void writeProfile(Minecraft mc) throws IOException {
         java.util.Map<String, Long> map = ((dev.froyln.liteoptimizer.mixin.dev.bench.ProfilerAccessor) mc.profiler).liteoptimizer$profilingMap();
         long root = map.getOrDefault("root", 1L);
@@ -69,6 +85,39 @@ public final class BenchRecorder {
             }
         }
         Config.LOG.info("[LiteOptimizer] profile written to bench/{}.profile.txt", label);
+        writeRenderList(mc);
+    }
+
+    /** the terrain sections rendered this frame, in render order — vanilla's renderInfos or Sodium's solid list */
+    private static void writeRenderList(Minecraft mc) throws IOException {
+        java.util.List<String> rows = new java.util.ArrayList<>();
+        for (Object info : ((dev.froyln.liteoptimizer.mixin.dev.bench.RenderGlobalAccessor) mc.renderGlobal).liteoptimizer$renderInfos()) {
+            for (java.lang.reflect.Field f : info.getClass().getDeclaredFields()) {
+                if (f.getType() == net.minecraft.client.renderer.chunk.RenderChunk.class) {
+                    f.setAccessible(true);
+                    try {
+                        net.minecraft.client.renderer.chunk.RenderChunk rc = (net.minecraft.client.renderer.chunk.RenderChunk) f.get(info);
+                        net.minecraft.util.math.BlockPos p = rc.getPosition();
+                        for (net.minecraft.util.BlockRenderLayer layer : net.minecraft.util.BlockRenderLayer.values()) {
+                            if (!rc.getCompiledChunk().isLayerEmpty(layer)) {
+                                rows.add(layer.name() + " " + p.getX() + " " + p.getY() + " " + p.getZ());
+                            }
+                        }
+                    } catch (IllegalAccessException e) {
+                        throw new IllegalStateException(e);
+                    }
+                }
+            }
+        }
+        me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer sodium = me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer.getInstanceNullable();
+        if (rows.isEmpty() && sodium != null) {
+            rows = sodium.debugRenderList();
+        }
+        try (Writer w = new FileWriter(new File("bench", label + ".chunks.txt"))) {
+            for (String r : rows) {
+                w.write(r + "\n");
+            }
+        }
     }
 
     /** Called at the head of every {@code Minecraft.runGameLoop()}. */
@@ -81,9 +130,14 @@ public final class BenchRecorder {
             worldSeenAt = -1;
             return;
         }
+        if (mc.player.capabilities.allowFlying) {
+            mc.player.capabilities.isFlying = true; // hold an airborne pose (creative)
+        }
         if (worldSeenAt < 0) {
             worldSeenAt = now;
-            shotAtTick = mc.world.getTotalWorldTime() + (long) (warmupNs / 1e9) * 20L;
+            // the next multiple of 100 ticks after the warm-up: an absolute world tick, so two runs
+            // whose join tick differs by a few ticks still shoot the same tick (beacon beams rotate per tick)
+            shotAtTick = (mc.world.getTotalWorldTime() + (long) (warmupNs / 1e9) * 20L) / 100L * 100L + 100L;
         }
         String shot = System.getProperty("liteoptimizer.screenshot");
         if (shot != null && !shotTaken && mc.world.getTotalWorldTime() >= shotAtTick) {
@@ -111,6 +165,11 @@ public final class BenchRecorder {
                 }
                 Config.LOG.info("[LiteOptimizer] bench '{}' recording for {} s", label, durationNs / 1e9);
             }
+            // the flight starts after the screenshot (a fixed tick), so both runs fly the same ticks
+            if (FLY > 0 && (shotTaken || !SCREENSHOT) && mc.player.ticksExisted != lastPlayerTick) {
+                lastPlayerTick = mc.player.ticksExisted;
+                fly(mc.player);
+            }
             if (lastFrame > 0) {
                 String mspt = "";
                 IntegratedServer server = mc.getIntegratedServer();
@@ -125,7 +184,7 @@ public final class BenchRecorder {
                 frames++;
             }
             lastFrame = now;
-            if (now - startedAt >= durationNs) {
+            if (now - startedAt >= durationNs && (shotTaken || !SCREENSHOT)) {
                 done = true;
                 out.close();
                 Config.LOG.info("[LiteOptimizer] bench '{}' written to bench/{}.csv", label, label);

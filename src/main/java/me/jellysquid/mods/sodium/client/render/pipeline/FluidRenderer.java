@@ -56,8 +56,35 @@ public class FluidRenderer {
         this.atlasSpriteWaterOverlay = texturemap.getAtlasSprite("minecraft:blocks/water_overlay");
     }
 
-    /** Same as vanilla; positions are written relative to the block (Sodium adds the offset). */
-    public boolean render(IBlockAccess blockAccess, IBlockState blockStateIn, BlockPos blockPosIn, ChunkModelBuffers buffers) {
+    // vanilla BufferBuilder.pos: (float)(((double)blockPos + d) + xOffset), xOffset = -(double)renderOrigin
+    private double absX, absY, absZ;
+    private int originX, originY, originZ;
+
+    private float fx(double d) {
+        return (float) ((this.absX + d) - this.originX);
+    }
+
+    private float fy(double d) {
+        return (float) ((this.absY + d) - this.originY);
+    }
+
+    private float fz(double d) {
+        return (float) ((this.absZ + d) - this.originZ);
+    }
+
+    /**
+     * Vanilla BlockFluidRenderer.renderFluid, writing into Sodium's buffers. Positions are computed
+     * exactly as vanilla does — absolute doubles rounded once to a float relative to the render
+     * origin — so the chunk offset must be zero when this is called.
+     */
+    public boolean render(IBlockAccess blockAccess, IBlockState blockStateIn, BlockPos blockPosIn, ChunkModelBuffers buffers, BlockPos renderOrigin) {
+        this.absX = blockPosIn.getX();
+        this.absY = blockPosIn.getY();
+        this.absZ = blockPosIn.getZ();
+        this.originX = renderOrigin.getX();
+        this.originY = renderOrigin.getY();
+        this.originZ = renderOrigin.getZ();
+
         BlockLiquid blockliquid = (BlockLiquid) blockStateIn.getBlock();
         boolean flag = blockStateIn.getMaterial() == Material.LAVA;
         TextureAtlasSprite[] atextureatlassprite = flag ? this.atlasSpritesLava : this.atlasSpritesWater;
@@ -83,8 +110,6 @@ public class FluidRenderer {
         float f8 = this.getFluidHeight(blockAccess, blockPosIn.south(), material);
         float f9 = this.getFluidHeight(blockAccess, blockPosIn.east().south(), material);
         float f10 = this.getFluidHeight(blockAccess, blockPosIn.east(), material);
-        // vanilla adds the block position to every vertex as a double; Sodium's sink takes the
-        // block-relative float and adds the offset itself, so d0/d1/d2 are 0 here
         final ModelQuadViewMutable quad = this.quad;
         quad.setFlags(0);
 
@@ -131,17 +156,17 @@ public class FluidRenderer {
             int color = ColorABGR.pack(1.0F * f, 1.0F * f1, 1.0F * f2, 1.0F);
 
             quad.setSprite(textureatlassprite);
-            this.setVertex(quad, 0, 0.0F, f7, 0.0F, f13, f17);
-            this.setVertex(quad, 1, 0.0F, f8, 1.0F, f14, f18);
-            this.setVertex(quad, 2, 1.0F, f9, 1.0F, f15, f19);
-            this.setVertex(quad, 3, 1.0F, f10, 0.0F, f16, f20);
+            this.setVertex(quad, 0, this.fx(0.0D), this.fy(f7), this.fz(0.0D), f13, f17);
+            this.setVertex(quad, 1, this.fx(0.0D), this.fy(f8), this.fz(1.0D), f14, f18);
+            this.setVertex(quad, 2, this.fx(1.0D), this.fy(f9), this.fz(1.0D), f15, f19);
+            this.setVertex(quad, 3, this.fx(1.0D), this.fy(f10), this.fz(0.0D), f16, f20);
             this.flushQuad(buffers, quad, ModelQuadFacing.UP, color, k2);
 
             if (blockliquid.shouldRenderSides(blockAccess, blockPosIn.up())) {
-                this.setVertex(quad, 0, 0.0F, f7, 0.0F, f13, f17);
-                this.setVertex(quad, 1, 1.0F, f10, 0.0F, f16, f20);
-                this.setVertex(quad, 2, 1.0F, f9, 1.0F, f15, f19);
-                this.setVertex(quad, 3, 0.0F, f8, 1.0F, f14, f18);
+                this.setVertex(quad, 0, this.fx(0.0D), this.fy(f7), this.fz(0.0D), f13, f17);
+                this.setVertex(quad, 1, this.fx(1.0D), this.fy(f10), this.fz(0.0D), f16, f20);
+                this.setVertex(quad, 2, this.fx(1.0D), this.fy(f9), this.fz(1.0D), f15, f19);
+                this.setVertex(quad, 3, this.fx(0.0D), this.fy(f8), this.fz(1.0D), f14, f18);
                 this.flushQuad(buffers, quad, ModelQuadFacing.DOWN, color, k2);
             }
         }
@@ -155,10 +180,10 @@ public class FluidRenderer {
             int color = ColorABGR.pack(0.5F, 0.5F, 0.5F, 1.0F);
 
             quad.setSprite(atextureatlassprite[0]);
-            this.setVertex(quad, 0, 0.0F, 0.0F, 1.0F, f35, f38);
-            this.setVertex(quad, 1, 0.0F, 0.0F, 0.0F, f35, f37);
-            this.setVertex(quad, 2, 1.0F, 0.0F, 0.0F, f36, f37);
-            this.setVertex(quad, 3, 1.0F, 0.0F, 1.0F, f36, f38);
+            this.setVertex(quad, 0, this.fx(0.0D), this.fy(0.0D), this.fz(1.0D), f35, f38);
+            this.setVertex(quad, 1, this.fx(0.0D), this.fy(0.0D), this.fz(0.0D), f35, f37);
+            this.setVertex(quad, 2, this.fx(1.0D), this.fy(0.0D), this.fz(0.0D), f36, f37);
+            this.setVertex(quad, 3, this.fx(1.0D), this.fy(0.0D), this.fz(1.0D), f36, f38);
             this.flushQuad(buffers, quad, ModelQuadFacing.DOWN, color, l1);
             flag3 = true;
         }
@@ -240,17 +265,17 @@ public class FluidRenderer {
                 ModelQuadFacing facing = i1 == 0 ? ModelQuadFacing.NORTH : i1 == 1 ? ModelQuadFacing.SOUTH : i1 == 2 ? ModelQuadFacing.WEST : ModelQuadFacing.EAST;
 
                 quad.setSprite(textureatlassprite1);
-                this.setVertex(quad, 0, (float) d3, f39, (float) d4, f41, f28);
-                this.setVertex(quad, 1, (float) d5, f40, (float) d6, f27, f29);
-                this.setVertex(quad, 2, (float) d5, 0.0F, (float) d6, f27, f30);
-                this.setVertex(quad, 3, (float) d3, 0.0F, (float) d4, f41, f30);
+                this.setVertex(quad, 0, this.fx(d3), this.fy(f39), this.fz(d4), f41, f28);
+                this.setVertex(quad, 1, this.fx(d5), this.fy(f40), this.fz(d6), f27, f29);
+                this.setVertex(quad, 2, this.fx(d5), this.fy(0.0D), this.fz(d6), f27, f30);
+                this.setVertex(quad, 3, this.fx(d3), this.fy(0.0D), this.fz(d4), f41, f30);
                 this.flushQuad(buffers, quad, facing, color, j);
 
                 if (textureatlassprite1 != this.atlasSpriteWaterOverlay) {
-                    this.setVertex(quad, 0, (float) d3, 0.0F, (float) d4, f41, f30);
-                    this.setVertex(quad, 1, (float) d5, 0.0F, (float) d6, f27, f30);
-                    this.setVertex(quad, 2, (float) d5, f40, (float) d6, f27, f29);
-                    this.setVertex(quad, 3, (float) d3, f39, (float) d4, f41, f28);
+                    this.setVertex(quad, 0, this.fx(d3), this.fy(0.0D), this.fz(d4), f41, f30);
+                    this.setVertex(quad, 1, this.fx(d5), this.fy(0.0D), this.fz(d6), f27, f30);
+                    this.setVertex(quad, 2, this.fx(d5), this.fy(f40), this.fz(d6), f27, f29);
+                    this.setVertex(quad, 3, this.fx(d3), this.fy(f39), this.fz(d4), f41, f28);
                     this.flushQuad(buffers, quad, facing.getOpposite(), color, j);
                 }
             }
