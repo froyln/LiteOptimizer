@@ -1,0 +1,7 @@
+# CLAUDE.local.md — personal, gitignored
+
+<!-- Copy to CLAUDE.local.md. Loaded after CLAUDE.md, only on this machine. -->
+
+- Local dev URL: <http://localhost:3000>
+- Preferred test data: <path or fixture name>
+- My sandbox credentials live in <path> (never paste them into chat)

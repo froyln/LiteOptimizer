@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.7.4",
+  "package": "dev.froyln.liteoptimizer.mixin",
+  "plugin": "dev.froyln.liteoptimizer.config.MixinPlugin",
+  "refmap": "mixins.liteoptimizer.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": []
+}

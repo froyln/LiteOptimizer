@@ -1,0 +1,26 @@
+# Claude Code personal files
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/logs/
+.claude/agent-memory-local/
+
+# Secrets
+.env
+.env.*
+!.env.example
+secrets/
+
+# Gradle / ForgeGradle
+build/
+.gradle/
+run/
+build.number
+*.launch
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# Profiler recordings are large
+docs/profiles/*.jfr
