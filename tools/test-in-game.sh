@@ -11,7 +11,7 @@ MODS_DIR="$HOME/.local/share/PrismLauncher/instances/$INSTANCE/minecraft/mods/1.
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 [ -d "$MODS_DIR" ] || { echo "Instance mods folder not found: $MODS_DIR" >&2; exit 1; }
-litemod="$(ls "$ROOT"/build/libs/liteoptimizer-liteloader-*.litemod 2>/dev/null | head -n1)"
+litemod="$(ls -t "$ROOT"/build/libs/liteoptimizer-liteloader-*.litemod 2>/dev/null | head -n1)"
 [ -n "$litemod" ] || { echo "No litemod in build/libs/ - run ./gradlew build first." >&2; exit 1; }
 
 rm -f "$MODS_DIR"/liteoptimizer-liteloader-*.litemod

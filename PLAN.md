@@ -291,7 +291,7 @@ tools/
 
 ## Task: 0.2 Lithium I — world batch 1 + S-effort memory rows
 
-**Status:** in progress — 11 of 16 rows shipped (see catalog); equipment_change_check and falling_block_movement deferred with reasons; blockpos_garbage, cramming_predicate_cache, nbt_tag_pooling judged low value for now
+**Status:** done (v0.2.0, e2172e4) — 12 rows shipped (+ structure_lookup_index from the B4 profile); equipment_change_check / falling_block_movement deferred with reasons; blockpos_garbage, cramming_predicate_cache, nbt_tag_pooling low value. **Owner still owes the in-game smoke checklist** (`docs/compat/checklist.md`) on this build.
 
 Rows (from `docs/catalog.md` batch 5 + memory quick wins), one commit each, harness on B2/B3/B5
 per commit: `world/tile_entity_removal` (pilot for the harness), `world/pending_ticks_chunk_lookup`,
