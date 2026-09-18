@@ -311,7 +311,7 @@ per commit: `world/tile_entity_removal` (pilot for the harness), `world/pending_
 
 ## Task: 0.3a Sodium compat matrix — before any Vintagium code
 
-**Status:** pending
+**Status:** done (`docs/compat/sodium.md`)
 
 For every method Vintagium overwrites or redirects in `RenderGlobal`, `ChunkRenderDispatcher`,
 `RenderChunk`, `WorldClient`, `ChunkProviderClient`, `BufferBuilder`, `BlockModelRenderer`,
@@ -336,7 +336,7 @@ the invocation a foreign `@Redirect` targets, or document the incompatibility. K
 
 ## Task: 0.3b Sodium I — port Vintagium to LiteLoader (oneshot backend)
 
-**Status:** pending
+**Status:** in progress
 
 **Constraints in bold:** **Mixin 0.7.5 only**, **no Forge classes**, **pixels identical to vanilla
 at the benchmark poses** (screenshot diff), **Litematica/MiniHUD overlays still render**.

@@ -155,10 +155,10 @@ as vanilla-equivalent on servers, `[EXPERIMENTAL]`/`[TNT]`/`[FIX]` = they don't.
 
 ## Lighting
 
-Newlight (installed, MIT, `nessiesson/newlight`) overwrites `World.checkLight`, `Chunk`
-relighting, `ExtendedBlockStorage`, `SPacketChunkData`, `ChunkProviderServer`,
-`AnvilChunkLoader`, `WorldServer`, `RenderGlobal.notifyLightSet`. Nothing here touches those
-methods. FoamFix `smallLightingOptimize`/`cheapMinimumLight` are not ported.
+Newlight (installed, MIT, `nessiesson/newlight`) hooks (injects/redirects — it has no
+`@Overwrite`, verified 2026-09-18) `World.checkLight`, `Chunk` relighting, `ExtendedBlockStorage`,
+`SPacketChunkData`, `ChunkProviderServer`, `AnvilChunkLoader`, `WorldServer`,
+`RenderGlobal.notifyLightSet`. Nothing here touches those methods. FoamFix `smallLightingOptimize`/`cheapMinimumLight` are not ported.
 
 ## Rejected on principle (so nobody re-proposes them)
 
