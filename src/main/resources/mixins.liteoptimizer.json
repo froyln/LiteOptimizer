@@ -15,6 +15,7 @@
     "world.entity_fluid_checks.ExtendedBlockStorageMixin",
     "world.entity_fluid_checks.WorldMixin",
     "world.raytrace_allocations.WorldMixin",
+    "world.structure_lookup_index.MapGenStructureMixin",
     "world.hard_hitbox_entity_list.ChunkMixin",
     "world.hard_hitbox_entity_list.WorldMixin",
     "world.entity_type_counts.EntityLivingMixin",

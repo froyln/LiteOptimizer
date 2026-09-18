@@ -28,7 +28,8 @@ public enum Option {
     FURNACE_RECIPE_CACHE("furnace_recipe_cache", WORLD, true, "cache furnace recipe lookups"),
     RAYTRACE_ALLOCATIONS("raytrace_allocations", WORLD, true, "allocation-free block ray tracing"),
     BLOCKPOS_GARBAGE("blockpos_garbage", WORLD, true, "mutable positions in hot vanilla loops"),
-    NBT_TAG_POOLING("nbt_tag_pooling", MEMORY, true, "canonical instances for small NBT tags");
+    NBT_TAG_POOLING("nbt_tag_pooling", MEMORY, true, "canonical instances for small NBT tags"),
+    STRUCTURE_LOOKUP_INDEX("structure_lookup_index", WORLD, true, "per-chunk index for 'is this position inside a structure' (swamp hut / monument / fortress spawn checks)");
 
     public final String key;
     public final Option pillar;

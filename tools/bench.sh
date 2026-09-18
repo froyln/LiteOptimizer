@@ -2,19 +2,23 @@
 # Benchmark: load a world, wait, record frame times + integrated-server MSPT with the
 # optimizations OFF, then ON (docs/methodology.md §2), and print the summary + deltas.
 #
-#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only]
+#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only] [--profile]
+#
+# --profile: run the instance on the system OpenJDK 8 (JFR built in) and record a JFR profile of
+# the recording window with tools/profile.sh → docs/profiles/<world>-<label>.top.txt
 #
 # Same instance handling as tools/parity.sh (instance.cfg / liteoptimizer.json restored after).
 # Output: run/bench/<world>-off.csv and -on.csv.
 set -euo pipefail
 
 WORLD_DIR=${1:?world dir}; shift
-WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"
+WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"; PROFILE=0
 while [ $# -gt 0 ]; do
   case "$1" in
     --only) ONLY=$2; shift 2 ;;
     --off-only) MODES="off"; shift ;;
     --on-only) MODES="on"; shift ;;
+    --profile) PROFILE=1; shift ;;
     *) if [ "$WARMUP" = 30 ] && [ -z "${W_SET:-}" ]; then WARMUP=$1; W_SET=1; else SECONDS_=$1; fi; shift ;;
   esac
 done
@@ -60,14 +64,19 @@ run_once() {  # $1 = label
   # parity=1 only for the main-menu auto-load / no-pause / tick gate; the seeding is harmless
   local jvm="-Dliteoptimizer.nopause=1 -Dliteoptimizer.parity=1 -Dliteoptimizer.parity.world=$SAVE -Dliteoptimizer.parity.ticks=999999999 -Dliteoptimizer.bench=$label -Dliteoptimizer.bench.warmup=$WARMUP -Dliteoptimizer.bench.seconds=$SECONDS_ -Dliteoptimizer.bench.quit=1"
   [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' '_')"
-  python3 - "$CFG" "$jvm" <<'PY'
+  python3 - "$CFG" "$jvm" "$PROFILE" <<'PY'
 import sys, re
-path, jvm = sys.argv[1], sys.argv[2]
+path, jvm, profile = sys.argv[1], sys.argv[2], sys.argv[3] == "1"
 text = open(path).read()
-text = re.sub(r"(?m)^OverrideJavaArgs=.*$", "OverrideJavaArgs=true", text)
-if "OverrideJavaArgs=" not in text: text += "\nOverrideJavaArgs=true\n"
-text = re.sub(r"(?m)^JvmArgs=.*$", "JvmArgs=" + jvm, text)
-if "JvmArgs=" not in text: text += "JvmArgs=" + jvm + "\n"
+def setkv(text, key, value):
+    if re.search(r"(?m)^" + key + "=", text):
+        return re.sub(r"(?m)^" + key + "=.*$", key + "=" + value, text)
+    return text + "\n" + key + "=" + value + "\n"
+text = setkv(text, "OverrideJavaArgs", "true")
+text = setkv(text, "JvmArgs", jvm)
+if profile:
+    text = setkv(text, "OverrideJavaLocation", "true")
+    text = setkv(text, "JavaPath", "/usr/lib/jvm/java-8-openjdk/bin/java")
 open(path, "w").write(text)
 PY
   if pgrep -f "[p]rismlauncher --launch" >/dev/null; then
@@ -76,6 +85,10 @@ PY
   echo "[bench] run '$label' (warmup ${WARMUP}s, record ${SECONDS_}s) ..."
   prismlauncher --launch "$INSTANCE" --offline BenchTester >/dev/null 2>&1 &
   local pid=$!
+  if [ $PROFILE = 1 ]; then
+    ( until rg -q "bench '$label' recording" "$MC/logs/latest.log" 2>/dev/null; do sleep 2; kill -0 $pid 2>/dev/null || exit 0; done
+      "$ROOT/tools/profile.sh" "$NAME-$label" "$SECONDS_" >/dev/null 2>&1 || echo "[bench] profile failed for $label" ) &
+  fi
   local waited=0 dumped=0
   while kill -0 $pid 2>/dev/null; do
     sleep 5; waited=$((waited+5))
