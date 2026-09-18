@@ -39,7 +39,8 @@ public enum Option {
     BLOCKSTATE_PROPERTY_STORAGE("blockstate_property_storage", MEMORY, true, "one neighbour table per block instead of one per blockstate"),
 
     // 0.5 Lithium II
-    PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)");
+    PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)"),
+    HOPPER_ENTITY_LOOKUP("hopper_entity_lookup", WORLD, true, "per-section list of inventory entities for hopper searches");
 
     public final String key;
     public final Option pillar;
