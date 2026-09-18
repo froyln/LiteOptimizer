@@ -409,11 +409,39 @@ for `int[]`, `BakedQuad`, `ImmutableTable`, `TextureAtlasSprite`.
 
 ## Task: 0.5 Lithium II — world batch 2 + AI
 
-**Status:** pending
+**Status:** in progress (started 2026-09-18) — 2 rows shipped from profiles, rest deferred (below); awaiting review/commit
 
 `world/hopper_inventory_cache` (+ bb cache), `world/tick_scheduler`, `world/explosions` (MASA
 subset), `world/entity_lookup`, `ai/goal_selector`, `ai/pathfinding_node_cache`,
 `ai/can_entity_be_seen`, `world/portal_search_cache`. Harness on B3/B4/B5 per commit.
+
+### Notes / findings (2026-09-18)
+
+- Profiled first (`tools/bench.sh --jfr` on B3-hoppers, B4-mobs, B5-tnt; `docs/profiles/*.top.txt`),
+  then picked rows by what the profiles showed instead of the planned list:
+  - `world/property_hashcode_cache` — **new row from the B3 profile**: `PropertyEnum.hashCode()` rehashes
+    two collections on every `IBlockState.getValue`; top self frame of the whole process. 3 tiny
+    mixins. B3-hoppers `--only`: frame −21 %, 1 % low −50 %, MSPT −19 %. Parity PASS B3-hoppers 600, B4-mobs 600.
+  - `world/hopper_entity_lookup` (the hopper part of `world/entity_lookup`): per-section `IInventory`
+    entity list, same pattern as `hard_hitbox_entity_list`. B3-hoppers MSPT −14 %. Parity PASS
+    B3-hoppers 600, B2-items 600, B4-mobs 600.
+  - Cumulative B3-hoppers all-off vs all-on (with 0.2–0.4): frame −49 %, MSPT −20 % (3.63 → 2.91 ms).
+  - `world/world_border_contains` — tried (B4 JFR named it the hottest server self frame), **no gain**
+    (MSPT −2.4 %, noise), deleted; row kept as rejected so it is not re-proposed.
+- Deferred, with reasons in the catalog: `ai/goal_selector`, `ai/pathfinding_node_cache`,
+  `ai/can_entity_be_seen` (B4 server time is ~all `findChunksForSpawning`, AI absent from the
+  profile), `world/tick_scheduler` (no benchmark world shows the TreeSet), `world/hopper_inventory_cache`
+  (after the two rows above hoppers are no longer visible in the B3 profile), `world/portal_search_cache`
+  (no benchmark world).
+- **`world/explosions` blocked on the owner**: `B5-tnt` (`4D TNT Quarry`) has no `pose.txt` and the
+  quarry is not running when the save loads — the JFR shows an idle server (MSPT 0.7). Needs: start the
+  quarry in game, save, copy to `~/Dev/OptimizationMod-1.12.2-worlds/B5-tnt`, write `pose.txt`. Carpet's
+  `optimizedTNT` is *not* parity-clean (early ray exit skips `nextFloat` calls, ObjectOpenHashSet
+  changes drop order, same-tick entity-list reuse misses drops); the portable subset is the per-explosion
+  block-state cache + density cache + `doExplosionB` state/chunk reuse.
+- Harness: `tools/profile.sh` died on `head`'s SIGPIPE under `pipefail` ("profile failed" with a
+  complete `top.txt`), and bench passed the full window to JFR so the recording outlived the game;
+  fixed both.
 
 ---
 
