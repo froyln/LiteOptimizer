@@ -6,6 +6,11 @@
   "refmap": "mixins.liteoptimizer.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "world.tile_entity_removal.WorldMixin",
+    "world.pending_ticks_chunk_lookup.WorldServerMixin",
+    "memory.entity_data_manager.EntityDataManagerMixin",
+    "world.item_merging.EntityItemMixin",
+    "memory.itemstack_is_empty.ItemStackMixin",
     "dev.parity.WorldServerAccessor",
     "dev.parity.WorldRandomMixin",
     "dev.parity.EntityRandomMixin",

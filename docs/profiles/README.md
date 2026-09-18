@@ -10,14 +10,17 @@ The instance already has real technical worlds in
 the originals) into `~/Dev/OptimizationMod-1.12.2-worlds/<id>/` and record the fixed pose in
 this file:
 
-| id | save to copy | pose (`/tp x y z yaw pitch`) | notes |
-|----|--------------|-------------------------------|-------|
-| B1 base | `RedBlaze908 Storage System 1_12 V2` (or `main sturuge`) | _fill_ | item-frame/chest walls, many TEs |
-| B2 items | `cobble farm for 1_11` or `48.7kcobble` pasted, running | _fill_ | let items pile up ~5k before recording |
-| B3 redstone | `8_5` / `22_Hopper_8_Itemsslice…` hopper halls, `50 furnace Array` | _fill_ | sorters + clocks running |
-| B4 mobs | `Heinz' Witchfarm`, `flush_mobfarms_creative`, iron farm | _fill_ | let the farm fill |
-| B5 tnt | `3-dir TNT quarry` / `4D TNT Quarry` | _fill_ | quarry running |
-| B6 flight | `seed 7480190280633614536` | elytra loop, RD 16 | the only non-static one |
+| id | dir under `~/Dev/OptimizationMod-1.12.2-worlds/` | source save | pose (`pose.txt`: `x y z yaw pitch`) | notes |
+|----|---|---|---|---|
+| B1 base | `B1-storage` | `RedBlaze908 Storage System 1_12 V2` | _fill_ | item-frame/chest walls, many TEs |
+| B2 items | `B2-items` | `cobble farm for 1_11` | _fill_ | let items pile up before recording |
+| B3 redstone | `B3-furnace` (harness proven), `B3-hoppers` | `50 furnace Array`, `8_5` | _fill_ | furnaces / hopper halls |
+| B4 mobs | `B4-mobs` | `Heinz' Witchfarm` | _fill_ | let the farm fill |
+| B5 tnt | `B5-tnt` | `4D TNT Quarry` | _fill_ | quarry running |
+| B6 flight | _todo_ | `seed 7480190280633614536` | elytra loop, RD 16 | the only non-static one |
+
+Worlds are copies (the instance's originals are never played by the tools). `pose.txt` is
+optional: without it the player stays where the save left them, which is fine for parity runs.
 
 Settings for every recording: render distance 16, VSync off, max FPS unlimited, fullscreen
 off (fixed window size), `doDaylightCycle false` + `/time set 6000`, particles All, smooth
