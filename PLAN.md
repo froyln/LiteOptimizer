@@ -409,7 +409,7 @@ for `int[]`, `BakedQuad`, `ImmutableTable`, `TextureAtlasSprite`.
 
 ## Task: 0.5 Lithium II — world batch 2 + AI
 
-**Status:** in progress (started 2026-09-18) — 2 rows shipped from profiles, rest deferred (below); awaiting review/commit
+**Status:** done (fe8076c, aa5d299, bd86f66, 3d0d2c9) — 2 rows shipped from profiles, rest deferred with evidence (below); `world/explosions` re-opens when the owner supplies a running B5-tnt save + pose.txt
 
 `world/hopper_inventory_cache` (+ bb cache), `world/tick_scheduler`, `world/explosions` (MASA
 subset), `world/entity_lookup`, `ai/goal_selector`, `ai/pathfinding_node_cache`,
