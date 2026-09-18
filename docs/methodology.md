@@ -176,6 +176,8 @@ draw of global block entities were found (see `docs/compat/sodium.md`).
 - **Server (integrated):** average and max MSPT over the same window.
 - **Memory:** heap after a forced GC (`jcmd <pid> GC.run` then `GC.heap_info`), and the
   `Chunk`/model object counts from `jcmd <pid> GC.class_histogram | head -40`.
+  `tools/bench.sh <world> --heap` does exactly that once the recording window starts and writes
+  `run/bench/<world>-<label>.heap.txt` for off and on; diff the two.
 - **Hotspots (research only):** JFR via `tools/profile.sh <label> [seconds]` (jcmd attach →
   `docs/profiles/<label>.jfr` + `<label>.top.txt` with the hottest self/inclusive frames).
   The instance ships Oracle `jre-legacy` 8u202, where JFR needs `-XX:+UnlockCommercialFeatures`;

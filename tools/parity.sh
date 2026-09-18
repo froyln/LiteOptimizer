@@ -44,10 +44,12 @@ cleanup() {
 trap cleanup EXIT
 
 write_config() {  # $1 = off|on
-  python3 - "$1" "$ONLY" "$OPT" <<'PY'
-import json, os, sys
-mode, only, path = sys.argv[1], sys.argv[2], sys.argv[3]
+  python3 - "$1" "$ONLY" "$OPT" "$ROOT/src/main/java/dev/froyln/liteoptimizer/config/Option.java" <<'PY'
+import json, os, re, sys
+mode, only, path, options = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 keys = [k for k in json.load(open(path)) if not k.startswith("_")] if os.path.exists(path) else []
+# keys the source knows but the instance's config file does not yet: a missing key means "enabled"
+keys += [k for k in re.findall(r'^\s*[A-Z_0-9]+\("([a-z_0-9]+)",', open(options).read(), re.M) if k not in keys]
 pillars = {"render", "world", "ai", "memory"}
 cfg = {}
 for k in keys:

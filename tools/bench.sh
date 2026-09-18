@@ -2,13 +2,15 @@
 # Benchmark: load a world, wait, record frame times + integrated-server MSPT with the
 # optimizations OFF, then ON (docs/methodology.md §2), and print the summary + deltas.
 #
-#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only] [--profile] [--jfr] [--fly <blocks/tick>] [--keep] [--no-entities]
+#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only] [--profile] [--jfr] [--heap] [--fly <blocks/tick>] [--keep] [--no-entities]
 #
 # --keep: leave the played copy at <instance>/saves/_bench (to copy generated chunks back into the world dir)
 #
 # --profile: keep vanilla's section profiler running for the recording window and copy
 #            bench/<label>.profile.txt (ms per frame per section, rendered chunk count) next to the csv.
 #            This is the tool for the client thread: JFR barely samples it (LWJGL native calls).
+# --heap:    once the recording starts: jcmd GC.run + GC.heap_info + top-40 GC.class_histogram →
+#            run/bench/<world>-<label>.heap.txt (memory pillar numbers). Runs on the system JDK like --jfr.
 # --jfr:     run the instance on the system OpenJDK 8 (JFR built in) and record a JFR profile of the
 #            recording window with tools/profile.sh → docs/profiles/<world>-<label>.top.txt
 #            (useful for the server thread).
@@ -18,7 +20,7 @@
 set -euo pipefail
 
 WORLD_DIR=${1:?world dir}; shift
-WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"; PROFILE=0; JFR=0; FLY=0; KEEP=0; NOENT=0
+WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"; PROFILE=0; JFR=0; HEAP=0; FLY=0; KEEP=0; NOENT=0
 while [ $# -gt 0 ]; do
   case "$1" in
     --only) ONLY=$2; shift 2 ;;
@@ -26,6 +28,7 @@ while [ $# -gt 0 ]; do
     --on-only) MODES="on"; shift ;;
     --profile) PROFILE=1; shift ;;
     --jfr) JFR=1; shift ;;
+    --heap) HEAP=1; shift ;;
     --fly) FLY=$2; shift 2 ;;
     --keep) KEEP=1; shift ;;
     --no-entities) NOENT=1; shift ;;  # screenshot parity: entities are per-run random
@@ -62,10 +65,12 @@ cleanup() {
 trap cleanup EXIT
 
 write_config() {  # $1 = off|on
-  python3 - "$1" "$ONLY" "$OPT" <<'PY'
-import json, os, sys
-mode, only, path = sys.argv[1], sys.argv[2], sys.argv[3]
+  python3 - "$1" "$ONLY" "$OPT" "$ROOT/src/main/java/dev/froyln/liteoptimizer/config/Option.java" <<'PY'
+import json, os, re, sys
+mode, only, path, options = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 keys = [k for k in json.load(open(path)) if not k.startswith("_")] if os.path.exists(path) else []
+# keys the source knows but the instance's config file does not yet: a missing key means "enabled"
+keys += [k for k in re.findall(r'^\s*[A-Z_0-9]+\("([a-z_0-9]+)",', open(options).read(), re.M) if k not in keys]
 pillars = {"render", "world", "ai", "memory"}
 cfg = {k: (False if mode == "off" else ((k in pillars) or (k == only)) if only else True) for k in keys}
 json.dump(cfg, open(path, "w"), indent=2)
@@ -83,7 +88,7 @@ run_once() {  # $1 = label
   [ $NOENT = 1 ] && jvm="$jvm -Dliteoptimizer.bench.noentities=1"
   [ -n "${EXTRA_JVM:-}" ] && jvm="$jvm $EXTRA_JVM"  # experiments, e.g. EXTRA_JVM=-Dliteoptimizer.dev.x=1
   [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' '_')"
-  python3 - "$CFG" "$jvm" "$JFR" <<'PY'
+  python3 - "$CFG" "$jvm" "$((JFR|HEAP))" <<'PY'
 import sys, re
 path, jvm, profile = sys.argv[1], sys.argv[2], sys.argv[3] == "1"
 text = open(path).read()
@@ -102,11 +107,27 @@ PY
     echo "[bench] a launched instance is already running — close it first"; exit 4
   fi
   echo "[bench] run '$label' (warmup ${WARMUP}s, record ${SECONDS_}s) ..."
+  local stamp="$OUT/.launch-stamp"; touch "$stamp"; sleep 1
+  rm -f "$OUT/$NAME-$label.heap.txt"
   prismlauncher --launch "$INSTANCE" --offline BenchTester >/dev/null 2>&1 &
   local pid=$!
+  # wait_recording: block until *this* launch's log (newer than the stamp, so a previous run with
+  # the same label cannot match) says the recording window started; false if the game died first
+  wait_recording() {
+    until [ "$MC/logs/latest.log" -nt "$stamp" ] && rg -q "bench '$label' recording" "$MC/logs/latest.log" 2>/dev/null; do
+      sleep 2; kill -0 $pid 2>/dev/null || return 1
+    done
+  }
   if [ $JFR = 1 ]; then
-    ( until rg -q "bench '$label' recording" "$MC/logs/latest.log" 2>/dev/null; do sleep 2; kill -0 $pid 2>/dev/null || exit 0; done
+    ( wait_recording || exit 0
       "$ROOT/tools/profile.sh" "$NAME-$label" "$SECONDS_" >/dev/null 2>&1 || echo "[bench] profile failed for $label" ) &
+  fi
+  if [ $HEAP = 1 ]; then
+    ( wait_recording || exit 0
+      jcmd=/usr/lib/jvm/java-8-openjdk/bin/jcmd; mcpid=$(pgrep -f "liteoptimizer.bench=$label" | head -1 || true)
+      [ -n "$mcpid" ] || { echo "[bench] heap: game pid not found for $label"; exit 0; }
+      { "$jcmd" "$mcpid" GC.run; "$jcmd" "$mcpid" GC.run; "$jcmd" "$mcpid" GC.heap_info; "$jcmd" "$mcpid" GC.class_histogram | head -102; } \
+        > "$OUT/$NAME-$label.heap.txt" 2>&1 || echo "[bench] heap dump failed for $label" ) &
   fi
   local waited=0 dumped=0
   while kill -0 $pid 2>/dev/null; do

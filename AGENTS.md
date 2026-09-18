@@ -37,6 +37,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk   # system JDK 21 cannot run ForgeG
 ./gradlew runClient             # dev client from ./run (asset download often stalls on this network)
 tools/test-in-game.sh           # build → copy litemod into the PrismLauncher instance → launch it
 tools/parity.sh <world> [ticks] [--only key] [--vanilla]   # state-hash diff off vs on (docs/methodology.md §1)
+tools/bench.sh <world> [warmup] [s] [--only key] [--heap] [--jfr]   # frame/MSPT off vs on; --heap adds forced-GC heap + class histogram
 tools/bench-summary.py a.csv [b.csv]                       # frame/MSPT summary of BenchRecorder output
 tools/profile.sh <label> [s]                               # JFR of the running game → docs/profiles/
 ```
