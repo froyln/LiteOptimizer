@@ -120,7 +120,7 @@ PY
   }
   if [ $JFR = 1 ]; then
     ( wait_recording || exit 0
-      "$ROOT/tools/profile.sh" "$NAME-$label" "$SECONDS_" >/dev/null 2>&1 || echo "[bench] profile failed for $label" ) &
+      "$ROOT/tools/profile.sh" "$NAME-$label" "$((SECONDS_ - 5))" >/dev/null 2>&1 || echo "[bench] profile failed for $label" ) &  # JFR starts a few s into the window; must end before the game quits
   fi
   if [ $HEAP = 1 ]; then
     ( wait_recording || exit 0

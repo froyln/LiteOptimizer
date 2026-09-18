@@ -19,6 +19,7 @@ echo "recording pid $PID for ${SECS}s → $OUT/$LABEL.jfr"
 until [ -s "$OUT/$LABEL.jfr" ] && ! "$JCMD" "$PID" JFR.check 2>/dev/null | grep -q "name=$LABEL.*running"; do sleep 2; done
 
 # top self frames (first frame of each sample) and top inclusive frames, both by sample count
+set +o pipefail  # `head` closes the pipe early; that is not an error
 "$JFR" print --events jdk.ExecutionSample "$OUT/$LABEL.jfr" > "$OUT/$LABEL.samples.txt"
 {
   echo "# $LABEL — $(date -Is) — ${SECS}s"; echo; echo "## top self frames"
