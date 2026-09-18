@@ -35,6 +35,7 @@ public enum Option {
     STRUCTURE_LOOKUP_INDEX("structure_lookup_index", WORLD, true, "per-chunk index for 'is this position inside a structure' (swamp hut / monument / fortress spawn checks)"),
 
     // 0.4 FerriteCore
+    BAKED_QUAD_DEDUP("baked_quad_dedup", MEMORY, true, "share identical baked quads between models"),
     BLOCKSTATE_PROPERTY_STORAGE("blockstate_property_storage", MEMORY, true, "one neighbour table per block instead of one per blockstate");
 
     public final String key;

@@ -55,6 +55,8 @@
     "dev.parity.PathNavigateMixin"
   ],
   "client": [
+    "memory.baked_quad_dedup.FaceBakeryMixin",
+    "memory.baked_quad_dedup.ModelBakeryMixin",
     "dev.parity.GuiMainMenuMixin",
     "dev.bench.MinecraftLoopMixin",
     "dev.bench.EntityRendererFlickerMixin",
