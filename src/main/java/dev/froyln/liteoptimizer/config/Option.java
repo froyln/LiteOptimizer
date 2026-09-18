@@ -36,7 +36,10 @@ public enum Option {
 
     // 0.4 FerriteCore
     BAKED_QUAD_DEDUP("baked_quad_dedup", MEMORY, true, "share identical baked quads between models"),
-    BLOCKSTATE_PROPERTY_STORAGE("blockstate_property_storage", MEMORY, true, "one neighbour table per block instead of one per blockstate");
+    BLOCKSTATE_PROPERTY_STORAGE("blockstate_property_storage", MEMORY, true, "one neighbour table per block instead of one per blockstate"),
+
+    // 0.5 Lithium II
+    PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)");
 
     public final String key;
     public final Option pillar;
