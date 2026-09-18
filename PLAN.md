@@ -377,12 +377,33 @@ at the benchmark poses** (screenshot diff), **Litematica/MiniHUD overlays still 
 
 ## Task: 0.4 FerriteCore — memory batch
 
-**Status:** pending
+**Status:** in progress (started 2026-09-18) — scope reduced to 2 of 5 rows (reasons below); code, numbers, review done; awaiting commit
 
 `memory/blockstate_property_storage` (VintageFix/FoamFix code), `memory/baked_quad_dedup`,
 `memory/model_dedup` + `model_part_dedup`, `memory/sprite_frames_release`, `memory/resource_location_intern`.
 Acceptance: heap after forced GC at the B1 pose before/after; `jcmd GC.class_histogram` deltas
 for `int[]`, `BakedQuad`, `ImmutableTable`, `TextureAtlasSprite`.
+
+### Notes / findings (2026-09-18)
+
+- `tools/bench.sh --heap`: 2× `jcmd GC.run` + `GC.heap_info` + top-100 `GC.class_histogram` once the
+  recording window starts → `run/bench/<world>-<label>.heap.txt`. Fixed two harness bugs on the way:
+  the `--jfr`/`--heap` watcher matched the *previous* run's `latest.log` (same label) and died under
+  `set -e`; `write_config` in bench.sh and parity.sh only knew keys already in the instance's config
+  file, so a brand-new key was silently **enabled in every run** (missing = default). Both now read
+  `Option.java` too.
+- `memory/blockstate_property_storage` — own `StateTable` (one `IBlockState[]` per container, int index
+  per state) instead of VintageFix's FastMap port: −10.5 MB Guava objects / old gen −14 MB at B1;
+  dev check `-Dliteoptimizer.dev.statecheck` (5487 states, 100 500 lookups, 0 failures); parity PASS
+  B3-hoppers 600, B5-tnt 600. Inner-class target → `@Mixin(targets=...)` + Notch-name aliases +
+  `remap = false` (the AP does not remap members of `targets` mixins).
+- `memory/baked_quad_dedup` — −2.2 MB (43 690 quads → 29 214 unique). Small; kept because it is
+  10 lines and measured.
+- `memory/sprite_frames_release` — **rejected**: vanilla 1.12.2 already clears static sprites'
+  frames in `ModelBakery.makeItemModels`; a mixin doing it released 0 sprites.
+- `memory/model_dedup`, `resource_location_intern` — not done: raw `ModelBlock`s are already garbage
+  in vanilla (no Forge `ModelLoader`), the rest is 2–3 MB at best; `ResourceLocation` 6.6k instances.
+  Left as low-value candidates in the catalog.
 
 ---
 
