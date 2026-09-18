@@ -32,7 +32,10 @@ public enum Option {
     RAYTRACE_ALLOCATIONS("raytrace_allocations", WORLD, true, "allocation-free block ray tracing"),
     BLOCKPOS_GARBAGE("blockpos_garbage", WORLD, true, "mutable positions in hot vanilla loops"),
     NBT_TAG_POOLING("nbt_tag_pooling", MEMORY, true, "canonical instances for small NBT tags"),
-    STRUCTURE_LOOKUP_INDEX("structure_lookup_index", WORLD, true, "per-chunk index for 'is this position inside a structure' (swamp hut / monument / fortress spawn checks)");
+    STRUCTURE_LOOKUP_INDEX("structure_lookup_index", WORLD, true, "per-chunk index for 'is this position inside a structure' (swamp hut / monument / fortress spawn checks)"),
+
+    // 0.4 FerriteCore
+    BLOCKSTATE_PROPERTY_STORAGE("blockstate_property_storage", MEMORY, true, "one neighbour table per block instead of one per blockstate");
 
     public final String key;
     public final Option pillar;

@@ -135,6 +135,7 @@ public final class BenchRecorder {
         }
         if (worldSeenAt < 0) {
             worldSeenAt = now;
+            StateCheck.runOnce();
             // the next multiple of 100 ticks after the warm-up: an absolute world tick, so two runs
             // whose join tick differs by a few ticks still shoot the same tick (beacon beams rotate per tick)
             shotAtTick = (mc.world.getTotalWorldTime() + (long) (warmupNs / 1e9) * 20L) / 100L * 100L + 100L;

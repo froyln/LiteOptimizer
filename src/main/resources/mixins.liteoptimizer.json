@@ -22,6 +22,7 @@
     "world.entity_type_counts.EntityMixin",
     "world.entity_type_counts.WorldMixin",
     "memory.itemstack_is_empty.ItemStackMixin",
+    "memory.blockstate_property_storage.StateImplementationMixin",
     "dev.parity.WorldServerAccessor",
     "dev.parity.WorldRandomMixin",
     "dev.parity.EntityRandomMixin",
