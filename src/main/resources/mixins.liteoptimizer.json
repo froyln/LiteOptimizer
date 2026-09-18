@@ -10,6 +10,11 @@
     "world.pending_ticks_chunk_lookup.WorldServerMixin",
     "memory.entity_data_manager.EntityDataManagerMixin",
     "world.item_merging.EntityItemMixin",
+    "world.block_collisions.WorldMixin",
+    "world.furnace_recipe_cache.FurnaceRecipesMixin",
+    "world.entity_type_counts.EntityLivingMixin",
+    "world.entity_type_counts.EntityMixin",
+    "world.entity_type_counts.WorldMixin",
     "memory.itemstack_is_empty.ItemStackMixin",
     "dev.parity.WorldServerAccessor",
     "dev.parity.WorldRandomMixin",
@@ -32,7 +37,15 @@
     "dev.parity.EntityXPOrbMathMixin",
     "dev.parity.EntityTNTPrimedMathMixin",
     "dev.parity.WorldEntitySpawnerMathMixin",
-    "dev.parity.SlotFurnaceOutputMathMixin"
+    "dev.parity.SlotFurnaceOutputMathMixin",
+    "dev.parity.EntityAILookIdleStrictMathMixin",
+    "dev.parity.EntityPlayerStrictMathMixin",
+    "dev.parity.EntityMinecartStrictMathMixin",
+    "dev.parity.EntityEnderEyeStrictMathMixin",
+    "dev.parity.EntityTNTPrimedStrictMathMixin",
+    "dev.parity.EntityDragonStrictMathMixin",
+    "dev.parity.MathHelperStrictMathMixin",
+    "dev.parity.PathNavigateMixin"
   ],
   "client": [
     "dev.parity.GuiMainMenuMixin",

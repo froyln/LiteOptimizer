@@ -64,6 +64,13 @@ anything. Dumps land in `run/parity/`.
   takes a variable number of server ticks, and ticking the world during it consumed RNG.
 - **The pause menu is disabled** (`-Dliteoptimizer.nopause`): an unfocused window pauses the
   integrated server.
+- **`PathNavigate.checkForStuck` uses `System.currentTimeMillis()`** to abandon a mob's path,
+  so mob movement diverges with real elapsed time (first seen at tick ~107 on the witch farm).
+  The harness feeds it a clock that advances 50 ms per counted tick (`PathNavigateMixin`).
+- **`Math.sin/cos/pow` differ between interpreter and JIT on JDK 8** (fdlibm vs x87 intrinsics);
+  the game-state call sites (`EntityAILookIdle`, `EntityPlayer.dropItem`, `EntityMinecart`,
+  `EntityEnderEye`, `EntityTNTPrimed`, `EntityDragon`, `MathHelper` tables) are redirected to
+  `StrictMath` in harness mode. Not proven to matter on the test worlds, pinned on principle.
 - **Fixed input.** Player does nothing; harness `/tp`s them to a fixed pose on world load,
   render distance fixed, `doDaylightCycle false`, `randomTickSpeed` at the world's value.
 - **Fixed length.** Count integrated-server ticks from the first tick after the world finishes
@@ -87,7 +94,7 @@ anything. Dumps land in `run/parity/`.
 
 ### What the harness proved (2026-09-17, world B3 "50 furnace Array", seed 1)
 
-Vanilla-vs-vanilla, two separate game launches, 600 ticks: all 625 chunks, every entity and
+Vanilla-vs-vanilla, two separate game launches, 600 ticks (and 6000 on B3): all 625 chunks, every entity and
 tile entity, the scheduled-tick list, world time **and** `World.rand`'s internal seed identical;
 the per-call-site histogram of `World.rand` consumption (verbose mode, `TracingRandom`) identical
 too. Before the fixes above, runs diverged in (1) world time (join delay), (2) one chunk

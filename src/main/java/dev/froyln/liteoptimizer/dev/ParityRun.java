@@ -30,12 +30,29 @@ public final class ParityRun {
     private ParityRun() {
     }
 
+    /** A wall clock that advances 50 ms per counted server tick (see PathNavigateMixin). */
+    public static long tickMillis() {
+        return 1_000_000_000L + Math.max(tick, 0) * 50L;
+    }
+
     /**
      * Worlds do not tick until the player has joined, so both runs simulate exactly the same
      * ticks: the join takes a variable number of server ticks (chunk loading, handshake).
      */
     public static boolean worldTicksAllowed() {
         return WORLD == null || joined;
+    }
+
+    private static long liteoptimizer$posHash(WorldServer w) {
+        long h = 0;
+        for (int i = 0; i < w.loadedEntityList.size(); i++) {
+            net.minecraft.entity.Entity e = w.loadedEntityList.get(i);
+            h = 31 * h + Double.doubleToLongBits(e.posX);
+            h = 31 * h + Double.doubleToLongBits(e.posY);
+            h = 31 * h + Double.doubleToLongBits(e.posZ);
+            h = 31 * h + Float.floatToIntBits(e.rotationYaw);
+        }
+        return h;
     }
 
     /** Called at the head of every {@code MinecraftServer.tick()}. */
@@ -64,7 +81,7 @@ public final class ParityRun {
                     .append(" sent ").append(sent).append(" players ").append(w.playerEntities.size())
                     .append(" rand ").append(w.rand instanceof TracingRandom ? ((TracingRandom) w.rand).calls : -1)
                     .append(" pos ").append(w.playerEntities.isEmpty() ? "-" : w.playerEntities.get(0).getPosition())
-                    .append(" entities ").append(w.loadedEntityList.size()).append('\n');
+                    .append(" entities ").append(w.loadedEntityList.size()).append(" posHash ").append(liteoptimizer$posHash(w)).append('\n');
         }
         if (tick == TICKS) {
             done = true;
