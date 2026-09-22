@@ -38,6 +38,9 @@ public enum Option {
     BAKED_QUAD_DEDUP("baked_quad_dedup", MEMORY, true, "share identical baked quads between models"),
     BLOCKSTATE_PROPERTY_STORAGE("blockstate_property_storage", MEMORY, true, "one neighbour table per block instead of one per blockstate"),
 
+    // 0.6 Sodium II
+    MODEL_DISPLAY_LISTS("model_display_lists", RENDER, true, "compile item-frame item and block model draws into display lists"),
+
     // 0.5 Lithium II
     PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)"),
     HOPPER_ENTITY_LOOKUP("hopper_entity_lookup", WORLD, true, "per-section list of inventory entities for hopper searches");

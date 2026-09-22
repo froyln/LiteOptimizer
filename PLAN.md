@@ -447,7 +447,16 @@ subset), `world/entity_lookup`, `ai/goal_selector`, `ai/pathfinding_node_cache`,
 
 ## Task: 0.6 Sodium II
 
-**Status:** pending
+**Status:** in progress (started 2026-09-18)
+
+Findings:
+- `render/model_display_lists` (B1 profile: 338 item frames = 11.4 ms/frame of `entities.entities`):
+  B1 frame 18.13 → 10.39 ms (−43 %), 1 % low −24 %; 0 differing pixels. Gated to the item-frame
+  path only — held item / GUI icons showed 1/255 lighting rounding differences on NVIDIA's
+  display-list path; the other `renderModelBrightnessColor` callers (TNT, minecart, enderman,
+  mooshroom/golem layers) are entity poses the screenshot harness cannot cover yet.
+- `entities.blockentities` 3.6 ms/frame at B1 (chest TESRs) is the next render target;
+  `dev.bench.TileEntityRendererSkipMixin` (`-Dliteoptimizer.bench.skiptesr=…`) attributes it per renderer class.
 
 Multidraw backend (GL43), `render/entity_culling` + `render/tile_entity_occlusion` on top of
 Sodium's culling data, `render/entity_model_matrix`, options screen, `render/chunk_light_cache`

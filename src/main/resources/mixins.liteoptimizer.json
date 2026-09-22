@@ -61,6 +61,8 @@
     "dev.parity.PathNavigateMixin"
   ],
   "client": [
+    "render.model_display_lists.RenderItemMixin",
+    "render.model_display_lists.BlockModelRendererMixin",
     "memory.baked_quad_dedup.FaceBakeryMixin",
     "memory.baked_quad_dedup.ModelBakeryMixin",
     "dev.parity.GuiMainMenuMixin",
@@ -70,6 +72,7 @@
     "dev.bench.RenderGlobalAccessor",
     "dev.bench.RenderChunkDumpMixin",
     "dev.bench.RenderManagerNoEntitiesMixin",
+    "dev.bench.TileEntityRendererSkipMixin",
     "dev.bench.TextureAtlasSpriteFreezeMixin",
     "dev.nopause.MinecraftNoPauseMixin",
     "render.sodium.core.frustum.MixinFrustum",
