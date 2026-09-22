@@ -10,8 +10,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * {@code -Dliteoptimizer.bench.noentities=1}: no entity is drawn (RenderManager.shouldRender is
- * false for all), so a screenshot compares terrain and block entities only — dropped items spin
- * from an unseeded client-side random and would differ between any two runs.
+ * false for all but hanging entities), so a screenshot compares terrain, block entities and item
+ * frames/paintings only — dropped items spin from an unseeded client-side random and would differ
+ * between any two runs.
  */
 @Mixin(RenderManager.class)
 public abstract class RenderManagerNoEntitiesMixin {
@@ -19,7 +20,7 @@ public abstract class RenderManagerNoEntitiesMixin {
 
     @Inject(method = "shouldRender", at = @At("HEAD"), cancellable = true)
     private void liteoptimizer$hideEntities(Entity entity, ICamera camera, double x, double y, double z, CallbackInfoReturnable<Boolean> cir) {
-        if (NO_ENTITIES) {
+        if (NO_ENTITIES && !(entity instanceof net.minecraft.entity.EntityHanging)) {  // item frames / paintings are deterministic
             cir.setReturnValue(false);
         }
     }

@@ -108,7 +108,7 @@ PY
   fi
   echo "[bench] run '$label' (warmup ${WARMUP}s, record ${SECONDS_}s) ..."
   local stamp="$OUT/.launch-stamp"; touch "$stamp"; sleep 1
-  rm -f "$OUT/$NAME-$label.heap.txt"
+  rm -f "$OUT/$NAME-$label.heap.txt" "$MC/bench/$label.profile.txt" "$MC/bench/$label.chunks.txt"  # never copy a previous run's files
   prismlauncher --launch "$INSTANCE" --offline BenchTester >/dev/null 2>&1 &
   local pid=$!
   # wait_recording: block until *this* launch's log (newer than the stamp, so a previous run with
