@@ -455,12 +455,40 @@ Findings:
   path only — held item / GUI icons showed 1/255 lighting rounding differences on NVIDIA's
   display-list path; the other `renderModelBrightnessColor` callers (TNT, minecart, enderman,
   mooshroom/golem layers) are entity poses the screenshot harness cannot cover yet.
-- `entities.blockentities` 3.6 ms/frame at B1 (chest TESRs) is the next render target;
-  `dev.bench.TileEntityRendererSkipMixin` (`-Dliteoptimizer.bench.skiptesr=…`) attributes it per renderer class.
+- **bench.sh *can* run from an agent session with the sandbox disabled for that call** — the
+  earlier "agent session can't bench" note was wrong. The failure was `cp -r` into
+  `$MC/saves/_bench` landing outside the sandboxed write root, not something about the game
+  itself. With `dangerouslyDisableSandbox` on the litemod-install and `bench.sh` calls (checked
+  first for a running instance — never launch a second Minecraft), it installs, launches,
+  records and quits cleanly. Used below for 0.6's three render rows.
+- `render/tile_entity_frustum` (`09a9d1c`) + `render/tile_entity_occlusion` (`09a9d1c`) shipped
+  2026-09-22. Bug caught before shipping: Sodium's `MixinWorldRenderer` cancels vanilla's
+  `renderEntities` before its own `RETURN` fires (already known for `tile_entity_frustum`'s
+  bracket, from the frustum pilot); `tile_entity_occlusion`'s own enter/exit bracket had the same
+  gap and would have stuck `insideRenderEntities` true past the frame with Sodium on — fixed by
+  calling both `exit()`s inline from `sodium$renderTileEntities`, same place the frustum fix
+  already lives.
+  B1-storage 20s/40s, `--profile`: frame avg **-42.3%**, 1% low -34.4%, mspt -6.2%; **0 differing
+  screenshot pixels** (3 runs — first run before the exit-bracket fix got a lucky 0 diff with
+  entities in-frame, second run after the fix showed ~756k differing pixels that were camera
+  partial-tick capture noise between off/on's very different FPS, not a regression — third run
+  with `--no-entities` reproduced 0 diff cleanly, confirming it). `blockentities` section time
+  didn't move outside run noise at the B1-storage pose (chest-wall vantage, most TEs already
+  visible) — real numbers, just a low-yield pose for these two; not isolated from each other
+  (`tile_entity_occlusion` needs `sodium` on to do anything, so `bench.sh --only` can't separate
+  the pair from each other, only from the rest of the mod).
+- `render/entity_culling` gap found while wiring occlusion, fixed same day (`38647ac`): the
+  ported `MixinRenderGlobal` had been calling `SodiumWorldRenderer.isEntityVisible`
+  unconditionally since 0.3.0 (`1f6d900`), gated only by Vintagium's own internal default, not
+  our `Option`/config key — no off switch, no catalog row, no bench, despite being live. Catalog
+  description was also wrong (said corner raycasts; shipped code is the same graph box-touch
+  method as `tile_entity_occlusion`, so the parity argument holds). Gave it `Option.ENTITY_CULLING`
+  (pillar `sodium`, default true — matches shipped behavior, no regression).
+  Same B1-storage run: `entities.entities` section **-89%** (5.188 → 0.569 ms/frame), combined
+  with the already-shipped `model_display_lists`, not isolated (same `sodium`-pillar coupling).
 
-Multidraw backend (GL43), `render/entity_culling` + `render/tile_entity_occlusion` on top of
-Sodium's culling data, `render/entity_model_matrix`, options screen, `render/chunk_light_cache`
-tuning, and whatever the profiles then show.
+Remaining: multidraw backend (GL43), `render/entity_model_matrix`, options screen,
+`render/chunk_light_cache` tuning, and whatever the profiles then show.
 
 ---
 
