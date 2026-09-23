@@ -14,6 +14,9 @@ public enum Option {
 
     // 0.3 Sodium I
     SODIUM("sodium", RENDER, true, "Sodium terrain renderer (ported Vintagium): chunk-graph culling, worker meshing, region VBOs, GL20/GL43 backends, particle culling"),
+    // found live in 0.3.0 with no key of its own (Vintagium's internal default only) while
+    // wiring 0.6's tile_entity_occlusion; given its own key so it can be switched off independently
+    ENTITY_CULLING("entity_culling", SODIUM, true, "skip fully occluded entities via Sodium's chunk-visibility graph"),
 
     // 0.2 Lithium I (keys exist before the code so the file is stable across versions)
     TILE_ENTITY_REMOVAL("tile_entity_removal", WORLD, true, "O(n) instead of O(n*m) tile entity list removal"),

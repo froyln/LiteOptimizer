@@ -1,5 +1,7 @@
 package dev.froyln.liteoptimizer.mixin.render.sodium.features.chunk_rendering;
 
+import dev.froyln.liteoptimizer.config.Config;
+import dev.froyln.liteoptimizer.config.Option;
 import me.jellysquid.mods.sodium.client.SodiumClientMod;
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import net.minecraft.client.Minecraft;
@@ -60,7 +62,8 @@ public abstract class MixinRenderGlobal {
             }
 
             // Check if any corners of the bounding box are in a visible subchunk
-            if(!SodiumWorldRenderer.getInstance().isEntityVisible(entity)) {
+            // (catalog: render/entity_culling, own config key liteoptimizer.entity_culling)
+            if(Config.isActive(Option.ENTITY_CULLING) && !SodiumWorldRenderer.getInstance().isEntityVisible(entity)) {
                 continue;
             }
 
