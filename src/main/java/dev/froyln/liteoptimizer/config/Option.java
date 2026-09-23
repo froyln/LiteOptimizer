@@ -40,6 +40,8 @@ public enum Option {
 
     // 0.6 Sodium II
     MODEL_DISPLAY_LISTS("model_display_lists", RENDER, true, "compile item-frame item and block model draws into display lists"),
+    TILE_ENTITY_FRUSTUM("tile_entity_frustum", RENDER, true, "skip block entities whose block box is outside the camera frustum"),
+    TILE_ENTITY_OCCLUSION("tile_entity_occlusion", RENDER, true, "skip block entities whose block box is fully behind Sodium's chunk-visibility graph"),
 
     // 0.5 Lithium II
     PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)"),

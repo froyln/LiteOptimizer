@@ -63,6 +63,10 @@
   "client": [
     "render.model_display_lists.RenderItemMixin",
     "render.model_display_lists.BlockModelRendererMixin",
+    "render.tile_entity_frustum.RenderGlobalMixin",
+    "render.tile_entity_frustum.TileEntityRendererDispatcherMixin",
+    "render.tile_entity_occlusion.RenderGlobalMixin",
+    "render.tile_entity_occlusion.TileEntityRendererDispatcherMixin",
     "memory.baked_quad_dedup.FaceBakeryMixin",
     "memory.baked_quad_dedup.ModelBakeryMixin",
     "dev.parity.GuiMainMenuMixin",

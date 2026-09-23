@@ -474,6 +474,14 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
         return this.chunkRenderManager == null ? java.util.Collections.emptyList() : this.chunkRenderManager.debugRenderList();
     }
 
+    /**
+     * @return True if the chunk section is visible in the graph built this frame, or the manager
+     * is not yet initialized (fails open: an uninitialized graph must never cause a false cull).
+     */
+    public boolean isChunkVisible(int x, int y, int z) {
+        return this.chunkRenderManager == null || this.chunkRenderManager.isChunkVisible(x, y, z);
+    }
+
     public String getChunksDebugString() {
         // C: visible/total
         return String.format("C: %s/%s Q: %s+%si ", this.chunkRenderManager.getVisibleChunkCount(), this.chunkRenderManager.getTotalSections(), this.chunkRenderManager.getRebuildQueueSize(), this.chunkRenderManager.getImportantRebuildQueueSize());
