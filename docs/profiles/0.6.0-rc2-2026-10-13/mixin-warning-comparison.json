@@ -1,0 +1,22 @@
+{
+  "baseline": [
+    "@ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$overrideMaxSize\\$GENERATED(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$modify32\\$GENERATED(I)I with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer->@Redirect::redirect$noClip\\$GENERATED(Laed;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityPlayer->@Redirect::redirect$updateNoClipping\\$GENERATED(Laed;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityRenderer->@Redirect::redirect$fixSpectator\\$GENERATED(Lbud;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityRenderer->@Redirect::redirect$fixSpectator\\$GENERATED(Lbud;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityLivingBase->@Redirect::redirect$fixElytraLanding\\$GENERATED(Lamu;)Z with priority 990, already redirected by mixins.carpetclient.json:MixinEntityLivingBase->@Redirect::redirect$redirectOnElytraLanded\\$GENERATED(Lamu;)Z with priority 999",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityPlayerSP->@Redirect::redirect$onDoesGuiPauseGame\\$GENERATED(Lblk;)Z with priority 990, already redirected by mixins.usefulmod.json:MixinEntityPlayerSP->@Redirect::redirect$mc2071\\$GENERATED(Lblk;)Z with priority 1000",
+    "Method overwrite conflict for a in mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer, previously written by carpetclient.mixins.MixinEntityPlayer. Skipping method.",
+    "Method overwrite conflict for getTimer in mixins.carpetclient.json:IMixinMinecraft, previously written by com.mumfrey.liteloader.client.mixin.MixinMinecraft. Skipping method."
+  ],
+  "candidate": [
+    "@ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$overrideMaxSize\\$GENERATED(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$modify32\\$GENERATED(I)I with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer->@Redirect::redirect$noClip\\$GENERATED(Laed;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityPlayer->@Redirect::redirect$updateNoClipping\\$GENERATED(Laed;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityRenderer->@Redirect::redirect$fixSpectator\\$GENERATED(Lbud;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityRenderer->@Redirect::redirect$fixSpectator\\$GENERATED(Lbud;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityLivingBase->@Redirect::redirect$fixElytraLanding\\$GENERATED(Lamu;)Z with priority 990, already redirected by mixins.carpetclient.json:MixinEntityLivingBase->@Redirect::redirect$redirectOnElytraLanded\\$GENERATED(Lamu;)Z with priority 999",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityPlayerSP->@Redirect::redirect$onDoesGuiPauseGame\\$GENERATED(Lblk;)Z with priority 990, already redirected by mixins.usefulmod.json:MixinEntityPlayerSP->@Redirect::redirect$mc2071\\$GENERATED(Lblk;)Z with priority 1000",
+    "Method overwrite conflict for a in mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer, previously written by carpetclient.mixins.MixinEntityPlayer. Skipping method.",
+    "Method overwrite conflict for getTimer in mixins.carpetclient.json:IMixinMinecraft, previously written by com.mumfrey.liteloader.client.mixin.MixinMinecraft. Skipping method."
+  ],
+  "added": [],
+  "removed": []
+}

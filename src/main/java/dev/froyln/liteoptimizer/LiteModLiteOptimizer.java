@@ -13,7 +13,7 @@ import dev.froyln.liteoptimizer.config.Option;
  * and reports what is active.
  */
 public class LiteModLiteOptimizer implements LiteMod {
-    public static final String VERSION = "0.3.0";
+    public static final String VERSION = "@MOD_VERSION@";
 
     @Override
     public String getName() {

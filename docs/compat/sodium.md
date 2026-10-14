@@ -79,7 +79,7 @@ vertex-format init. What is replaced so the frame is vanilla's, bit for bit:
 |---|---|---|
 | block meshing: `BlockModelRenderer` smooth/flat + `AmbientOcclusionFace`, `BlockFluidRenderer` | own light pipelines, per-vertex biome blending, quad re-orientation, own fluid renderer | vanilla's algorithms verbatim into Sodium's buffers (`pipeline/BlockRenderer`, `pipeline/FluidRenderer`); vanilla's own `AmbientOcclusionFace` class via an inner-class mixin; positions rounded once as `BufferBuilder.putPosition`/`pos` (block pos + offset as doubles) |
 | vertex layout `DefaultVertexFormats.BLOCK` (28 B: pos 3f, colour 4ub, uv 2f, light 2s) | compact half-float format, encoded lightmap coords | the same 28-byte layout (`SFPModelVertexType`), raw lightmap shorts — every section's bytes equal vanilla's (`tools/vtx-diff.py`: 485/485 sections identical on B1) |
-| draw: `VboRenderList` — matrix stack, `RenderChunk`'s 1.000001 seam matrix, client arrays, one `glDrawArrays` per section | GLSL program, VAOs, `glMultiDrawArrays`, region multidraw | `ChunkRenderBackendFixedFunction`: vanilla's draw path per section (`glMultiDrawArrays` was ~10× a plain draw per range on NVIDIA; the multidraw backend stays opt-in) |
+| draw: `VboRenderList` — matrix stack, `RenderChunk`'s 1.000001 seam matrix, client arrays, one `glDrawArrays` per section | GLSL program, VAOs, `glMultiDrawArrays`, region multidraw | `ChunkRenderBackendFixedFunction`: vanilla's draw path per section (`glMultiDrawArrays` was ~10× a plain draw per range on NVIDIA; production selects only the fixed-function backend) |
 | one buffer per layer in `getAllInBoxMutable` order (x, y, z); translucent sorted back-to-front, stable, centroid distance, resorted after a 1-block move | per-face slices, unstable sort, resort only within 96 blocks, block-face culling | block order, one buffer per pass (`use_block_face_culling` off by default), the same sort, resort everywhere |
 | `setupTerrain` graph search: first parent wins, `EnumFacing` order, closed-pocket rule, wrapped root enumeration above/below the world, exact AABB frustum test | culling state merged from every parent, sorted roots, 1.125-block frustum margin | vanilla's search (`ChunkGraphCuller`): same section set, same order |
 | sections built as soon as their chunk loads; unloaded neighbours are the blank chunk (air, sky 15, plains) | wait for the 8 neighbours | build immediately (`ChunkRenderContainer.canRebuild`) — otherwise the outer ring of the render distance is missing |
@@ -98,8 +98,10 @@ Known, documented deviations (none of them change a pixel at a fixed pose):
   frame earlier or later than in vanilla.
 - The vanilla renderer's `renderInfos`, `ChunkRenderDispatcher`, `ViewFrustum` and
   `RenderChunk`s are idle; mods that read them see empty structures (compat matrix above).
-- Opt-in, not parity: `use_chunk_multidraw` (GL 4.3 region multidraw, shader transform: a
-  sub-pixel off), `use_compact_vertex_format`, `use_block_face_culling`, `use_fog_occlusion`.
+- Production parity settings (enforced 2026-10-13): multidraw, compact vertex format, block-face
+  culling, and fog occlusion are forced off on config load/save; translucency sorting is forced
+  on. Their controls are removed. Old JSON cannot opt into the non-parity paths. Backend reference
+  classes remain in the port, but production config selects SFP/fixed-function rendering.
 
 Performance (uncapped, `docs/bench/README.md`): B6 flight over ocean/islands at RD 10, frame
 1.66 → 1.06 ms (−36 %), 1 % low 8.22 → 6.00 ms (−27 %), client-thread root 1.35 → 0.73

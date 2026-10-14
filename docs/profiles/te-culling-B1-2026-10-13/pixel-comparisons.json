@@ -1,0 +1,69 @@
+{
+  "te-frustum-B1": {
+    "RGB_differing_pixels": 24,
+    "dimensions": [
+      892,
+      952
+    ],
+    "inclusive_bounds": [
+      39,
+      256,
+      227,
+      456
+    ],
+    "changed_keys": [
+      "tile_entity_frustum"
+    ]
+  },
+  "te-occlusion-B1": {
+    "RGB_differing_pixels": 21,
+    "dimensions": [
+      892,
+      952
+    ],
+    "inclusive_bounds": [
+      42,
+      256,
+      162,
+      322
+    ],
+    "changed_keys": [
+      "tile_entity_occlusion"
+    ]
+  },
+  "te-frustum-clean": {
+    "RGB_differing_pixels": 17,
+    "dimensions": [
+      892,
+      952
+    ],
+    "inclusive_bounds": [
+      39,
+      254,
+      227,
+      456
+    ],
+    "changed_keys": [
+      "tile_entity_frustum"
+    ]
+  },
+  "te-frustum-static": {
+    "RGB_differing_pixels": 9,
+    "dimensions": [
+      892,
+      952
+    ],
+    "inclusive_bounds": [
+      39,
+      309,
+      227,
+      456
+    ],
+    "changed_keys": [
+      "tile_entity_frustum"
+    ]
+  },
+  "unchanged_off_control": {
+    "RGB_differing_pixels": 19
+  }
+}

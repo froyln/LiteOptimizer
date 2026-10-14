@@ -1,0 +1,7 @@
+[bench] run 'off' (warmup 20s, record 10s) ...
+[bench] run 'on' (warmup 20s, record 10s) ...
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/te-frustum-static-off.csv: 1643 frames, 164.2 fps, avg 6.09 ms, 1% low 31.18 ms, max 319.9 ms, mspt avg 3.71 max 14.69
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/te-frustum-static-on.csv: 2105 frames, 210.5 fps, avg 4.75 ms, 1% low 12.35 ms, max 27.5 ms, mspt avg 3.84 max 21.32
+  frame_avg_ms: -22.0%
+  frame_1pct_low_ms: -60.4%
+  mspt_avg: +3.4%

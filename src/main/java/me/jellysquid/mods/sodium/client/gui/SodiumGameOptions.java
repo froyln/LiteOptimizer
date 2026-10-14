@@ -26,14 +26,13 @@ public class SodiumGameOptions {
 
     public static class AdvancedSettings {
         public boolean useVertexArrayObjects = true;
-        // LiteOptimizer: off = the fixed-function backend (vanilla's own draw path per section, pixel
-        // parity); multidraw = Sodium's GL 4.3 shader backend, faster but a sub-pixel off vanilla
+        // LiteOptimizer: shader backends are excluded until they preserve vanilla pixels.
         public boolean useChunkMultidraw = false;
 
         public boolean animateOnlyVisibleTextures = true;
-        public boolean useEntityCulling = true;
+        public boolean useEntityCulling = false;
         public boolean useParticleCulling = true;
-        public boolean useFogOcclusion = true;
+        public boolean useFogOcclusion = false;
         // LiteOptimizer: off = vanilla's BLOCK vertex layout (needed by the fixed-function backend)
         public boolean useCompactVertexFormat = false;
         // LiteOptimizer: off = one buffer per pass in vanilla's block order (pixel parity: z-fights
@@ -131,6 +130,11 @@ public class SodiumGameOptions {
             config = new SodiumGameOptions();
         }
 
+        if (config == null || config.advanced == null || config.quality == null
+                || config.performance == null || config.notifications == null) {
+            config = new SodiumGameOptions();
+        }
+        config.enforceParitySettings();
         config.configPath = path;
 
         try {
@@ -143,7 +147,18 @@ public class SodiumGameOptions {
         return config;
     }
 
+    private void enforceParitySettings() {
+        // Saved upstream settings must not enable paths that change vanilla's rendered output.
+        this.advanced.useEntityCulling = false;
+        this.advanced.useChunkMultidraw = false;
+        this.advanced.useCompactVertexFormat = false;
+        this.advanced.useBlockFaceCulling = false;
+        this.advanced.useFogOcclusion = false;
+        this.advanced.translucencySorting = true;
+    }
+
     public void writeChanges() throws IOException {
+        this.enforceParitySettings();
         Path dir = this.configPath.getParent();
 
         if (!Files.exists(dir)) {

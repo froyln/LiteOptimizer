@@ -2,7 +2,7 @@
 # Benchmark: load a world, wait, record frame times + integrated-server MSPT with the
 # optimizations OFF, then ON (docs/methodology.md §2), and print the summary + deltas.
 #
-#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>] [--off-only|--on-only] [--profile] [--jfr] [--heap] [--fly <blocks/tick>] [--keep] [--no-entities]
+#   tools/bench.sh <world-dir> [warmup_s=30] [seconds=60] [--only <key>|--compare <key>] [--off-only|--on-only] [--profile] [--jfr] [--heap] [--fly <blocks/tick>] [--keep] [--no-entities]
 #
 # --keep: leave the played copy at <instance>/saves/_bench (to copy generated chunks back into the world dir)
 #
@@ -20,10 +20,11 @@
 set -euo pipefail
 
 WORLD_DIR=${1:?world dir}; shift
-WARMUP=30; SECONDS_=60; ONLY=""; MODES="off on"; PROFILE=0; JFR=0; HEAP=0; FLY=0; KEEP=0; NOENT=0
+WARMUP=30; SECONDS_=60; ONLY=""; COMPARE=""; MODES="off on"; PROFILE=0; JFR=0; HEAP=0; FLY=0; KEEP=0; NOENT=0
 while [ $# -gt 0 ]; do
   case "$1" in
     --only) ONLY=$2; shift 2 ;;
+    --compare) COMPARE=$2; shift 2 ;;
     --off-only) MODES="off"; shift ;;
     --on-only) MODES="on"; shift ;;
     --profile) PROFILE=1; shift ;;
@@ -50,6 +51,10 @@ NAME=$(basename "$WORLD_DIR")
 [ -d "$WORLD_DIR/region" ] || { echo "$WORLD_DIR is not a world (no region/)"; exit 2; }
 POSE=""; [ -f "$WORLD_DIR/pose.txt" ] && POSE=$(cat "$WORLD_DIR/pose.txt")
 
+[ -z "$ONLY" ] || [ -z "$COMPARE" ] || { echo "[bench] --only and --compare are mutually exclusive"; exit 2; }
+if pgrep -f '[o]rg.prismlauncher.EntryPoint' >/dev/null; then
+  echo "[bench] Minecraft is running; close it before changing instance settings"; exit 4
+fi
 cp "$CFG" "$CFG.bench-backup"
 cp "$GAMEOPT" "$GAMEOPT.bench-backup"
 # uncapped frame rate for the recording (260 = "unlimited"); restored with the backup after
@@ -65,14 +70,20 @@ cleanup() {
 trap cleanup EXIT
 
 write_config() {  # $1 = off|on
-  python3 - "$1" "$ONLY" "$OPT" "$ROOT/src/main/java/dev/froyln/liteoptimizer/config/Option.java" <<'PY'
+  python3 - "$1" "$ONLY" "$OPT" "$ROOT/src/main/java/dev/froyln/liteoptimizer/config/Option.java" "$COMPARE" <<'PY'
 import json, os, re, sys
-mode, only, path, options = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+mode, only, path, options, compare = sys.argv[1:]
 keys = [k for k in json.load(open(path)) if not k.startswith("_")] if os.path.exists(path) else []
 # keys the source knows but the instance's config file does not yet: a missing key means "enabled"
-keys += [k for k in re.findall(r'^\s*[A-Z_0-9]+\("([a-z_0-9]+)",', open(options).read(), re.M) if k not in keys]
+source_keys = re.findall(r'^\s*[A-Z_0-9]+\("([a-z_0-9]+)",', open(options).read(), re.M)
+keys += [k for k in source_keys if k not in keys]
 pillars = {"render", "world", "ai", "memory"}
 cfg = {k: (False if mode == "off" else ((k in pillars) or (k == only)) if only else True) for k in keys}
+if compare:
+    if compare not in source_keys:
+        raise SystemExit("Unknown comparison key: " + compare)
+    cfg = {k: True for k in keys}
+    cfg[compare] = mode == "on"
 json.dump(cfg, open(path, "w"), indent=2)
 PY
 }
@@ -89,7 +100,7 @@ run_once() {  # $1 = label
   [ -n "${EXTRA_JVM:-}" ] && jvm="$jvm $EXTRA_JVM"  # experiments, e.g. EXTRA_JVM=-Dliteoptimizer.dev.x=1
   [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' '_')"
   python3 - "$CFG" "$jvm" "$((JFR|HEAP))" <<'PY'
-import sys, re
+import sys, re, json
 path, jvm, profile = sys.argv[1], sys.argv[2], sys.argv[3] == "1"
 text = open(path).read()
 def setkv(text, key, value):
@@ -97,7 +108,7 @@ def setkv(text, key, value):
         return re.sub(r"(?m)^" + key + "=.*$", key + "=" + value, text)
     return text + "\n" + key + "=" + value + "\n"
 text = setkv(text, "OverrideJavaArgs", "true")
-text = setkv(text, "JvmArgs", jvm)
+text = setkv(text, "JvmArgs", json.dumps(jvm))
 if profile:
     text = setkv(text, "OverrideJavaLocation", "true")
     text = setkv(text, "JavaPath", "/usr/lib/jvm/java-8-openjdk/bin/java")
@@ -147,7 +158,11 @@ PY
   if [ -d "$MC/bench/vtx-$label" ]; then rm -r "$OUT/$NAME-vtx-$label" 2>/dev/null || true; mv "$MC/bench/vtx-$label" "$OUT/$NAME-vtx-$label"; fi
 }
 
-for mode in $MODES; do write_config $mode; run_once $mode; done
+for mode in $MODES; do
+  write_config $mode
+  cp "$OPT" "$OUT/$NAME-$mode.config.json"
+  run_once $mode
+done
 if [ "$MODES" = "off on" ]; then
   python3 "$ROOT/tools/bench-summary.py" "$OUT/$NAME-off.csv" "$OUT/$NAME-on.csv"
 else

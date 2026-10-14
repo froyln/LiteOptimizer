@@ -54,7 +54,7 @@ The check that must pass before any change is called done:
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk ./gradlew build   # must exit 0
 ```
 
-Then, for every optimization that ships, the two hand checks described in `docs/methodology.md`:
+Then, for every optimization that ships, the two evidence checks described in `docs/methodology.md`:
 
 1. **Parity:** the mod must not change game state. Run the parity harness (same world, same
    seed, N ticks, with and without the mod → identical chunk/entity NBT hash).
@@ -65,6 +65,80 @@ In-game session: `./gradlew build && tools/test-in-game.sh` launches the PrismLa
 `1.12.2 test ai` (LiteLoader 1.12.2 + the full technical mod stack: litematica, malilib, minihud,
 tweakeroo, carpet client, newlight, litetweaker, ...) offline with the fresh litemod installed.
 Prefer it over `runClient`.
+
+### Isolated in-game desktop workflow
+
+When the owner wants Minecraft opened for an agent to inspect or control, use the existing
+headless Sway desktop with WayVNC. It is separate from the owner's Hyprland workspaces and keeps
+the physical mouse and keyboard out of the game session:
+
+- Reuse the AI Sway session when available. If isolated VNC is not running, start it with
+  `/home/froyln/Dev/ai-desktop.sh`, then verify `127.0.0.1:5900` is listening. Keep WayVNC
+  bound to loopback.
+- Launch PrismLauncher and Minecraft **inside that Sway session**, for example through its
+  `SWAYSOCK` IPC (`swaymsg exec prismlauncher`), then use a local/headless VNC connection to
+  `127.0.0.1:5900` for screenshots and virtual input. Do not start Prism from the regular
+  Hyprland terminal and assume it will appear in Sway.
+- Do not move or focus windows across the owner's workspaces, switch their active workspace, or
+  use tools that drive the physical mouse/keyboard. Do not ask the owner to move Minecraft or
+  click through the game. Use only the isolated session's compositor IPC and WayVNC virtual
+  input for in-game interaction.
+- Do not open a VNC viewer on the owner's normal desktop. Connect from the agent side; if that
+  connection is unavailable, report the specific blocker instead of falling back to host input.
+- The nested `WLR_BACKENDS=wayland` setup proved unreliable here because its Wayland output
+  disappeared from WayVNC. Use the headless backend for this workflow.
+
+### Minecraft GUI control rules
+
+The isolated graphical desktop is available through VNC at `localhost:5900`. It belongs to
+a separate Sway compositor and is separate from the owner's normal Hyprland desktop.
+All Minecraft visual interaction must happen through this VNC session.
+
+- NEVER control the normal Hyprland desktop or move the physical mouse.
+- NEVER switch Hyprland workspaces.
+- NEVER use `hyprctl` to focus, move, or interact with Minecraft.
+- NEVER use desktop-control tools that operate on the host Hyprland session.
+- NEVER bring Minecraft onto the physical monitors.
+
+Before GUI control, verify that isolated VNC is available:
+
+```bash
+ss -ltnp | grep 5900
+```
+
+If `127.0.0.1:5900` is not listening, run `/home/froyln/Dev/ai-desktop.sh` and check again.
+If it is still unavailable, report that the isolated VNC desktop is unavailable. Never
+fall back to controlling the normal desktop; host Hyprland is off-limits for GUI automation.
+
+Capture the current isolated desktop and inspect `/tmp/ai-desktop.png`:
+
+```bash
+vncdo -s localhost::5900 capture /tmp/ai-desktop.png
+```
+
+Use VNC mouse and keyboard input freely inside the isolated desktop:
+
+```bash
+vncdo -s localhost::5900 move X Y
+vncdo -s localhost::5900 click 1          # left click
+vncdo -s localhost::5900 move 500 400 click 1
+vncdo -s localhost::5900 click 3          # right click
+vncdo -s localhost::5900 key enter
+vncdo -s localhost::5900 type "example text"
+```
+
+Interaction loop:
+
+1. Capture `/tmp/ai-desktop.png`.
+2. Inspect the screenshot.
+3. Decide what needs to be clicked or typed.
+4. Interact through `vncdo`.
+5. Capture another screenshot.
+6. Verify the result.
+7. Repeat as necessary.
+
+Take a new screenshot whenever the GUI changes. Never assume an action succeeded without
+checking a new screenshot.
 
 This command is also what `.claude/hooks/verify-on-stop.sh` runs when enabled, and the default
 `/goal` condition: "`./gradlew build` exits 0".
@@ -98,7 +172,7 @@ Three pillars in one litemod, each a package with its own config keys and a mast
 
 | pillar | package | role | upstream code we port (all LGPL-3-compatible) |
 |--------|---------|------|-----------------------------------------------|
-| Sodium | `render/` | replaces the terrain render pipeline (`RenderGlobal.setupTerrain`/`renderBlockLayer`/`updateChunks`, `RenderChunk`, `ChunkRenderDispatcher`) with Sodium's chunk-graph culling, worker meshing, compact vertex formats, region VBOs, GL20 oneshot / GL43 multidraw backends; plus particle/entity culling, texture animation, model matrix | Vintagium (`~/Dev/references/Vintagium`, Sodium 0.4 on 1.12.2 Forge) de-Forged and ported to Mixin 0.7.5 |
+| Sodium | `render/` | replaces the terrain render pipeline (`RenderGlobal.setupTerrain`/`renderBlockLayer`/`updateChunks`, `RenderChunk`, `ChunkRenderDispatcher`) with Sodium's chunk-graph culling, worker meshing, compact vertex formats, region VBOs, the vanilla fixed-function backend (legacy shader backends retained but excluded from production config); plus particle/entity culling, texture animation, model matrix | Vintagium (`~/Dev/references/Vintagium`, Sodium 0.4 on 1.12.2 Forge) de-Forged and ported to Mixin 0.7.5 |
 | Lithium | `world/`, `ai/` | game-logic optimizations with bit-identical state: collisions, entity lookups, hoppers, tick scheduler, explosions, AI, block-entity ticking, chunk save | carpetmod112 helpers, TISCarpet113 ports, own code from `docs/vanilla-audit.md` |
 | FerriteCore | `memory/` | heap: blockstate tables, quad/model dedup, sprite frames, NBT canonicalization, `EntityDataManager`, `ItemStack.isEmpty` | FoamFix / VintageFix 1.12.2 code |
 
@@ -138,8 +212,10 @@ gate. `docs/compat/checklist.md` is the per-mod smoke list; `docs/compat/instanc
 - Never `@Overwrite` a method another installed mod injects into; `@Inject`+cancel instead.
 - Never remove an invocation another mod `@Redirect`s (`call` rows) from a method we rewrite.
 - Lighting methods are Newlight's (`@Overwrite`s) — off-limits.
-- The litemod must load with the full set and the checklist must pass at the B1 pose before a
-  version is tagged.
+- During development, verify the foreign hooks affected by the change; do not rerun the entire
+  per-mod checklist for every optimization. The litemod must load with the full set and the full
+  checklist must pass at the B1 pose before a version is tagged. Track development completion
+  separately from release readiness in `PLAN.md`. Use disposable world copies for mutating checks.
 
 ## Security invariants
 

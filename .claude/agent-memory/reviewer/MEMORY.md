@@ -1,0 +1,3 @@
+- [Mixin prod checks](reference_mixin_prod_checks.md) — srg path + refmap extraction to verify Notch aliases / `targets=` mixins actually apply; @Shadow fields reobf via srg not refmap; @Invoker opcode facts
+- [Lazy cache threads](feedback_lazy_cache_threads.md) — two-field lazy caches on render-thread-visible vanilla objects are a race; require single-field sentinel
+- [Render parity coverage](project_render_parity_coverage.md) — `--no-entities` screenshots skip all non-hanging entity draws; check hooked-method callers vs what the pose shows

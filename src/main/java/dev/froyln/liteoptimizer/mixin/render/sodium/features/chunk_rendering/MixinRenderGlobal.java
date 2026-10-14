@@ -1,9 +1,6 @@
 package dev.froyln.liteoptimizer.mixin.render.sodium.features.chunk_rendering;
 
-import dev.froyln.liteoptimizer.config.Config;
-import dev.froyln.liteoptimizer.config.Option;
 import me.jellysquid.mods.sodium.client.SodiumClientMod;
-import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -58,12 +55,6 @@ public abstract class MixinRenderGlobal {
 
             // Do regular vanilla checks for visibility
             if(!this.renderManager.shouldRender(entity, camera, renderViewX, renderViewY, renderViewZ) && !entity.isRidingOrBeingRiddenBy(player)) {
-                continue;
-            }
-
-            // Check if any corners of the bounding box are in a visible subchunk
-            // (catalog: render/entity_culling, own config key liteoptimizer.entity_culling)
-            if(Config.isActive(Option.ENTITY_CULLING) && !SodiumWorldRenderer.getInstance().isEntityVisible(entity)) {
                 continue;
             }
 

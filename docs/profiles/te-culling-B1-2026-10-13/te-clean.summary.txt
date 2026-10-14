@@ -1,0 +1,7 @@
+[bench] run 'off' (warmup 20s, record 40s) ...
+[bench] run 'on' (warmup 20s, record 40s) ...
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/te-frustum-clean-off.csv: 6933 frames, 173.3 fps, avg 5.77 ms, 1% low 16.15 ms, max 318.7 ms, mspt avg 4.17 max 85.73
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/te-frustum-clean-on.csv: 8432 frames, 210.8 fps, avg 4.74 ms, 1% low 14.73 ms, max 311.5 ms, mspt avg 4.06 max 79.78
+  frame_avg_ms: -17.8%
+  frame_1pct_low_ms: -8.8%
+  mspt_avg: -2.6%

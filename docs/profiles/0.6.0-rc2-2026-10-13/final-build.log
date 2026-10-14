@@ -1,0 +1,260 @@
+To honour the JVM settings for this build a new JVM will be forked. Please consider using the daemon: https://docs.gradle.org/4.10.3/userguide/gradle_daemon.html.
+Daemon will be stopped at the end of the build stopping after processing
+
+> Configure project :
+This mapping 'stable_39' was designed for MC 1.12! Use at your own peril.
+WARNING: You are using an unsupported version of ForgeGradle.
+Please consider upgrading to ForgeGradle 5 and helping in the efforts to get old versions working on the modern toolchain.
+See https://gist.github.com/TheCurle/fe7ad3ede188cbdd15c235cc75d52d4a for more info on contributing.
+#################################################
+         ForgeGradle 2.3.4-gfc67182        
+  https://github.com/MinecraftForge/ForgeGradle  
+#################################################
+                 Powered by MCP                  
+             http://modcoderpack.com             
+     by: Searge, ProfMobius, R4wk, ZeuX          
+     Fesh0r, IngisKahn, bspkrs, LexManos         
+#################################################
+
+> Task :extractMcpMappings SKIPPED
+> Task :liteloaderDeobfCompileDeobfDepTask0 SKIPPED
+> Task :liteloaderDeobfCompileDeobfDepTask1 SKIPPED
+> Task :liteloaderDeobfCompileRemapDepSourcesTask2 SKIPPED
+> Task :liteloaderDeobfCompileRemapDepSourcesTask3 SKIPPED
+> Task :deobfCompileDummyTask
+> Task :deobfProvidedDummyTask
+> Task :sourceApiJava
+> Task :compileApiJava NO-SOURCE
+> Task :processApiResources NO-SOURCE
+> Task :apiClasses UP-TO-DATE
+> Task :sourceMainJava
+
+> Task :compileJava
+Note: SpongePowered MIXIN Annotation Processor Version=0.7.4
+Note: ObfuscationServiceMCP supports type: "searge"
+Note: ObfuscationServiceMCP supports type: "notch"
+Note: Loading searge mappings from /home/froyln/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_stable/39/1.12.2/srgs/mcp-srg.srg
+Note: Loading notch mappings from /home/froyln/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_stable/39/1.12.2/srgs/mcp-notch.srg
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/WorldRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<init>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/EntityRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<init>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/ExplosionRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<init>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/MinecraftServerRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<init>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/BlockDispenserRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<init>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/MathHelperRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<clinit>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/ItemRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<clinit>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/InventoryHelperRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<clinit>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/TileEntityDispenserRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "<clinit>", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/TileEntityLockableLootRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "fillWithLoot", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/dev/parity/EntityMinecartContainerRandomMixin.java:16: warning: Cannot find class mapping for @At(NEW.<target>) 'java/util/Random'
+    @Redirect(method = "addLoot", at = @At(value = "NEW", target = "java/util/Random"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/world/tile_entity_removal/WorldMixin.java:42: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Ljava/util/List;removeAll(Ljava/util/Collection;)Z'
+    @Redirect(method = "updateEntities", at = @At(value = "INVOKE", target = "Ljava/util/List;removeAll(Ljava/util/Collection;)Z"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/world/tile_entity_removal/WorldMixin.java:48: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Ljava/util/Iterator;remove()V'
+    @Redirect(method = "updateEntities", at = @At(value = "INVOKE", target = "Ljava/util/Iterator;remove()V"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/world/tile_entity_removal/WorldMixin.java:53: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Ljava/util/List;remove(Ljava/lang/Object;)Z'
+    @Redirect(method = "updateEntities", at = @At(value = "INVOKE", target = "Ljava/util/List;remove(Ljava/lang/Object;)Z"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/world/pending_ticks_chunk_lookup/WorldServerMixin.java:48: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Ljava/util/TreeSet;add(Ljava/lang/Object;)Z'
+    @Redirect(method = {"updateBlockTick", "scheduleBlockUpdate"}, at = @At(value = "INVOKE", target = "Ljava/util/TreeSet;add(Ljava/lang/Object;)Z"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/world/pending_ticks_chunk_lookup/WorldServerMixin.java:63: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Ljava/util/TreeSet;remove(Ljava/lang/Object;)Z'
+    @Redirect(method = "tickUpdates", at = @At(value = "INVOKE", target = "Ljava/util/TreeSet;remove(Ljava/lang/Object;)Z"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/render/sodium/features/chunk_rendering/MixinChunkBuilder.java:22: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Lcom/google/common/collect/Queues;newArrayBlockingQueue(I)Ljava/util/concurrent/ArrayBlockingQueue;'
+    @Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/Queues;newArrayBlockingQueue(I)Ljava/util/concurrent/ArrayBlockingQueue;"))
+    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/dev/froyln/liteoptimizer/mixin/render/sodium/features/chunk_rendering/MixinWorldRenderer.java:148: warning: Cannot find method mapping for @At(INVOKE.<target>) 'Ljava/util/Set;isEmpty()Z'
+    @Redirect(method = "updateClouds", at = @At(value = "INVOKE", target = "Ljava/util/Set;isEmpty()Z", ordinal = 1))
+    ^
+Note: Writing refmap to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/compileJava-refmap.json
+Note: Writing refmap to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/compileJava-refmap.json
+Note: Writing searge output SRGs to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/mcp-srg.srg
+Note: Writing notch output SRGs to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/mcp-notch.srg
+Note: Writing refmap to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/compileJava-refmap.json
+Note: Writing refmap to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/compileJava-refmap.json
+Note: Writing searge output SRGs to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/mcp-srg.srg
+Note: Writing notch output SRGs to /home/froyln/Dev/OptimizationMod-1.12.2/build/tmp/compileJava/mcp-notch.srg
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/me/jellysquid/mods/sodium/client/util/CompatMemoryUtil.java:49: warning: Unsafe is internal proprietary API and may be removed in a future release
+    static final sun.misc.Unsafe UNSAFE;
+                         ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/me/jellysquid/mods/sodium/client/util/CompatMemoryUtil.java:55: warning: Unsafe is internal proprietary API and may be removed in a future release
+    private static sun.misc.Unsafe getUnsafeInstance() {
+                           ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/me/jellysquid/mods/sodium/client/util/CompatMemoryUtil.java:56: warning: Unsafe is internal proprietary API and may be removed in a future release
+        java.lang.reflect.Field[] fields = sun.misc.Unsafe.class.getDeclaredFields();
+                                                   ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/me/jellysquid/mods/sodium/client/util/CompatMemoryUtil.java:67: warning: Unsafe is internal proprietary API and may be removed in a future release
+            if (!field.getType().equals(sun.misc.Unsafe.class)) {
+                                                ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/me/jellysquid/mods/sodium/client/util/CompatMemoryUtil.java:78: warning: Unsafe is internal proprietary API and may be removed in a future release
+                return (sun.misc.Unsafe)field.get(null);
+                                ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3694: warning: Unsafe is internal proprietary API and may be removed in a future release
+        public static final sun.misc.Unsafe UNSAFE;
+                                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3733: warning: Unsafe is internal proprietary API and may be removed in a future release
+                sun.misc.Unsafe.class.getDeclaredMethod("getLong", new Class[] {Object.class, long.class});
+                        ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3734: warning: Unsafe is internal proprietary API and may be removed in a future release
+                sun.misc.Unsafe.class.getDeclaredMethod("putLong", new Class[] {Object.class, long.class, long.class});
+                        ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3962: warning: Unsafe is internal proprietary API and may be removed in a future release
+        public static sun.misc.Unsafe getUnsafeInstance() throws SecurityException {
+                              ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3963: warning: Unsafe is internal proprietary API and may be removed in a future release
+            java.lang.reflect.Field[] fields = sun.misc.Unsafe.class.getDeclaredFields();
+                                                       ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3966: warning: Unsafe is internal proprietary API and may be removed in a future release
+                if (!field.getType().equals(sun.misc.Unsafe.class))
+                                                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3973: warning: Unsafe is internal proprietary API and may be removed in a future release
+                    return (sun.misc.Unsafe) field.get(null);
+                                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:3989: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4029: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4049: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4061: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4081: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4091: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4104: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4124: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4140: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4156: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4176: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4196: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4212: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4232: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4252: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4268: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4291: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4314: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4334: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4365: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4384: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4394: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4516: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4536: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4552: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4572: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4595: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4614: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4624: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4722: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4747: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+/home/froyln/Dev/OptimizationMod-1.12.2/build/sources/main/java/repack/joml/MemUtil.java:4774: warning: Unsafe is internal proprietary API and may be removed in a future release
+            sun.misc.Unsafe u = UNSAFE;
+                    ^
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+62 warnings
+
+> Task :processResources UP-TO-DATE
+> Task :classes
+> Task :litemod
+> Task :jar
+> Task :sourceTestJava
+> Task :compileTestJava NO-SOURCE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :extractMcpData SKIPPED
+> Task :genSrgs SKIPPED
+> Task :reobfJar
+> Task :extractAnnotationsJar
+> Task :assemble
+> Task :check UP-TO-DATE
+> Task :build
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/4.10.3/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 15s
+11 actionable tasks: 10 executed, 1 up-to-date

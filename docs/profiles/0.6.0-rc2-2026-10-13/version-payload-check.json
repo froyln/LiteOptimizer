@@ -1,0 +1,9 @@
+{
+  "tested_sha256": "843d887cd841188932474fc3b15d9d8a07a800b05fd40144a6130314dd04209e",
+  "final_sha256": "a26226f6ec8f96fa9174378feab1efd048cca0e2ae074cd2a3d0f11562e8519b",
+  "changed_entries": [
+    "dev/froyln/liteoptimizer/LiteModLiteOptimizer.class",
+    "me/jellysquid/mods/sodium/client/SodiumClientMod.class"
+  ],
+  "only_change": "UTF-8 constant 0.3.0 to 0.6.0-rc2 in each class; all other payloads byte-identical"
+}

@@ -1,0 +1,7 @@
+[bench] run 'off' (warmup 20s, record 40s) ...
+[bench] run 'on' (warmup 20s, record 40s) ...
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/te-occlusion-B1-off.csv: 8587 frames, 214.7 fps, avg 4.66 ms, 1% low 14.43 ms, max 329.3 ms, mspt avg 3.67 max 18.15
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/te-occlusion-B1-on.csv: 8764 frames, 219.1 fps, avg 4.56 ms, 1% low 14.16 ms, max 317.1 ms, mspt avg 3.72 max 16.98
+  frame_avg_ms: -2.0%
+  frame_1pct_low_ms: -1.9%
+  mspt_avg: +1.3%

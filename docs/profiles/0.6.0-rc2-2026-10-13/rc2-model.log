@@ -1,0 +1,7 @@
+[bench] run 'off' (warmup 20s, record 40s) ...
+[bench] run 'on' (warmup 20s, record 40s) ...
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/rc2-model-B1-off.csv: 6391 frames, 159.8 fps, avg 6.26 ms, 1% low 18.09 ms, max 344.2 ms, mspt avg 3.74 max 17.10
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/rc2-model-B1-on.csv: 7776 frames, 194.4 fps, avg 5.14 ms, 1% low 15.78 ms, max 342.0 ms, mspt avg 3.90 max 81.02
+  frame_avg_ms: -17.8%
+  frame_1pct_low_ms: -12.7%
+  mspt_avg: +4.3%

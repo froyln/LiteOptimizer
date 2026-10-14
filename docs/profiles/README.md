@@ -1,7 +1,11 @@
 # Baseline profiles
 
-Status: **not recorded yet** — needs a person in the game. Everything below is the
-procedure; the numbers get appended per world when they exist.
+Status: **feature-evaluation profiles available; six-world baseline set incomplete**.
+Use the available recordings below as historical leads, not evidence of the current artifact.
+Automated benchmark/profile runners exist; recording is not globally blocked on a person.
+B1 storage and B3 hoppers are ready workload leads. B5 needs an active quarry; B6 needs a
+repeatable flight fixture for any new evaluation. The current plan does not require filling
+all six baseline slots before development. Match build/config/pose before reusing a result.
 
 ## Benchmark worlds → existing saves
 
@@ -12,7 +16,7 @@ this file:
 
 | id | dir under `~/Dev/OptimizationMod-1.12.2-worlds/` | source save | pose (`pose.txt`: `x y z yaw pitch`) | notes |
 |----|---|---|---|---|
-| B1 base | `B1-storage` | `RedBlaze908 Storage System 1_12 V2` | _fill_ | item-frame/chest walls, many TEs |
+| B1 base | `B1-storage` | `RedBlaze908 Storage System 1_12 V2` | `-1980.5842 31.8099 712.0018 -101.0218 42.5330` | item-frame/chest walls, many TEs; recovered from saved player data |
 | B2 items | `B2-items` | `cobble farm for 1_11` | _fill_ | let items pile up before recording |
 | B3 redstone | `B3-furnace` (harness proven), `B3-hoppers` | `50 furnace Array`, `8_5` | _fill_ | furnaces / hopper halls |
 | B4 mobs | `B4-mobs` | `Heinz' Witchfarm` | _fill_ | let the farm fill |
@@ -45,3 +49,30 @@ tools/profile.sh B1-baseline 60       # → docs/profiles/B1-baseline.{jfr,top.t
 
 (append one `## B<n>` section per world: pose, date, top-10 self frames, top-10 inclusive
 frames, MSPT avg/max from the debug profile, heap after GC.)
+
+## Available optimization profiles
+
+These are feature-evaluation recordings, not the six-world baseline set described above.
+The current summaries do not show `ArrayLightDataCache` among the sampled self or inclusive
+frames. In the 60-second B3-hoppers recording, sampled chunk-build work includes
+`WorldSlice.copyBlocks`, `BlockRenderer.renderQuadsFlat`, and AO bounds filling. This does not
+support tuning the light cache yet; capture a focused chunk-build profile if that cache becomes
+a candidate again.
+
+| recording | duration | useful render frames in the summary |
+|---|---:|---|
+| B1-storage-on | 55 s | No sampled `ArrayLightDataCache` frame. |
+| B3-hoppers-on | 60 s | `WorldSlice.copyBlocks`, `BlockRenderer.renderQuadsFlat`, chunk graph traversal, AO bounds filling. |
+| B4-mobs-on | 40 s | No sampled `ArrayLightDataCache` frame. |
+
+## Current focused evaluation
+
+[Entity culling B1, 2026-10-13](entity-culling-B1-2026-10-13/README.md):
+Sodium/display lists held constant; 3.24→3.31 ms frame average, no demonstrated gain.
+52 full-image differences are in dynamic MiniHUD lines; remainder below top 96 rows matches.
+Entity-culling release evidence is insufficient. TESRs dominate this current B1 profile.
+
+[Tile-entity culling B1, 2026-10-13](te-culling-B1-2026-10-13/README.md): frustum
+frame average improves 18.3% and 17.8% in isolated pairs; exact pixel parity remains unresolved
+(9 differences after controls). TE occlusion is redundant for ordinary Sodium dispatch and
+its 2% paired result does not establish gain. Raw evidence and reproduction are retained.

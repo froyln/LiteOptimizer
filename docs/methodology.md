@@ -35,6 +35,21 @@ instance twice via `prismlauncher --launch`, diffs the two dumps, and restores e
 `--vanilla` runs off vs off — the determinism check that must pass before the harness means
 anything. Dumps land in `run/parity/`.
 
+### Isolated benchmark comparisons
+
+`tools/bench.sh <world> <warmup> <seconds> --compare <key>` keeps all known switches on
+in both runs and changes only the named source option. This holds renderer dependencies constant when measuring one retained optimization. `--only` remains the older all-off versus selected-feature
+mode and does not isolate a feature from renderer dependencies. Saved `run/bench/<world>-off/on.config.json`
+files record the exact switches. Inspect these and the Sodium settings before attributing gain.
+The runner refuses a live Minecraft process before changing instance settings.
+
+`--no-entities` hides moving entities but **retains item frames and paintings**. A B1 capture
+in that mode covers hanging-entity rendering and TESRs; it cannot prove other entity types.
+Disable dynamic HUD overlays consistently for pixel comparisons, or explicitly report their
+pixels separately without claiming an entire screenshot match. For Tweakeroo glint suppression,
+check both `YeetToggles.disableItemGlint` and `Lists.itemGlintItemList`: a potion blacklist
+does not suppress enchanted-tool glint. Save and restore these user settings.
+
 ### Harness design
 
 - **Seed everything.** A mixin package `mixin/dev/parity/` redirects every `new Random()`
@@ -138,7 +153,8 @@ itself renders non-deterministically is pinned. `tools/bench.sh <world> [warmup]
   are random per frame, the sky colour moves with the time of day.
 - **`--no-entities`** hides entities (`RenderManager.shouldRender` false): a dropped item spins
   from an unseeded client `Math.random()` and differs between any two runs, vanilla or not.
-  Block entities (chests, beacons…) stay: they are deterministic.
+  Block entities stay. Some TESRs use additional client randomness or wall-clock effects;
+  verify an unchanged control before calling a scene deterministic.
 
 Vanilla-vs-vanilla under this protocol is 0 differing pixels on B1 (a base with beacons, water
 streams, sea lanterns, glass) — that is the control; a mod-vs-vanilla diff then means the mod.

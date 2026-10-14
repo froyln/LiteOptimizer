@@ -13,10 +13,7 @@ public enum Option {
     MEMORY("memory", null, true, "FerriteCore pillar: heap reductions"),
 
     // 0.3 Sodium I
-    SODIUM("sodium", RENDER, true, "Sodium terrain renderer (ported Vintagium): chunk-graph culling, worker meshing, region VBOs, GL20/GL43 backends, particle culling"),
-    // found live in 0.3.0 with no key of its own (Vintagium's internal default only) while
-    // wiring 0.6's tile_entity_occlusion; given its own key so it can be switched off independently
-    ENTITY_CULLING("entity_culling", SODIUM, true, "skip fully occluded entities via Sodium's chunk-visibility graph"),
+    SODIUM("sodium", RENDER, true, "Sodium terrain renderer (ported Vintagium): chunk-graph culling, worker meshing, fixed-function terrain backend, particle culling"),
 
     // 0.2 Lithium I (keys exist before the code so the file is stable across versions)
     TILE_ENTITY_REMOVAL("tile_entity_removal", WORLD, true, "O(n) instead of O(n*m) tile entity list removal"),
@@ -43,8 +40,6 @@ public enum Option {
 
     // 0.6 Sodium II
     MODEL_DISPLAY_LISTS("model_display_lists", RENDER, true, "compile item-frame item and block model draws into display lists"),
-    TILE_ENTITY_FRUSTUM("tile_entity_frustum", RENDER, true, "skip block entities whose block box is outside the camera frustum"),
-    TILE_ENTITY_OCCLUSION("tile_entity_occlusion", RENDER, true, "skip block entities whose block box is fully behind Sodium's chunk-visibility graph"),
 
     // 0.5 Lithium II
     PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)"),

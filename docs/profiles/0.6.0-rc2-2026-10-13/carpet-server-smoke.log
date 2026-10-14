@@ -1,0 +1,206 @@
+[12:44:49] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[12:44:49] [Server thread/INFO]: Loading properties
+[12:44:49] [Server thread/INFO]: Default game type: CREATIVE
+[12:44:49] [Server thread/INFO]: Generating keypair
+[12:44:49] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25566
+[12:44:49] [Server thread/INFO]: Using epoll channel type
+[12:44:49] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[12:44:49] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[12:44:49] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[12:44:49] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[12:44:49] [Server thread/INFO]: Preparing level "world"
+[12:44:49] [Server thread/INFO]: Loaded 488 advancements
+[12:44:49] [Server thread/INFO]: Preparing start region for level 0
+[12:44:49] [Server thread/INFO]: Done (0.673s)! For help, type "help" or "?"
+[12:44:58] [Server thread/INFO]: Opped SmokeTester
+[12:44:58] [Server thread/INFO]: Player 'SmokeTester' cannot be found
+[12:45:08] [Server thread/INFO]: SmokeTester[/127.0.0.1:35242] logged in with entity id 355 at (-2030.5, 1.0, 570.5)
+[12:45:08] [Server thread/INFO]: SmokeTester joined the game
+[12:45:26] [Server thread/INFO]: Set SmokeTester's game mode to Creative Mode
+[12:45:26] [Server thread/INFO]: Teleported SmokeTester to -1969.5, 38.0, 700.5
+[12:45:26] [Server thread/INFO]: Current CarpetMod Settings:
+[12:45:26] [Server thread/INFO]: Carpet Mod version: v22_03_22
+[12:45:26] [Server thread/WARN]: SmokeTester moved too quickly! 61.0,37.0,130.0
+[12:45:53] [Server thread/INFO]: SmokeTester lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[12:45:53] [Server thread/INFO]: SmokeTester left the game
+[12:46:12] [Server thread/INFO]: SmokeTester[/127.0.0.1:45748] logged in with entity id 356 at (-1969.5, 36.0, 700.5)
+[12:46:12] [Server thread/INFO]: SmokeTester joined the game
+[12:47:23] [Server thread/INFO]: accurateBlockPlacement is set to: false
+[12:47:32] [Server thread/INFO]: accurateBlockPlacement: true, [change permanently?]
+[12:47:47] [Server thread/INFO]: accurateBlockPlacement: false, [change permanently?]
+[12:52:23] [Server thread/INFO]: 49 blocks filled
+[12:52:23] [Server thread/INFO]: Teleported SmokeTester to -1969.5, 100.0, 694.5
+[12:52:23] [Server thread/WARN]: SmokeTester moved too quickly! 0.0,64.0,-6.0
+[12:55:44] [Server thread/INFO]: Replaced slot slot.weapon.mainhand with 1 * [Stick]
+[12:56:00] [Server thread/INFO]: SmokeTester lost connection: Kicked for spamming
+[12:56:00] [Server thread/INFO]: SmokeTester left the game
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:00] [Server thread/WARN]: handleDisconnection() called twice
+[12:56:25] [Server thread/INFO]: Opped SmokeTester
+[12:57:30] [Server thread/INFO]: SmokeTester[/127.0.0.1:53720] logged in with entity id 655 at (-1969.5, 100.0, 694.5)
+[12:57:30] [Server thread/INFO]: SmokeTester joined the game
+[12:59:16] [Server thread/INFO]: [SmokeTester: Game rule sendCommandFeedback has been updated to false]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Block placed]
+[12:59:16] [Server thread/INFO]: [SmokeTester: Game rule sendCommandFeedback has been updated to true]
+[12:59:34] [Server thread/INFO]: 49 blocks filled
+[12:59:34] [Server thread/INFO]: Teleported SmokeTester to -1969.5, 100.0, 687.5
+[13:02:46] [Server thread/INFO]: Block placed
+[13:03:36] [Server thread/INFO]: Block placed
+[13:04:28] [Server thread/INFO]: Found SmokeTester
+[13:06:26] [Server thread/INFO]: SmokeTester lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[13:06:26] [Server thread/INFO]: SmokeTester left the game
+[13:07:04] [Server thread/INFO]: Stopping the server
+[13:07:04] [Server thread/INFO]: Stopping server
+[13:07:04] [Server thread/INFO]: Saving players
+[13:07:04] [Server thread/INFO]: Saving worlds
+[13:07:04] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[13:07:04] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[13:07:04] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[13:07:04] [Server Shutdown Thread/INFO]: Stopping server
+[13:07:04] [Server Shutdown Thread/INFO]: Saving players
+[13:07:04] [Server Shutdown Thread/INFO]: Saving worlds
+[13:07:04] [Server Shutdown Thread/INFO]: Saving chunks for level 'world'/overworld

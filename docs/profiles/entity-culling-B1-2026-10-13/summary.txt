@@ -1,0 +1,7 @@
+[bench] run 'off' (warmup 20s, record 40s) ...
+[bench] run 'on' (warmup 20s, record 40s) ...
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/entity-culling-B1-off.csv: 12342 frames, 308.5 fps, avg 3.24 ms, 1% low 11.40 ms, max 340.5 ms, mspt avg 3.81 max 18.95
+/home/froyln/Dev/OptimizationMod-1.12.2/run/bench/entity-culling-B1-on.csv: 12087 frames, 302.2 fps, avg 3.31 ms, 1% low 12.04 ms, max 345.6 ms, mspt avg 4.11 max 88.40
+  frame_avg_ms: +2.1%
+  frame_1pct_low_ms: +5.6%
+  mspt_avg: +8.0%

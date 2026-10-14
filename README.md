@@ -28,15 +28,19 @@ changing vanilla behaviour, bisect with these and report it with the world.
 
 ## Status
 
-0.3 (Sodium I): the Sodium/Vintagium terrain renderer (`render/sodium`), pixel-identical to
-vanilla at a fixed pose — terrain flight frame time −36 %, 1 % low −27 % with the frame cap
-off; plus 0.2's 12 game-logic and memory optimizations, all parity-proven on item, hopper,
-furnace and mob-farm worlds (hopper hall MSPT −14 %, item farm −39 %, witch farm −30 %). See
-`docs/catalog.md` for every row, `docs/bench/README.md` for numbers, `docs/compat/sodium.md`
-for what the render pillar changes and what it keeps.
+Current development candidate: **0.6.0-rc2**. Fixed-function terrain rendering, item-frame
+model display lists, and the existing logic/memory optimizations remain. Entity graph culling,
+TE graph occlusion, and generic TE frustum culling are excluded because their gain/parity
+proofs were insufficient. Saved settings cannot reactivate the excluded rendering paths.
 
-Sodium's own switches live in `liteconfig/common/liteoptimizer-sodium.json`; the defaults are
-the parity ones. `use_chunk_multidraw: true` is faster still but a sub-pixel off vanilla.
+The candidate passes B3 hopper state parity (600 ticks). Its isolated B1 display-list test
+reduces frame average 6.26 → 5.14 ms with zero differing pixels and a zero-pixel unchanged
+control. Full release compatibility certification remains pending; this is an untagged candidate.
+[Candidate evidence](docs/profiles/0.6.0-rc2-2026-10-13/README.md).
+
+Sodium settings live in `liteconfig/common/liteoptimizer-sodium.json`. Production load/save
+forces fixed-function vertices/backend, face/fog/entity graph culling off, and translucency
+sorting on. The options UI exposes the retained settings.
 
 ## Build
 

@@ -22,6 +22,8 @@ minecraft {
     mappings = project.mappings_version
     runDir = 'run'
     makeObfSourceJar = false
+    replaceIn 'LiteModLiteOptimizer.java'
+    replace '@MOD_VERSION@', project.mod_version
 }
 
 compileJava {

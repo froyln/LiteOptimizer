@@ -164,8 +164,6 @@ public abstract class MixinWorldRenderer {
     @Inject(method = "renderEntities", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/RenderHelper;enableStandardItemLighting()V", shift = At.Shift.AFTER, ordinal = 1), cancellable = true)
     public void sodium$renderTileEntities(Entity entity, ICamera camera, float partialTicks, CallbackInfo ci) {
         this.renderer.renderTileEntities(partialTicks, damagedBlocks);
-        dev.froyln.liteoptimizer.render.TileEntityFrustum.exit();  // vanilla's RETURN is skipped by the cancel below
-        dev.froyln.liteoptimizer.render.TileEntityOcclusion.exit();  // same: its RETURN injector never fires here
 
         this.mc.entityRenderer.disableLightmap();
         this.mc.profiler.endSection();
