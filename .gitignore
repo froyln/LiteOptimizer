@@ -1,0 +1,31 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+secrets/
+
+# Build outputs and local game data
+build/
+.gradle/
+run/
+build.number
+*.launch
+
+# IDE files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# Local recordings
+*.jfr
+
+# Personal development workflow
+AGENTS.md
+CLAUDE*.md
+PLAN.md
+.claude/
+.codex/
+.agents/
+.mcp.json*
