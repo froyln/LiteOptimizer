@@ -5,14 +5,6 @@ less repeated work in item-frame scenes, lower model/blockstate memory use, and 
 optimizations for singleplayer's integrated server — packaged in one `.litemod` with no
 additional runtime dependencies beyond LiteLoader.
 
-**No server installation is required.** Connect to an unmodified vanilla 1.12.2 server.
-The mod is designed to preserve server mechanics, RNG, update order, player actions and vanilla
-networking. Client rendering may differ where a configurable optimization skips unnecessary draws.
-
-**Status: 0.6.0-rc2, development release candidate.** There is recorded benchmark and gameplay
-evidence, but full compatibility certification is still in progress. This is an independent
-project, not an official Sodium, Lithium or FerriteCore release.
-
 ## What it optimizes
 
 These nine optimizations are enabled by default:
@@ -92,7 +84,7 @@ for provenance and formulas.
 
 1. Install Minecraft **1.12.2** with **LiteLoader 1.12.2** and Java 8.
 2. Build the mod below, or use an artifact when one is published.
-3. Put `liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod` in your instance's `mods/1.12.2/` folder.
+3. Put `liteoptimizer-liteloader-1.12.2.litemod` in your instance's `mods/1.12.2/` folder.
 4. Launch the game. No server plugin or mod is needed.
 
 This is a LiteLoader mod, not a Forge `.jar` or Fabric mod. Do not install another Sodium/Vintagium
@@ -119,26 +111,6 @@ Renderer settings are in `liteconfig/common/liteoptimizer-sodium.json` and the v
 The production renderer fixes the backend and vertex format to the conservative fixed-function
 path, disables face/fog/entity-graph culling, and keeps translucency sorting on. Legacy shader
 backends and compact vertices are excluded from the production configuration.
-
-## Compatibility and validation
-
-Recorded checks cover a technical stack including Litematica/MaLiLib, MiniHUD, Tweakeroo,
-ItemScroller, Carpet Client, Newlight, VoxelMap, WorldEditCUI, IsoRenders and SchematicPreview.
-Coverage includes overlays, free camera, resource reloads and selected inventory/placement features;
-**the complete per-mod feature matrix is not yet certified**. TellMe/MaLiLib and Model Gap Fix
-failures also occurred in the baseline without LiteOptimizer and are not counted as working.
-
-An unmodified vanilla 1.12.2 server was used for join/reconnect, movement and small corrections,
-placement/breaking, a completed villager trade, potion use, inventory transfers, portal travel and
-terrain streaming. Earlier unexplained connection resets remain unresolved; a later grouped
-session completed without a reset. Carpet and WorldEdit fixtures provide separate compatibility
-coverage and do not substitute for vanilla-server checks.
-
-A stable singleplayer fixture passed **6,000-tick OFF/OFF and OFF/ON state-hash comparisons** at
-render distance 2. The B1 storage world failed its own OFF/OFF determinism control and is not used
-as strict state-parity proof. These checks cover the recorded workloads, not all possible worlds.
-The UI donation removal was built after those runtime sessions; no new gameplay gain is attributed
-to that UI change.
 
 ## Build from source
 
