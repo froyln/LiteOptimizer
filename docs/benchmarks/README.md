@@ -122,3 +122,17 @@ Render changes are client-only and may have documented presentation differences.
 change movement, inventory actions, interaction reach or server-bound packet semantics. Exact
 pixel comparison is a fixed-scene check only. Full-stack gameplay checks and an unmodified vanilla
 server complement the state harness; the README records the remaining compatibility limitations.
+
+## Charts
+
+The README charts use only the three retained raw CSV pairs above. Gray means the measured
+feature is OFF; teal means it is ON. Every bar starts at zero. Frame-time percentages are
+reductions, while FPS percentages are increases calculated from unrounded means. These are
+historical individual-feature measurements, not a new combined-mod benchmark.
+
+PNG previews and editable SVG exports are in [charts/](charts/). Regenerate with Python 3
+and matplotlib installed:
+
+```bash
+python3 tools/plot-benchmarks.py
+```

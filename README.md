@@ -33,6 +33,10 @@ score. Other settings and optimizations were held constant within each pair. Res
 the scene, render distance, resource packs, hardware and other installed mods; gains do not add
 together. Recent runs used a technical LiteLoader mod stack rather than a bare vanilla client.
 
+![Feature OFF and ON: average and slowest 1% frame times, with percentage reductions](docs/benchmarks/charts/frame-time-comparison.png)
+
+![Feature OFF and ON: average FPS, with percentage increases](docs/benchmarks/charts/fps-comparison.png)
+
 ### Terrain rendering: retained frame-by-frame data
 
 B6 flight fixture, 0.5 blocks/tick forward flight, 20 seconds warmup and 40 seconds recording.
