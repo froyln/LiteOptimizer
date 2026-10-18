@@ -374,6 +374,10 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
      * @param render The render to rebuild
      */
     public CompletableFuture<ChunkBuildResult<T>> scheduleSortTaskAsync(ChunkRenderContainer<T> render) {
+        // A stale sort queue entry must not cancel a rebuild or copy pre-edit block entities.
+        if (render.needsRebuild() || render.hasPendingBuild()) {
+            return CompletableFuture.completedFuture(null);
+        }
         return this.schedule(this.createSortTask(render));
     }
 
