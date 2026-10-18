@@ -15,7 +15,8 @@ OUT = ROOT / 'docs/benchmarks/charts'
 CASES = [('Terrain · 16 chunks', 'terrain-rd16'),
          ('Terrain · 10 chunks', 'terrain-rd10'),
          ('Item-frame display lists', 'item-frames')]
-OFF, ON, INK, MUTED = '#94a3b8', '#0d9488', '#142b42', '#53657a'
+OFF, ON, INK, MUTED = '#586575', '#79b8ff', '#e6edf3', '#9da7b3'
+BACKGROUND = '#0d1117'
 
 
 def load(case, mode):
@@ -34,23 +35,20 @@ plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 11,
 
 
 def figure(title, subtitle, panels):
-    fig, axes = plt.subplots(1, panels, figsize=(14, 6.5), squeeze=False)
-    fig.patch.set_facecolor('#f8fafc')
-    fig.text(.04, .94, 'LITEOPTIMIZER  /  MINECRAFT 1.12.2', color=ON, size=10, weight='bold')
-    fig.text(.04, .865, title, size=25, weight='bold')
-    fig.text(.04, .81, subtitle, color=MUTED, size=11)
+    fig, axes = plt.subplots(1, panels, figsize=(14, 5.5), squeeze=False)
+    fig.patch.set_facecolor(BACKGROUND)
+    fig.text(.04, .90, title, size=22, weight='bold')
+    fig.text(.04, .83, subtitle, color=MUTED, size=11)
     fig.legend(handles=[Patch(color=OFF, label='Feature OFF'), Patch(color=ON, label='Feature ON')],
-               loc='upper right', bbox_to_anchor=(.97, .975), frameon=False, ncol=2)
-    fig.text(.04, .075, 'Individual feature comparisons · other settings held constant · gains do not add together',
-             color=MUTED, size=10)
-    fig.text(.04, .035, 'Source: retained B6 terrain and B1 item-frame CSV pairs, Oct 13–15, 2026. Historical candidate runs; hardware inventory incomplete.',
-             color=MUTED, size=8.5)
-    fig.subplots_adjust(left=.205, right=.94, top=.68, bottom=.23, wspace=.8)
+               loc='upper right', bbox_to_anchor=(.97, .94), frameon=False, ncol=2)
+    fig.text(.04, .055, 'Single-feature OFF / ON · B6 flight + B1 item frames · October 2026',
+             color=MUTED, size=9)
+    fig.subplots_adjust(left=.205, right=.96, top=.67, bottom=.23, wspace=.22)
     return fig, axes[0]
 
 
 def bars(ax, metric, title, unit, increase=False):
-    ax.set_facecolor('#f8fafc')
+    ax.set_facecolor(BACKGROUND)
     maximum = max(values[metric] for _, off, on in DATA for values in (off, on))
     for y, (_, off, on) in enumerate(DATA):
         for offset, values, color in [(-.17, off, OFF), (.17, on, ON)]:
@@ -69,7 +67,7 @@ def bars(ax, metric, title, unit, increase=False):
     ticks = MaxNLocator(nbins=4).tick_values(0, maximum)
     ax.set_xticks(ticks[ticks <= maximum * 1.1])
     ax.set_xlabel(unit, labelpad=10)
-    ax.grid(axis='x', alpha=.15, zorder=0)
+    ax.grid(axis='x', color=MUTED, alpha=.16, zorder=0)
     ax.tick_params(axis='both', length=0, pad=9)
     for spine in ax.spines.values():
         spine.set_visible(False)
@@ -78,16 +76,20 @@ def bars(ax, metric, title, unit, increase=False):
 def save(fig, name):
     OUT.mkdir(parents=True, exist_ok=True)
     for extension in ('png', 'svg'):
-        fig.savefig(OUT / (name + '.' + extension), dpi=180, facecolor=fig.get_facecolor())
+        path = OUT / (name + '.' + extension)
+        fig.savefig(path, dpi=180, facecolor=fig.get_facecolor())
+        if extension == 'svg':
+            path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines()) + '\n')
     plt.close(fig)
 
 
-fig, axes = figure('Less time per frame', 'Lower is better · milliseconds · percentages show time reductions', 2)
-bars(axes[0], 0, 'Average frame time', 'Milliseconds')
-bars(axes[1], 1, 'Slowest 1% mean frame time', 'Milliseconds')
+fig, axes = figure('LiteOptimizer · frame time', 'Milliseconds · lower is better', 2)
+bars(axes[0], 0, 'Average', 'Milliseconds')
+bars(axes[1], 1, 'Slowest 1% mean', 'Milliseconds')
+axes[1].tick_params(axis='y', labelleft=False)
 save(fig, 'frame-time-comparison')
 
-fig, axes = figure('More frames per second', 'Higher is better · average FPS derived from mean frame time · percentages show FPS increases', 1)
-bars(axes[0], 2, 'Average FPS', 'Frames per second', increase=True)
+fig, axes = figure('LiteOptimizer · FPS', 'Average FPS · higher is better', 1)
+bars(axes[0], 2, '', 'Frames per second', increase=True)
 save(fig, 'fps-comparison')
 print('Charts written to', OUT)

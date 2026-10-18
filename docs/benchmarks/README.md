@@ -126,7 +126,7 @@ server complement the state harness; the README records the remaining compatibil
 ## Charts
 
 The README charts use only the three retained raw CSV pairs above. Gray means the measured
-feature is OFF; teal means it is ON. Every bar starts at zero. Frame-time percentages are
+feature is OFF; blue means it is ON. Every bar starts at zero. Frame-time percentages are
 reductions, while FPS percentages are increases calculated from unrounded means. These are
 historical individual-feature measurements, not a new combined-mod benchmark.
 
