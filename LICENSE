@@ -1,0 +1,23 @@
+LiteOptimizer — optimization mod for Minecraft 1.12.2 on LiteLoader.
+Copyright (C) 2026 froyln
+
+This program is free software: you can redistribute it and/or modify it under the terms of the
+GNU Lesser General Public License as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details: https://www.gnu.org/licenses/lgpl-3.0.html
+
+Portions are ported from, and remain under the terms of their original licenses:
+- Vintagium (Asek3/sodium-1.12), itself derived from Sodium 0.4 by JellySquid (CaffeineMC) — LGPL-3.0
+- JOML (JOML-CI), repackaged as `repack.joml` by Vintagium — MIT
+- carpetmod112 (gnembon and contributors) — LGPL-3.0
+- FoamFix (Adrian Siekierka) — LGPL-3.0
+- VintageFix (embeddedt; portions FerriteCore by malte0811, MIT) — LGPL-3.0
+- Lithium (CaffeineMC) — LGPL-3.0
+- VanillaFix (Dimensional Development) — MIT
+- ParticleCulling (bl4ckscor3) — MIT
+- Valkyrie (Red Studio) — MIT
+- better-biome-blend (FionaTheMortal) — Unlicense
+Each ported file keeps its original copyright header.
