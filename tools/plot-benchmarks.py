@@ -87,9 +87,9 @@ fig, axes = figure('LiteOptimizer · frame time', 'Milliseconds · lower is bett
 bars(axes[0], 0, 'Average', 'Milliseconds')
 bars(axes[1], 1, 'Slowest 1% mean', 'Milliseconds')
 axes[1].tick_params(axis='y', labelleft=False)
-save(fig, 'frame-time-comparison')
+save(fig, 'frame-time-comparison-dark')
 
 fig, axes = figure('LiteOptimizer · FPS', 'Average FPS · higher is better', 1)
 bars(axes[0], 2, '', 'Frames per second', increase=True)
-save(fig, 'fps-comparison')
+save(fig, 'fps-comparison-dark')
 print('Charts written to', OUT)
