@@ -28,61 +28,48 @@ off in saved configs until their evidence requirements are met.
 
 ## Benchmarks
 
-The following are **individual feature OFF → ON comparisons**, not a combined vanilla-versus-mod
-score. Other settings and optimizations were held constant within each pair. Results depend on
-the scene, render distance, resource packs, hardware and other installed mods; gains do not add
-together. Recent runs used a technical LiteLoader mod stack rather than a bare vanilla client.
+Three paired runs compare all optimization switches **OFF** with the release defaults **ON**.
+They use the same LiteLoader client stack in both modes; this is not a comparison with bare
+Minecraft. Each run had 30 seconds of warmup and 60 seconds of recording. Percent changes below
+are the median of the three paired changes; graphs show each mode's median and run range.
 
-![Feature OFF and ON: average and slowest 1% frame times, with percentage reductions](docs/benchmarks/charts/frame-time-comparison-dark.png)
+![Dark chart comparing average frame time with all optimizations off and defaults on](docs/benchmarks/charts/whole-mod-frame-time-2026-10-20-dark.png)
 
-![Feature OFF and ON: average FPS, with percentage increases](docs/benchmarks/charts/fps-comparison-dark.png)
+![Dark chart comparing average FPS with all optimizations off and defaults on](docs/benchmarks/charts/whole-mod-fps-2026-10-20-dark.png)
 
-### Terrain rendering: retained frame-by-frame data
+![Dark chart comparing slowest 1 percent frame time](docs/benchmarks/charts/whole-mod-slowest-1pct-2026-10-20-dark.png)
 
-B6 flight fixture, 0.5 blocks/tick forward flight, 20 seconds warmup and 40 seconds recording.
-The `sodium` switch was the only optimization setting changed. Recorded on the revision-95
-0.6.0-rc2 candidate, October 15, 2026. FPS is calculated from the mean recorded frame time.
+![Dark chart comparing sampled integrated-server tick time](docs/benchmarks/charts/whole-mod-mspt-2026-10-20-dark.png)
 
-| Render distance | Average frame time | Frame time reduction | Average FPS | FPS increase | Slowest 1% mean frame time |
-|---|---:|---:|---:|---:|---:|
-| 16 chunks | 3.426 → 1.380 ms | **59.7%** | 291.9 → 724.5 | **148.2%** | 11.04 → 5.25 ms (**52.5% lower**) |
-| 10 chunks | 0.945 → 0.734 ms | **22.4%** | 1,057.7 → 1,363.0 | **28.9%** | 5.46 → 3.27 ms (**40.2% lower**) |
+| Scene | Average FPS | Average frame time | Slowest 1% mean frame time | Sampled integrated-server MSPT |
+|---|---:|---:|---:|---:|
+| B1 storage, RD10; entities suppressed | 138.1 → 267.6 (**+95.0%**) | 7.240 → 3.737 ms (**−48.7%**) | 12.205 → 7.086 ms (**−40.4%**) | 4.105 → 3.713 ms (**−3.0%**) |
+| B6 forward flight, RD16; 0.5 blocks/tick | 247.6 → 377.2 (**+52.3%**) | 4.038 → 2.651 ms (**−34.3%**) | 15.920 → 7.456 ms (**−53.5%**) | 3.417 → 3.419 ms (**+0.0%**) |
 
-The RD16 pair contains 11,677 OFF frames and 28,980 ON frames; RD10 contains 42,310 and 54,521.
-These are short controlled workload samples, not expected FPS for every world. Long stalls remain:
-RD16 maximum frame time was 96.1 → 81.4 ms. The RD10 and RD16 runs are different settings, not
-repeats of the same workload. [Raw CSVs, calculations and measurement limits](docs/benchmarks/README.md).
+The three B1 FPS pair changes ranged from **+61.9% to +95.3%**; B6 ranged from **+48.7% to
++54.1%**. The first B1 pair was lower than the other two in ON mode, so its spread is shown
+instead of treating the median as a guaranteed result. B1 and B6 are distinct scenes, not
+repeats of one workload.
 
-### Other rendering work
+The integrated-server figure is sampled MSPT from the singleplayer client. It does not represent
+remote server TPS; samples may miss ticks. B6 showed no consistent change across pairs. No claim
+is made that a remote server runs faster.
 
-| Feature / fixture | Average frame time OFF → ON | Reduction | Slowest 1% mean OFF → ON | Evidence |
-|---|---:|---:|---:|---|
-| Item-frame display lists / B1 storage | 6.260 → 5.144 ms | **17.8%** | 18.09 → 15.78 ms (12.7% lower) | Retained CSV pair; 20 s warmup / 40 s recording. |
-| Block-entity frustum / B1 storage | 6.05 → 4.07 ms | **32.7%** | 23.65 → 9.54 ms (59.7% lower) | Historical measurement report; raw CSV unavailable in this repository. |
-| Camera visibility cache / B6 flight | 0.97–0.99 → 0.95–0.96 ms | **3.4% median** across three pairs | **7.7% median reduction** | Historical report; small result near the 3% noise threshold; raw CSV unavailable here. |
+The structure lookup feature was also isolated over three B4 pairs. Its median paired FPS change was
+**−0.3%**, with pair changes from **−0.6% to +0.3%**, so this run found no measurable rendering
+gain. Sampled MSPT fell by a median **15.6%** across this one workload (pair changes −16.8% to
+−11.4%); treat that as fixture-specific evidence, not a general server-speed result. One-pair memory checks are preliminary: blockstate storage changed FPS by **+0.3%** and
+baked-quad deduplication by **+1.0%**. A class histogram recorded **43,690 to 29,214 baked
+quads** (33.1% fewer unique instances); this count does not establish a total-heap percentage.
 
-The item-frame pair corresponds to approximately **159.8 → 194.4 FPS (+21.7%)**. Its full-image
-OFF/ON comparison and an unchanged OFF/OFF control each recorded zero differing pixels at the
-fixed test pose. This does not promise exact pixels for every resource pack or scene. Frustum
-culling intentionally omits eligible off-screen draws; it does not skip block-entity simulation.
+Measurements used a Ryzen 5 2600, GTX 1660 SUPER, Java 8u504, 1920×1080, VSync off and the
+technical LiteLoader stack. Minecraft's maximum 260 FPS setting (unlimited) was selected.
+The workload worlds are not distributed, and results depend on scene and hardware. Raw CSVs,
+effective configs, per-run summaries, hardware details and calculation notes are in the
+[benchmark evidence](docs/benchmarks/README.md).
 
-### Memory and integrated-server logic
-
-These are older recorded measurements, with less complete raw-data retention than the terrain
-and item-frame pairs. Treat them as workload-specific evidence rather than current whole-mod scores.
-
-| Feature | Workload / metric | Recorded result |
-|---|---|---|
-| Blockstate property storage | B1 heap after forced GC / class histogram | About **10.5 MB fewer Guava map/table objects**; old-generation occupancy about **14 MB lower** in the recorded run. These are overlapping views, not additive savings. |
-| Baked-quad deduplication | B1 model load | **43,690 → 29,214 unique quads**, **33.1% fewer**; approximately **2.2 MB** heap reduction. No FPS gain is claimed. |
-| Property hash caching | B3 hopper fixture | Integrated-server mean **3.78 → 3.07 MSPT**, **18.8% lower**; historical report also records average frame time −21% and slowest 1% −50%. |
-| Hopper inventory-entity lookup | B3 hopper fixture, isolated option | Integrated-server mean **3.75 → 3.22 MSPT**, **14.1% lower**. |
-| Structure lookup index | B4 mob-farm fixture | Historical report records a gain, but its percentage and displayed timings disagree. **No reliable percentage is claimed here.** |
-
-MSPT means milliseconds per simulation tick; lower is better. Reduced MSPT provides more tick
-headroom, but does not increase simulation speed above the normal 20 TPS. No remote-server TPS,
-combined heap saving or universal speedup is claimed. See [benchmark details](docs/benchmarks/README.md)
-for provenance and formulas.
+Older individual-feature results remain in that report with their original provenance and limits;
+they are not combined with these measurements.
 
 ## Install
 

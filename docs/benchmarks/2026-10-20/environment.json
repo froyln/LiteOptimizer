@@ -1,0 +1,56 @@
+{
+  "platform": "Linux-7.2.0-1-cachyos-x86_64-with-glibc2.44",
+  "cpu": "AMD Ryzen 5 2600 Six-Core Processor",
+  "memory_total_kib": "16311568",
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER, 610.57.04",
+  "java": "openjdk version \"1.8.0_504\"\nOpenJDK Runtime Environment (build 1.8.0_504-b01)\nOpenJDK 64-Bit Server VM (build 25.504-b01, mixed mode)",
+  "warmup_seconds": 30,
+  "record_seconds": 60,
+  "fps_cap": "unlimited (maxFps=260)",
+  "vsync": false,
+  "heap_max_mib": 3072,
+  "worker_profiling": false,
+  "client_profiler": false,
+  "stack": "technical LiteLoader mod stack",
+  "vertex_dumping": false,
+  "cpu_governor": {
+    "cpu11": "schedutil",
+    "cpu9": "schedutil",
+    "cpu7": "schedutil",
+    "cpu5": "schedutil",
+    "cpu3": "schedutil",
+    "cpu1": "schedutil",
+    "cpu10": "schedutil",
+    "cpu8": "schedutil",
+    "cpu6": "schedutil",
+    "cpu4": "schedutil",
+    "cpu2": "schedutil",
+    "cpu0": "schedutil"
+  },
+  "os_release": [
+    "NAME=\"CachyOS Linux\"",
+    "PRETTY_NAME=\"CachyOS\"",
+    "ID=cachyos",
+    "ID_LIKE=arch"
+  ],
+  "profile_note": "No --profile or --jfr during frame measurements; legacy --profile also performs vertex dumps.",
+  "render_distance_by_workload": {
+    "B6-full": 16,
+    "B1-full": 10,
+    "B4-structure": 10,
+    "B1-memory": 10
+  },
+  "viewport_pixels": [
+    1920,
+    1080
+  ],
+  "whole_mod_definition": "All optimization switches OFF versus release-default optimizations ON; identical LiteLoader stack and measurement hooks remain installed in both modes.",
+  "frame_runs_repetitions": 3,
+  "run_order_by_pair": [
+    "OFF then ON",
+    "ON then OFF",
+    "OFF then ON"
+  ],
+  "memory_repetitions": 1,
+  "simulation_metric": "Sampled integrated-server MSPT, not every server tick and not remote-server TPS."
+}

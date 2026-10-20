@@ -1,0 +1,25 @@
+{
+  "frames": 61634,
+  "frame_mean_ms": 0.9735028835220819,
+  "slowest_1pct_mean_ms": 3.0679258946515398,
+  "fps": 1027.2183235678285,
+  "mspt_mean": 5.47494504579517,
+  "mspt_samples": 1201,
+  "record_seconds": 60.000876723000005,
+  "enabled_options": [
+    "render",
+    "world",
+    "ai",
+    "memory",
+    "sodium",
+    "structure_lookup_index",
+    "baked_quad_dedup",
+    "blockstate_property_storage",
+    "model_display_lists",
+    "tile_entity_frustum",
+    "camera_visgraph_cache",
+    "property_hashcode_cache",
+    "hopper_entity_lookup"
+  ],
+  "finished_utc": "2026-10-20T18:24:31Z"
+}

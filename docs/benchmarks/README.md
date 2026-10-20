@@ -1,5 +1,14 @@
 # Benchmark evidence
 
+## Current whole-mod results
+
+The October 20, 2026 comparison measures all release defaults ON versus all optimization switches
+OFF in three paired runs for each of two scenes. The [current report](2026-10-20/README.md) includes
+medians, paired effects, run ranges, settings, raw frame CSVs, effective configs and artifact hashes.
+These results use a technical LiteLoader stack in both modes; they are not bare vanilla comparisons.
+The older individual-feature data below remains separate and should not be combined with the new
+measurements.
+
 ## Retained raw measurements
 
 These CSVs contain client frame durations in nanoseconds (`frame_ns`) and sampled integrated-server
@@ -14,9 +23,8 @@ with the same instrumentation in each OFF/ON pair. Instrumentation overhead is n
 
 Terrain config snapshots and the tested artifact SHA-256 are retained with the data. The item-frame
 runtime artifact SHA-256 was `843d887cd841188932474fc3b15d9d8a07a800b05fd40144a6130314dd04209e`;
-a later version-string correction did not change its rendering implementation. These are historical
-candidate benchmarks, not measurements of a new UI-only build. No aggregate all-defaults-on
-versus bare vanilla result has been established for the current candidate.
+a later version-string correction did not change its rendering implementation. These historical single-feature results predate the current whole-mod comparison in
+[the October 20, 2026 report](2026-10-20/README.md); do not mix the datasets.
 
 All three pairs used the technical LiteLoader mod stack. The reports do not retain a reliable
 hardware/driver inventory for these exact captures, so no CPU, GPU or driver model is asserted.
@@ -121,14 +129,15 @@ unchanged OFF/OFF control diverged; higher-distance loading variance was also ob
 Render changes are client-only and may have documented presentation differences. They must not
 change movement, inventory actions, interaction reach or server-bound packet semantics. Exact
 pixel comparison is a fixed-scene check only. Full-stack gameplay checks and an unmodified vanilla
-server complement the state harness; the README records the remaining compatibility limitations.
+server complement the state harness; benchmark coverage is limited to the recorded fixtures and
+play sessions.
 
 ## Charts
 
-The README charts use only the three retained raw CSV pairs above. Gray means the measured
-feature is OFF; blue means it is ON. Every bar starts at zero. Frame-time percentages are
-reductions, while FPS percentages are increases calculated from unrounded means. These are
-historical individual-feature measurements, not a new combined-mod benchmark.
+The current README charts use the three paired full-mod measurements per workload in
+[2026-10-20](2026-10-20/README.md): gray means optimizations OFF and blue means defaults ON. Bars
+show per-mode medians, whiskers show observed min–max, and percentages show median paired change.
+Earlier charts retain their individual-feature datasets and historical labels.
 
 PNG previews and editable SVG exports are in [charts/](charts/). Regenerate with Python 3
 and matplotlib installed:

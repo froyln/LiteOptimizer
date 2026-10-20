@@ -93,3 +93,64 @@ fig, axes = figure('LiteOptimizer · FPS', 'Average FPS · higher is better', 1)
 bars(axes[0], 2, '', 'Frames per second', increase=True)
 save(fig, 'fps-comparison-dark')
 print('Charts written to', OUT)
+
+# Current full-mod run: bars show per-mode medians; whiskers show run ranges.
+import json
+
+CURRENT = ROOT / 'docs/benchmarks/2026-10-20/summary.json'
+current = json.loads(CURRENT.read_text())
+WORKLOADS = [('B1 storage · RD10', 'B1-full'), ('B6 flight · RD16', 'B6-full')]
+
+
+def draw_current(metric, title, unit, filename):
+    fig, ax = plt.subplots(figsize=(10.8, 4.7))
+    fig.patch.set_facecolor(BACKGROUND)
+    ax.set_facecolor(BACKGROUND)
+    ax.set_title(title, loc='left', color=INK, size=20, weight='bold', pad=22)
+    colors = {'off': OFF, 'on': ON}
+    for y, (label, key) in enumerate(WORKLOADS):
+        group = current[key]
+        for offset, mode in [(-.16, 'off'), (.16, 'on')]:
+            stats = group[mode][metric]
+            median = stats['median']
+            left, right = median - stats['min'], stats['max'] - median
+            ax.barh(y + offset, median, height=.27, color=colors[mode], zorder=3)
+            ax.errorbar(median, y + offset, xerr=[[left], [right]], fmt='none',
+                        ecolor=INK, elinewidth=1.2, capsize=4, zorder=4)
+            ax.text(stats['max'] * 1.04, y + offset, f'{median:,.2f}',
+                    va='center', color=INK, size=10)
+        changes = group['per_pair_change_percent'][metric]
+        ordered = sorted(changes)
+        effect = ordered[len(ordered) // 2]
+        sign = '−' if effect < 0 else '+'
+        ax.text(.99, y, f'{sign}{abs(effect):.1f}%', transform=ax.get_yaxis_transform(),
+                ha='right', va='center', color=ON, size=11, weight='bold')
+
+    ax.set_yticks(range(len(WORKLOADS)), [label for label, _ in WORKLOADS])
+    ax.invert_yaxis()
+    maximum = max(current[key][mode][metric]['max']
+                  for _, key in WORKLOADS for mode in ('off', 'on'))
+    ax.set_xlim(0, maximum * 1.24)
+    ax.set_xlabel(unit, color=MUTED, labelpad=10)
+    ax.grid(axis='x', color=MUTED, alpha=.16, zorder=0)
+    ax.tick_params(axis='both', colors=MUTED, length=0, pad=9)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    fig.legend(handles=[Patch(color=OFF, label='Optimizations OFF'),
+                        Patch(color=ON, label='Defaults ON')],
+               loc='upper right', bbox_to_anchor=(.96, .97),
+               frameon=False, ncol=2, labelcolor=INK)
+    fig.text(.04, .025, 'Bars: median of 3 runs · whiskers: run min–max · right labels: median paired change',
+             color=MUTED, size=9)
+    fig.subplots_adjust(left=.24, right=.96, top=.78, bottom=.20)
+    save(fig, filename)
+
+
+draw_current('frame_mean_ms', 'LiteOptimizer · average frame time',
+             'Milliseconds · lower is better', 'whole-mod-frame-time-2026-10-20-dark')
+draw_current('slowest_1pct_mean_ms', 'LiteOptimizer · slowest 1% mean frame time',
+             'Milliseconds · lower is better', 'whole-mod-slowest-1pct-2026-10-20-dark')
+draw_current('fps', 'LiteOptimizer · average FPS',
+             'Frames per second · higher is better', 'whole-mod-fps-2026-10-20-dark')
+draw_current('mspt_mean', 'LiteOptimizer · sampled integrated-server MSPT',
+             'Milliseconds per tick · lower is better', 'whole-mod-mspt-2026-10-20-dark')
