@@ -85,7 +85,7 @@ public final class Config {
                 LOG.warn("[LiteOptimizer] config key '{}' is not a boolean; using default {}", key, option.defaultValue);
             } else {
                 boolean enabled = entry.getValue().getAsBoolean();
-                if (enabled && !option.defaultValue) {
+                if (enabled && !option.defaultValue && !allowBenchmarkOverride(option)) {
                     LOG.warn("[LiteOptimizer] '{}' is not release-validated; forcing it off", key);
                     VALUES.put(option, false);
                     missing = true;
@@ -100,6 +100,12 @@ public final class Config {
             }
         }
         return missing;
+    }
+
+    // Focused bench pairs may opt in to one unvalidated key without changing its release default.
+    private static boolean allowBenchmarkOverride(Option option) {
+        return "on".equals(System.getProperty("liteoptimizer.bench"))
+                && option.key.equals(System.getProperty("liteoptimizer.bench.unvalidated"));
     }
 
     private static void write(File file) {
@@ -142,11 +148,28 @@ public final class Config {
         assert !migrated.contains("\"item_merging\": true") : "legacy true must be rewritten off";
         assert isEnabled(Option.RENDER) : "non-boolean must fall back to default";
         w = new FileWriter(f);
+        w.write("{\"entity_culling\": true, \"item_merging\": true}");
+        w.close();
+        System.setProperty("liteoptimizer.bench", "off");
+        System.setProperty("liteoptimizer.bench.unvalidated", "entity_culling");
+        load(f);
+        assert !isActive(Option.ENTITY_CULLING) : "off run must not enable candidate";
+        w = new FileWriter(f);
+        w.write("{\"entity_culling\": true, \"item_merging\": true}");
+        w.close();
+        System.setProperty("liteoptimizer.bench", "on");
+        load(f);
+        assert isActive(Option.ENTITY_CULLING) : "named bench candidate should be enabled";
+        assert !isActive(Option.ITEM_MERGING) : "bench override must not enable other candidates";
+        System.clearProperty("liteoptimizer.bench");
+        System.clearProperty("liteoptimizer.bench.unvalidated");
+        w = new FileWriter(f);
         w.write("not json at all");
         w.close();
         load(f);
         assert isEnabled(Option.WORLD) : "malformed must reset to defaults";
         assert !isActive(Option.ITEM_MERGING) : "malformed config must reset to release defaults";
+        assert !isActive(Option.ENTITY_CULLING) : "experimental option must default off";
         f.delete();
         System.out.println("Config self-check OK");
     }

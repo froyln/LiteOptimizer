@@ -30,6 +30,8 @@ public class ChunkGraphCuller implements ChunkCuller {
 
     private FrustumExtended frustum;
     private boolean useOcclusionCulling;
+    private int entityGraphFrame = -1;
+    private boolean entityGraphValid;
 
     private int activeFrame = 0;
     private int centerChunkX, centerChunkY, centerChunkZ;
@@ -54,6 +56,10 @@ public class ChunkGraphCuller implements ChunkCuller {
      */
     @Override
     public IntArrayList computeVisible(Vec3d cameraPos, FrustumExtended frustum, int frame, boolean spectator) {
+        this.entityGraphValid = false;
+        if (Config.isActive(Option.ENTITY_CULLING)) {
+            this.computeEntityVisibility(cameraPos, frame, spectator);
+        }
         boolean search = this.initSearch(cameraPos, frustum, frame, spectator);
 
         ChunkGraphIterationQueue queue = this.visible;
@@ -76,6 +82,48 @@ public class ChunkGraphCuller implements ChunkCuller {
         }
 
         return this.visible.getOrderedIdList();
+    }
+
+    private void computeEntityVisibility(Vec3d cameraPos, int frame, boolean spectator) {
+        this.visible.clear();
+        this.entityGraphFrame = frame;
+        BlockPos origin = new BlockPos(cameraPos.x, cameraPos.y, cameraPos.z);
+        int x = origin.getX() >> 4, y = origin.getY() >> 4, z = origin.getZ() >> 4;
+        if (y < 0 || y >= 16) return;
+
+        this.updateGrid();
+        this.centerChunkX = x;
+        this.centerChunkY = y;
+        this.centerChunkZ = z;
+        ChunkGraphNode root = this.getNode(x, y, z);
+        if (root == null) return;
+
+        Set<EnumFacing> exits = this.getVisibleFacings(origin);
+        if (exits.isEmpty() && !spectator) return;
+        if (exits.size() == 1) exits.remove(this.getViewFacing().getOpposite());
+        if (exits.isEmpty()) return;
+
+        this.entityGraphValid = true;
+        root.setLastEntityVisibleFrame(frame);
+        root.resetCullingState();
+        this.visible.add(root);
+        for (int i = 0; i < this.visible.size(); i++) {
+            ChunkGraphNode node = this.visible.getNode(i);
+            short cullData = node.computeQueuePop();
+            for (EnumFacing dir : DirectionUtil.ALL_DIRECTIONS) {
+                if ((cullData & (1 << dir.ordinal())) == 0) continue;
+                ChunkGraphNode adj = node.getConnectedNode(dir);
+                if (adj != null) this.bfsEnqueueEntity(adj, dir.getOpposite(), cullData, frame);
+            }
+        }
+    }
+
+    private void bfsEnqueueEntity(ChunkGraphNode node, EnumFacing flow, short parentalData, int frame) {
+        if (node.getLastEntityVisibleFrame() == frame || !this.isWithinRenderDistance(node)) return;
+        node.setLastEntityVisibleFrame(frame);
+        node.setCullingState(parentalData);
+        node.updateCullingState(flow, parentalData);
+        this.visible.add(node);
     }
 
     /**
@@ -358,5 +406,12 @@ public class ChunkGraphCuller implements ChunkCuller {
         }
 
         return render.getLastVisibleFrame() == this.activeFrame;
+    }
+
+    @Override
+    public boolean isEntitySectionVisible(int x, int y, int z) {
+        if (!this.entityGraphValid) return true;
+        ChunkGraphNode render = this.getNode(x, y, z);
+        return render == null || render.getLastEntityVisibleFrame() == this.entityGraphFrame;
     }
 }

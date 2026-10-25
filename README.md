@@ -24,7 +24,9 @@ These nine optimizations are enabled by default:
 World logic optimizations affect the **integrated server in singleplayer**. They cannot speed up
 a remote server that does not run this mod. Memory savings and rendering improvements apply to
 the client. Other candidate switches exist in the source, but remain disabled and are normalized
-off in saved configs until their evidence requirements are met.
+off in saved configs until their evidence requirements are met. The 2026-10-24
+[rendering and network probes](docs/experiments/2026-10-24-render-network.md) record the
+experimental entity-culling result and rejected GUI/network candidates.
 
 ## Benchmarks
 

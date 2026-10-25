@@ -42,6 +42,7 @@ public enum Option {
     // 0.6 Sodium II
     MODEL_DISPLAY_LISTS("model_display_lists", RENDER, true, "compile item-frame item and block model draws into display lists"),
     TILE_ENTITY_FRUSTUM("tile_entity_frustum", RENDER, true, "skip block entities whose block box is outside the camera frustum"),
+    ENTITY_CULLING("entity_culling", RENDER, false, "skip entities outside Sodium's visible chunk graph"),
     CAMERA_VISGRAPH_CACHE("camera_visgraph_cache", RENDER, true, "reuse the camera section's visibility flood fill until that section changes"),
 
     // 0.5 Lithium II

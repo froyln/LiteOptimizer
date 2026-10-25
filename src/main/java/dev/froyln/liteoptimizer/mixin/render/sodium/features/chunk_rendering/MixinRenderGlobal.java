@@ -1,6 +1,8 @@
 package dev.froyln.liteoptimizer.mixin.render.sodium.features.chunk_rendering;
 
 import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import dev.froyln.liteoptimizer.config.Config;
+import dev.froyln.liteoptimizer.config.Option;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -13,6 +15,7 @@ import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.chunk.Chunk;
+import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -66,6 +69,9 @@ public abstract class MixinRenderGlobal {
                                      List<Entity> loadedEntityList, List<Entity> outlineEntityList,
                                      List<Entity> multipassEntityList) {
         EntityPlayerSP player = this.mc.player;
+        SodiumWorldRenderer sodiumRenderer = SodiumWorldRenderer.getInstanceNullable();
+        boolean useEntityCulling = sodiumRenderer != null
+                && (SodiumClientMod.options().advanced.useEntityCulling || Config.isActive(Option.ENTITY_CULLING));
         BlockPos.MutableBlockPos entityBlockPos = new BlockPos.MutableBlockPos();
         // Apply entity distance scaling
         Entity.setRenderDistanceWeight(MathHelper.clamp((double)this.mc.gameSettings.renderDistanceChunks / 8.0D, 1.0D, 2.5D) * SodiumClientMod.options().quality.entityDistanceScaling);
@@ -76,6 +82,15 @@ public abstract class MixinRenderGlobal {
                 continue;
             }
 
+            boolean outlineActive = false;
+            if (useEntityCulling) {
+                outlineActive = this.isOutlineActive(entity, renderViewEntity, camera);
+                if (!outlineActive && entity != renderViewEntity && !entity.isRidingOrBeingRiddenBy(player)
+                        && !sodiumRenderer.isEntityVisible(entity)) {
+                    continue;
+                }
+            }
+
             boolean isSleeping = renderViewEntity instanceof EntityLivingBase && ((EntityLivingBase) renderViewEntity).isPlayerSleeping();
 
             if ((entity != renderViewEntity || this.mc.gameSettings.thirdPersonView != 0 || isSleeping)
@@ -84,7 +99,7 @@ public abstract class MixinRenderGlobal {
                 ++this.countEntitiesRendered;
                 this.renderManager.renderEntityStatic(entity, partialTicks, false);
 
-                if (this.isOutlineActive(entity, renderViewEntity, camera))
+                if (useEntityCulling ? outlineActive : this.isOutlineActive(entity, renderViewEntity, camera))
                 {
                     outlineEntityList.add(entity);
                 }

@@ -488,6 +488,10 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
         return this.culler.isSectionVisible(x, y, z);
     }
 
+    public boolean isEntitySectionVisible(int x, int y, int z) {
+        return this.culler.isEntitySectionVisible(x, y, z);
+    }
+
     public void updateChunks() {
         this.builder.cleanupSectionCache();
 

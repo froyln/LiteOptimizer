@@ -15,4 +15,6 @@ public interface ChunkCuller {
     void invalidateCameraVisibility(int x, int y, int z);
 
     boolean isSectionVisible(int x, int y, int z);
+
+    boolean isEntitySectionVisible(int x, int y, int z);
 }

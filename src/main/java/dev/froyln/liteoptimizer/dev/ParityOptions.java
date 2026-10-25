@@ -15,7 +15,7 @@ public final class ParityOptions {
             "liteoptimizer.parity", "liteoptimizer.parity.world", "liteoptimizer.parity.ticks",
             "liteoptimizer.parity.label", "liteoptimizer.parity.pose", "liteoptimizer.parity.verbose",
             "liteoptimizer.parity.trace", "liteoptimizer.nopause", "liteoptimizer.bench",
-            "liteoptimizer.bench.warmup", "liteoptimizer.bench.seconds", "liteoptimizer.bench.quit",
+            "liteoptimizer.bench.unvalidated", "liteoptimizer.bench.warmup", "liteoptimizer.bench.seconds", "liteoptimizer.bench.quit",
             "liteoptimizer.bench.profile", "liteoptimizer.bench.fly", "liteoptimizer.bench.noentities",
             "liteoptimizer.screenshot"
     };
@@ -78,11 +78,13 @@ public final class ParityOptions {
                     + "liteoptimizer.parity.label=off\n"
                     + "liteoptimizer.parity.pose=-1_64_2_90_0\n"
                     + "liteoptimizer.bench=off\n"
+                    + "liteoptimizer.bench.unvalidated=entity_culling\n"
                     + "liteoptimizer.bench.warmup=20\n");
             writer.close();
             if (!apply(file) || !"17".equals(System.getProperty("liteoptimizer.parity"))
                     || !"_parity".equals(System.getProperty("liteoptimizer.parity.world"))
                     || !"off".equals(System.getProperty("liteoptimizer.bench"))
+                    || !"entity_culling".equals(System.getProperty("liteoptimizer.bench.unvalidated"))
                     || !"20".equals(System.getProperty("liteoptimizer.bench.warmup"))
                     || !"1".equals(System.getProperty("liteoptimizer.nopause"))) {
                 throw new AssertionError("valid parity settings were not applied");

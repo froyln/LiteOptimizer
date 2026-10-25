@@ -17,6 +17,7 @@ public class ChunkGraphNode {
     private final int chunkX, chunkY, chunkZ;
 
     private int lastVisibleFrame = -1;
+    private int lastEntityVisibleFrame = -1;
 
     private long visibilityData;
     private short cullingState;
@@ -40,6 +41,14 @@ public class ChunkGraphNode {
 
     public int getLastVisibleFrame() {
         return this.lastVisibleFrame;
+    }
+
+    public void setLastEntityVisibleFrame(int frame) {
+        this.lastEntityVisibleFrame = frame;
+    }
+
+    public int getLastEntityVisibleFrame() {
+        return this.lastEntityVisibleFrame;
     }
 
     public int getChunkX() {

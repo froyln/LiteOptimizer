@@ -2,6 +2,19 @@ package dev.froyln.liteoptimizer.render;
 
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.culling.ICamera;
+import net.minecraft.client.renderer.tileentity.TileEntityBannerRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityBeaconRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityBedRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityChestRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityEnderChestRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityEndGatewayRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityEndPortalRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityEnchantmentTableRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityMobSpawnerRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityPistonRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntityShulkerBoxRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntitySignRenderer;
+import net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -31,6 +44,23 @@ public final class TileEntityFrustum {
             return false;
         }
         TileEntitySpecialRenderer<TileEntity> renderer = TileEntityRendererDispatcher.instance.getRenderer(te);
-        return renderer != null && !renderer.isGlobalRenderer(te);
+        return renderer != null && isVanillaRenderer(renderer) && !renderer.isGlobalRenderer(te);
+    }
+
+    private static boolean isVanillaRenderer(TileEntitySpecialRenderer<?> renderer) {
+        Class<?> type = renderer.getClass();
+        return type == TileEntityBannerRenderer.class
+                || type == TileEntityBeaconRenderer.class
+                || type == TileEntityBedRenderer.class
+                || type == TileEntityChestRenderer.class
+                || type == TileEntityEnderChestRenderer.class
+                || type == TileEntityEndGatewayRenderer.class
+                || type == TileEntityEndPortalRenderer.class
+                || type == TileEntityEnchantmentTableRenderer.class
+                || type == TileEntityMobSpawnerRenderer.class
+                || type == TileEntityPistonRenderer.class
+                || type == TileEntityShulkerBoxRenderer.class
+                || type == TileEntitySignRenderer.class
+                || type == TileEntitySkullRenderer.class;
     }
 }
