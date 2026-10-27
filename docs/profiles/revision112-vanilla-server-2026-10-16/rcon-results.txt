@@ -1,0 +1,30 @@
+Exact artifact SHA-256: f4f331643d280fc9c90aaacc538ed4037ecdf79bd12639c1ce8c50a7bd2d3592
+Server: local, unmodified Mojang Minecraft 1.12.2 dedicated server
+Client: disposable full-stack Prism clone; 17 mods loaded
+
+RCON auth: accepted
+The test player was given one emerald before the completed trade.
+scoreboard players test LiteOptTest trade112 1 * -> Score 1 is in range 1 to 2147483647
+testfor LiteOptTest {Inventory:[{id:"minecraft:emerald"}]} -> did not match
+testfor LiteOptTest {Inventory:[{id:"minecraft:bread"}]} -> Found LiteOptTest
+RCON save-all -> Saved the world
+Saved server player NBT contained exactly one inventory entry: Slot 0, minecraft:bread, Count 1. No emerald was present.
+Dimension check: testfor LiteOptTest {Dimension:-1} -> Found LiteOptTest
+walkOneCm at end: 1814
+Correction command response: Teleported LiteOptTest to 23.3625, 25.0, 6.3
+Correction command response: Teleported LiteOptTest to 23.3625, 25.0, 6.3
+Server log: no moved wrongly / moved too quickly warning in this session
+
+After reconnect, before movement: walkOneCm = 1814
+After 2 seconds of client W input: walkOneCm = 2458 (+644 cm)
+
+Player NBT extraction was read-only; the saved file is the server’s `world/playerdata/919c110b-25bc-37de-b02a-7772ab1d9cbf.dat` (see `playerdata-inventory.txt`). An earlier click sequence in the session did not increment `trade112`; it was reset and excluded before the successful attempt.
+
+Placement follow-up: the vanilla server confirmed stone at `(18, 26, 4)` after client placement; `stoneuse = 3`.
+Break attempt follow-up: `execute LiteOptTest 18 26 4 testforblock 18 26 4 minecraft:stone` returned `Successfully found the block at 18, 26, 4`; objective `mine112` exists as `stat.mineBlock.minecraft.stone`, but `scoreboard players test LiteOptTest mine112 1 *` returned `No mine112 score for LiteOptTest found`. This attempt did not pass.
+
+Potion follow-up: `potion112` (`stat.useItem.minecraft.potion`) has no score; the server still finds the `minecraft:swiftness` potion in LiteOptTest inventory and `SelectedItem`; no `minecraft:glass_bottle` or Speed effect (Id 1) was found. The clone `options.txt` maps `key_key.use` to LWJGL key 88 (F12). Brief F12/right-click inputs and a two-second right-button hold did not consume it; sustained F12 key-down remains untested. This check did not pass.
+
+Potion success after sustained F12: `scoreboard players test LiteOptTest potion112 1 *` returned Score 1; Swiftness potion absent; glass bottle found; Speed effect Id 1 found. The clone binding is `key_key.use:88`; a two-second F12 key-down consumed the potion.
+
+Breaking success after correcting aim: the vanilla server found air at `(18, 26, 4)`; `scoreboard players test LiteOptTest mine112 1 *` returned Score 1. Before this, the same coordinate was confirmed as stone and no score existed. The client held attack with the diamond pickaxe selected.

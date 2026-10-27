@@ -11,6 +11,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.Chunk;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -21,34 +22,34 @@ public abstract class MixinClientChunkManager implements ChunkStatusListenerMana
     @Shadow
     public abstract Chunk provideChunk(int x, int z);
 
-    private final LongOpenHashSet loadedChunks = new LongOpenHashSet();
-    private boolean needsTrackingUpdate = false;
+    @Unique private final LongOpenHashSet liteoptimizerLoadedChunks = new LongOpenHashSet();
+    @Unique private boolean liteoptimizerNeedsTrackingUpdate = false;
 
-    private ChunkStatusListener listener;
+    @Unique private ChunkStatusListener liteoptimizerChunkStatusListener;
 
     @Inject(method = "loadChunk", at = @At("RETURN"))
     private void afterLoadChunkFromPacket(int x, int z, CallbackInfoReturnable<Chunk> cir) {
-        if (this.listener != null) {
-            this.listener.onChunkAdded(x, z);
-            this.loadedChunks.add(ChunkPos.asLong(x, z));
+        if (this.liteoptimizerChunkStatusListener != null) {
+            this.liteoptimizerChunkStatusListener.onChunkAdded(x, z);
+            this.liteoptimizerLoadedChunks.add(ChunkPos.asLong(x, z));
         }
     }
 
     @Inject(method = "unloadChunk", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/chunk/Chunk;onUnload()V", shift = At.Shift.AFTER))
     private void afterUnloadChunk(int x, int z, CallbackInfo ci) {
-        if (this.listener != null) {
-            this.listener.onChunkRemoved(x, z);
-            this.loadedChunks.remove(ChunkPos.asLong(x, z));
+        if (this.liteoptimizerChunkStatusListener != null) {
+            this.liteoptimizerChunkStatusListener.onChunkRemoved(x, z);
+            this.liteoptimizerLoadedChunks.remove(ChunkPos.asLong(x, z));
         }
     }
 
     @Inject(method = "tick", at = @At("RETURN"))
     private void afterTick(CallbackInfoReturnable<Boolean> cir) {
-        if (!this.needsTrackingUpdate) {
+        if (!this.liteoptimizerNeedsTrackingUpdate) {
             return;
         }
 
-        LongIterator it = this.loadedChunks.iterator();
+        LongIterator it = this.liteoptimizerLoadedChunks.iterator();
 
         while (it.hasNext()) {
             long pos = it.nextLong();
@@ -59,13 +60,13 @@ public abstract class MixinClientChunkManager implements ChunkStatusListenerMana
             if (this.provideChunk(x, z) == null) {
                 it.remove();
 
-                if (this.listener != null) {
-                    this.listener.onChunkRemoved(x, z);
+                if (this.liteoptimizerChunkStatusListener != null) {
+                    this.liteoptimizerChunkStatusListener.onChunkRemoved(x, z);
                 }
             }
         }
 
-        this.needsTrackingUpdate = false;
+        this.liteoptimizerNeedsTrackingUpdate = false;
     }
 
     /*@Inject(method = "setChunkMapCenter(II)V", at = @At("RETURN"))
@@ -82,16 +83,16 @@ public abstract class MixinClientChunkManager implements ChunkStatusListenerMana
     }*/
     @Override
     public void setNeedsTrackingUpdate(boolean needsTrackingUpdate) {
-        this.needsTrackingUpdate = needsTrackingUpdate;
+        this.liteoptimizerNeedsTrackingUpdate = needsTrackingUpdate;
     }
 
     @Override
     public boolean needsTrackingUpdate() {
-        return this.needsTrackingUpdate;
+        return this.liteoptimizerNeedsTrackingUpdate;
     }
 
     @Override
     public void setListener(ChunkStatusListener listener) {
-        this.listener = listener;
+        this.liteoptimizerChunkStatusListener = listener;
     }
 }

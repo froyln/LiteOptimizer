@@ -75,7 +75,7 @@ public final class StateTable {
     /** Neighbour of the state at {@code index} with {@code property} = {@code value}, or null if the value is not allowed. */
     public IBlockState with(int index, IProperty<?> property, Object value) {
         for (int i = 0; i < props.length; i++) {
-            if (props[i] == property) {
+            if (props[i].equals(property)) {
                 Integer vi = valueIndex[i].get(value);
                 if (vi == null) return null;
                 int cur = (index / stride[i]) % size[i];

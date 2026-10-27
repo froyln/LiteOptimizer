@@ -1,0 +1,900 @@
+[02:38:05] [main/INFO]: Loading tweak class name com.mumfrey.liteloader.launch.LiteLoaderTweaker
+[02:38:05] [main/INFO]: Using primary tweak class name com.mumfrey.liteloader.launch.LiteLoaderTweaker
+[02:38:05] [main/INFO]: Calling tweak class com.mumfrey.liteloader.launch.LiteLoaderTweaker
+[02:38:05] [main/INFO]: Bootstrapping LiteLoader 1.12.2
+[02:38:05] [main/INFO]: Registering API provider class com.mumfrey.liteloader.client.api.LiteLoaderCoreAPIClient
+[02:38:05] [main/INFO]: Spawning API provider class 'com.mumfrey.liteloader.client.api.LiteLoaderCoreAPIClient' ...
+[02:38:05] [main/INFO]: API provider class 'com.mumfrey.liteloader.client.api.LiteLoaderCoreAPIClient' provides API 'liteloader'
+[02:38:05] [main/INFO]: Initialising API 'liteloader' ...
+[02:38:05] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.7.5 Source=file:/home/froyln/.local/share/PrismLauncher/libraries/com/mumfrey/liteloader/1.12.2-SNAPSHOT/liteloader-1.12.2-SNAPSHOT.jar Service=LaunchWrapper Env=CLIENT
+[02:38:05] [main/INFO]: FML platform manager could not load class cpw.mods.fml.relauncher.CoreModManager. Proceeding without FML support.
+[02:38:05] [main/INFO]: LiteLoader begin PREINIT...
+[02:38:05] [main/INFO]: Initialising Loader properties...
+[02:38:05] [main/INFO]: Setting up logger...
+[02:38:05] [main/INFO]: LiteLoader 1.12.2 starting up...
+[02:38:05] [main/INFO]: Active Pack: 1.12.2-SNAPSHOT-r4CC2BB0-b4-4
+[02:38:05] [main/INFO]: Java reports OS="linux"
+[02:38:05] [main/INFO]: Adding supported mod class prefix 'LiteMod'
+[02:38:05] [main/INFO]: Enumerating class path...
+[02:38:05] [main/INFO]: Class path separator=":"
+[02:38:05] [main/INFO]: Class path entries=(
+   classpathEntry=/usr/share/PrismLauncher/NewLaunch.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/patchy/1.3.9/patchy-1.3.9.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/oshi-project/oshi-core/1.1/oshi-core-1.1.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/net/sf/jopt-simple/jopt-simple/5.0.3/jopt-simple-5.0.3.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/io/netty/netty-all/4.1.9.Final/netty-all-4.1.9.Final.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/google/guava/guava/21.0/guava-21.0.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/commons-io/commons-io/2.5/commons-io-2.5.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/authlib/1.5.25/authlib-1.5.25.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/realms/1.10.22/realms-1.10.22.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/it/unimi/dsi/fastutil/7.1.0/fastutil-7.1.0.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-all/5.2/asm-all-5.2.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/mumfrey/liteloader/1.12.2-SNAPSHOT/liteloader-1.12.2-SNAPSHOT.jar
+   classpathEntry=/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/minecraft/1.12.2/minecraft-1.12.2-client.jar
+)
+[02:38:05] [main/INFO]: Registering discovery module EnumeratorModuleClassPath: [<Java Class Path>]
+[02:38:05] [main/INFO]: Registering discovery module EnumeratorModuleFolder: [/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods]
+[02:38:05] [main/INFO]: Registering discovery module EnumeratorModuleFolder: [/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2]
+[02:38:05] [main/INFO]: Registering enumerator plugin DefaultEnumeratorPlugin: [com.mumfrey.liteloader.core.api.DefaultEnumeratorPlugin@46d59067]
+[02:38:05] [main/INFO]: Discovering valid mod files in folder /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods
+[02:38:05] [main/INFO]: Discovering valid mod files in folder /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'Carpet_Client-v1.4d.220122.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet_Client-v1.4d.220122.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'connect_to_1_12_x-1.12.2-1.5.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/connect_to_1_12_x-1.12.2-1.5.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'itemscroller-liteloader-1.12.2-0.31.1.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/itemscroller-liteloader-1.12.2-0.31.1.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'litematica-liteloader-1.12.2-0.31.4.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/litematica-liteloader-1.12.2-0.31.4.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'minihud-liteloader-1.12.2-0.41.1.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/minihud-liteloader-1.12.2-0.41.1.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'tellme-1.12.2-0.6.3.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tellme-1.12.2-0.6.3.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'tweakeroo-liteloader-1.12.2-0.31.0.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tweakeroo-liteloader-1.12.2-0.31.0.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'UsefulMod-1.12.2-1.1.0.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/UsefulMod-1.12.2-1.1.0.litemod
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_voxelMap_1.7.1_for_1.12.2.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'Carpet.Client-v1.4c.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet.Client-v1.4c.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'BBOutlineReloaded-1.0.13-1.12.2-litemod.jar'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/BBOutlineReloaded-1.0.13-1.12.2-litemod.jar
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'malilib-liteloader-1.12.2-0.54.0.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/malilib-liteloader-1.12.2-0.54.0.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'mod-chatcalc-1.0-mc1.12.2.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-chatcalc-1.0-mc1.12.2.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'mod-litetweaker-1.10.4-mc1.12.2.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-litetweaker-1.10.4-mc1.12.2.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'isorenders-0.1.0.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/isorenders-0.1.0.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'schematicpreview-liteloader-1.12.2-0.1.0.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/schematicpreview-liteloader-1.12.2-0.1.0.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'modelgapfix-liteloader-1.12.2-1.0.0.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/modelgapfix-liteloader-1.12.2-1.0.0.litemod
+[02:38:05] [main/INFO]: Inspecting jar metadata in 'liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod'
+[02:38:05] [main/INFO]: Considering valid mod file: /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod
+[02:38:05] [main/INFO]: Discovering tweaks on class path...
+[02:38:05] [main/INFO]: Baking listener list for EnumerationObserver with 1 listeners
+[02:38:05] [main/INFO]: Registering discovered mod files in folder /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet_Client-v1.4d.220122.litemod' at revision 1303.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/connect_to_1_12_x-1.12.2-1.5.litemod' at revision 5.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/itemscroller-liteloader-1.12.2-0.31.1.litemod' at revision 7.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/litematica-liteloader-1.12.2-0.31.4.litemod' at revision 9.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/minihud-liteloader-1.12.2-0.41.1.litemod' at revision 3.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod' at revision 11211.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod' at revision 3.0000
+[02:38:05] [main/INFO]: Container /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tellme-1.12.2-0.6.3.litemod is disabled
+[02:38:05] [main/INFO]: Not adding valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tellme-1.12.2-0.6.3.litemod', the specified mod is disabled or missing a required dependency
+[02:38:05] [main/INFO]: Mod tellme is disabled for profile 1.12.2, not injecting tranformers
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tweakeroo-liteloader-1.12.2-0.31.0.litemod' at revision 3.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/UsefulMod-1.12.2-1.1.0.litemod' at revision 43.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_voxelMap_1.7.1_for_1.12.2.litemod' at revision 1701.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/BBOutlineReloaded-1.0.13-1.12.2-litemod.jar' at revision 14.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/malilib-liteloader-1.12.2-0.54.0.litemod' at revision 9.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-chatcalc-1.0-mc1.12.2.litemod' at revision 1.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-litetweaker-1.10.4-mc1.12.2.litemod' at revision 13.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/isorenders-0.1.0.litemod' at revision 11.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/schematicpreview-liteloader-1.12.2-0.1.0.litemod' at revision 23.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/modelgapfix-liteloader-1.12.2-1.0.0.litemod' at revision 4.0000
+[02:38:05] [main/INFO]: Adding newest valid mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod' at revision 102.0000
+[02:38:05] [main/INFO]: Registering discovered mod files in folder /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2
+[02:38:05] [main/INFO]: Dependency check for tweakeroo passed
+[02:38:05] [main/INFO]: Dependency check for litematica passed
+[02:38:05] [main/INFO]: Dependency check for minihud passed
+[02:38:05] [main/INFO]: Dependency check for schematicpreview passed
+[02:38:05] [main/INFO]: Dependency check for litetweaker passed
+[02:38:05] [main/INFO]: Dependency check for itemscroller passed
+[02:38:05] [main/INFO]: Mod file 'Carpet_Client-v1.4d.220122.litemod' provides classTransformer 'carpetclient.transformers.MinecraftTransformer', adding to class loader
+[02:38:05] [main/INFO]: classTransformer 'carpetclient.transformers.MinecraftTransformer' was successfully added
+[02:38:05] [main/INFO]: Registering mixin config mixins.carpetclient.optifinecompat.json for Carpet_Client-v1.4d.220122.litemod
+[02:38:05] [main/ERROR]: Mixin config mixins.carpetclient.optifinecompat.json does not specify "minVersion" property
+[02:38:05] [main/INFO]: Registering mixin config mixins.carpetclient.json for Carpet_Client-v1.4d.220122.litemod
+[02:38:05] [main/INFO]: Compatibility level set to JAVA_8
+[02:38:05] [main/ERROR]: Mixin config mixins.carpetclient.json does not specify "minVersion" property
+[02:38:05] [main/INFO]: Registering mixin config mixins.connect_to_1_12_x.json for connect_to_1_12_x-1.12.2-1.5.litemod
+[02:38:05] [main/INFO]: Dependency check for itemscroller passed
+[02:38:05] [main/INFO]: Registering mixin config mixins.itemscroller.json for itemscroller-liteloader-1.12.2-0.31.1.litemod
+[02:38:05] [main/INFO]: Dependency check for litematica passed
+[02:38:05] [main/INFO]: Registering mixin config mixins.litematica.json for litematica-liteloader-1.12.2-0.31.4.litemod
+[02:38:05] [main/INFO]: Dependency check for minihud passed
+[02:38:05] [main/INFO]: Registering mixin config mixins.minihud.json for minihud-liteloader-1.12.2-0.41.1.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.newlight.json for mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod
+[02:38:05] [main/ERROR]: Mixin config mixins.newlight.json does not specify "minVersion" property
+[02:38:05] [main/INFO]: Dependency check for tweakeroo passed
+[02:38:05] [main/INFO]: Registering mixin config mixins.tweakeroo.json for tweakeroo-liteloader-1.12.2-0.31.0.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.usefulmod.json for UsefulMod-1.12.2-1.1.0.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.clientcommands.json for UsefulMod-1.12.2-1.1.0.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.oldnorth.json for mod_voxelMap_1.7.1_for_1.12.2.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.voxelmap.json for mod_voxelMap_1.7.1_for_1.12.2.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.bbor.json for BBOutlineReloaded-1.0.13-1.12.2-litemod.jar
+[02:38:05] [main/INFO]: Registering mixin config mixins.malilib.json for malilib-liteloader-1.12.2-0.54.0.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.chatcalc.json for mod-chatcalc-1.0-mc1.12.2.litemod
+[02:38:05] [main/INFO]: Dependency check for litetweaker passed
+[02:38:05] [main/INFO]: Registering mixin config mixins.litetweaker.json for mod-litetweaker-1.10.4-mc1.12.2.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.isorenders.json for isorenders-0.1.0.litemod
+[02:38:05] [main/INFO]: Dependency check for schematicpreview passed
+[02:38:05] [main/INFO]: Registering mixin config mixins.schematicpreview.json for schematicpreview-liteloader-1.12.2-0.1.0.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.modelgapfix.json for modelgapfix-liteloader-1.12.2-1.0.0.litemod
+[02:38:05] [main/INFO]: Registering mixin config mixins.liteoptimizer.json for liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod
+[02:38:05] [main/INFO]: Initialising LiteLoader Mixins
+[02:38:05] [main/INFO]: LiteLoader PREINIT complete
+[02:38:05] [main/INFO]: Injecting required class transformer 'com.mumfrey.liteloader.transformers.event.EventProxyTransformer'
+[02:38:05] [main/INFO]: Injecting required class transformer 'com.mumfrey.liteloader.launch.LiteLoaderTransformer'
+[02:38:05] [main/INFO]: Injecting required class transformer 'com.mumfrey.liteloader.client.transformers.CrashReportTransformer'
+[02:38:05] [main/INFO]: Queuing required class transformer 'com.mumfrey.liteloader.transformers.event.EventTransformer'
+[02:38:05] [main/INFO]: Queuing required class transformer 'com.mumfrey.liteloader.common.transformers.LiteLoaderPacketTransformer'
+[02:38:05] [main/INFO]: Queuing required class transformer 'com.mumfrey.liteloader.transformers.event.json.ModEventInjectionTransformer'
+[02:38:05] [main/INFO]: Loading tweak class name org.spongepowered.asm.launch.MixinTweaker
+[02:38:05] [main/INFO]: Loading tweak class name org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[02:38:05] [main/INFO]: Loading tweak class name com.mumfrey.liteloader.launch.LiteLoaderTweaker$PreInitTweaker
+[02:38:05] [main/INFO]: Calling tweak class org.spongepowered.asm.launch.MixinTweaker
+[02:38:05] [main/INFO]: Calling tweak class org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[02:38:05] [main/INFO]: Calling tweak class com.mumfrey.liteloader.launch.LiteLoaderTweaker$PreInitTweaker
+[02:38:05] [main/WARN]: Tweak class name org.spongepowered.asm.mixin.EnvironmentStateTweaker has already been visited -- skipping
+[02:38:05] [main/INFO]: Injecting downstream transformers
+[02:38:05] [main/INFO]: Injecting additional class transformer class 'carpetclient.transformers.MinecraftTransformer'
+[02:38:05] [main/WARN]: Reference map 'mixins.isorenders.refmap.json' for mixins.isorenders.json could not be read. If this is a development environment you can ignore this message
+[02:38:05] [main/WARN]: Failed to select mixin config: mixins.modelgapfix.json
+java.lang.NullPointerException: null
+	at org.spongepowered.asm.mixin.transformer.MixinConfig.onSelect(MixinConfig.java:453) ~[liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.selectConfigs(MixinTransformer.java:608) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.select(MixinTransformer.java:570) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.checkSelect(MixinTransformer.java:548) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:451) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at org.spongepowered.asm.mixin.transformer.Proxy.transform(Proxy.java:72) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at net.minecraft.launchwrapper.LaunchClassLoader.runTransformers(LaunchClassLoader.java:279) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:176) [launchwrapper-1.12.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [?:1.8.0_202]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [?:1.8.0_202]
+	at net.minecraft.launchwrapper.LaunchClassLoader.registerTransformer(LaunchClassLoader.java:88) [launchwrapper-1.12.jar:?]
+	at com.mumfrey.liteloader.launch.ClassTransformerManager.injectTransformer(ClassTransformerManager.java:194) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.launch.ClassTransformerManager.injectDownstreamTransformers(ClassTransformerManager.java:180) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.launch.LiteLoaderTweaker.onPreBeginGame(LiteLoaderTweaker.java:409) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.launch.LiteLoaderTweaker.getLaunchTarget(LiteLoaderTweaker.java:317) [liteloader-1.12.2-SNAPSHOT.jar:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:130) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:05] [main/INFO]: optifine not detected
+[02:38:05] [main/INFO]: optifine not detected
+[02:38:05] [main/INFO]: [LiteOptimizer] world/tile_entity_removal: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/pending_ticks_chunk_lookup: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] memory/entity_data_manager: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/item_merging: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/block_collisions: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/furnace_recipe_cache: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/entity_fluid_checks: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/raytrace_allocations: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/structure_lookup_index: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/hard_hitbox_entity_list: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/entity_type_counts: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] memory/itemstack_is_empty: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] memory/blockstate_property_storage: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/property_hashcode_cache: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] world/hopper_entity_lookup: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] dev/parity: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] render/sodium: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] render/model_display_lists: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] render/tile_entity_frustum: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] memory/baked_quad_dedup: enabled
+[02:38:05] [main/INFO]: [LiteOptimizer] dev/bench: disabled
+[02:38:05] [main/INFO]: [LiteOptimizer] dev/nopause: disabled
+[02:38:06] [main/INFO]: Injecting additional class transformer class 'com.mumfrey.liteloader.transformers.event.EventTransformer'
+[02:38:06] [main/INFO]: Injecting additional class transformer class 'com.mumfrey.liteloader.common.transformers.LiteLoaderPacketTransformer'
+[02:38:06] [main/INFO]: Injecting additional class transformer class 'com.mumfrey.liteloader.transformers.event.json.ModEventInjectionTransformer'
+[02:38:06] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[02:38:06] [main/WARN]: Method overwrite conflict for getTimer in mixins.carpetclient.json:IMixinMinecraft, previously written by com.mumfrey.liteloader.client.mixin.MixinMinecraft. Skipping method.
+[02:38:06] [main/WARN]: Method overwrite conflict for a in mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer, previously written by carpetclient.mixins.MixinEntityPlayer. Skipping method.
+[02:38:06] [main/WARN]: @Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer->@Redirect::redirect$noClip$zpm000(Laed;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityPlayer->@Redirect::redirect$updateNoClipping$zbn000(Laed;)Z with priority 1000
+[02:38:06] [main/WARN]: @Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer->@Redirect::redirect$noClip$zpm000(Laed;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityPlayer->@Redirect::redirect$updateNoClipping$zbn000(Laed;)Z with priority 1000
+[02:38:06] [main/WARN]: @Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityLivingBase->@Redirect::redirect$fixElytraLanding$zha000(Lamu;)Z with priority 990, already redirected by mixins.carpetclient.json:MixinEntityLivingBase->@Redirect::redirect$redirectOnElytraLanded$zzk000(Lamu;)Z with priority 999
+[02:38:06] [main/WARN]: @Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityPlayerSP->@Redirect::redirect$onDoesGuiPauseGame$zhc000(Lblk;)Z with priority 990, already redirected by mixins.usefulmod.json:MixinEntityPlayerSP->@Redirect::redirect$mc2071$zkb000(Lblk;)Z with priority 1000
+[02:38:06] [Client thread/INFO]: Setting user: Kisde
+[02:38:07] [Client thread/WARN]: @ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$overrideMaxSize$zje000(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$modify32$zbh000(I)I with priority 1000
+[02:38:07] [Client thread/WARN]: @ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$overrideMaxSize$zje000(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$modify32$zbh000(I)I with priority 1000
+[02:38:07] [Client thread/WARN]: @ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$overrideMaxSize$zje000(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$modify32$zbh000(I)I with priority 1000
+[02:38:08] [Client thread/INFO]: LWJGL Version: 2.9.4
+[02:38:08] [Client thread/INFO]: Reloading ResourceManager: Default, FaihtfulMatuAddons 1.12, XeKr redstone display1.12.zip, 1.12_Gaemer_Tools_32x.zip
+[02:38:09] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[02:38:09] [Thread-3/INFO]: Initializing LWJGL OpenAL
+[02:38:09] [Thread-3/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[02:38:09] [Thread-3/INFO]: OpenAL initialized.
+[02:38:09] [Sound Library Loader/INFO]: Sound engine started
+[02:38:10] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater.png
+java.io.FileNotFoundException: minecraft:textures/block/repeater.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.a(SourceFile:100) [cev.class:?]
+	at bib.aq(SourceFile:530) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:10] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/furnace_front.png
+java.io.FileNotFoundException: minecraft:textures/blocks/furnace_front.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.a(SourceFile:100) [cev.class:?]
+	at bib.aq(SourceFile:530) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:10] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/oak.png
+java.io.FileNotFoundException: minecraft:textures/blocks/oak.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.a(SourceFile:100) [cev.class:?]
+	at bib.aq(SourceFile:530) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:11] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/cobblestone.png
+java.io.FileNotFoundException: minecraft:textures/block/cobblestone.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.a(SourceFile:100) [cev.class:?]
+	at bib.aq(SourceFile:530) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:11] [Client thread/WARN]: Texture minecraft:textures/items/broken/broken_pickaxe.png with size 255x255 limits mip level from 4 to 0
+[02:38:11] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater_on.png
+java.io.FileNotFoundException: minecraft:textures/block/repeater_on.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.a(SourceFile:100) [cev.class:?]
+	at bib.aq(SourceFile:530) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:11] [Client thread/WARN]: textures: dropping miplevel from 4 to 0, because of minimum power of two: 1
+[02:38:11] [Client thread/INFO]: Created: 2048x2048 textures-atlas
+[02:38:11] [Client thread/INFO]: baked_quad_dedup: 43690 quads baked, 29214 unique (14476 shared)
+[02:38:12] [Client thread/INFO]: JInput Component Registry is initialising...
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/ERROR]: The jar file /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar has a security seal for path net.java.games.input, but that path is defined and not secure
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller Power Button on Unknown...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller Power Button on Unknown...
+[02:38:12] [Client thread/INFO]: Inspecting Mouse controller foostan Corne v4 Mouse on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller foostan Corne v4 System Control on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller foostan Corne v4 Keyboard on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller Kingston HyperX Virtual Surround Sound Consumer Control on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller keyd virtual keyboard on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Mouse controller keyd virtual pointer on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller Kingston HyperX QuadCast S Consumer Control on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Mouse controller Logitech G502 HERO Gaming Mouse on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Keyboard controller foostan Corne v4 on USB port...
+[02:38:12] [Client thread/INFO]: Inspecting Stick controller keyd virtual pointer on Unknown...
+[02:38:12] [Client thread/INFO]: JInput Component Registry initialised, found 12 controller(s) 663 component(s)
+[02:38:12] [Client thread/INFO]: LiteLoader begin INIT...
+[02:38:12] [Client thread/INFO]: Baking listener list for CoreProvider with 2 listeners
+[02:38:12] [Client thread/INFO]: Injecting external mods into class path...
+[02:38:12] [Client thread/INFO]: Successfully injected mod file '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod' into classpath
+[02:38:12] [Client thread/INFO]: Injecting external mods into class path...
+[02:38:12] [Client thread/INFO]: Discovering mods on class path...
+[02:38:12] [Client thread/INFO]: Searching /usr/share/PrismLauncher/NewLaunch.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/mojang/patchy/1.3.9/patchy-1.3.9.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/oshi-project/oshi-core/1.1/oshi-core-1.1.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/net/sf/jopt-simple/jopt-simple/5.0.3/jopt-simple-5.0.3.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/io/netty/netty-all/4.1.9.Final/netty-all-4.1.9.Final.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/google/guava/guava/21.0/guava-21.0.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/commons-io/commons-io/2.5/commons-io-2.5.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/commons-codec/commons-codec/1.10/commons-codec-1.10.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/mojang/authlib/1.5.25/authlib-1.5.25.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/mojang/realms/1.10.22/realms-1.10.22.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/it/unimi/dsi/fastutil/7.1.0/fastutil-7.1.0.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-all/5.2/asm-all-5.2.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/mumfrey/liteloader/1.12.2-SNAPSHOT/liteloader-1.12.2-SNAPSHOT.jar...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/libraries/com/mojang/minecraft/1.12.2/minecraft-1.12.2-client.jar...
+[02:38:12] [Client thread/INFO]: Discovering mods in valid mod files...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet_Client-v1.4d.220122.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/connect_to_1_12_x-1.12.2-1.5.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/itemscroller-liteloader-1.12.2-0.31.1.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/litematica-liteloader-1.12.2-0.31.4.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/minihud-liteloader-1.12.2-0.41.1.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tweakeroo-liteloader-1.12.2-0.31.0.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/UsefulMod-1.12.2-1.1.0.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_voxelMap_1.7.1_for_1.12.2.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/BBOutlineReloaded-1.0.13-1.12.2-litemod.jar...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/malilib-liteloader-1.12.2-0.54.0.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-chatcalc-1.0-mc1.12.2.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-litetweaker-1.10.4-mc1.12.2.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/isorenders-0.1.0.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/schematicpreview-liteloader-1.12.2-0.1.0.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/modelgapfix-liteloader-1.12.2-1.0.0.litemod...
+[02:38:12] [Client thread/INFO]: Searching /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod...
+[02:38:12] [Client thread/INFO]: Found 1 potential matches
+[02:38:12] [Client thread/INFO]: Discovering mods in valid mod files...
+[02:38:12] [Client thread/INFO]: Mod class discovery completed
+[02:38:12] [Client thread/INFO]: LiteLoader begin POSTINIT...
+[02:38:12] [Client thread/INFO]: Inhibiting sound handler reload
+[02:38:12] [Client thread/INFO]: Registering interface provider com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient for API LiteLoader core API
+[02:38:12] [Client thread/WARN]: Injection warning: LVT in buy::a(Lvg;Lbxy;F)V has incompatible changes at opcode 326 in callback buy::handler$renderEntitiesDevelopmentLocals$bca000.
+Expected: [D, D, D, Lvg;, D, D, D, Ljava/util/List;, Ljava/util/List;, Ljava/util/List;, Let$b;]
+   Found: [D, D, D, Lvg;, Ljava/util/List;, Ljava/util/List;, Let$b;]
+[02:38:12] [Client thread/INFO]: Registering interface provider com.mumfrey.liteloader.client.PacketEventsClient for API LiteLoader core API
+[02:38:12] [Client thread/INFO]: Registering interface provider com.mumfrey.liteloader.client.ClientPluginChannelsClient for API LiteLoader core API
+[02:38:12] [Client thread/INFO]: Registering interface provider com.mumfrey.liteloader.core.ServerPluginChannels for API LiteLoader core API
+[02:38:12] [Client thread/INFO]: Registering interface provider com.mumfrey.liteloader.messaging.MessageBus for API LiteLoader core API
+[02:38:12] [Client thread/INFO]: Discovered 17 total mod(s), injected 0 tweak(s)
+[02:38:12] [Client thread/INFO]: Loading mod from carpetclient.LiteModCarpetClient
+[02:38:12] [Client thread/INFO]: Baking listener list for ModLoadObserver with 1 listeners
+[02:38:12] [Client thread/INFO]: Successfully added mod Carpet Client version v1.4d.220122
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet_Client-v1.4d.220122.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "Carpet_Client-v1.4d.220122.litemod" as mod resource pack with identifier "Carpet Client"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet_Client-v1.4d.220122.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from net.earthcomputer.connect_to_1_12_x.LiteModConnectTo112x
+[02:38:12] [Client thread/INFO]: Successfully added mod Connect to 1.12.x version 1.5
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/connect_to_1_12_x-1.12.2-1.5.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "connect_to_1_12_x-1.12.2-1.5.litemod" as mod resource pack with identifier "Connect to 1.12.x"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/connect_to_1_12_x-1.12.2-1.5.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Dependency check for itemscroller passed
+[02:38:12] [Client thread/INFO]: Loading mod from fi.dy.masa.itemscroller.LiteModItemScroller
+[02:38:12] [Client thread/INFO]: Successfully added mod Item Scroller version 0.31.1
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/itemscroller-liteloader-1.12.2-0.31.1.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "itemscroller-liteloader-1.12.2-0.31.1.litemod" as mod resource pack with identifier "Item Scroller"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/itemscroller-liteloader-1.12.2-0.31.1.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Dependency check for litematica passed
+[02:38:12] [Client thread/INFO]: Loading mod from fi.dy.masa.litematica.LiteModLitematica
+[02:38:12] [Client thread/INFO]: Successfully added mod Litematica version 0.31.4
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/litematica-liteloader-1.12.2-0.31.4.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "litematica-liteloader-1.12.2-0.31.4.litemod" as mod resource pack with identifier "Litematica"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/litematica-liteloader-1.12.2-0.31.4.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Dependency check for minihud passed
+[02:38:12] [Client thread/INFO]: Loading mod from fi.dy.masa.minihud.LiteModMiniHud
+[02:38:12] [Client thread/INFO]: Successfully added mod MiniHUD version 0.41.1
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/minihud-liteloader-1.12.2-0.41.1.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "minihud-liteloader-1.12.2-0.41.1.litemod" as mod resource pack with identifier "MiniHUD"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/minihud-liteloader-1.12.2-0.41.1.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from com.mumfrey.worldeditcui.LiteModWorldEditCUI
+[02:38:12] [Client thread/INFO]: Successfully added mod WorldEditCUI version 1.12.1_01
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod" as mod resource pack with identifier "WorldEditCUI"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from nessiesson.newlight.LiteModNewLight
+[02:38:12] [Client thread/INFO]: Successfully added mod Newlight version 1.0.2-SNAPSHOT
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod" as mod resource pack with identifier "Newlight"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Dependency check for tweakeroo passed
+[02:38:12] [Client thread/INFO]: Loading mod from fi.dy.masa.tweakeroo.LiteModTweakeroo
+[02:38:12] [Client thread/INFO]: Successfully added mod Tweakeroo version 0.31.0
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tweakeroo-liteloader-1.12.2-0.31.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "tweakeroo-liteloader-1.12.2-0.31.0.litemod" as mod resource pack with identifier "Tweakeroo"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tweakeroo-liteloader-1.12.2-0.31.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from nessiesson.usefulmod.LiteModUsefulMod
+[02:38:12] [Client thread/INFO]: Successfully added mod UsefulMod version 1.1.0
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/UsefulMod-1.12.2-1.1.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "UsefulMod-1.12.2-1.1.0.litemod" as mod resource pack with identifier "UsefulMod"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/UsefulMod-1.12.2-1.1.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from com.mamiyaotaru.voxelmap.litemod.LiteModVoxelMap
+[02:38:12] [Client thread/INFO]: Successfully added mod VoxelMap version 1.7.1
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_voxelMap_1.7.1_for_1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "mod_voxelMap_1.7.1_for_1.12.2.litemod" as mod resource pack with identifier "VoxelMap"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_voxelMap_1.7.1_for_1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from com.irtimaled.bbor.litemod.LiteMod
+[02:38:12] [Client thread/INFO]: Successfully added mod BoundingBoxOutlineReloaded version 1.0.13-1.12.2
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/BBOutlineReloaded-1.0.13-1.12.2-litemod.jar" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "BBOutlineReloaded-1.0.13-1.12.2-litemod.jar" as mod resource pack with identifier "BoundingBoxOutlineReloaded"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/BBOutlineReloaded-1.0.13-1.12.2-litemod.jar" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from fi.dy.masa.malilib.LiteModMaLiLib
+[02:38:12] [Client thread/INFO]: Successfully added mod MaLiLib version 0.54.0
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/malilib-liteloader-1.12.2-0.54.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "malilib-liteloader-1.12.2-0.54.0.litemod" as mod resource pack with identifier "MaLiLib"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/malilib-liteloader-1.12.2-0.54.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from tomb.chatcalc.LiteModChatCalc
+[02:38:12] [Client thread/INFO]: [STDOUT]: test
+[02:38:12] [Client thread/INFO]: Successfully added mod ChatCalc version 1.0
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-chatcalc-1.0-mc1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "mod-chatcalc-1.0-mc1.12.2.litemod" as mod resource pack with identifier "ChatCalc"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-chatcalc-1.0-mc1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Dependency check for litetweaker passed
+[02:38:12] [Client thread/INFO]: Loading mod from xyz.crazyh.litetweaker.LiteModLiteTweaker
+[02:38:12] [Client thread/INFO]: Successfully added mod LiteTweaker version 1.10.4
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-litetweaker-1.10.4-mc1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "mod-litetweaker-1.10.4-mc1.12.2.litemod" as mod resource pack with identifier "LiteTweaker"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-litetweaker-1.10.4-mc1.12.2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from com.glisco.isorenders.LiteModIsoRenders
+[02:38:12] [Client thread/INFO]: Successfully added mod IsoRenders version 0.1.0
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/isorenders-0.1.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "isorenders-0.1.0.litemod" as mod resource pack with identifier "IsoRenders"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/isorenders-0.1.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Dependency check for schematicpreview passed
+[02:38:12] [Client thread/INFO]: Loading mod from dev.froyln.schematicpreview.LiteModSchematicPreview
+[02:38:12] [Client thread/INFO]: Successfully added mod SchematicPreview version 0.1.0
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/schematicpreview-liteloader-1.12.2-0.1.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "schematicpreview-liteloader-1.12.2-0.1.0.litemod" as mod resource pack with identifier "SchematicPreview"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/schematicpreview-liteloader-1.12.2-0.1.0.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Loading mod from dev.froyln.liteoptimizer.LiteModLiteOptimizer
+[02:38:12] [Client thread/INFO]: Successfully added mod LiteOptimizer version 0.6.0-rc2
+[02:38:12] [Client thread/INFO]: Adding "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Setting up "liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod" as mod resource pack with identifier "LiteOptimizer"
+[02:38:12] [Client thread/INFO]: Successfully added "/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod" to active resource pack set
+[02:38:12] [Client thread/INFO]: Initialising mod Carpet Client version v1.4d.220122
+[02:38:12] [Client thread/INFO]: Initialising mod Connect to 1.12.x version 1.5
+[02:38:12] [Client thread/INFO]: Initialising mod Item Scroller version 0.31.1
+[02:38:12] [Client thread/INFO]: Initialising mod Litematica version 0.31.4
+[02:38:12] [Client thread/INFO]: Initialising mod MiniHUD version 0.41.1
+[02:38:12] [Client thread/INFO]: Initialising mod WorldEditCUI version 1.12.1_01
+[02:38:12] [Client thread/INFO]: Initialising mod Newlight version 1.0.2-SNAPSHOT
+[02:38:12] [Client thread/INFO]: Initialising mod Tweakeroo version 0.31.0
+[02:38:12] [Client thread/INFO]: Initialising mod UsefulMod version 1.1.0
+[02:38:12] [Client thread/INFO]: Initialising mod VoxelMap version 1.7.1
+[02:38:12] [Client thread/INFO]: Initialising mod BoundingBoxOutlineReloaded version 1.0.13-1.12.2
+[02:38:12] [Client thread/INFO]: Initialising mod MaLiLib version 0.54.0
+[02:38:12] [Client thread/INFO]: Initialising mod ChatCalc version 1.0
+[02:38:12] [Client thread/INFO]: Initialising mod LiteTweaker version 1.10.4
+[02:38:12] [Client thread/INFO]: Initialising mod IsoRenders version 0.1.0
+[02:38:12] [Client thread/INFO]: Initialising mod SchematicPreview version 0.1.0
+[02:38:12] [Client thread/INFO]: Initialising mod LiteOptimizer version 0.6.0-rc2
+[02:38:12] [Client thread/INFO]: [LiteOptimizer] 0.6.0-rc2 loaded; disabled: tile_entity_removal, pending_ticks_chunk_lookup, itemstack_is_empty, entity_data_manager, entity_fluid_checks, block_collisions, hard_hitbox_entity_list, item_merging, equipment_change_check, cramming_predicate_cache, entity_type_counts, falling_block_movement, furnace_recipe_cache, raytrace_allocations, blockpos_garbage, nbt_tag_pooling
+[02:38:12] [Client thread/INFO]: Baking listener list for InterfaceObserver with 0 listeners
+[02:38:12] [Client thread/INFO]: Listener WorldEditCUI is registering MessageBus channel wecui:wecui
+[02:38:12] [Client thread/WARN]: @Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityRenderer->@Redirect::redirect$fixSpectator$zpn001(Lbud;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityRenderer->@Redirect::redirect$fixSpectator$zbg000(Lbud;)Z with priority 1000
+[02:38:13] [Client thread/WARN]: ERROR : Couldn't load Narrator library : Unable to load library 'fliteWrapper': Native library (linux-x86-64/libfliteWrapper.so) not found in resource path ([file:/usr/share/PrismLauncher/NewLaunch.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/lwjgl/2.9.4-nightly-20150209/lwjgl-2.9.4-nightly-20150209.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/lwjgl/lwjgl/lwjgl_util/2.9.4-nightly-20150209/lwjgl_util-2.9.4-nightly-20150209.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/patchy/1.3.9/patchy-1.3.9.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/oshi-project/oshi-core/1.1/oshi-core-1.1.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/net/java/dev/jna/jna/4.4.0/jna-4.4.0.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/net/sf/jopt-simple/jopt-simple/5.0.3/jopt-simple-5.0.3.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/io/netty/netty-all/4.1.9.Final/netty-all-4.1.9.Final.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/google/guava/guava/21.0/guava-21.0.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/commons-io/commons-io/2.5/commons-io-2.5.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/commons-codec/commons-codec/1.10/commons-codec-1.10.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/authlib/1.5.25/authlib-1.5.25.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/realms/1.10.22/realms-1.10.22.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/it/unimi/dsi/fastutil/7.1.0/fastutil-7.1.0.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/text2speech/1.10.3/text2speech-1.10.3.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/org/ow2/asm/asm-all/5.2/asm-all-5.2.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/mumfrey/liteloader/1.12.2-SNAPSHOT/liteloader-1.12.2-SNAPSHOT.jar, file:/home/froyln/.local/share/PrismLauncher/libraries/com/mojang/minecraft/1.12.2/minecraft-1.12.2-client.jar, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/Carpet_Client-v1.4d.220122.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/connect_to_1_12_x-1.12.2-1.5.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/itemscroller-liteloader-1.12.2-0.31.1.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/malilib-liteloader-1.12.2-0.54.0.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/litematica-liteloader-1.12.2-0.31.4.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/minihud-liteloader-1.12.2-0.41.1.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-newlight-1.0.2-SNAPSHOT-mc1.12.2.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/tweakeroo-liteloader-1.12.2-0.31.0.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/UsefulMod-1.12.2-1.1.0.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_voxelMap_1.7.1_for_1.12.2.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/BBOutlineReloaded-1.0.13-1.12.2-litemod.jar, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-chatcalc-1.0-mc1.12.2.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod-litetweaker-1.10.4-mc1.12.2.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/isorenders-0.1.0.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/schematicpreview-liteloader-1.12.2-0.1.0.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/modelgapfix-liteloader-1.12.2-1.0.0.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod, file:/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/mods/1.12.2/mod_worldeditcui_1.12.1_01_lite_mc1.12.1.litemod])
+[02:38:13] [Client thread/INFO]: Reloading ResourceManager: Default, LiteLoader, Carpet Client, Connect to 1.12.x, Item Scroller, Litematica, MiniHUD, WorldEditCUI, Newlight, Tweakeroo, UsefulMod, VoxelMap, BoundingBoxOutlineReloaded, MaLiLib, ChatCalc, LiteTweaker, IsoRenders, SchematicPreview, LiteOptimizer, FaihtfulMatuAddons 1.12, XeKr redstone display1.12.zip, 1.12_Gaemer_Tools_32x.zip
+[02:38:14] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater.png
+java.io.FileNotFoundException: minecraft:textures/block/repeater.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.c(SourceFile:105) [cev.class:?]
+	at cev.a(SourceFile:93) [cev.class:?]
+	at bib.f(SourceFile:761) [bib.class:?]
+	at com.mumfrey.liteloader.client.ResourcesClient.refreshResources(ResourcesClient.java:45) [ResourcesClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient.onStartupComplete(LiteLoaderEventBrokerClient.java:275) [LiteLoaderEventBrokerClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at bib.handler$onStartupComplete$bch000(SourceFile:9676) [bib.class:?]
+	at bib.aq(SourceFile:583) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:14] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/furnace_front.png
+java.io.FileNotFoundException: minecraft:textures/blocks/furnace_front.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.c(SourceFile:105) [cev.class:?]
+	at cev.a(SourceFile:93) [cev.class:?]
+	at bib.f(SourceFile:761) [bib.class:?]
+	at com.mumfrey.liteloader.client.ResourcesClient.refreshResources(ResourcesClient.java:45) [ResourcesClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient.onStartupComplete(LiteLoaderEventBrokerClient.java:275) [LiteLoaderEventBrokerClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at bib.handler$onStartupComplete$bch000(SourceFile:9676) [bib.class:?]
+	at bib.aq(SourceFile:583) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:14] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/oak.png
+java.io.FileNotFoundException: minecraft:textures/blocks/oak.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.c(SourceFile:105) [cev.class:?]
+	at cev.a(SourceFile:93) [cev.class:?]
+	at bib.f(SourceFile:761) [bib.class:?]
+	at com.mumfrey.liteloader.client.ResourcesClient.refreshResources(ResourcesClient.java:45) [ResourcesClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient.onStartupComplete(LiteLoaderEventBrokerClient.java:275) [LiteLoaderEventBrokerClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at bib.handler$onStartupComplete$bch000(SourceFile:9676) [bib.class:?]
+	at bib.aq(SourceFile:583) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:14] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/cobblestone.png
+java.io.FileNotFoundException: minecraft:textures/block/cobblestone.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.c(SourceFile:105) [cev.class:?]
+	at cev.a(SourceFile:93) [cev.class:?]
+	at bib.f(SourceFile:761) [bib.class:?]
+	at com.mumfrey.liteloader.client.ResourcesClient.refreshResources(ResourcesClient.java:45) [ResourcesClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient.onStartupComplete(LiteLoaderEventBrokerClient.java:275) [LiteLoaderEventBrokerClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at bib.handler$onStartupComplete$bch000(SourceFile:9676) [bib.class:?]
+	at bib.aq(SourceFile:583) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:14] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater_on.png
+java.io.FileNotFoundException: minecraft:textures/block/repeater_on.png
+	at cei.a(SourceFile:59) ~[cei.class:?]
+	at cev.a(SourceFile:56) ~[cev.class:?]
+	at cdp.b(SourceFile:96) [cdp.class:?]
+	at cdp.a(SourceFile:76) [cdp.class:?]
+	at cgb.n(SourceFile:763) [cgb.class:?]
+	at cgb.a(SourceFile:188) [cgb.class:?]
+	at cgc.a(SourceFile:23) [cgc.class:?]
+	at cev.c(SourceFile:105) [cev.class:?]
+	at cev.a(SourceFile:93) [cev.class:?]
+	at bib.f(SourceFile:761) [bib.class:?]
+	at com.mumfrey.liteloader.client.ResourcesClient.refreshResources(ResourcesClient.java:45) [ResourcesClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient.onStartupComplete(LiteLoaderEventBrokerClient.java:275) [LiteLoaderEventBrokerClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at bib.handler$onStartupComplete$bch000(SourceFile:9676) [bib.class:?]
+	at bib.aq(SourceFile:583) [bib.class:?]
+	at bib.a(SourceFile:404) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[02:38:14] [Client thread/INFO]: Created: 2048x2048 textures-atlas
+[02:38:15] [Client thread/INFO]: baked_quad_dedup: 43690 quads baked, 29214 unique (14476 shared)
+[02:38:15] [Client thread/INFO]: Calling late init for mod WorldEditCUI
+[02:38:15] [Client thread/INFO]: Calling late init for mod VoxelMap
+[02:38:15] [Client thread/INFO]: [STDOUT]: Error loading old block IDs config file from litemod!
+[02:38:15] [Client thread/INFO]: [STDERR]: java.io.FileNotFoundException: voxelmap:conf/blockids.txt
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at cei.a(SourceFile:59)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at cev.a(SourceFile:56)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at com.mamiyaotaru.voxelmap.util.g.for(Unknown Source)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at com.mamiyaotaru.voxelmap.a.<init>(Unknown Source)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at com.mamiyaotaru.voxelmap.t.do(Unknown Source)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at com.mamiyaotaru.voxelmap.litemod.LiteModVoxelMap.onInitCompleted(Unknown Source)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at com.mumfrey.liteloader.client.LiteLoaderEventBrokerClient.onStartupComplete(LiteLoaderEventBrokerClient.java:283)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at bib.handler$onStartupComplete$bch000(SourceFile:9676)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at bib.aq(SourceFile:583)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at bib.a(SourceFile:404)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at net.minecraft.client.main.Main.main(SourceFile:123)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129)
+[02:38:15] [Client thread/INFO]: [STDERR]: 	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70)
+[02:38:15] [Client thread/INFO]: [STDOUT]: CATEGORY ORDER IS 11
+[02:38:15] [Client thread/INFO]: Created: 256x256 waypoints-atlas
+[02:38:15] [Client thread/INFO]: Created: 256x128 chooser-atlas
+[02:38:15] [Client thread/INFO]: Created: 512x512 mobs-atlas
+[02:38:15] [Client thread/INFO]: Calling late init for mod MaLiLib
+[02:38:16] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/malilib.json' is not readable
+[02:38:16] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[02:38:16] [Client thread/INFO]: Calling late init for mod IsoRenders
+[02:38:16] [Client thread/INFO]: Baking listener list for ViewportListener with 1 listeners
+[02:38:16] [Client thread/INFO]: Sound handler reload inhibit removed
+[02:38:16] [Client thread/INFO]: Reloading sound handler
+[02:38:16] [Client thread/INFO]: SoundSystem shutting down...
+[02:38:16] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[02:38:16] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[02:38:16] [Client thread/INFO]: Baking listener list for GameLoopListener with 0 listeners
+[02:38:16] [Client thread/INFO]: Baking listener list for RenderListener with 1 listeners
+[02:38:16] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[02:38:16] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[02:38:17] [Thread-8/INFO]: OpenAL initialized.
+[02:38:17] [Sound Library Loader/INFO]: Sound engine started
+[02:38:17] [Client thread/INFO]: Baking listener list for TickObserver with 3 listeners
+[02:38:17] [Client thread/INFO]: Baking listener list for PostRenderObserver with 3 listeners
+[02:38:17] [Client thread/INFO]: Baking listener list for Tickable with 9 listeners
+[02:38:17] [Client thread/INFO]: Baking listener list for FrameBufferListener with 0 listeners
+[02:40:16] [Client thread/INFO]: Baking listener list for ServerCommandProvider with 0 listeners
+[02:40:16] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[02:40:16] [Server thread/INFO]: Generating keypair
+[02:40:16] [Server thread/INFO]: Loaded 488 advancements
+[02:40:16] [Server thread/INFO]: create world dimension: 0 (seed: 2558629639865533195)
+[02:40:16] [Server thread/INFO]: create world dimension: -1 (seed: 2558629639865533195)
+[02:40:16] [Server thread/INFO]: create world dimension: 1 (seed: 2558629639865533195)
+[02:40:16] [Server thread/INFO]: Preparing start region for level 0
+[02:40:17] [Server thread/INFO]: Baking listener list for IEventState with 0 listeners
+[02:40:17] [Server thread/INFO]: Baking listener list for ServerTickable with 0 listeners
+[02:40:17] [Client thread/INFO]: Switching to protocol version 340
+[02:40:17] [Netty Server IO #1/INFO]: Generating new Event Handler Proxy Class com.mumfrey.liteloader.core.event.EventProxy
+[02:40:17] [Netty Server IO #1/INFO]: Successfully generated event handler proxy class with 124 handlers(s) and 124 total invocations
+[02:40:17] [Netty Local Client IO #0/INFO]: Baking listener list for PostLoginListener with 0 listeners
+[02:40:17] [Server thread/INFO]: Baking listener list for ServerPlayerListener with 0 listeners
+[02:40:17] [Server thread/INFO]: Kisde[local:E:6de19bf3] logged in with entity id 354 at (-1969.5, 37.256046588037954, 700.5)
+[02:40:17] [Server thread/INFO]: Kisde joined the game
+[02:40:17] [Client thread/INFO]: Baking listener list for PreJoinGameListener with 0 listeners
+[02:40:17] [Server thread/INFO]: Baking listener list for IEventState with 1 listeners
+[02:40:17] [Client thread/INFO]: Started 6 worker threads
+[02:40:18] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/malilib.json' is not readable
+[02:40:18] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[02:40:18] [Client thread/INFO]: Creating 10 render threads
+[02:40:18] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[02:40:18] [Server thread/INFO]: Saving and pausing game...
+[02:40:18] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[02:40:18] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[02:40:18] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[02:40:18] [Client thread/INFO]: Baking listener list for JoinGameListener with 3 listeners
+[02:40:18] [Client thread/INFO]: Baking listener list for PreRenderListener with 0 listeners
+[02:40:18] [Client thread/INFO]: Baking listener list for PostRenderListener with 4 listeners
+[02:40:18] [Client thread/INFO]: Baking listener list for HUDRenderListener with 2 listeners
+[02:40:18] [Client thread/INFO]: Baking listener list for ChatRenderListener with 0 listeners
+[02:40:19] [Client thread/INFO]: Baking listener list for WorldObserver with 2 listeners
+[02:40:19] [Server thread/INFO]: Baking listener list for PlayerMoveListener with 0 listeners
+[02:40:19] [Client thread/INFO]: Loaded 67 advancements
+[02:40:20] [Client thread/INFO]: Baking listener list for EntityRenderListener with 0 listeners
+[02:43:51] [Server thread/INFO]: Saving and pausing game...
+[02:43:51] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[02:43:52] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[02:43:52] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[02:44:01] [Client thread/INFO]: Stopping worker threads
+[02:44:02] [Server thread/INFO]: Stopping server
+[02:44:02] [Server thread/INFO]: Saving players
+[02:44:02] [Server thread/INFO]: Kisde lost connection: Disconnected
+[02:44:02] [Server thread/INFO]: Kisde left the game
+[02:44:02] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[02:44:02] [Server thread/INFO]: Saving worlds
+[02:44:02] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[02:44:02] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[02:44:02] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[02:50:11] [Client thread/INFO]: Connecting to localhost, 25565
+[02:50:11] [Server Connector #1/INFO]: Switching to protocol version 340
+[02:50:11] [Netty Epoll Client IO #0/INFO]: Looking for local structures (host:port=localhost:25565)
+[02:50:11] [Netty Epoll Client IO #0/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost/25565)
+[02:50:11] [Netty Epoll Client IO #0/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost)
+[02:50:11] [Netty Epoll Client IO #0/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost,25565)
+[02:50:11] [Netty Epoll Client IO #0/INFO]: No local structures folders found
+[02:50:11] [Client thread/INFO]: Started 6 worker threads
+[02:50:11] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/malilib.json' is not readable
+[02:50:11] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[02:50:11] [Client thread/INFO]: Creating 10 render threads
+[02:50:11] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[02:50:52] [Client thread/INFO]: Baking listener list for PlayerClickListener with 0 listeners
+[02:51:49] [Client thread/INFO]: Loaded 5 advancements
+[02:54:20] [Client thread/INFO]: Stopping worker threads
+[02:58:09] [Client thread/INFO]: Connecting to localhost, 25565
+[02:58:09] [Server Connector #2/INFO]: Switching to protocol version 340
+[02:58:09] [Netty Epoll Client IO #1/INFO]: Looking for local structures (host:port=localhost:25565)
+[02:58:09] [Netty Epoll Client IO #1/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost/25565)
+[02:58:09] [Netty Epoll Client IO #1/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost)
+[02:58:09] [Netty Epoll Client IO #1/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost,25565)
+[02:58:09] [Netty Epoll Client IO #1/INFO]: No local structures folders found
+[02:58:09] [Client thread/INFO]: Started 6 worker threads
+[02:58:09] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/malilib.json' is not readable
+[02:58:09] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe-20261015b/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[02:58:09] [Client thread/INFO]: Creating 10 render threads
+[02:58:09] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[02:58:10] [Client thread/INFO]: Loaded 5 advancements
+[03:03:37] [Client thread/INFO]: Stopping worker threads

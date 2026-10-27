@@ -78,8 +78,10 @@ Normalized startup conflict comparison: **7 distinct warnings both without and w
 no added or removed warnings (`mixin-warning-comparison.json`). Generated handler suffixes and
 repeat warnings were normalized. The baseline also logs malilib PacketSplitter empty-payload
 exceptions on this Carpet stack; candidate logs contain those exceptions too. This is baseline
-behavior, not a clean no-error certification. Direct reconnect also logged malilib config-override
-NPE; that path has not received an equivalent no-mod comparison and remains a release check.
+behavior, not a clean no-error certification. The direct-connect `ConfigOverrideUtils` NPE was
+compared on 2026-10-14 with the same vanilla server and full mod stack after LiteOptimizer was
+removed; it reproduced at the same MaLiLib line. See
+[`vanilla-server-smoke-2026-10-14`](../vanilla-server-smoke-2026-10-14/README.md).
 
 A moved overlay once needed F3+A during unreliable per-command VNC interaction. The control
 was repeated with a persistent VNC connection in true headless Sway. On both no-LiteOptimizer
@@ -91,7 +93,9 @@ This is a tested development candidate, **not** completion of the entire release
 Remaining gates include the other table features in `docs/compat/checklist.md`: exact prepared
 inert verification, translucent mode, other MiniHUD shapes/structures, piston preview, inventory
 scroll, placement/restock/stacking, other installed-mod commands/outlines, and resource-reload
-smoke. WorldEditCUI selection needs a suitable WorldEdit-capable fixture.
+smoke. The vanilla-server smoke and a built revision 21 startup are recorded in
+`docs/profiles/vanilla-server-smoke-2026-10-14/`; entity interaction is still unverified.
+WorldEditCUI selection needs a suitable WorldEdit-capable fixture.
 
 
 Desktop correction: the reused session was discovered to use `WLR_BACKENDS=wayland`,

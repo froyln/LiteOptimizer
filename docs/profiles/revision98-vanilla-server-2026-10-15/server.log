@@ -1,0 +1,48 @@
+[23:03:55] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[23:03:55] [Server thread/INFO]: Loading properties
+[23:03:55] [Server thread/INFO]: Default game type: SURVIVAL
+[23:03:55] [Server thread/INFO]: Generating keypair
+[23:03:55] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[23:03:55] [Server thread/INFO]: Using epoll channel type
+[23:03:55] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[23:03:55] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[23:03:55] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[23:03:55] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[23:03:55] [Server thread/INFO]: Preparing level "world"
+[23:03:56] [Server thread/INFO]: Loaded 488 advancements
+[23:03:56] [Server thread/INFO]: Preparing start region for level 0
+[23:03:56] [Server thread/INFO]: Done (0.437s)! For help, type "help" or "?"
+[23:03:56] [Server thread/INFO]: Starting remote control listener
+[23:03:56] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25575
+[23:06:47] [Server thread/INFO]: LiteOptTest[/127.0.0.1:53080] logged in with entity id 114 at (100.5, 4.0, 106.54029769213207)
+[23:06:47] [Server thread/INFO]: LiteOptTest joined the game
+[23:07:14] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:07:21] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:07:21] [RCON Client #3/INFO]: [Rcon: Set score of walk for player LiteOptTest to 0]
+[23:07:21] [RCON Client #3/INFO]: [Rcon: Teleported LiteOptTest to 100.75, 4.0, 106.5403]
+[23:07:21] [Server thread/WARN]: LiteOptTest moved wrongly!
+[23:07:48] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:07:48] [RCON Client #4/INFO]: [Rcon: Score 876 is in range -2147483648 to 2147483647]
+[23:08:11] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:08:11] [RCON Client #5/INFO]: [Rcon: Teleported LiteOptTest to 100.8125, 4.0, 115.1711]
+[23:08:24] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:08:24] [RCON Client #6/INFO]: [Rcon: Teleported LiteOptTest to 100.8125, 4.0, 115.1711]
+[23:08:39] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:08:39] [RCON Client #7/INFO]: [Rcon: Teleported LiteOptTest to 100.8125, 4.0, 115.1711]
+[23:10:16] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:10:16] [RCON Client #8/INFO]: [Rcon: Successfully found the block at 100, 3, 117]
+[23:10:16] [RCON Client #8/INFO]: [Rcon: Successfully found the block at 100, 3, 116]
+[23:10:16] [RCON Client #8/INFO]: [Rcon: Successfully found the block at 100, 3, 118]
+[23:10:26] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:10:26] [RCON Client #9/INFO]: [Rcon: Score 1 is in range -2147483648 to 2147483647]
+[23:10:41] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:10:41] [RCON Client #10/INFO]: [Rcon: Set score of stoneuse for player LiteOptTest to 0]
+[23:10:44] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:11:09] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:11:09] [RCON Client #12/INFO]: [Rcon: Teleported LiteOptTest to 100.8125, 4.0, 115.1711]
+[23:11:26] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:11:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:11:42] [RCON Client #14/INFO]: [Rcon: Score 876 is in range 876 to 876]
+[23:11:42] [RCON Client #14/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]
+[23:11:42] [RCON Client #14/INFO]: [Rcon: Block placed]
+[23:11:42] [RCON Client #14/INFO]: [Rcon: Successfully found the block at 100, 3, 117]

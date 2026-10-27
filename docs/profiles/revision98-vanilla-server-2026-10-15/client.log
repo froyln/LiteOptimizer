@@ -1,0 +1,15 @@
+[00:02:03] [Client thread/INFO]: Stopping worker threads
+[00:06:47] [Client thread/INFO]: Connecting to 127.0.0.1, 25565
+[00:06:47] [Server Connector #2/INFO]: Switching to protocol version 340
+[00:06:47] [Netty Epoll Client IO #1/INFO]: Looking for local structures (host:port=localhost:25565)
+[00:06:47] [Netty Epoll Client IO #1/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost/25565)
+[00:06:47] [Netty Epoll Client IO #1/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost)
+[00:06:47] [Netty Epoll Client IO #1/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher-parity-probe/instances/1.12.2 test ai parity rev44/minecraft/./config/BBOutlineReloaded/localhost,25565)
+[00:06:47] [Netty Epoll Client IO #1/INFO]: No local structures folders found
+[00:06:47] [Client thread/INFO]: Started 6 worker threads
+[00:06:47] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe/minecraft/liteconfig/common/malilib.json' is not readable
+[00:06:47] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[00:06:47] [Client thread/INFO]: Creating 10 render threads
+[00:06:47] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[00:06:48] [Client thread/INFO]: Loaded 5 advancements
+[00:10:23] [Client thread/INFO]: Baking listener list for PlayerClickListener with 0 listeners

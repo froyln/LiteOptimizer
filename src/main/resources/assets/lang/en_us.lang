@@ -79,4 +79,3 @@ sodium.options.threads.value=%s thread(s)
 sodium.options.default=Default
 sodium.options.buttons.undo=Undo
 sodium.options.buttons.apply=Apply
-sodium.options.buttons.donate=Buy coffee for JellySquid!"

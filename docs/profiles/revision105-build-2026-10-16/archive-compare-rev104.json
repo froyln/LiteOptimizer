@@ -1,0 +1,13 @@
+{
+  "baseline": "revision 104 exact installed artifact",
+  "baseline_sha256": "4d2c3a44fe33751a96362a918a6023641b91a7461159110d75ff64b3ff593237",
+  "candidate": "revision 105 build output",
+  "candidate_sha256": "7b886a420aac9dceca7c0c190c282629dc96a679353d2ec63218eb0d9f275ef6",
+  "baseline_entries": 729,
+  "candidate_entries": 729,
+  "missing": [],
+  "extra": [],
+  "content_different": [
+    "litemod.json"
+  ]
+}

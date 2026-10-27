@@ -29,6 +29,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -50,6 +51,8 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
     private final List<Thread> threads = new ArrayList<>();
 
     private ClonedChunkSectionCache sectionCache;
+    private ChunkRenderCacheLocal immediateCache;
+    private ChunkBuildBuffers immediateBuffers;
 
     private World world;
     private Vec3d cameraPosition = Vec3d.ZERO;
@@ -147,6 +150,8 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
 
         this.world = null;
         this.sectionCache = null;
+        this.immediateCache = null;
+        this.immediateBuffers = null;
     }
 
     public void cleanupSectionCache() {
@@ -162,6 +167,9 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
         while (uploadIterator.hasNext()) {
             ChunkBuildResult<T> result = uploadIterator.next();
             ChunkRenderContainer<T> section = result.render;
+            if (result.revision != section.getBuildRevision()) {
+                continue;
+            }
 
             ChunkBuildResult<T> oldResult = map.get(section);
 
@@ -188,6 +196,19 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
         this.backend.upload(RenderDevice.INSTANCE.createCommandList(), filterChunkBuilds(new DequeDrain<>(this.uploadQueue)));
 
         return true;
+    }
+
+    public void enqueueFutureUploads(Deque<CompletableFuture<ChunkBuildResult<T>>> futures) {
+        while (!futures.isEmpty()) {
+            try {
+                ChunkBuildResult<T> result = futures.remove().join();
+                if (result != null) {
+                    this.uploadQueue.add(result);
+                }
+            } catch (CancellationException ignored) {
+                // Cancelled rebuilds have no result to upload.
+            }
+        }
     }
 
     public void handleFailures() {
@@ -274,7 +295,7 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
 
     private static int getThreadCount() {
         int requested = SodiumClientMod.options().performance.chunkBuilderThreads;
-        return requested == 0 ? getOptimalThreadCount() : Math.min(requested, getMaxThreadCount());
+        return requested <= 0 ? getOptimalThreadCount() : Math.min(requested, getMaxThreadCount());
     }
 
     private static int getMaxThreadCount() {
@@ -329,11 +350,34 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
         return this.schedule(this.createRebuildTask(render));
     }
 
+    /** Runs a section rebuild on the render thread for Tweakeroo's immediate-build setting. */
+    public void scheduleRebuildTaskImmediate(ChunkRenderContainer<T> render) {
+        if (this.immediateCache == null) {
+            this.immediateCache = new ChunkRenderCacheLocal(Minecraft.getMinecraft(), this.world);
+            this.immediateBuffers = new ChunkBuildBuffers(this.vertexType, this.renderPassManager);
+        }
+        ChunkRenderBuildTask<T> task = this.createRebuildTask(render);
+        try {
+            ChunkBuildResult<T> result = task.performBuild(this.immediateCache, this.immediateBuffers, () -> false);
+            if (result != null) {
+                this.uploadQueue.add(result);
+            }
+        } catch (Throwable ex) {
+            this.failureQueue.add(ex);
+        } finally {
+            task.releaseResources();
+        }
+    }
+
     /**
      * Schedules the rebuild task asynchronously on the worker pool, returning a future wrapping the task.
      * @param render The render to rebuild
      */
     public CompletableFuture<ChunkBuildResult<T>> scheduleSortTaskAsync(ChunkRenderContainer<T> render) {
+        // A stale sort queue entry must not cancel a rebuild or copy pre-edit block entities.
+        if (render.needsRebuild() || render.hasPendingBuild()) {
+            return CompletableFuture.completedFuture(null);
+        }
         return this.schedule(this.createSortTask(render));
     }
 
@@ -342,21 +386,21 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
      * @param render The render to rebuild
      */
     private ChunkRenderBuildTask<T> createRebuildTask(ChunkRenderContainer<T> render) {
-        render.cancelRebuildTask();
+        long revision = render.cancelRebuildTask();
 
         ChunkRenderContext context = WorldSlice.prepare(this.world, render.getChunkPos(), this.sectionCache);
 
         if (context == null) {
-            return new ChunkRenderEmptyBuildTask<>(render);
+            return new ChunkRenderEmptyBuildTask<>(render, revision);
         } else {
-            return new ChunkRenderRebuildTask<>(render, context, render.getRenderOrigin()).withCameraPosition(this.cameraPosition);
+            return new ChunkRenderRebuildTask<>(render, revision, context, render.getRenderOrigin()).withCameraPosition(this.cameraPosition);
         }
     }
 
     private ChunkRenderBuildTask<T> createSortTask(ChunkRenderContainer<T> render) {
-        render.cancelRebuildTask();
+        long revision = render.cancelRebuildTask();
 
-        return new ChunkRenderTranslucencySortTask<>(render, render.getRenderOrigin(), this.cameraPosition);
+        return new ChunkRenderTranslucencySortTask<>(render, revision, render.getRenderOrigin(), this.cameraPosition);
     }
 
     public void onChunkDataChanged(int x, int y, int z) {
@@ -419,10 +463,12 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
          * currently available, it will wait on {@link ChunkBuilder#jobNotifier} field until notified.
          */
         private WrappedTask<T> getNextJob() {
-            WrappedTask<T> job = ChunkBuilder.this.buildQueue.poll();
-
-            if (job == null) {
-                synchronized (ChunkBuilder.this.jobNotifier) {
+            synchronized (ChunkBuilder.this.jobNotifier) {
+                while (this.running.get()) {
+                    WrappedTask<T> job = ChunkBuilder.this.buildQueue.poll();
+                    if (job != null) {
+                        return job;
+                    }
                     try {
                         ChunkBuilder.this.jobNotifier.wait();
                     } catch (InterruptedException ignored) {
@@ -430,7 +476,7 @@ public class ChunkBuilder<T extends ChunkGraphicsState> {
                 }
             }
 
-            return job;
+            return null;
         }
     }
 

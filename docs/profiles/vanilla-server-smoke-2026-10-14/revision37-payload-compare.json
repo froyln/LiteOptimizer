@@ -1,0 +1,15 @@
+{
+  "new_archive": "liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod",
+  "new_revision": 37,
+  "new_sha256": "53e9a3546baac034bb53e5fe8ec719cea071b7d32b0de43a01d3e819efbd247a",
+  "previous_installed_revision": 35,
+  "previous_sha256": "4c59feacd4b90a9d255893431b59617628db6c1460a1c73824e5b770c3f88645",
+  "archive_entries": 726,
+  "same_entry_names": true,
+  "different_entries": [
+    "litemod.json"
+  ],
+  "change": "revision field 35 -> 37; all code, resources, and mixin config/refmap entries match byte-for-byte",
+  "installed_sha256_matches_build": true,
+  "runtime_evidence": "revision37-full-stack-b1.log"
+}

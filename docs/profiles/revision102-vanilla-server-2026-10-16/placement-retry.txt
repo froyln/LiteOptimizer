@@ -1,0 +1,3 @@
+First retry (failed): F3 showed player XYZ 1205.027 / 4.000000 / 546.583 and target `Looking at: 1205 3 547 minecraft:grass`. After a P key press, RCON found air at `(1205,4,547)`, `stoneuse` stayed zero, and the five-stone stack remained unchanged.
+
+Fresh-launch retry (passed): before launching Minecraft, the disposable profile's use binding was set to P. At `(1205.278,4.0,549.157)`, F3 showed the ray targeting grass `(1205,3,550)`. Holding P for one second placed stone at `(1205,4,550)`. RCON then confirmed the block, `stoneuse = 1`, and a four-stone stack in hotbar slot 0. The block was restored to air and `save-all` succeeded. After the game exited, the original `key_key.use:-99` binding was restored.

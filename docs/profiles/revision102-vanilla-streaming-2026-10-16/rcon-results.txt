@@ -1,0 +1,20 @@
+Server: unmodified Mojang 1.12.2 server, loopback 127.0.0.1:25565; RCON 127.0.0.1:25576.
+Client: exact revision-102 artifact SHA-256 7209ca68471ce6944fae4cb179c2d75bd87e12e007150c5fa8ffba5711943abe; same archive payload as revision 103 except litemod.json revision metadata.
+
+Start setup at the saved baseline (no position teleport during the movement interval):
+- testfor Kisde {Dimension:0} => Found Kisde
+- scoreboard players set Kisde stream_walk 0 => Set score to 0
+- save-all => Saved the world
+- Player NBT at start: Dimension 0, Pos [1202.5, 4.0, 762.9990869706369], OnGround 1, playerGameType 0 (Survival)
+- F3 start: XYZ 1202.500 / 4.00000 / 762.999; chunk (75, 47); MultiplayerChunkCache 248.
+
+Movement: held forward plus the instance's configured sprint key (left Shift, `key_key.sprint:42`) for 60 seconds through the isolated loopback VNC desktop. No RCON teleport or position correction was issued during this interval.
+
+End checks:
+- testfor Kisde {Dimension:0} => Found Kisde
+- scoreboard players test Kisde stream_walk 0 99999999 => Score 26396 is in range (26,396 cm)
+- save-all => Saved the world
+- Player NBT at end: Dimension 0, Pos [1202.5, 4.0, 1022.0261782932686], OnGround 1, playerGameType 0 (Survival)
+- F3 end: XYZ 1202.500 / 4.00000 / 1022.026; chunk (75, 63); MultiplayerChunkCache 240; newly streamed flat terrain rendered.
+
+The F3 chunk coordinate advanced 16 columns (47 -> 63) over 259.027 blocks of ordinary client movement. The vanilla log contains `moved too quickly` warnings from the earlier setup teleports at 09:41, before the saved baseline and test interval. It contains no `moved too quickly` or `moved wrongly` warning after the 09:46:43 baseline reset. No warning during the accepted movement interval invalidates this streaming result. Earlier failed setup is retained in the server log for transparency.

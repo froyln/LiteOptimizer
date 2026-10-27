@@ -397,6 +397,7 @@ overwrites or shadows; `call` = an invocation inside some method that the mixin 
 | `net.minecraft.client.renderer.RenderGlobal` | `updateClouds` | member | mod_voxelMap_1.7.1_for_1.12.2.litemod | `MixinRenderGlobal` |
 | `net.minecraft.client.renderer.RenderItem` | `renderItemOverlayIntoGUI` | member | UsefulMod-1.12.2-1.1.0.litemod | `MixinRenderItem` |
 | `net.minecraft.client.renderer.ViewFrustum` | `updateChunkPositions` | call | tweakeroo-liteloader-1.12.2-0.31.0.litemod | `MixinRenderGlobal` |
+| `net.minecraft.client.renderer.block.model.ItemModelGenerator` | `getBlockParts` | member | modelgapfix-liteloader-1.12.2-1.0.0.litemod | `ItemModelGeneratorMixin` |
 | `net.minecraft.client.renderer.chunk.ChunkRenderDispatcher` | `updateTransparencyLater` | member | tweakeroo-liteloader-1.12.2-0.31.0.litemod | `MixinChunkRenderDispatcher` |
 | `net.minecraft.client.renderer.chunk.ChunkRenderWorker` | `isChunkExisting` | member | tweakeroo-liteloader-1.12.2-0.31.0.litemod | `MixinChunkRenderWorker` |
 | `net.minecraft.client.renderer.chunk.RenderChunk` | `needsImmediateUpdate` | call | tweakeroo-liteloader-1.12.2-0.31.0.litemod | `MixinRenderGlobal` |
@@ -644,4 +645,4 @@ overwrites or shadows; `call` = an invocation inside some method that the mixin 
 | `net.minecraft.world.gen.feature.WorldGenLiquids` | `generate` | member | minihud-liteloader-1.12.2-0.41.1.litemod | `WorldGenLiquidsMixin` |
 | `net.minecraft.world.storage.WorldInfo` | `getWorldTime` | member | mod-litetweaker-1.10.4-mc1.12.2.litemod | `MixinWorldInfo` |
 
-638 rows, 156 vanilla classes, 15 mods.
+639 rows, 157 vanilla classes, 16 mods.

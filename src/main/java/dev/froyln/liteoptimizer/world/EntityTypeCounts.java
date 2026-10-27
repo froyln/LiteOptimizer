@@ -9,7 +9,7 @@ import net.minecraft.entity.EntityLiving;
 
 /**
  * Per-world counters behind World.countEntities(Class): one int per class ever asked for,
- * maintained on entity add/remove and on the persistence flag flipping to true. The vanilla
+ * maintained on entity add/remove and on every persistence flag change. The vanilla
  * predicate is reproduced exactly: an entity counts for a class iff the class is assignable
  * from its class and it is not an EntityLiving with isNoDespawnRequired().
  */
@@ -57,15 +57,4 @@ public final class EntityTypeCounts {
         }
     }
 
-    /** The entity's persistence flag just became true while it is in the world: it no longer counts. */
-    public void becamePersistent(EntityLiving entity) {
-        if (this.counts.isEmpty()) {
-            return;
-        }
-        for (Map.Entry<Class<?>, int[]> e : this.counts.entrySet()) {
-            if (e.getKey().isAssignableFrom(entity.getClass())) {
-                e.getValue()[0]--;
-            }
-        }
-    }
 }

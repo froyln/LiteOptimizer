@@ -1,0 +1,54 @@
+[23:19:42] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[23:19:42] [Server thread/INFO]: Loading properties
+[23:19:42] [Server thread/INFO]: Default game type: SURVIVAL
+[23:19:42] [Server thread/INFO]: Generating keypair
+[23:19:42] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[23:19:42] [Server thread/INFO]: Using epoll channel type
+[23:19:42] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[23:19:42] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[23:19:42] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[23:19:42] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[23:19:42] [Server thread/INFO]: Preparing level "world"
+[23:19:42] [Server thread/INFO]: Loaded 488 advancements
+[23:19:42] [Server thread/INFO]: Preparing start region for level 0
+[23:19:42] [Server thread/INFO]: Done (0.470s)! For help, type "help" or "?"
+[23:19:42] [Server thread/INFO]: Starting remote control listener
+[23:19:42] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25575
+[23:20:35] [Server thread/INFO]: LiteOptTest[/127.0.0.1:54574] logged in with entity id 116 at (99.4192640022643, 4.0, 123.68799739928753)
+[23:20:35] [Server thread/INFO]: LiteOptTest joined the game
+[23:21:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:21:25] [RCON Client #2/INFO]: [Rcon: Set score of stoneuse for player LiteOptTest to 0]
+[23:21:25] [RCON Client #2/INFO]: [Rcon: Teleported LiteOptTest to 100.5, 4.0, 100.5]
+[23:21:25] [RCON Client #2/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:21:48] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:22:04] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:22:04] [RCON Client #4/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:22:51] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:23:37] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:24:12] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:24:12] [RCON Client #7/INFO]: [Rcon: Set LiteOptTest's game mode to Survival Mode]
+[23:24:12] [RCON Client #7/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 5 * [Stone]]
+[23:24:12] [RCON Client #7/INFO]: [Rcon: Teleported LiteOptTest to 100.5, 4.0, 100.5]
+[23:24:12] [RCON Client #7/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:24:38] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:25:04] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:25:04] [RCON Client #9/INFO]: [Rcon: Set score of minedirt for player LiteOptTest to 0]
+[23:25:09] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:25:09] [RCON Client #10/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:26:09] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:26:09] [RCON Client #11/INFO]: [Rcon: Set score of stoneuse for player LiteOptTest to 0]
+[23:26:09] [RCON Client #11/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 5 * [Stone]]
+[23:26:09] [RCON Client #11/INFO]: [Rcon: Teleported LiteOptTest to 100.5, 4.0, 100.5]
+[23:26:09] [RCON Client #11/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:26:13] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:29:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:29:34] [RCON Client #13/INFO]: [Rcon: Stopping the server]
+[23:29:34] [Server thread/INFO]: Stopping server
+[23:29:34] [Server thread/INFO]: Saving players
+[23:29:34] [Server thread/INFO]: Saving worlds
+[23:29:34] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[23:29:34] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[23:29:34] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[23:29:34] [Server Shutdown Thread/INFO]: Stopping server
+[23:29:34] [Server Shutdown Thread/INFO]: Saving players
+[23:29:34] [Server Shutdown Thread/INFO]: LiteOptTest lost connection: Server closed

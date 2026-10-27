@@ -11,6 +11,8 @@ import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import dev.froyln.liteoptimizer.dev.ParityOptions;
+
 /**
  * Decides per mixin class whether it is applied, from the package name:
  * {@code dev.froyln.liteoptimizer.mixin.<pillar>.<key>.X} is applied iff the pillar and the key are
@@ -23,6 +25,9 @@ public final class MixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
+        if (ParityOptions.apply(new File(Launch.minecraftHome, "parity/run.properties"))) {
+            Config.LOG.info("[LiteOptimizer] parity settings loaded from game directory");
+        }
         Config.load(new File(Launch.minecraftHome, "liteconfig/common/liteoptimizer.json"));
     }
 

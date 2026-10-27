@@ -1,0 +1,27 @@
+[14:31:57] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[14:31:57] [Server thread/INFO]: Loading properties
+[14:31:57] [Server thread/INFO]: Default game type: CREATIVE
+[14:31:57] [Server thread/INFO]: Generating keypair
+[14:31:57] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[14:31:57] [Server thread/INFO]: Using epoll channel type
+[14:31:57] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[14:31:57] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[14:31:57] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[14:31:57] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[14:31:58] [Server thread/INFO]: Preparing level "portal-world"
+[14:31:58] [Server thread/INFO]: Loaded 488 advancements
+[14:31:58] [Server thread/INFO]: Preparing start region for level 0
+[14:31:58] [Server thread/INFO]: Done (0.316s)! For help, type "help" or "?"
+[14:31:58] [Server thread/INFO]: Starting remote control listener
+[14:31:58] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25576
+[14:32:49] [Server thread/INFO]: Kisde[/127.0.0.1:38910] logged in with entity id 65 at (1.5, 4.0, 1.5)
+[14:32:49] [Server thread/INFO]: Kisde joined the game
+[14:35:02] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[14:35:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[14:35:34] [RCON Client #3/INFO]: [Rcon: Successfully found the block at 1, 5, 0]
+[14:35:34] [RCON Client #3/INFO]: [Rcon: Successfully found the block at 2, 6, 0]
+[14:35:34] [RCON Client #3/INFO]: [Rcon: Successfully found the block at 1, 7, 0]
+[14:36:32] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[14:36:32] [RCON Client #4/INFO]: [Rcon: Teleported Kisde to 1.5, 4.0, 0.5]
+[14:36:36] [Server thread/INFO]: Kisde has made the advancement [We Need to Go Deeper]
+[14:36:36] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3177ms behind, skipping 63 tick(s)

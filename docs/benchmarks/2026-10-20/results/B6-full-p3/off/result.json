@@ -1,0 +1,11 @@
+{
+  "frames": 15006,
+  "frame_mean_ms": 3.9985755844328934,
+  "slowest_1pct_mean_ms": 15.91978821192053,
+  "fps": 250.089057686733,
+  "mspt_mean": 4.005798415492958,
+  "mspt_samples": 1136,
+  "record_seconds": 60.00262522,
+  "enabled_options": [],
+  "finished_utc": "2026-10-20T17:59:34Z"
+}

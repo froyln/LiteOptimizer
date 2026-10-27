@@ -1,0 +1,35 @@
+[00:50:25] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[00:50:25] [Server thread/INFO]: Loading properties
+[00:50:25] [Server thread/INFO]: Default game type: CREATIVE
+[00:50:25] [Server thread/INFO]: Generating keypair
+[00:50:25] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[00:50:25] [Server thread/INFO]: Using epoll channel type
+[00:50:25] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[00:50:25] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[00:50:25] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[00:50:25] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[00:50:25] [Server thread/INFO]: Preparing level "disposable-world"
+[00:50:25] [Server thread/INFO]: Loaded 488 advancements
+[00:50:25] [Server thread/INFO]: Preparing start region for level 0
+[00:50:25] [Server thread/INFO]: Done (0.435s)! For help, type "help" or "?"
+[00:50:25] [Server thread/INFO]: Starting remote control listener
+[00:50:25] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25570
+[00:51:30] [Server thread/INFO]: LiteOptTest[/127.0.0.1:58948] logged in with entity id 87 at (260.5, 4.0, 0.5)
+[00:51:30] [Server thread/INFO]: LiteOptTest joined the game
+[00:52:23] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+[00:53:11] [Server thread/INFO]: Saving...
+[00:53:11] [Server thread/INFO]: Flushing all saves...
+[00:53:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (disposable-world): All chunks are saved
+[00:53:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[00:53:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[00:53:11] [Server thread/INFO]: Flushing completed
+[00:53:11] [Server thread/INFO]: Saved the world
+[00:56:47] [Server thread/INFO]: Stopping the server
+[00:56:47] [Server thread/INFO]: Stopping server
+[00:56:47] [Server thread/INFO]: Saving players
+[00:56:47] [Server thread/INFO]: Saving worlds
+[00:56:47] [Server thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[00:56:47] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_nether
+[00:56:47] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_end
+[00:56:47] [Server Shutdown Thread/INFO]: Stopping server
+[00:56:47] [Server Shutdown Thread/INFO]: Saving players

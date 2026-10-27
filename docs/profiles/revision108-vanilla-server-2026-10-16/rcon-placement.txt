@@ -1,0 +1,12 @@
+scoreboard players list LiteOptTest => Showing 14 tracked objective(s) for LiteOptTest:- minedirt: 4 (minedirt)- potion_use: 1 (potion_use)- rev96_walk: 4203 (rev96_walk)- potion: 1 (potion)- walk108: 876 (walk108)- rev97_walk: 4203 (rev97_walk)- trade: 1 (trade)- walk: 1227 (walk)- rev100potion: 1 (rev100potion)- stoneuse: 2 (stoneuse)- place108: 1 (place108)- stream_walk: 876 (stream_walk)- rev100trade: 1 (rev100trade)- walkOneCm: 876 (walkOneCm)
+testfor @p {playerGameType:0,Dimension:0} => Found LiteOptTest
+entitydata @p {} => LiteOptTest is a player and cannot be changed
+testforblock 107 4 110 minecraft:stone => The block at 107, 4, 110 is Air (expected: Stone)
+testforblock 107 3 110 minecraft:grass => Successfully found the block at 107, 3, 110
+stone scan => [(107, 4, 111)]
+
+scoreboard players list LiteOptTest => Showing 14 tracked objective(s) for LiteOptTest:- minedirt: 5 (minedirt)- potion_use: 1 (potion_use)- rev96_walk: 4203 (rev96_walk)- potion: 1 (potion)- walk108: 876 (walk108)- rev97_walk: 4203 (rev97_walk)- trade: 1 (trade)- walk: 1227 (walk)- rev100potion: 1 (rev100potion)- stoneuse: 2 (stoneuse)- place108: 1 (place108)- stream_walk: 876 (stream_walk)- rev100trade: 1 (rev100trade)- walkOneCm: 876 (walkOneCm)
+testforblock 107 4 111 minecraft:stone => Successfully found the block at 107, 4, 111
+testforblock 107 3 111 minecraft:air => The block at 107, 3, 111 is Grass Block (expected: Air)
+testforblock 107 3 111 minecraft:dirt => The block at 107, 3, 111 is Grass Block (expected: Dirt)
+save-all => Saving...Saved the world

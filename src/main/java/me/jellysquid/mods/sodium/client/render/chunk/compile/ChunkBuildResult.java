@@ -12,11 +12,13 @@ import me.jellysquid.mods.sodium.client.render.chunk.passes.BlockRenderPass;
  */
 public class ChunkBuildResult<T extends ChunkGraphicsState> {
     public final ChunkRenderContainer<T> render;
+    public final long revision;
     public final ChunkRenderData data;
     public BlockRenderPass[] passesToUpload;
 
-    public ChunkBuildResult(ChunkRenderContainer<T> render, ChunkRenderData data) {
+    public ChunkBuildResult(ChunkRenderContainer<T> render, long revision, ChunkRenderData data) {
         this.render = render;
+        this.revision = revision;
         this.data = data;
         this.passesToUpload = BlockRenderPass.VALUES;
     }

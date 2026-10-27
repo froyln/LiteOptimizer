@@ -1,0 +1,514 @@
+{
+  "config_version": 1,
+  "Generic": {
+    "beaconRangeAutoUpdate": false,
+    "blockGridOverlayMode": "all",
+    "blockGridOverlayRadius": 16,
+    "chunkUnloadBucketOverlayFontScale": 0.1625,
+    "chunkUnloadBucketHashSize": true,
+    "chunkUnloadBucketOverlayChunkRadius": -1,
+    "coordinateFormat": "x: %.1f y: %.1f z: %.1f",
+    "coordinateFormatCustomized": false,
+    "realTimeFormat": "yyyy-MM-dd HH:mm:ss",
+    "debugMessages": false,
+    "pathFindingDebugPointWidth": true,
+    "dontResetSeedOnDimensionChange": true,
+    "droppedChunksHashSize": -1,
+    "enableVanillaDebugRendererFix": true,
+    "infoLinesRendering": {
+      "enabled": false,
+      "hotkey": {
+        "keys": "H"
+      }
+    },
+    "itemNbtEnabled": true,
+    "itemPreviewZ": 400,
+    "lightLevelColoredNumbers": true,
+    "lightLevelMarkers": "square",
+    "lightLevelMarkerSize": 0.84,
+    "lightLevelNumbers": "block",
+    "lightLevelNumberOffsetBlock": {
+      "x": 0.24,
+      "y": 0.32
+    },
+    "lightLevelNumberOffsetSky": {
+      "x": 0.42,
+      "y": 0.56
+    },
+    "lightLevelNumberRotation": true,
+    "lightLevelRange": 24,
+    "lightLevelThreshold": 8,
+    "lightLevelZOffset": 0.005,
+    "mapPreview": false,
+    "mapPreviewRequireShift": true,
+    "mapPreviewSize": 160,
+    "mcTimeFormat": "MC time: (day {DAY}) {HOUR}:{MIN}:xx",
+    "offsetSubtitleHud": false,
+    "overlaysRendering": {
+      "enabled": true,
+      "hotkey": {
+        "keys": ""
+      }
+    },
+    "requireSneak": false,
+    "shulkerBoxPreview": true,
+    "shulkerDisplayBgColor": true,
+    "shulkerDisplayRequireShift": false,
+    "slimeChunkOverlayRadius": -1,
+    "sortLinesByLength": false,
+    "sortLinesReversed": false,
+    "spawnableColumnHeightsOverlayRadius": 40,
+    "spawnableSubChunkCheckInterval": 20,
+    "spawnableSubChunksOverlayRadius": -1,
+    "spawnerPositionPrint": false,
+    "structuresRenderThrough": true,
+    "timeDayDivisor": 24000,
+    "timeTotalDivisor": 24000,
+    "woolCounterEnableAll": true,
+    "woolCounterTypes": "0-15"
+  },
+  "Hotkeys": {
+    "itemNbtKeyPretty": {
+      "keys": ""
+    },
+    "itemNbtKeyString": {
+      "keys": ""
+    },
+    "openConfigGui": {
+      "keys": "H,C"
+    },
+    "openShapeEditor": {
+      "keys": ""
+    },
+    "requiredKey": {
+      "keys": ""
+    },
+    "setDistanceReferencePoint": {
+      "keys": ""
+    }
+  },
+  "Colors": {
+    "beaconRangeLvl1": "#20E060FF",
+    "beaconRangeLvl2": "#20FFB040",
+    "beaconRangeLvl3": "#20FFF040",
+    "beaconRangeLvl4": "#2060FF40",
+    "blockGrid": "#80FFFFFF",
+    "lightLevelMarkerDark": "#FFFF4848",
+    "lightLevelMarkerLit": "#FFFFFF33",
+    "lightLevelNumberBlockDark": "#FFC03030",
+    "lightLevelNumberBlockLit": "#FF209040",
+    "lightLevelNumberSkyDark": "#FFFFF030",
+    "lightLevelNumberSkyLit": "#FF40E0FF",
+    "randomTicksFixed": "#40F9F225",
+    "randomTicksPlayer": "#4030FE73",
+    "regionFileBorders": "#40FF8019",
+    "shapeCanDespawnSphere": "#60A04050",
+    "shapeCanSpawnSphere": "#60A04050",
+    "shapeCircle": "#6030B0B0",
+    "shapeDespawnSphere": "#60A04050",
+    "shapeSphereBlocky": "#6030B0B0",
+    "slimeChunks": "#B020F020",
+    "spawnPreviewAtPlayerEntity": "#402050D0",
+    "spawnPreviewAtPlayerLazy": "#40D030D0",
+    "spawnChunksRealEntity": "#4030FF20",
+    "spawnChunksRealLazy": "#40FF3020",
+    "spawnableChunkFixed": "#40FF2090",
+    "spawnableChunksPlayer": "#40FF3030",
+    "spawnableColumnHeights": "#A0FF00FF",
+    "spawnerPositions": "#40FF8019",
+    "waterFallPositions": "#40326BF3"
+  },
+  "InfoToggles": {
+    "infoBiomeName": false,
+    "infoBiomeRegistryName": false,
+    "infoBlockBreakSpeed": false,
+    "infoBlockEntities": false,
+    "infoBlockInChunk": false,
+    "infoBlockPosition": true,
+    "infoBlockProperties": false,
+    "infoCarpetWoolCounters": false,
+    "infoChunkPosition": false,
+    "infoChunkSections": false,
+    "infoChunkSectionsLine": false,
+    "infoChunkUnloadOrder": false,
+    "infoChunkUpdates": false,
+    "infoCoordinates": false,
+    "infoDifficulty": false,
+    "infoDimensionId": false,
+    "infoDistance": false,
+    "infoEntities": true,
+    "infoEntitiesClientWorld": false,
+    "infoEntityRegistryName": false,
+    "infoFPS": false,
+    "infoLightLevel": false,
+    "infoLoadedChunksCount": false,
+    "infoLookingAtBlock": true,
+    "infoLookingAtBlockInChunk": false,
+    "infoLookingAtEntity": false,
+    "infoMemoryUsage": false,
+    "infoMobCaps": false,
+    "infoParticleCount": false,
+    "infoPing": false,
+    "infoPlayerFacing": true,
+    "infoPlayerPitchRotation": false,
+    "infoPlayerYawRotation": false,
+    "infoRegionFile": false,
+    "infoServerTPS": true,
+    "infoSlimeChunk": true,
+    "infoSpawnableSubChunks": false,
+    "infoSpeed": false,
+    "infoSpeedAxis": false,
+    "infoTimeIRL": true,
+    "infoTimeDayModulo": true,
+    "infoTimeTotalModulo": false,
+    "infoTimeWorld": false,
+    "infoWorldTimeFormatted": true
+  },
+  "InfoHotkeys": {
+    "infoBiomeName": {
+      "keys": ""
+    },
+    "infoBiomeRegistryName": {
+      "keys": ""
+    },
+    "infoBlockBreakSpeed": {
+      "keys": ""
+    },
+    "infoBlockEntities": {
+      "keys": ""
+    },
+    "infoBlockInChunk": {
+      "keys": ""
+    },
+    "infoBlockPosition": {
+      "keys": ""
+    },
+    "infoBlockProperties": {
+      "keys": ""
+    },
+    "infoCarpetWoolCounters": {
+      "keys": ""
+    },
+    "infoChunkPosition": {
+      "keys": ""
+    },
+    "infoChunkSections": {
+      "keys": ""
+    },
+    "infoChunkSectionsLine": {
+      "keys": ""
+    },
+    "infoChunkUnloadOrder": {
+      "keys": ""
+    },
+    "infoChunkUpdates": {
+      "keys": ""
+    },
+    "infoCoordinates": {
+      "keys": ""
+    },
+    "infoDifficulty": {
+      "keys": ""
+    },
+    "infoDimensionId": {
+      "keys": ""
+    },
+    "infoDistance": {
+      "keys": ""
+    },
+    "infoEntities": {
+      "keys": ""
+    },
+    "infoEntitiesClientWorld": {
+      "keys": ""
+    },
+    "infoEntityRegistryName": {
+      "keys": ""
+    },
+    "infoFPS": {
+      "keys": ""
+    },
+    "infoLightLevel": {
+      "keys": ""
+    },
+    "infoLoadedChunksCount": {
+      "keys": ""
+    },
+    "infoLookingAtBlock": {
+      "keys": ""
+    },
+    "infoLookingAtBlockInChunk": {
+      "keys": ""
+    },
+    "infoLookingAtEntity": {
+      "keys": ""
+    },
+    "infoMemoryUsage": {
+      "keys": ""
+    },
+    "infoMobCaps": {
+      "keys": ""
+    },
+    "infoParticleCount": {
+      "keys": ""
+    },
+    "infoPing": {
+      "keys": ""
+    },
+    "infoPlayerFacing": {
+      "keys": ""
+    },
+    "infoPlayerPitchRotation": {
+      "keys": ""
+    },
+    "infoPlayerYawRotation": {
+      "keys": ""
+    },
+    "infoRegionFile": {
+      "keys": ""
+    },
+    "infoServerTPS": {
+      "keys": ""
+    },
+    "infoSlimeChunk": {
+      "keys": ""
+    },
+    "infoSpawnableSubChunks": {
+      "keys": ""
+    },
+    "infoSpeed": {
+      "keys": ""
+    },
+    "infoSpeedAxis": {
+      "keys": ""
+    },
+    "infoTimeIRL": {
+      "keys": ""
+    },
+    "infoTimeDayModulo": {
+      "keys": ""
+    },
+    "infoTimeTotalModulo": {
+      "keys": ""
+    },
+    "infoTimeWorld": {
+      "keys": ""
+    },
+    "infoWorldTimeFormatted": {
+      "keys": ""
+    }
+  },
+  "InfoLineOrders": {
+    "infoBiomeName": 19,
+    "infoBiomeRegistryName": 20,
+    "infoBlockBreakSpeed": 6,
+    "infoBlockEntities": 3220,
+    "infoBlockInChunk": 28,
+    "infoBlockPosition": 6,
+    "infoBlockProperties": 27,
+    "infoCarpetWoolCounters": 50,
+    "infoChunkPosition": 7,
+    "infoChunkSections": 14,
+    "infoChunkSectionsLine": 15,
+    "infoChunkUnloadOrder": 30,
+    "infoChunkUpdates": 16,
+    "infoCoordinates": 4,
+    "infoDifficulty": 18,
+    "infoDimensionId": 5,
+    "infoDistance": 33,
+    "infoEntities": 21,
+    "infoEntitiesClientWorld": 22,
+    "infoEntityRegistryName": 24,
+    "infoFPS": 0,
+    "infoLightLevel": 10,
+    "infoLoadedChunksCount": 31,
+    "infoLookingAtBlock": 25,
+    "infoLookingAtBlockInChunk": 26,
+    "infoLookingAtEntity": 23,
+    "infoMemoryUsage": 0,
+    "infoMobCaps": 40,
+    "infoParticleCount": 17,
+    "infoPing": 36,
+    "infoPlayerFacing": 8,
+    "infoPlayerPitchRotation": 12,
+    "infoPlayerYawRotation": 11,
+    "infoRegionFile": 29,
+    "infoServerTPS": 9,
+    "infoSlimeChunk": 22,
+    "infoSpawnableSubChunks": 32,
+    "infoSpeed": 13,
+    "infoSpeedAxis": 13,
+    "infoTimeIRL": 1,
+    "infoTimeDayModulo": 35,
+    "infoTimeTotalModulo": 34,
+    "infoTimeWorld": 2,
+    "infoWorldTimeFormatted": 3
+  },
+  "Internal": {
+    "chunkUnloadBucketOverlayY": 64.0,
+    "infoLinesHudLocation": "top_left",
+    "slimeChunksOverlayTopY": 80.0
+  },
+  "RendererToggles": {
+    "debugCollisionBoxEnabled": false,
+    "debugHeightMapEnabled": false,
+    "debugNeighborsUpdateEnabled": false,
+    "debugPathfindingEnabled": false,
+    "debugSolidFaceEnabled": false,
+    "debugWaterEnabled": false,
+    "beaconRange": false,
+    "blockGrid": false,
+    "chunkUnloadBucket": false,
+    "lightLevel": false,
+    "randomTicksFixed": false,
+    "randomTicksPlayer": false,
+    "regionFile": false,
+    "shapeRenderer": true,
+    "slimeChunks": false,
+    "spawnableChunksFixed": true,
+    "spawnableChunksPlayer": false,
+    "spawnableColumnHeights": false,
+    "spawnerPositions": false,
+    "spawnChunkReal": false,
+    "spawnChunkPlayer": false,
+    "structureMainToggle": true,
+    "waterFalls": false
+  },
+  "RendererHotkeys": {
+    "debugCollisionBoxEnabled": {
+      "keys": ""
+    },
+    "debugHeightMapEnabled": {
+      "keys": ""
+    },
+    "debugNeighborsUpdateEnabled": {
+      "keys": ""
+    },
+    "debugPathfindingEnabled": {
+      "keys": ""
+    },
+    "debugSolidFaceEnabled": {
+      "keys": ""
+    },
+    "debugWaterEnabled": {
+      "keys": ""
+    },
+    "beaconRange": {
+      "keys": ""
+    },
+    "blockGrid": {
+      "keys": ""
+    },
+    "chunkUnloadBucket": {
+      "keys": ""
+    },
+    "lightLevel": {
+      "keys": ""
+    },
+    "randomTicksFixed": {
+      "keys": ""
+    },
+    "randomTicksPlayer": {
+      "keys": ""
+    },
+    "regionFile": {
+      "keys": ""
+    },
+    "shapeRenderer": {
+      "keys": ""
+    },
+    "slimeChunks": {
+      "keys": ""
+    },
+    "spawnableChunksFixed": {
+      "keys": ""
+    },
+    "spawnableChunksPlayer": {
+      "keys": ""
+    },
+    "spawnableColumnHeights": {
+      "keys": ""
+    },
+    "spawnerPositions": {
+      "keys": ""
+    },
+    "spawnChunkReal": {
+      "keys": ""
+    },
+    "spawnChunkPlayer": {
+      "keys": ""
+    },
+    "structureMainToggle": {
+      "keys": ""
+    },
+    "waterFalls": {
+      "keys": ""
+    }
+  },
+  "StructureToggles": {
+    "desertPyramid": false,
+    "endCity": false,
+    "igloo": false,
+    "jungleTemple": false,
+    "mansion": false,
+    "netherFortress": true,
+    "oceanMonument": false,
+    "stronghold": false,
+    "village": false,
+    "witchHut": true
+  },
+  "StructureHotkeys": {
+    "desertPyramid": {
+      "keys": ""
+    },
+    "endCity": {
+      "keys": ""
+    },
+    "igloo": {
+      "keys": ""
+    },
+    "jungleTemple": {
+      "keys": ""
+    },
+    "mansion": {
+      "keys": ""
+    },
+    "netherFortress": {
+      "keys": ""
+    },
+    "oceanMonument": {
+      "keys": ""
+    },
+    "stronghold": {
+      "keys": ""
+    },
+    "village": {
+      "keys": ""
+    },
+    "witchHut": {
+      "keys": ""
+    }
+  },
+  "StructureColors": {
+    "desertPyramid Main": "#30FFFF00",
+    "desertPyramid Components": "#30FFFF00",
+    "endCity Main": "#30EB07EB",
+    "endCity Components": "#30EB07EB",
+    "igloo Main": "#300FAFE4",
+    "igloo Components": "#300FAFE4",
+    "jungleTemple Main": "#3099FF00",
+    "jungleTemple Components": "#3099FF00",
+    "mansion Main": "#30FF6500",
+    "mansion Components": "#30FF6500",
+    "netherFortress Main": "#30FC381D",
+    "netherFortress Components": "#30FC381D",
+    "oceanMonument Main": "#3029E6EF",
+    "oceanMonument Components": "#3029E6EF",
+    "stronghold Main": "#30009999",
+    "stronghold Components": "#30009999",
+    "village Main": "#3054CB4E",
+    "village Components": "#3054CB4E",
+    "witchHut Main": "#30BE1DFC",
+    "witchHut Components": "#300099FF"
+  }
+}

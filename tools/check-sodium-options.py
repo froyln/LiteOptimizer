@@ -18,6 +18,11 @@ import java.nio.charset.StandardCharsets;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptions;
 public class SodiumOptionsCheck {
     private static void safe(SodiumGameOptions c) {
+        assert c.quality.cloudQuality != null;
+        assert c.quality.weatherQuality != null;
+        assert c.quality.leavesQuality != null;
+        assert c.quality.smoothLighting != null;
+        assert c.performance.chunkBuilderThreads >= 0;
         assert !c.advanced.useEntityCulling;
         assert !c.advanced.useChunkMultidraw;
         assert !c.advanced.useCompactVertexFormat;
@@ -48,7 +53,10 @@ public class SodiumOptionsCheck {
         safe(saved);
         assert !saved.quality.enableClouds && !saved.advanced.useEntityCulling;
         assert saved.performance.chunkBuilderThreads == 3;
-        for (String invalid : new String[]{"null", "{\"advanced\":null}", "{\"quality\":null}", "{\"performance\":null}", "{\"notifications\":null}", "{"}) {
+        for (String invalid : new String[]{"null", "{\"advanced\":null}", "{\"quality\":null}", "{\"performance\":null}", "{\"notifications\":null}", "{",
+                "{\"quality\":{\"cloud_quality\":\"INVALID\"}}", "{\"quality\":{\"weather_quality\":null}}",
+                "{\"quality\":{\"leaves_quality\":\"INVALID\"}}", "{\"quality\":{\"smooth_lighting\":null}}",
+                "{\"performance\":{\"chunk_builder_threads\":-1}}"}) {
             Files.write(p, invalid.getBytes(StandardCharsets.UTF_8));
             safe(SodiumGameOptions.load(p));
         }

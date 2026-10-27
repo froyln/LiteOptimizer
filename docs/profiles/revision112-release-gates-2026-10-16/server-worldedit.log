@@ -1,0 +1,470 @@
+[15:30:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[15:30:06] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[15:30:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[15:30:06] [main/INFO] [FML]: Forge Mod Loader version 14.23.5.2859 for Minecraft 1.12.2 loading
+[15:30:06] [main/INFO] [FML]: Java is OpenJDK 64-Bit Server VM, version 1.8.0_504, running on Linux:amd64:7.2.0-1-cachyos, installed at /usr/lib/jvm/java-8-openjdk/jre
+[15:30:06] [main/INFO] [FML]: Searching /home/froyln/Dev/OptimizationMod-1.12.2/run/worldedit-cui-fixture/./mods for mods
+[15:30:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[15:30:06] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[15:30:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[15:30:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[15:30:06] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[15:30:08] [main/INFO] [FML]: Found valid fingerprint for Minecraft Forge. Certificate fingerprint e3c3d50c7c986df74c645c0ac54639741c90a557
+[15:30:08] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[15:30:08] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[15:30:08] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[15:30:08] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[15:30:09] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.server.MinecraftServer}
+[15:30:12] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting minecraft server version 1.12.2
+[15:30:12] [Server thread/INFO] [FML]: MinecraftForge v14.23.5.2859 Initialized
+[15:30:12] [Server thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[15:30:12] [Server thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...
+[15:30:12] [Server thread/INFO] [FML]: Replaced 1227 ore ingredients
+[15:30:12] [Server thread/INFO] [FML]: Config directory created successfully
+[15:30:12] [Server thread/INFO] [FML]: Searching /home/froyln/Dev/OptimizationMod-1.12.2/run/worldedit-cui-fixture/./mods for mods
+[15:30:15] [Server thread/INFO] [FML]: Forge Mod Loader has identified 5 mods to load
+[15:30:15] [Server thread/WARN] [FML]: Missing English translation for FML: assets/fml/lang/en_us.lang
+[15:30:15] [Server thread/WARN] [FML]: Missing English translation for worldedit: assets/worldedit/lang/en_us.lang
+[15:30:15] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, worldedit] at CLIENT
+[15:30:15] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, worldedit] at SERVER
+[15:30:16] [Server thread/INFO] [FML]: Processing ObjectHolder annotations
+[15:30:16] [Server thread/INFO] [FML]: Found 1168 ObjectHolder annotations
+[15:30:16] [Server thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[15:30:16] [Server thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[15:30:16] [Server thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[15:30:16] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[15:30:16] [Server thread/INFO] [FML]: Applying holder lookups
+[15:30:16] [Server thread/INFO] [FML]: Holder lookups applied
+[15:30:16] [Server thread/INFO] [FML]: Applying holder lookups
+[15:30:16] [Server thread/INFO] [FML]: Holder lookups applied
+[15:30:16] [Server thread/INFO] [FML]: Applying holder lookups
+[15:30:16] [Server thread/INFO] [FML]: Holder lookups applied
+[15:30:16] [Server thread/INFO] [FML]: Applying holder lookups
+[15:30:16] [Server thread/INFO] [FML]: Holder lookups applied
+[15:30:16] [Server thread/INFO] [FML]: Injecting itemstacks
+[15:30:16] [Server thread/INFO] [FML]: Itemstack injection complete
+[15:30:16] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Loading properties
+[15:30:16] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Default game type: CREATIVE
+[15:30:16] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Generating keypair
+[15:30:16] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting Minecraft server on 127.0.0.1:25568
+[15:30:16] [Server thread/INFO] [net.minecraft.network.NetworkSystem]: Using epoll channel type
+[15:30:16] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[15:30:16] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer]: The server will make no attempt to authenticate usernames. Beware.
+[15:30:16] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[15:30:16] [Server thread/WARN] [net.minecraft.server.dedicated.DedicatedServer]: To change this, set "online-mode" to "true" in the server.properties file.
+[15:30:16] [Server thread/INFO] [FML]: Applying holder lookups
+[15:30:16] [Server thread/INFO] [FML]: Holder lookups applied
+[15:30:16] [Server thread/INFO] [FML]: Injecting itemstacks
+[15:30:16] [Server thread/INFO] [FML]: Itemstack injection complete
+[15:30:16] [Server thread/INFO] [worldedit]: WorldEdit for Forge (version 6.1.10) is loaded
+[15:30:16] [Server thread/INFO] [FML]: Forge Mod Loader has successfully loaded 5 mods
+[15:30:17] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Preparing level "world"
+[15:30:17] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: UP_TO_DATE Target: null
+[15:30:17] [Server thread/INFO] [FML]: Loading dimension 0 (world) (net.minecraft.server.dedicated.DedicatedServer@2232d99e)
+[15:30:17] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[15:30:17] [Server thread/INFO] [FML]: Loading dimension -1 (world) (net.minecraft.server.dedicated.DedicatedServer@2232d99e)
+[15:30:17] [Server thread/INFO] [FML]: Loading dimension 1 (world) (net.minecraft.server.dedicated.DedicatedServer@2232d99e)
+[15:30:17] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
+[15:30:18] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Done (1.689s)! For help, type "help" or "?"
+[15:30:18] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting remote control listener
+[15:30:18] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: RCON running on 127.0.0.1:25578
+[15:30:18] [Server thread/INFO] [FML]: Unloading dimension -1
+[15:30:18] [Server thread/INFO] [FML]: Unloading dimension 1
+[15:34:43] [Server thread/INFO] [FML]: Connection received without FML marker, assuming vanilla.
+[15:34:43] [Server thread/INFO] [FML]: Opening channel which already seems to have a state set. This is a vanilla connection. Handshake handler will stop now
+[15:34:43] [Server thread/INFO] [FML]: [Server thread] Server side vanilla connection established
+[15:34:43] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: LiteOptTest[/127.0.0.1:37082] logged in with entity id 354 at (-2029.5, 1.0, 558.5)
+[15:34:43] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: LiteOptTest joined the game
+[15:35:13] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [LiteOptTest: Teleported LiteOptTest to -1980.5841684379052, 31.809877259292847, 712.0017676442468]
+[15:36:13] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [LiteOptTest: Block placed]
+[15:36:14] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [LiteOptTest: Object successfully summoned]
+[15:41:24] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [LiteOptTest: Teleported LiteOptTest to -1980.5, 30.0, 712.5]
+[15:41:38] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Object successfully summoned]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:38] [RCON Client #2/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found entity.ItemFrame.name]
+[15:41:48] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:41:48] [RCON Client #3/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Set LiteOptTest's game mode to Spectator Mode]
+[15:41:48] [RCON Client #3/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Teleported LiteOptTest to -1980.5, 30.0, 712.5]
+[15:41:48] [Server thread/WARN] [net.minecraft.network.NetHandlerPlayServer]: LiteOptTest moved too quickly! -1.6205954735062278,29.0,1.242901225779633
+[15:44:04] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:44:04] [RCON Client #4/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [White Shulker Box]]
+[15:44:04] [RCON Client #4/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Set LiteOptTest's game mode to Creative Mode]
+[15:44:04] [RCON Client #4/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:44:04] [RCON Client #4/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Teleported LiteOptTest to -1980.5, 30.0, 712.5]
+[15:48:13] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:48:13] [RCON Client #5/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: 19 blocks filled]
+[15:48:13] [RCON Client #5/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:48:13] [RCON Client #5/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:48:13] [RCON Client #5/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Replaced slot slot.hotbar.0 with 1 * Air]
+[15:48:13] [RCON Client #5/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Teleported LiteOptTest to -1981.5, 30.0, 713.5]
+[15:49:16] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:49:16] [RCON Client #6/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: 63 blocks filled]
+[15:49:16] [RCON Client #6/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:49:16] [RCON Client #6/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:49:16] [RCON Client #6/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Teleported LiteOptTest to -2002.5, 70.0, 701.5]
+[15:50:45] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:50:45] [RCON Client #7/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Replaced slot slot.hotbar.0 with 64 * [Oak Wood Planks]]
+[15:50:45] [RCON Client #7/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:50:45] [RCON Client #7/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Teleported LiteOptTest to -2002.5, 70.0, 699.5]
+[15:51:10] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:51:44] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:51:44] [RCON Client #9/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Successfully found the block at -2001, 70, 699]
+[15:54:14] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:54:14] [RCON Client #10/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Successfully found the block at -2001, 70, 699]
+[15:54:14] [RCON Client #10/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Successfully found the block at -2000, 70, 699]
+[15:54:44] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:54:44] [RCON Client #11/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Set LiteOptTest's game mode to Survival Mode]
+[15:54:44] [RCON Client #11/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Oak Wood Planks]]
+[15:54:44] [RCON Client #11/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Replaced slot slot.inventory.0 with 16 * [Oak Wood Planks]]
+[15:54:44] [RCON Client #11/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:54:44] [RCON Client #11/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found LiteOptTest]
+[15:57:09] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:57:09] [RCON Client #12/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Successfully found the block at -2001, 70, 699]
+[15:57:09] [RCON Client #12/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Found LiteOptTest]
+[15:57:25] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:57:25] [RCON Client #13/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Set LiteOptTest's game mode to Creative Mode]
+[15:57:25] [RCON Client #13/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Replaced slot slot.hotbar.0 with 64 * [Piston]]
+[15:57:25] [RCON Client #13/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Block placed]
+[15:57:42] [RCON Listener #1/INFO] [net.minecraft.server.MinecraftServer]: Rcon connection from: /127.0.0.1
+[15:57:42] [RCON Client #14/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Successfully found the block at -2001, 70, 699]
+[15:57:42] [RCON Client #14/INFO] [net.minecraft.server.dedicated.DedicatedServer]: [Rcon: Successfully found the block at -2001, 70, 699]
+[15:58:49] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: LiteOptTest lost connection: Disconnected
+[15:58:49] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: LiteOptTest left the game

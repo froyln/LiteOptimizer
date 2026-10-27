@@ -1,0 +1,3 @@
+player NBT after server save
+Pos: (22.5, 20.0, 6.5)
+Dimension: -1

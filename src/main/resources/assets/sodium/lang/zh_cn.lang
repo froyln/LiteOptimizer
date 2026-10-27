@@ -79,5 +79,4 @@ sodium.options.threads.value=%s 线程
 sodium.options.default=默认
 sodium.options.buttons.undo=撤销
 sodium.options.buttons.apply=应用
-sodium.options.buttons.donate=给JellySquid买杯咖啡！
 sodium.options.open_button=LiteOptimizer 设置

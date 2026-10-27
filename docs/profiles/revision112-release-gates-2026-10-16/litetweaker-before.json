@@ -1,0 +1,183 @@
+{
+  "config_version": 1,
+  "Generic": {
+    "additionalBlockBreakingCooldown": {
+      "enabled": false,
+      "hotkey": {
+        "keys": ""
+      }
+    },
+    "additionalDelay": 2,
+    "autoClearGhostBlock": {
+      "enabled": false,
+      "hotkey": {
+        "keys": ""
+      }
+    },
+    "autoClearGhostBlockInterval": 100,
+    "autoDropContainer": {
+      "enabled": false,
+      "hotkey": {
+        "keys": "CHAR_191"
+      }
+    },
+    "autoDropContainerType": "shulker",
+    "autoFillContainer": {
+      "enabled": false,
+      "hotkey": {
+        "keys": "CHAR_123"
+      }
+    },
+    "autoFillContainerLimit": 3,
+    "autoRefreshInventory": {
+      "enabled": false,
+      "hotkey": {
+        "keys": ""
+      }
+    },
+    "autoRefreshInventoryInterval": 100,
+    "backgroundFPSLimit": -1,
+    "blockHitList": {
+      "type": "blacklist",
+      "blacklist": [
+        "minecraft:dragon_egg"
+      ],
+      "whitelist": []
+    },
+    "clientTime": 6000,
+    "customTitle": "Minecraft 1.12.2",
+    "entityHitList": [
+      "EntityEnderCrystal"
+    ],
+    "perimeterWallList": [
+      "minecraft:sandstone",
+      "minecraft:netherrack"
+    ],
+    "minihudFontScale": 1.0
+  },
+  "Tweaks": {
+    "alwaysRenderBarrierParticles": false,
+    "alwaysRenderStructureVoidModel": false,
+    "alwaysRenderBarrierModel": false,
+    "anvilRenameCopy": false,
+    "autoFish": false,
+    "autoRespawn": false,
+    "betterF3nCycle": true,
+    "clientTimeOverride": false,
+    "creativeNoClip": true,
+    "miningGhostBlockFix": false,
+    "noFall": false,
+    "perimeterWallHelper": false,
+    "fakeNightVision": false,
+    "perventDigBlocksBelow": false,
+    "placeIgnoreEntity": false,
+    "stepUp": false,
+    "disableBeaconBeam": false,
+    "disableBlockBreakingCooldown": false,
+    "disableBlockHit": false,
+    "disableCommandblockOutputToConsole": false,
+    "disableEntityHit": false,
+    "disablePumpkinOverlay": false,
+    "disableSlimeBounce": false,
+    "disableSlowDown": false,
+    "disableVignetting": false,
+    "disableWaterFov": false
+  },
+  "TweakHotkeys": {
+    "alwaysRenderBarrierParticles": {
+      "keys": ""
+    },
+    "alwaysRenderStructureVoidModel": {
+      "keys": ""
+    },
+    "alwaysRenderBarrierModel": {
+      "keys": ""
+    },
+    "anvilRenameCopy": {
+      "keys": ""
+    },
+    "autoFish": {
+      "keys": ""
+    },
+    "autoRespawn": {
+      "keys": ""
+    },
+    "betterF3nCycle": {
+      "keys": ""
+    },
+    "clientTimeOverride": {
+      "keys": ""
+    },
+    "creativeNoClip": {
+      "keys": ""
+    },
+    "miningGhostBlockFix": {
+      "keys": ""
+    },
+    "noFall": {
+      "keys": ""
+    },
+    "perimeterWallHelper": {
+      "keys": ""
+    },
+    "fakeNightVision": {
+      "keys": ""
+    },
+    "perventDigBlocksBelow": {
+      "keys": ""
+    },
+    "placeIgnoreEntity": {
+      "keys": ""
+    },
+    "stepUp": {
+      "keys": ""
+    },
+    "disableBeaconBeam": {
+      "keys": ""
+    },
+    "disableBlockBreakingCooldown": {
+      "keys": ""
+    },
+    "disableBlockHit": {
+      "keys": ""
+    },
+    "disableCommandblockOutputToConsole": {
+      "keys": ""
+    },
+    "disableEntityHit": {
+      "keys": ""
+    },
+    "disablePumpkinOverlay": {
+      "keys": ""
+    },
+    "disableSlimeBounce": {
+      "keys": ""
+    },
+    "disableSlowDown": {
+      "keys": ""
+    },
+    "disableVignetting": {
+      "keys": ""
+    },
+    "disableWaterFov": {
+      "keys": ""
+    }
+  },
+  "Hotkeys": {
+    "clearGhostBlock": {
+      "keys": ""
+    },
+    "clearGhostBlockRightClick": {
+      "keys": ""
+    },
+    "openConfigGui": {
+      "keys": "END"
+    },
+    "refreshInventory": {
+      "keys": ""
+    },
+    "toggleMainHand": {
+      "keys": ""
+    }
+  }
+}

@@ -28,6 +28,9 @@ public class ChunkRenderContainer<T extends ChunkGraphicsState> {
 
     private ChunkRenderData data = ChunkRenderData.ABSENT;
     private CompletableFuture<Void> rebuildTask = null;
+    // Prevent a late async result from replacing a newer synchronous rebuild.
+    private long buildRevision;
+    private long dataRevision;
 
     private boolean needsRebuild;
     private boolean needsImportantRebuild;
@@ -56,7 +59,8 @@ public class ChunkRenderContainer<T extends ChunkGraphicsState> {
      * Cancels any pending tasks to rebuild the chunk. If the result of any pending tasks has not been processed yet,
      * those will also be discarded when processing finally happens.
      */
-    public void cancelRebuildTask() {
+    public long cancelRebuildTask() {
+        this.buildRevision++;
         this.needsRebuild = false;
         this.needsImportantRebuild = false;
         this.needsSort = false;
@@ -65,6 +69,15 @@ public class ChunkRenderContainer<T extends ChunkGraphicsState> {
             this.rebuildTask.cancel(false);
             this.rebuildTask = null;
         }
+        return this.buildRevision;
+    }
+
+    public long getBuildRevision() {
+        return this.buildRevision;
+    }
+
+    public boolean hasPendingBuild() {
+        return this.dataRevision != this.buildRevision;
     }
 
     public ChunkRenderData getData() {
@@ -129,6 +142,7 @@ public class ChunkRenderContainer<T extends ChunkGraphicsState> {
 
         this.worldRenderer.onChunkRenderUpdated(this.chunkX, this.chunkY, this.chunkZ, this.data, info);
         this.data = info;
+        this.dataRevision = this.buildRevision;
 
         this.tickable = !info.getAnimatedSprites().isEmpty();
     }
@@ -149,7 +163,7 @@ public class ChunkRenderContainer<T extends ChunkGraphicsState> {
     }
 
     public boolean scheduleSort(boolean important) {
-        if (this.needsRebuild)
+        if (this.needsRebuild || this.hasPendingBuild())
             return false;
 
         boolean changed = !this.needsSort;

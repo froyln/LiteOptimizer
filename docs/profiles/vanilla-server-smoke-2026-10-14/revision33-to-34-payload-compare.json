@@ -1,0 +1,21 @@
+{
+  "old_sha256": "66e5f1d20f6477ff96fbf719f989a148bcee8698311498ceb3b7ebd9facc9004",
+  "new_sha256": "3808b92e36261a365ced1b4f9b3ed9c5d9d12a5333e0e206bad148ab4a9905f9",
+  "comparison": "Revision 33 installed archive versus revision 34 built archive, before revision 34 was installed.",
+  "differing_entries": [
+    "litemod.json"
+  ],
+  "payload": "All packaged code/resources are byte-identical; litemod.json differs only by revision 33 versus 34.",
+  "revision34_manifest": {
+    "name": "liteoptimizer",
+    "displayName": "LiteOptimizer",
+    "version": "0.6.0-rc2",
+    "author": "froyln",
+    "mcversion": "1.12.2",
+    "revision": "34",
+    "mixinConfigs": [
+      "mixins.liteoptimizer.json"
+    ]
+  },
+  "note": "The subsequent installed-versus-built identity check has identical revision 34 hashes; this file records the earlier rev33-to-rev34 comparison."
+}

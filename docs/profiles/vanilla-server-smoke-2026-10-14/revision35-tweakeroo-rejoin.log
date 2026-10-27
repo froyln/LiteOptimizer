@@ -1,0 +1,144 @@
+[00:01:32] [Client thread/INFO]: Baking listener list for PlayerClickListener with 0 listeners
+[00:01:32] [Server thread/INFO]: Baking listener list for PlayerInteractionListener with 0 listeners
+[00:02:22] [Server thread/INFO]: Saving and pausing game...
+[00:02:22] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[00:02:22] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[00:02:22] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[00:03:02] [Client thread/INFO]: Stopping worker threads
+[00:03:03] [Server thread/INFO]: Stopping server
+[00:03:03] [Server thread/INFO]: Saving players
+[00:03:03] [Server thread/INFO]: Kisde lost connection: Disconnected
+[00:03:03] [Server thread/INFO]: Kisde left the game
+[00:03:03] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[00:03:03] [Server thread/INFO]: Saving worlds
+[00:03:03] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[00:03:03] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[00:03:03] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[00:06:29] [Client thread/INFO]: Connecting to localhost, 25565
+[00:06:29] [Server Connector #1/INFO]: Switching to protocol version 340
+[00:06:29] [Netty Epoll Client IO #0/INFO]: Looking for local structures (host:port=localhost:25565)
+[00:06:29] [Netty Epoll Client IO #0/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/./config/BBOutlineReloaded/localhost/25565)
+[00:06:29] [Netty Epoll Client IO #0/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/./config/BBOutlineReloaded/localhost)
+[00:06:29] [Netty Epoll Client IO #0/INFO]: Looking for local structures (folder=/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/./config/BBOutlineReloaded/localhost,25565)
+[00:06:29] [Netty Epoll Client IO #0/INFO]: No local structures folders found
+[00:06:29] [Client thread/INFO]: Started 6 worker threads
+[00:06:30] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/liteconfig/common/malilib.json' is not readable
+[00:06:30] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[00:06:30] [Client thread/ERROR]: Exception while trying to apply config overrides
+java.lang.NullPointerException: null
+	at fi.dy.masa.malilib.config.util.ConfigOverrideUtils.tryApplyOverridesFromServer(ConfigOverrideUtils.java:149) ~[ConfigOverrideUtils.class:?]
+	at fi.dy.masa.malilib.config.util.ConfigOverrideUtils.applyConfigOverrides(ConfigOverrideUtils.java:70) [ConfigOverrideUtils.class:?]
+	at fi.dy.masa.malilib.event.dispatch.ClientWorldChangeEventDispatcherImpl.onEnterWorld(ClientWorldChangeEventDispatcherImpl.java:96) [ClientWorldChangeEventDispatcherImpl.class:?]
+	at fi.dy.masa.malilib.event.dispatch.ClientWorldChangeEventDispatcherImpl.onWorldLoadPost(ClientWorldChangeEventDispatcherImpl.java:69) [ClientWorldChangeEventDispatcherImpl.class:?]
+	at bib.handler$onLoadWorldPost$znj000(SourceFile:7639) [bib.class:?]
+	at bib.a(SourceFile:2297) [bib.class:?]
+	at bib.a(SourceFile:2218) [bib.class:?]
+	at brz.a(SourceFile:297) [brz.class:?]
+	at com.mumfrey.liteloader.client.PacketEventsClient.handlePacket(PacketEventsClient.java:149) [PacketEventsClient.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.core.PacketEvents.handlePacketEvent(PacketEvents.java:219) [PacketEvents.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.core.PacketEvents.handlePacket(PacketEvents.java:161) [PacketEvents.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.core.PacketEvents.handlePacket(PacketEvents.java:148) [PacketEvents.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at com.mumfrey.liteloader.core.event.EventProxy.$event00003(EventProxy.java:214) [EventProxy.class:1.12.2-SNAPSHOT+jnks-b4.git-4cc2bb00c8eff08863c9f7625be08983951546a5]
+	at jh.a(SourceFile) [jh.class:?]
+	at hv$1.run(SourceFile:13) [hv$1.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_202]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_202]
+	at h.a(SourceFile:46) [h.class:?]
+	at bib.az(SourceFile:991) [bib.class:?]
+	at bib.a(SourceFile:419) [bib.class:?]
+	at net.minecraft.client.main.Main.main(SourceFile:123) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at org.prismlauncher.launcher.impl.StandardLauncher.launch(StandardLauncher.java:115) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.listen(EntryPoint.java:129) [NewLaunch.jar:?]
+	at org.prismlauncher.EntryPoint.main(EntryPoint.java:70) [NewLaunch.jar:?]
+[00:06:30] [Client thread/INFO]: Creating 10 render threads
+[00:06:30] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[00:07:40] [Client thread/INFO]: Baking listener list for ChatListener with 0 listeners
+[00:07:40] [Client thread/INFO]: [CHAT] [00:07:40] Your game mode has been updated to Survival Mode
+[00:09:24] [Client thread/INFO]: Loaded 7 advancements
+[00:10:57] [Client thread/INFO]: Stopping worker threads
+[00:10:57] [Client thread/INFO]: Started 6 worker threads
+[00:10:57] [Client thread/INFO]: Stopping worker threads
+[00:10:57] [Client thread/INFO]: Started 6 worker threads
+[00:11:00] [Client thread/INFO]: [CHAT] [00:11:00] Kisde has made the advancement [We Need to Go Deeper]
+[00:11:01] [Client thread/INFO]: Loaded 24 advancements
+[00:12:15] [Client thread/INFO]: [CHAT] [00:12:15] You died @ 261, 31, -2
+[00:12:15] [Client thread/INFO]: You died @ 261, 31, -2
+[00:12:15] [Client thread/INFO]: [CHAT] [00:12:15] Kisde fell from a high place
+[00:12:47] [Client thread/INFO]: [CHAT] [00:12:47] Your game mode has been updated to Creative Mode
+[00:13:16] [Client thread/INFO]: Stopping worker threads
+[00:13:16] [Client thread/INFO]: Started 6 worker threads
+[00:13:16] [Client thread/INFO]: Stopping worker threads
+[00:13:16] [Client thread/INFO]: Started 6 worker threads
+[00:14:57] [Client thread/INFO]: Stopping worker threads
+[00:21:26] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[00:21:26] [Server thread/INFO]: Generating keypair
+[00:21:26] [Server thread/INFO]: Loaded 488 advancements
+[00:21:26] [Server thread/INFO]: create world dimension: 0 (seed: 2558629639865533195)
+[00:21:26] [Server thread/INFO]: create world dimension: -1 (seed: 2558629639865533195)
+[00:21:26] [Server thread/INFO]: create world dimension: 1 (seed: 2558629639865533195)
+[00:21:26] [Server thread/INFO]: Preparing start region for level 0
+[00:21:26] [Server thread/INFO]: Baking listener list for IEventState with 0 listeners
+[00:21:26] [Client thread/INFO]: Switching to protocol version 340
+[00:21:26] [Server thread/INFO]: Kisde[local:E:98e2c201] logged in with entity id 1147 at (-1969.5, 37.256046588037954, 700.5)
+[00:21:26] [Server thread/INFO]: Kisde joined the game
+[00:21:26] [Client thread/INFO]: Started 6 worker threads
+[00:21:26] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/liteconfig/common/malilib.json' is not readable
+[00:21:26] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[00:21:26] [Client thread/INFO]: Creating 10 render threads
+[00:21:26] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[00:21:26] [Server thread/INFO]: Saving and pausing game...
+[00:21:26] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[00:21:26] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[00:21:26] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[00:21:27] [Server thread/INFO]: Baking listener list for IEventState with 1 listeners
+[00:21:27] [Client thread/INFO]: Loaded 67 advancements
+[01:11:38] [Server thread/INFO]: Saving and pausing game...
+[01:11:38] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[01:11:38] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[01:11:38] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[01:14:13] [Server thread/INFO]: Saving and pausing game...
+[01:14:13] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[01:14:13] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[01:14:13] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[01:14:28] [Client thread/INFO]: Stopping worker threads
+[01:14:28] [Server thread/INFO]: Stopping server
+[01:14:28] [Server thread/INFO]: Saving players
+[01:14:28] [Server thread/INFO]: Kisde lost connection: Disconnected
+[01:14:28] [Server thread/INFO]: Kisde left the game
+[01:14:28] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[01:14:28] [Server thread/INFO]: Saving worlds
+[01:14:28] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[01:14:28] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[01:14:28] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[01:15:15] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
+[01:15:15] [Server thread/INFO]: Generating keypair
+[01:15:15] [Server thread/INFO]: Loaded 488 advancements
+[01:15:15] [Server thread/INFO]: create world dimension: 0 (seed: 2558629639865533195)
+[01:15:15] [Server thread/INFO]: create world dimension: -1 (seed: 2558629639865533195)
+[01:15:15] [Server thread/INFO]: create world dimension: 1 (seed: 2558629639865533195)
+[01:15:15] [Server thread/INFO]: Preparing start region for level 0
+[01:15:15] [Server thread/INFO]: Baking listener list for IEventState with 0 listeners
+[01:15:15] [Client thread/INFO]: Switching to protocol version 340
+[01:15:15] [Server thread/INFO]: Kisde[local:E:0d3c6b3b] logged in with entity id 1861 at (-1969.5, 37.256046588037954, 700.5)
+[01:15:15] [Server thread/INFO]: Kisde joined the game
+[01:15:15] [Client thread/INFO]: Started 6 worker threads
+[01:15:15] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/liteconfig/common/malilib.json' is not readable
+[01:15:15] [Client thread/WARN]: ModConfig#loadFromFile(): File '/home/froyln/.local/share/PrismLauncher/instances/1.12.2 test ai/minecraft/liteconfig/common/schematicpreview.json' is not readable
+[01:15:15] [Client thread/INFO]: Creating 10 render threads
+[01:15:15] [Client thread/INFO]: Using 55 total BufferBuilder caches
+[01:15:15] [Server thread/INFO]: Saving and pausing game...
+[01:15:15] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[01:15:15] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[01:15:15] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[01:15:16] [Server thread/INFO]: Baking listener list for IEventState with 1 listeners
+[01:15:16] [Client thread/INFO]: Loaded 67 advancements
+[01:17:56] [Server thread/INFO]: Saving and pausing game...
+[01:17:56] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[01:17:56] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[01:17:56] [Server thread/INFO]: Saving chunks for level 'world'/the_end

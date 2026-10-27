@@ -1,0 +1,30 @@
+1214:[19:21:26] [Thread-13/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+1215:[19:21:26] [Thread-13/INFO]: OpenAL initialized.
+1216:[19:21:26] [Sound Library Loader/INFO]: Sound engine started
+1217:[19:21:27] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater.png
+1248:[19:21:27] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/furnace_front.png
+1279:[19:21:27] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/oak.png
+1310:[19:21:27] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater_on.png
+1341:[19:21:27] [Client thread/INFO]: Created: 4096x4096 textures-atlas
+1342:[19:21:27] [Client thread/INFO]: baked_quad_dedup: 89516 quads baked, 69998 unique (19518 shared)
+1343:[19:21:28] [Client thread/INFO]: Created: 256x256 waypoints-atlas
+1344:[19:21:28] [Client thread/INFO]: Created: 256x128 chooser-atlas
+1345:[19:21:28] [Client thread/INFO]: Created: 1024x512 mobs-atlas
+1346:[19:24:34] [Client thread/INFO]: Reloading ResourceManager: Default, LiteLoader, Carpet Client, Connect to 1.12.x, Item Scroller, Litematica, MiniHUD, WorldEditCUI, Newlight, Tweakeroo, UsefulMod, VoxelMap, BoundingBoxOutlineReloaded, MaLiLib, ChatCalc, LiteTweaker, IsoRenders, SchematicPreview, LiteOptimizer, FaihtfulMatuAddons 1.12, XeKr redstone display1.12.zip, 1.12_Gaemer_Tools_32x.zip
+1347:[19:24:35] [Client thread/INFO]: SoundSystem shutting down...
+1348:[19:24:35] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+1349:[19:24:35] [Sound Library Loader/INFO]: Starting up SoundSystem...
+1350:[19:24:35] [Thread-15/INFO]: Initializing LWJGL OpenAL
+1351:[19:24:35] [Thread-15/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+1352:[19:24:35] [Thread-15/INFO]: OpenAL initialized.
+1353:[19:24:36] [Sound Library Loader/INFO]: Sound engine started
+1354:[19:24:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater.png
+1385:[19:24:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/furnace_front.png
+1416:[19:24:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/blocks/oak.png
+1447:[19:24:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/cobblestone.png
+1478:[19:24:36] [Client thread/ERROR]: Using missing texture, unable to load minecraft:textures/block/repeater_on.png
+1509:[19:24:36] [Client thread/INFO]: Created: 2048x2048 textures-atlas
+1510:[19:24:37] [Client thread/INFO]: baked_quad_dedup: 43690 quads baked, 29214 unique (14476 shared)
+1511:[19:24:37] [Client thread/INFO]: Created: 256x256 waypoints-atlas
+1512:[19:24:37] [Client thread/INFO]: Created: 256x128 chooser-atlas
+1513:[19:24:37] [Client thread/INFO]: Created: 512x512 mobs-atlas

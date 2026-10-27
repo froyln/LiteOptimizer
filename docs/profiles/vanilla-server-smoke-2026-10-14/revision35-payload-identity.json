@@ -1,0 +1,16 @@
+{
+  "build_sha256": "4c59feacd4b90a9d255893431b59617628db6c1460a1c73824e5b770c3f88645",
+  "installed_sha256": "4c59feacd4b90a9d255893431b59617628db6c1460a1c73824e5b770c3f88645",
+  "differing_entries": [],
+  "manifest": {
+    "name": "liteoptimizer",
+    "displayName": "LiteOptimizer",
+    "version": "0.6.0-rc2",
+    "author": "froyln",
+    "mcversion": "1.12.2",
+    "revision": "35",
+    "mixinConfigs": [
+      "mixins.liteoptimizer.json"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "built_sha256": "e6db069a72c759f1c9d77abecda49e62d17fb50bfa9558dc197dc6091215fe9e",
+  "installed_runtime_tested_sha256": "4bac2055096578bfce40405278b8dc1c2f40321e72b494e76c52c3288ec546c7",
+  "built_revision": "27",
+  "runtime_tested_revision": "25",
+  "changed_entries": [
+    "litemod.json"
+  ]
+}

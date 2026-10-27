@@ -1,0 +1,7 @@
+# Revision 97 Tweakeroo dirty-section bridge check — 2026-10-15
+
+The exact revision-97 artifact (`4a80a24fc6beb166872e30dcee58d982d8c6757c877220ad8d7e3fd639f71882`) ran with the full technical mod stack in the disposable `B1-rev96-render-smoke` copy. The artifact hash in the build directory and clone matched.
+
+In Tweakeroo's config UI, `Chunk Render On Main Thread` was turned ON. The integrated server first confirmed `(-1968, 38, 700)` was air. `/setblock` placed glowstone there and the client reported `Block placed`; `/testforblock` confirmed the result. F3+A then logged `Reloading all chunks` and the client stopped/restarted its chunk worker threads without a crash. With the setting still ON, the marker was replaced with air, F3+A ran again, and `/testforblock` confirmed the location was air. The setting was toggled back OFF and the B1 copy was saved and cleanly shut down. Final clone config records `tweakChunkRenderOnMainThread=false`.
+
+This verifies the Sodium/Tweakeroo synchronous rebuild path for a real block update and removal, plus a full chunk reload while enabled. It is a compatibility check, not a performance benchmark; the block change ran on the integrated server in a disposable local copy. Remaining Tweakeroo features (placement, restock, stacking, particles, TE distance and item-frame options) still need focused checks. Event excerpts and final config value are in `client-events.txt` and `config-final.txt`.

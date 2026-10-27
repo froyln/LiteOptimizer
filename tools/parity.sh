@@ -6,8 +6,8 @@
 #
 # Needs: the PrismLauncher instance below with the litemod already installed (tools/test-in-game.sh
 # or a copy into mods/), and <world-dir>/pose.txt = "x y z yaw pitch" (optional). The instance's
-# instance.cfg and liteoptimizer.json are modified for the runs and restored afterwards. The world
-# is copied into the instance as saves/_parity for each run and removed at the end.
+# liteoptimizer.json and parity/run.properties are restored afterwards. The world is copied into
+# the instance as saves/_parity for each run and removed at the end.
 set -euo pipefail
 
 WORLD_DIR=${1:?world dir}; shift
@@ -20,25 +20,32 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-INSTANCE="1.12.2 test ai"
-INSTANCE_DIR="$HOME/.local/share/PrismLauncher/instances/$INSTANCE"
+INSTANCE=${PARITY_INSTANCE:-"1.12.2 test ai"}
+LAUNCHER=${PARITY_LAUNCHER:-prismlauncher}
+AI_DESKTOP=${PARITY_DESKTOP:-/home/froyln/Dev/ai-desktop.sh}
+PRISM_ROOT=${PARITY_PRISM_ROOT:-"$HOME/.local/share/PrismLauncher"}
+INSTANCE_DIR="$PRISM_ROOT/instances/$INSTANCE"
 MC="$INSTANCE_DIR/minecraft"
-CFG="$INSTANCE_DIR/instance.cfg"
 OPT="$MC/liteconfig/common/liteoptimizer.json"
+RUN_CONFIG="$MC/parity/run.properties"
 SAVE="_parity"
 SEED=${PARITY_SEED:-1}
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUT="$ROOT/run/parity"; mkdir -p "$OUT"
 
 [ -d "$WORLD_DIR/region" ] || { echo "$WORLD_DIR is not a world (no region/)"; exit 2; }
+[ -f "$WORLD_DIR/level.dat" ] || { echo "$WORLD_DIR is not a world (no level.dat)"; exit 2; }
+"$AI_DESKTOP" status >/dev/null 2>&1 || { echo "isolated Sway desktop is unavailable; start it before parity runs" >&2; exit 5; }
+ss -ltn 2>/dev/null | grep -q '127\.0\.0\.1:5900' || { echo "isolated WayVNC is unavailable on 127.0.0.1:5900" >&2; exit 5; }
 POSE=""; [ -f "$WORLD_DIR/pose.txt" ] && POSE=$(cat "$WORLD_DIR/pose.txt")
 
-cp "$CFG" "$CFG.parity-backup"
 [ -f "$OPT" ] && cp "$OPT" "$OPT.parity-backup" || true
+[ -f "$RUN_CONFIG" ] && cp "$RUN_CONFIG" "$RUN_CONFIG.parity-backup" || true
 remove_save() { [ -d "$MC/saves/$SAVE" ] && rm -r "$MC/saves/$SAVE" || true; }
 cleanup() {
-  mv -f "$CFG.parity-backup" "$CFG"
   [ -f "$OPT.parity-backup" ] && mv -f "$OPT.parity-backup" "$OPT" || true
+  [ -f "$RUN_CONFIG.parity-backup" ] && mv -f "$RUN_CONFIG.parity-backup" "$RUN_CONFIG" || rm -f "$RUN_CONFIG"
+  rm -f "$OPT.parity-tmp" "$RUN_CONFIG.parity-tmp"
   remove_save
 }
 trap cleanup EXIT
@@ -51,53 +58,107 @@ keys = [k for k in json.load(open(path)) if not k.startswith("_")] if os.path.ex
 # keys the source knows but the instance's config file does not yet: a missing key means "enabled"
 keys += [k for k in re.findall(r'^\s*[A-Z_0-9]+\("([a-z_0-9]+)",', open(options).read(), re.M) if k not in keys]
 pillars = {"render", "world", "ai", "memory"}
+dependencies = {"camera_visgraph_cache": {"sodium"}}
+required = dependencies.get(only, set())
 cfg = {}
 for k in keys:
     if mode == "off":
-        cfg[k] = False
+        cfg[k] = k in required
     elif only:
-        cfg[k] = (k in pillars) or (k == only)
+        cfg[k] = (k in pillars) or (k == only) or (k in required)
     else:
         cfg[k] = True
-json.dump(cfg, open(path, "w"), indent=2)
+with open(path + ".parity-tmp", "w") as f:
+    json.dump(cfg, f, indent=2)
+os.replace(path + ".parity-tmp", path)
 PY
 }
 
 run_once() {  # $1 = label
   local label=$1
+  local run_label="${label}-$$-${RANDOM}"
   remove_save; cp -r "$WORLD_DIR" "$MC/saves/$SAVE"
-  rm -f "$MC/parity/$label.txt"
-  local jvm="-Dliteoptimizer.nopause=1 ${PARITY_VERBOSE:+-Dliteoptimizer.parity.verbose=1 -Dliteoptimizer.parity.trace=1} -Dliteoptimizer.parity=$SEED -Dliteoptimizer.parity.world=$SAVE -Dliteoptimizer.parity.ticks=$TICKS -Dliteoptimizer.parity.label=$label"
-  [ -n "$POSE" ] && jvm="$jvm -Dliteoptimizer.parity.pose=$(printf '%s' "$POSE" | tr ' ' '_')"
-  python3 - "$CFG" "$jvm" <<'PY'
-import sys, re
-path, jvm = sys.argv[1], sys.argv[2]
-text = open(path).read()
-text = re.sub(r"(?m)^OverrideJavaArgs=.*$", "OverrideJavaArgs=true", text)
-if "OverrideJavaArgs=" not in text: text += "\nOverrideJavaArgs=true\n"
-text = re.sub(r"(?m)^JvmArgs=.*$", "JvmArgs=" + jvm, text)
-if "JvmArgs=" not in text: text += "JvmArgs=" + jvm + "\n"
-open(path, "w").write(text)
+  mkdir -p "$MC/parity"
+  rm -f "$MC/parity/$run_label.txt" "$MC/parity/$run_label.detail.txt"
+  python3 - "$RUN_CONFIG" "$SEED" "$SAVE" "$TICKS" "$run_label" "$POSE" "${PARITY_VERBOSE:-}" "${PARITY_TRACE:-}" <<'PY'
+import os, sys
+path, seed, world, ticks, label, pose, verbose, trace = sys.argv[1:]
+values = {
+    "liteoptimizer.parity": seed,
+    "liteoptimizer.parity.world": world,
+    "liteoptimizer.parity.ticks": ticks,
+    "liteoptimizer.parity.label": label,
+    "liteoptimizer.nopause": "1",
+}
+if pose:
+    values["liteoptimizer.parity.pose"] = pose.replace(" ", "_")
+if verbose:
+    values["liteoptimizer.parity.verbose"] = "1"
+if trace:
+    values["liteoptimizer.parity.trace"] = "1"
+with open(path + ".parity-tmp", "w") as f:
+    for key, value in values.items():
+        f.write(key + "=" + value + "\n")
+os.replace(path + ".parity-tmp", path)
 PY
-  if pgrep -f "[p]rismlauncher --launch" >/dev/null; then
-    echo "[parity] a launched instance is already running — close it first"; exit 4
+  if python3 - "$INSTANCE_DIR/natives" <<'PY'
+import os, sys
+needle = os.fsencode(os.path.realpath(sys.argv[1]))
+for pid in os.listdir('/proc'):
+    if not pid.isdigit() or pid == str(os.getpid()):
+        continue
+    try:
+        command = open('/proc/' + pid + '/cmdline', 'rb').read()
+    except (OSError, PermissionError):
+        continue
+    if b'org.prismlauncher.EntryPoint' in command and needle in command:
+        sys.exit(0)
+sys.exit(1)
+PY
+  then
+    echo "[parity] this target instance is already running — close it first"; exit 4
   fi
   echo "[parity] run '$label' ($TICKS ticks) ..."
-  prismlauncher --launch "$INSTANCE" --offline ParityTester >/dev/null 2>&1 &
+  if [ -n "${PARITY_PROFILE:-}" ]; then
+    "$AI_DESKTOP" exec "$LAUNCHER" --dir "$PRISM_ROOT" --show-window --launch "$INSTANCE" --profile "$PARITY_PROFILE" >/dev/null 2>&1 &
+  else
+    "$AI_DESKTOP" exec "$LAUNCHER" --dir "$PRISM_ROOT" --show-window --launch "$INSTANCE" --offline ParityTester >/dev/null 2>&1 &
+  fi
   local pid=$!
-  local waited=0 dumped=0
-  # the game exits by itself after writing the dump (ParityRun → Minecraft.shutdown)
-  while kill -0 $pid 2>/dev/null; do
-    sleep 5; waited=$((waited+5))
-    if [ $waited -gt 3600 ]; then echo "[parity] timeout, killing pid $pid"; kill $pid 2>/dev/null || true; break; fi
-    if [ -f "$MC/parity/$label.txt" ]; then
-      dumped=$((dumped+5))
-      if [ $dumped -gt 60 ]; then echo "[parity] dump written but game still open after 60 s — closing pid $pid"; kill $pid 2>/dev/null || true; break; fi
+  local waited=0 seen=0
+  local start_timeout=${PARITY_START_TIMEOUT:-600}
+  # Wait for the harness to acknowledge this unique label; the launcher may reuse cached JVM args.
+  while :; do
+    if [ $seen -eq 1 ]; then
+      if ! pgrep -f -- "-Djava.library.path=$INSTANCE_DIR/natives" >/dev/null; then break; fi
+    elif grep -F "parity run '$run_label' started" "$MC/logs/latest.log" >/dev/null 2>&1; then
+      seen=1
     fi
+    if [ $seen -eq 0 ] && [ $waited -ge "$start_timeout" ]; then
+      python3 - "$INSTANCE_DIR/natives" <<'PY'
+import os, signal, sys
+needle = os.fsencode("-Djava.library.path=" + os.path.realpath(sys.argv[1]))
+for pid in os.listdir('/proc'):
+    if not pid.isdigit():
+        continue
+    try:
+        command = open('/proc/' + pid + '/cmdline', 'rb').read()
+    except (OSError, PermissionError):
+        continue
+    if needle in command:
+        os.kill(int(pid), signal.SIGTERM)
+PY
+      echo "[parity] target game did not acknowledge run '$run_label' — check $MC/logs/latest.log"; exit 3
+    fi
+    if [ $waited -ge 3600 ]; then
+      echo "[parity] timed out waiting for '$label'"; exit 4
+    fi
+    sleep 5; waited=$((waited+5))
   done
   wait $pid 2>/dev/null || true
-  [ -f "$MC/parity/$label.txt" ] || { echo "[parity] no dump for $label — check $MC/logs/latest.log"; exit 3; }
-  cp "$MC/parity/$label.txt" "$OUT/$label.txt"; [ -f "$MC/parity/$label.detail.txt" ] && cp "$MC/parity/$label.detail.txt" "$OUT/" || true
+  [ -f "$MC/parity/$run_label.txt" ] || { echo "[parity] no dump for $label — check $MC/logs/latest.log"; exit 3; }
+  cp "$MC/parity/$run_label.txt" "$OUT/$label.txt"
+  [ -f "$MC/parity/$run_label.detail.txt" ] && cp "$MC/parity/$run_label.detail.txt" "$OUT/$label.detail.txt" || true
 }
 
 write_config off; run_once off

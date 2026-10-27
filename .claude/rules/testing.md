@@ -21,5 +21,7 @@ paths:
   `assert`s, run as `javac -d /tmp/x Foo.java && java -ea -cp /tmp/x Foo`. Anything touching
   MC is verified in-game: parity harness + benchmark per `docs/methodology.md`, numbers pasted
   into the PLAN.md task and `docs/catalog.md`.
-- A parity failure is a bug in the optimization, never a reason to relax the hash comparison.
+- A server/shared-state parity failure is a bug, never a reason to relax the hash comparison.
+  Client-only pixel/animation differences may be intentional under AGENTS.md; document them
+  before implementation and test the server boundary, visual correctness and compatibility.
 - Never delete or skip a failing test to get green. Report it and stop.

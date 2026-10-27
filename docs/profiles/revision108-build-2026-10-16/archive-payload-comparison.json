@@ -1,0 +1,10 @@
+{
+  "builtRevision": 108,
+  "installedRevision": 107,
+  "builtEntries": 728,
+  "installedEntries": 728,
+  "changedEntries": [
+    "litemod.json"
+  ],
+  "conclusion": "Only the automatic manifest revision field differs; code and resources are byte-identical."
+}

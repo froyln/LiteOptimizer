@@ -12,7 +12,7 @@ OUT="$ROOT/docs/profiles"; mkdir -p "$OUT"
 JCMD=/usr/lib/jvm/java-8-openjdk/bin/jcmd
 JFR=/usr/lib/jvm/java-21-openjdk/bin/jfr
 
-PID=$(pgrep -f '[j]ava-8-openjdk/bin/java .*launchwrapper|[j]re-legacy/bin/java .*launchwrapper' | head -n1)
+PID=${PROFILE_PID:-$(pgrep -f '[j]ava-8-openjdk/bin/java .*launchwrapper|[j]re-legacy/bin/java .*launchwrapper' | head -n1)}
 [ -n "$PID" ] || { echo "game not running" >&2; exit 1; }
 echo "recording pid $PID for ${SECS}s → $OUT/$LABEL.jfr"
 "$JCMD" "$PID" JFR.start name="$LABEL" duration="${SECS}s" filename="$OUT/$LABEL.jfr" settings=profile >/dev/null

@@ -17,7 +17,9 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import io.netty.buffer.Unpooled;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ClassInheritanceMultiMap;
@@ -139,12 +141,35 @@ public final class ParityDump {
         for (Entity entity : entities) {
             NBTTagCompound nbt = new NBTTagCompound();
             entity.writeToNBT(nbt);
+            if (entity instanceof EntityLivingBase) {
+                canonicalizeEffects(nbt);
+            }
             md.update((entity.getEntityId() + " " + nbt).getBytes(StandardCharsets.UTF_8));
             if (detail != null) {
                 detail.write("entity " + chunk.x + " " + chunk.z + " " + entity.getEntityId() + " " + nbt + "\n");
             }
         }
         return hex(md.digest());
+    }
+
+    private static void canonicalizeEffects(NBTTagCompound nbt) {
+        NBTTagList effects = nbt.getTagList("ActiveEffects", 10);
+        List<NBTTagCompound> sorted = new ArrayList<NBTTagCompound>(effects.tagCount());
+        for (int i = 0; i < effects.tagCount(); i++) {
+            sorted.add(effects.getCompoundTagAt(i));
+        }
+        Collections.sort(sorted, new Comparator<NBTTagCompound>() {
+            @Override
+            public int compare(NBTTagCompound a, NBTTagCompound b) {
+                int id = Integer.compare(a.getByte("Id") & 0xff, b.getByte("Id") & 0xff);
+                return id != 0 ? id : Integer.compare(a.getByte("Amplifier") & 0xff, b.getByte("Amplifier") & 0xff);
+            }
+        });
+        NBTTagList canonical = new NBTTagList();
+        for (NBTTagCompound effect : sorted) {
+            canonical.appendTag(effect);
+        }
+        nbt.setTag("ActiveEffects", canonical);
     }
 
     private static String randSeed(Random random) {

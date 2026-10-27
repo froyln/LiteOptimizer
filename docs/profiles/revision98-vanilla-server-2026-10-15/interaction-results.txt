@@ -1,0 +1,15 @@
+> scoreboard players test LiteOptTest walk 876 876
+Score 876 is in range 876 to 876
+
+> scoreboard players test LiteOptTest minedirt 1 2147483647
+Score 1 is in range 1 to 2147483647
+
+> scoreboard players test LiteOptTest stoneuse 1 2147483647
+Score 0 is NOT in range 1 to 2147483647
+
+> setblock 100 3 117 minecraft:grass
+Block placed
+
+> testforblock 100 3 117 minecraft:grass
+Successfully found the block at 100, 3, 117
+

@@ -1,0 +1,24 @@
+862:[18:01:11] [Client thread/INFO]: [CHAT] [18:01:11] Unknown command. Try /help for a list of commands
+903:[18:05:15] [Client thread/INFO]: [CHAT] [18:05:15] [Rcon: Block placed]
+904:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (2)
+905:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (3)
+906:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (4)
+907:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (5)
+908:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (6)
+909:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (7)
+910:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (8)
+911:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (9)
+912:[18:06:01] [Client thread/INFO]: [CHAT] [18:06:01] [Rcon: Block placed] (10)
+913:[18:06:02] [Client thread/INFO]: [CHAT] [18:06:02] [Rcon: Block placed] (11)
+955:[18:12:00] [Client thread/INFO]: [CHAT] [18:12:00] Unknown command. Try /help for a list of commands
+962:[18:14:11] [Client thread/INFO]: [CHAT] [18:14:11] Local game hosted on port 38993
+1003:[18:17:26] [Client thread/INFO]: [CHAT] [18:17:26] Local game hosted on port 35333
+1004:[18:18:21] [Server thread/INFO]: [VanillaTester: Successfully found the block at -1968, 38, 700]
+1005:[18:18:21] [Client thread/INFO]: [CHAT] [18:18:21] Successfully found the block at -1968, 38, 700
+1006:[18:18:54] [Server thread/INFO]: [VanillaTester: Block placed]
+1007:[18:18:54] [Client thread/INFO]: [CHAT] [18:18:54] Block placed
+1008:[18:19:31] [Server thread/INFO]: [VanillaTester: Successfully found the block at -1968, 38, 700]
+1009:[18:19:31] [Client thread/INFO]: [CHAT] [18:19:31] Successfully found the block at -1968, 38, 700
+1012:[18:21:35] [Client thread/INFO]: [CHAT] [18:21:35] Unknown command. Try /help for a list of commands
+1013:[18:22:11] [Server thread/INFO]: [VanillaTester: Successfully found the block at -1968, 38, 700]
+1014:[18:22:11] [Client thread/INFO]: [CHAT] [18:22:11] Successfully found the block at -1968, 38, 700

@@ -1,0 +1,4 @@
+scoreboard players list LiteOptTest => Showing 16 tracked objective(s) for LiteOptTest:- minedirt: 5 (minedirt)- potion_use: 1 (potion_use)- rev96_walk: 4374 (rev96_walk)- potion: 1 (potion)- walk108: 1047 (walk108)- walk110: 171 (walk110)- trade110: 1 (trade110)- rev97_walk: 4374 (rev97_walk)- trade: 2 (trade)- walk: 1398 (walk)- rev100potion: 1 (rev100potion)- stoneuse: 2 (stoneuse)- place108: 1 (place108)- stream_walk: 1047 (stream_walk)- rev100trade: 2 (rev100trade)- walkOneCm: 1047 (walkOneCm)
+testfor @p {Inventory:[{id:"minecraft:emerald"}]} => Found LiteOptTest
+testfor @p {Inventory:[{id:"minecraft:wool",Slot:0b,Count:20b}]} => LiteOptTest did not match the required data structure
+save-all => Saving...Saved the world

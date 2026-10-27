@@ -1,0 +1,30 @@
+{
+  "built_sha256": "311697c260630b317a2d958700307f9d5de07a4509ef47e58e65735dca5fd85d",
+  "tested_installed_sha256": "c2232ba38f8b13554eddb4f18f4dd871bf708c808dddd1f6a2452f0651bbb760",
+  "built_manifest": {
+    "name": "liteoptimizer",
+    "displayName": "LiteOptimizer",
+    "version": "0.6.0-rc2",
+    "author": "froyln",
+    "mcversion": "1.12.2",
+    "revision": "59",
+    "mixinConfigs": [
+      "mixins.liteoptimizer.json"
+    ]
+  },
+  "tested_manifest": {
+    "name": "liteoptimizer",
+    "displayName": "LiteOptimizer",
+    "version": "0.6.0-rc2",
+    "author": "froyln",
+    "mcversion": "1.12.2",
+    "revision": "58",
+    "mixinConfigs": [
+      "mixins.liteoptimizer.json"
+    ]
+  },
+  "changed_entries": [
+    "litemod.json"
+  ],
+  "other_entries_identical": true
+}

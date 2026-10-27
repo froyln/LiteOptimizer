@@ -42,6 +42,7 @@ import net.minecraft.world.WorldType;
 public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkRenderBuildTask<T> {
     private static final BlockRenderLayer[] LAYERS = BlockRenderLayer.values();
     private final ChunkRenderContainer<T> render;
+    private final long revision;
         
     private final BlockPos offset;
 
@@ -51,8 +52,9 @@ public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkR
 
     private final boolean translucencySorting;
 
-    public ChunkRenderRebuildTask(ChunkRenderContainer<T> render, ChunkRenderContext context, BlockPos offset) {
+    public ChunkRenderRebuildTask(ChunkRenderContainer<T> render, long revision, ChunkRenderContext context, BlockPos offset) {
         this.render = render;
+        this.revision = revision;
         this.offset = offset;
         this.context = context;
         this.camera = Vec3d.ZERO;
@@ -198,7 +200,7 @@ public class ChunkRenderRebuildTask<T extends ChunkGraphicsState> extends ChunkR
         renderData.setOcclusionData(occluder.computeVisibility());
         renderData.setBounds(bounds.build(this.render.getChunkPos()));
 
-        return new ChunkBuildResult<>(this.render, renderData.build());
+        return new ChunkBuildResult<>(this.render, this.revision, renderData.build());
     }
 
     private ReportedException fillCrashInfo(CrashReport report, WorldSlice slice, BlockPos pos) {

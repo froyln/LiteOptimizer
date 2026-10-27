@@ -1,0 +1,11 @@
+{
+  "built_sha256": "5d987cfc17e42982ba786fca3d77f8ef11a5489028e014c52d5cab24c1f15820",
+  "revision98_sha256": "cd0b0951dd78187fafc43081446938fff649f63a0c81af12c4fe1861fb209170",
+  "entry_count_build": 729,
+  "entry_count_revision98": 729,
+  "different_entries": [
+    "litemod.json"
+  ],
+  "revision99_manifest": "99",
+  "revision98_manifest": "98"
+}

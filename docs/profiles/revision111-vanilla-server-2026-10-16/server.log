@@ -1,0 +1,323 @@
+[11:49:08] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[11:49:08] [Server thread/INFO]: Loading properties
+[11:49:08] [Server thread/INFO]: Default game type: SURVIVAL
+[11:49:08] [Server thread/INFO]: Generating keypair
+[11:49:08] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[11:49:08] [Server thread/INFO]: Using epoll channel type
+[11:49:08] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[11:49:08] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[11:49:08] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[11:49:08] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[11:49:08] [Server thread/INFO]: Preparing level "world"
+[11:49:08] [Server thread/INFO]: Loaded 488 advancements
+[11:49:08] [Server thread/INFO]: Preparing start region for level 0
+[11:49:09] [Server thread/INFO]: Done (0.476s)! For help, type "help" or "?"
+[11:49:09] [Server thread/INFO]: Starting remote control listener
+[11:49:09] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25576
+[11:50:26] [Server thread/INFO]: LiteOptTest[/127.0.0.1:57290] logged in with entity id 119 at (116.5, 4.0, 109.69999998807907)
+[11:50:26] [Server thread/INFO]: LiteOptTest joined the game
+[11:50:52] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:50:52] [RCON Client #2/INFO]: [Rcon: Added new objective 'walk108' successfully]
+[11:50:52] [RCON Client #2/INFO]: [Rcon: Set score of walk108 for player LiteOptTest to 0]
+[11:51:14] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:51:48] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:52:56] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:52:56] [RCON Client #5/INFO]: [Rcon: Teleported LiteOptTest to 107.9315, 4.0, 109.7]
+[11:53:13] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:53:13] [RCON Client #6/INFO]: [Rcon: Found LiteOptTest]
+[11:53:13] [RCON Client #6/INFO]: [Rcon: Saved the world]
+[11:53:29] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:53:29] [RCON Client #7/INFO]: [Rcon: Teleported LiteOptTest to 107.9315, 4.0, 109.7]
+[11:53:50] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:53:50] [RCON Client #8/INFO]: [Rcon: Found LiteOptTest]
+[11:53:50] [RCON Client #8/INFO]: [Rcon: Successfully found the block at 107, 3, 111]
+[11:53:50] [RCON Client #8/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[11:53:50] [RCON Client #8/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 5 * [Stone]]
+[11:53:50] [RCON Client #8/INFO]: [Rcon: Added new objective 'place108' successfully]
+[11:53:50] [RCON Client #8/INFO]: [Rcon: Set score of place108 for player LiteOptTest to 0]
+[11:54:03] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[11:54:03] [Server thread/INFO]: LiteOptTest left the game
+[11:55:51] [Server thread/INFO]: LiteOptTest[/127.0.0.1:41324] logged in with entity id 128 at (107.9315, 4.0, 109.7)
+[11:55:51] [Server thread/INFO]: LiteOptTest joined the game
+[11:56:56] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:56:56] [RCON Client #9/INFO]: [Rcon: Successfully found the block at 107, 3, 111]
+[11:56:56] [RCON Client #9/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[11:57:40] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:57:40] [RCON Client #10/INFO]: [Rcon: Found LiteOptTest]
+[11:57:40] [RCON Client #10/INFO]: [Rcon: Found LiteOptTest]
+[11:57:40] [RCON Client #10/INFO]: [Rcon: Successfully found the block at 107, 3, 111]
+[11:57:40] [RCON Client #10/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[11:57:40] [RCON Client #10/INFO]: [Rcon: Saved the world]
+[11:59:02] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[11:59:02] [RCON Client #11/INFO]: [Rcon: Successfully found the block at 107, 3, 111]
+[11:59:02] [RCON Client #11/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[11:59:02] [RCON Client #11/INFO]: [Rcon: Saved the world]
+[11:59:17] [Server thread/INFO]: LiteOptTest lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[11:59:17] [Server thread/INFO]: LiteOptTest left the game
+[12:00:33] [Server thread/INFO]: LiteOptTest[/127.0.0.1:37924] logged in with entity id 137 at (107.9315, 4.0, 109.7)
+[12:00:33] [Server thread/INFO]: LiteOptTest joined the game
+[12:01:21] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:27] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:34] [RCON Client #15/INFO]: [Rcon: Found LiteOptTest]
+[12:01:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:34] [RCON Client #18/INFO]: [Rcon: Successfully found the block at 107, 3, 110]
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Client #28/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:01:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:02:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:02:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:02:25] [RCON Client #44/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:02:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:02:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:02:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:02:25] [RCON Client #47/INFO]: [Rcon: Saved the world]
+[12:05:04] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:05:04] [RCON Client #48/INFO]: [Rcon: Saved the world]
+[12:05:04] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[12:05:04] [Server thread/INFO]: LiteOptTest left the game
+[12:05:22] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:05:43] [Server thread/INFO]: LiteOptTest[/127.0.0.1:56190] logged in with entity id 149 at (107.9315, 4.0, 109.7)
+[12:05:43] [Server thread/INFO]: LiteOptTest joined the game
+[12:05:59] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:05:59] [RCON Client #50/INFO]: [Rcon: Found LiteOptTest]
+[12:05:59] [RCON Client #50/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:06:06] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:06:06] [RCON Client #51/INFO]: [Rcon: Added new objective 'walk110' successfully]
+[12:06:06] [RCON Client #51/INFO]: [Rcon: Set score of walk110 for player LiteOptTest to 0]
+[12:06:20] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:06:20] [RCON Client #52/INFO]: [Rcon: Found LiteOptTest]
+[12:06:20] [RCON Client #52/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:06:20] [RCON Client #52/INFO]: [Rcon: Saved the world]
+[12:06:53] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:06:53] [RCON Client #53/INFO]: [Rcon: Found LiteOptTest]
+[12:06:53] [RCON Client #53/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:06:53] [RCON Client #53/INFO]: [Rcon: Saved the world]
+[12:09:05] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:09:05] [RCON Client #54/INFO]: [Rcon: Saved the world]
+[12:09:16] [Server thread/INFO]: LiteOptTest lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[12:09:16] [Server thread/INFO]: LiteOptTest left the game
+[12:13:24] [Server thread/INFO]: LiteOptTest[/127.0.0.1:33340] logged in with entity id 159 at (106.32831479921371, 4.0, 109.07886668071222)
+[12:13:24] [Server thread/INFO]: LiteOptTest joined the game
+[12:13:46] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:13:46] [RCON Client #55/INFO]: [Rcon: Found LiteOptTest]
+[12:13:46] [RCON Client #55/INFO]: [Rcon: Found LiteOptTest]
+[12:14:00] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:14:28] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:14:28] [RCON Client #57/INFO]: [Rcon: Found LiteOptTest]
+[12:14:28] [RCON Client #57/INFO]: [Rcon: Found LiteOptTest]
+[12:14:28] [RCON Client #57/INFO]: [Rcon: Saved the world]
+[12:14:52] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:14:52] [RCON Client #58/INFO]: [Rcon: Found LiteOptTest]
+[12:14:52] [RCON Client #58/INFO]: [Rcon: Found LiteOptTest]
+[12:14:52] [RCON Client #58/INFO]: [Rcon: Saved the world]
+[12:15:36] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[12:15:36] [Server thread/INFO]: LiteOptTest left the game
+[12:17:07] [Server thread/INFO]: LiteOptTest[/127.0.0.1:32934] logged in with entity id 164 at (106.32831479921371, 4.0, 109.07886668071222)
+[12:17:07] [Server thread/INFO]: LiteOptTest joined the game
+[12:17:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Added new objective 'trade110' successfully]
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Set score of trade110 for player LiteOptTest to 0]
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 20 * [Wheat]]
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Object successfully summoned]
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Teleported LiteOptTest to 107.5, 4.0, 110.5]
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Found Villager]
+[12:17:25] [RCON Client #59/INFO]: [Rcon: Found Villager]
+[12:18:23] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[12:18:23] [Server thread/INFO]: LiteOptTest left the game
+[12:19:29] [Server thread/INFO]: LiteOptTest[/127.0.0.1:53336] logged in with entity id 169 at (107.5, 3.0, 110.5)
+[12:19:29] [Server thread/INFO]: LiteOptTest joined the game
+[12:19:57] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:19:57] [RCON Client #60/INFO]: [Rcon: Found LiteOptTest]
+[12:19:57] [RCON Client #60/INFO]: [Rcon: Found Villager]
+[12:19:57] [RCON Client #60/INFO]: [Rcon: Found Villager]
+[12:21:35] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:21:43] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:21:49] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:21:49] [RCON Client #63/INFO]: [Rcon: Found LiteOptTest]
+[12:22:23] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:24:28] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:24:51] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:24:51] [RCON Client #66/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 20 * [Wheat]]
+[12:24:51] [RCON Client #66/INFO]: [Rcon: Found LiteOptTest]
+[12:25:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:25:42] [RCON Client #67/INFO]: [Rcon: Found LiteOptTest]
+[12:25:46] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:25:46] [RCON Client #68/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 20 * [White Wool]]
+[12:26:16] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:26:38] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:26:38] [RCON Client #70/INFO]: [Rcon: Found LiteOptTest]
+[12:26:51] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:26:51] [RCON Client #71/INFO]: [Rcon: Found LiteOptTest]
+[12:26:51] [RCON Client #71/INFO]: [Rcon: Saved the world]
+[12:27:34] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[12:27:34] [Server thread/INFO]: LiteOptTest left the game
+[12:30:46] [Server thread/INFO]: LiteOptTest[/127.0.0.1:52444] logged in with entity id 188 at (107.5, 3.0, 110.5)
+[12:30:46] [Server thread/INFO]: LiteOptTest joined the game
+[12:31:10] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:31:10] [RCON Client #72/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:31:10] [RCON Client #72/INFO]: [Rcon: Teleported LiteOptTest to 107.5, 4.0, 109.5]
+[12:31:10] [RCON Client #72/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Diamond Pickaxe]]
+[12:31:10] [Server thread/WARN]: LiteOptTest moved wrongly!
+[12:31:21] [Server thread/INFO]: LiteOptTest has made the advancement [Stone Age]
+[12:31:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:32:21] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:32:21] [RCON Client #74/INFO]: [Rcon: Successfully found the block at 107, 4, 111]
+[12:32:21] [RCON Client #74/INFO]: [Rcon: Found LiteOptTest]
+[12:32:21] [RCON Client #74/INFO]: [Rcon: Saved the world]
+[12:32:52] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:32:52] [RCON Client #75/INFO]: [Rcon: Added new objective 'potion111' successfully]
+[12:32:52] [RCON Client #75/INFO]: [Rcon: Set score of potion111 for player LiteOptTest to 0]
+[12:32:52] [RCON Client #75/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Uncraftable Potion]]
+[12:32:59] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:32:59] [RCON Client #76/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Potion of Swiftness]]
+[12:33:15] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:33:15] [RCON Client #77/INFO]: [Rcon: Saved the world]
+[12:33:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:33:25] [RCON Client #78/INFO]: [Rcon: Found LiteOptTest]
+[12:33:40] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:33:55] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:33:55] [RCON Client #80/INFO]: [Rcon: Found LiteOptTest]
+[12:33:55] [RCON Client #80/INFO]: [Rcon: Found LiteOptTest]
+[12:33:55] [RCON Client #80/INFO]: [Rcon: Saved the world]
+[12:34:10] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:34:10] [RCON Client #81/INFO]: [Rcon: Found LiteOptTest]
+[12:34:10] [RCON Client #81/INFO]: [Rcon: Found LiteOptTest]
+[12:34:41] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Block placed]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Flint and Steel]]
+[12:34:41] [RCON Client #82/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 108.5]
+[12:35:02] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:35:02] [RCON Client #83/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 108.5]
+[12:35:23] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:35:23] [RCON Client #84/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 108.5]
+[12:37:19] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:37:19] [RCON Client #85/INFO]: [Rcon: Successfully found the block at 109, 4, 110]
+[12:37:19] [RCON Client #85/INFO]: [Rcon: Successfully found the block at 112, 7, 110]
+[12:37:33] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:37:33] [RCON Client #86/INFO]: [Rcon: Block placed]
+[12:37:51] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:37:51] [RCON Client #87/INFO]: [Rcon: Block placed]
+[12:37:51] [RCON Client #87/INFO]: [Rcon: Block placed]
+[12:37:51] [RCON Client #87/INFO]: [Rcon: Block placed]
+[12:37:51] [RCON Client #87/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Block placed]
+[12:38:27] [RCON Client #88/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 108.5]
+[12:38:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:38:42] [RCON Client #89/INFO]: [Rcon: Successfully found the block at 110, 5, 110]
+[12:38:42] [RCON Client #89/INFO]: [Rcon: Successfully found the block at 111, 7, 110]
+[12:39:29] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:39:29] [RCON Client #90/INFO]: [Rcon: Found LiteOptTest]
+[12:39:29] [RCON Client #90/INFO]: [Rcon: Saved the world]
+[12:40:02] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:40:22] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:40:22] [RCON Client #92/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 110.5]
+[12:40:22] [Server thread/WARN]: LiteOptTest moved wrongly!
+[12:40:29] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:41:08] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:41:17] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:41:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:41:34] [RCON Client #96/INFO]: [Rcon: Found LiteOptTest]
+[12:41:49] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:41:49] [RCON Client #97/INFO]: [Rcon: Successfully found the block at 110, 5, 110]
+[12:41:49] [RCON Client #97/INFO]: [Rcon: Successfully found the block at 111, 7, 110]
+[12:43:15] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:43:15] [RCON Client #98/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 108.5]
+[12:43:15] [Server thread/WARN]: LiteOptTest moved wrongly!
+[12:43:26] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:43:26] [RCON Client #99/INFO]: [Rcon: Found LiteOptTest]
+[12:43:31] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:43:31] [RCON Client #100/INFO]: [Rcon: Found LiteOptTest]
+[12:43:47] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:43:47] [RCON Client #101/INFO]: [Rcon: Found LiteOptTest]
+[12:44:01] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:44:21] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:44:21] [RCON Client #103/INFO]: [Rcon: Found LiteOptTest]
+[12:44:41] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:44:45] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:44:52] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:46:19] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:46:44] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:46:44] [RCON Client #108/INFO]: [Rcon: Found LiteOptTest]
+[12:47:08] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:49:19] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:49:32] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:49:32] [RCON Client #111/INFO]: [Rcon: Successfully found the block at 110, 4, 110]
+[12:49:32] [RCON Client #111/INFO]: [Rcon: Successfully found the block at 110, 5, 110]
+[12:49:32] [RCON Client #111/INFO]: [Rcon: Successfully found the block at 110, 4, 109]
+[12:49:51] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:49:51] [RCON Client #112/INFO]: [Rcon: Found LiteOptTest]
+[12:50:26] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:50:26] [RCON Client #113/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 5.0, 110.5]
+[12:50:26] [Server thread/WARN]: LiteOptTest moved wrongly!
+[12:50:31] [Server thread/INFO]: LiteOptTest has made the advancement [We Need to Go Deeper]
+[12:50:31] [Server thread/WARN]: LiteOptTest moved too quickly! -84.0,20.0,-103.0
+[12:50:37] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:50:37] [RCON Client #114/INFO]: [Rcon: Found LiteOptTest]
+[12:53:06] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:53:33] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:54:25] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:54:32] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:55:02] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:55:21] [Server thread/INFO]: LiteOptTest lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[12:55:21] [Server thread/INFO]: LiteOptTest left the game
+[12:55:27] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[12:58:46] [Server thread/INFO]: Kisde[/127.0.0.1:56936] logged in with entity id 232 at (1202.5, 4.0, 1022.0261782932686)
+[12:58:46] [Server thread/INFO]: Kisde joined the game
+[13:00:11] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:00:11] [RCON Client #121/INFO]: [Rcon: Found Kisde]
+[13:00:24] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:00:24] [RCON Client #122/INFO]: [Rcon: Added new objective 'rev111walk' successfully]
+[13:01:10] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:01:10] [RCON Client #123/INFO]: [Rcon: Found Kisde]
+[13:02:15] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:02:15] [RCON Client #124/INFO]: [Rcon: Found Kisde]
+[13:04:22] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:04:22] [RCON Client #125/INFO]: [Rcon: Found Kisde]
+[13:05:57] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:05:57] [RCON Client #126/INFO]: [Rcon: Found Kisde]
+[13:06:48] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[13:06:48] [RCON Client #127/INFO]: [Rcon: Found Kisde]

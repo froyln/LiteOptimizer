@@ -1,0 +1,7 @@
+gamemode 0 LiteOptTest -> 
+replaceitem entity LiteOptTest slot.hotbar.0 planks 1 -> Replaced slot slot.hotbar.0 with 1 * [Oak Wood Planks]
+replaceitem entity LiteOptTest slot.inventory.0 planks 16 -> Replaced slot slot.inventory.0 with 16 * [Oak Wood Planks]
+setblock -2000 70 699 stone -> Block placed
+testfor LiteOptTest {Inventory:[{Slot:0b,id:"minecraft:planks",Count:1b},{Slot:9b,id:"minecraft:planks",Count:16b}]} -> Found LiteOptTest
+testforblock -2001 70 699 planks -> Successfully found the block at -2001, 70, 699
+testfor LiteOptTest {Inventory:[{Slot:0b,id:"minecraft:planks",Count:16b}]} -> Found LiteOptTest

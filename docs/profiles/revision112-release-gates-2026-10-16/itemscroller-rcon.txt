@@ -1,0 +1,15 @@
+setblock 24 25 7 minecraft:chest -> Cannot place block outside of the world
+replaceitem block 24 25 7 slot.container.0 minecraft:cobblestone 64 -> Block at 24, 25, 7 is not a container
+replaceitem block 24 25 7 slot.container.1 minecraft:stone 64 -> Block at 24, 25, 7 is not a container
+tp LiteOptTest 26.5 25 7.5 90 18 -> Teleported LiteOptTest to 26.5, 25.0, 7.5
+execute LiteOptTest ~ ~ ~ setblock 23 26 7 minecraft:air -> The block couldn't be placedFailed to execute 'setblock 23 26 7 minecraft:air' as LiteOptTest
+execute LiteOptTest ~ ~ ~ setblock 23 25 7 minecraft:chest -> Block placed
+execute LiteOptTest ~ ~ ~ replaceitem block 23 25 7 slot.container.0 minecraft:cobblestone 64 -> Replaced slot slot.container.0 with 64 * [Cobblestone]
+execute LiteOptTest ~ ~ ~ replaceitem block 23 25 7 slot.container.1 minecraft:stone 64 -> Replaced slot slot.container.1 with 64 * [Stone]
+tp LiteOptTest 24.777 25 7.5 90 40 -> Teleported LiteOptTest to 24.777, 25.0, 7.5
+execute LiteOptTest ~ ~ ~ testforblock 23 25 7 minecraft:chest -1 {Items:[{Slot:0b,id:"minecraft:cobblestone",Count:63b}]} -> The block at 23, 25, 7 did not have the required NBT keysFailed to execute 'testforblock 23 25 7 minecraft:chest -1 {Items:[{Slot:0b,id:"minecraft:cobblestone",Count:63b}]}' as LiteOptTest
+testfor LiteOptTest {Inventory:[{id:"minecraft:cobblestone",Count:2b}]} -> LiteOptTest did not match the required data structure
+execute LiteOptTest ~ ~ ~ testforblock 23 25 7 minecraft:chest -1 {Items:[{Slot:0b,id:"minecraft:cobblestone",Count:63b}]} -> Successfully found the block at 23, 25, 7
+testfor LiteOptTest {Inventory:[{id:"minecraft:cobblestone",Count:2b}]} -> Found LiteOptTest
+execute LiteOptTest ~ ~ ~ testforblock 23 25 7 minecraft:chest -1 {Items:[{Slot:0b,id:"minecraft:cobblestone",Count:64b}]} -> Successfully found the block at 23, 25, 7
+testfor LiteOptTest {Inventory:[{id:"minecraft:cobblestone",Count:1b}]} -> Found LiteOptTest

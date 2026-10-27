@@ -1,0 +1,4 @@
+17:[17:03:37] [Server thread/INFO]: VanillaTester[/127.0.0.1:45752] logged in with entity id 0 at (1215.5, 4.0, 500.5)
+18:[17:03:37] [Server thread/INFO]: VanillaTester joined the game
+60:[17:07:59] [Server thread/INFO]: VanillaTester has made the advancement [We Need to Go Deeper]
+62:[17:07:59] [Server thread/WARN]: VanillaTester moved too quickly! -1059.0,45.0,-427.0

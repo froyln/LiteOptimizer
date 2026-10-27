@@ -1,0 +1,2 @@
+faa2ba14b109f35c698c86d078c68dcd36e271ae4729aac0dca894c371986b68  build/libs/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod
+faa2ba14b109f35c698c86d078c68dcd36e271ae4729aac0dca894c371986b68  /home/froyln/.local/share/PrismLauncher/instances/liteoptimizer-parity-probe/minecraft/mods/1.12.2/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod

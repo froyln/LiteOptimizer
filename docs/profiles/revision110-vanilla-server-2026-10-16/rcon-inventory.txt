@@ -1,0 +1,7 @@
+Before transfer: Slot 0 stone x4 matched; Slot 10 stone did not match.
+After GUI transfer to main inventory: Slot 10 stone x4 matched; Slot 0 stone did not match.
+After transfer back to hotbar:
+testfor @p {Inventory:[{id:"minecraft:stone",Slot:0b,Count:4b}]} => Found LiteOptTest
+testfor @p {Inventory:[{id:"minecraft:stone",Slot:10b,Count:4b}]} => LiteOptTest did not match the required data structure
+testfor @p {playerGameType:0,Dimension:0} => Found LiteOptTest
+save-all => Saving...Saved the world

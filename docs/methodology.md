@@ -2,12 +2,43 @@
 
 Three questions, in order. A "no" at any step ends the candidate.
 
-1. **Is it parity-safe?** Same game state, same RNG consumption order, same iteration order,
-   same rendered pixels (for render work). Argued in writing first, then proven by the harness.
+1. **Does it respect the behavior boundary?** Shared/server simulation must retain identical
+   state, RNG consumption and update order. Client-only rendering/presentation may change with
+   documented configurable tradeoffs, unchanged player actions and vanilla networking.
 2. **Is it measurable?** A before/after number on at least one benchmark world.
 3. **Is it worth its code?** Gain per line. A 2% win that costs 400 lines of `@Overwrite` loses.
 
 ## 1. Parity
+
+### Scope policy (2026-10-14)
+
+The primary workload is a client connecting to an unmodified vanilla 1.12.2 server.
+No server component is required. Existing integrated-server optimizations may remain only
+with vanilla simulation parity; their MSPT gains do not improve a remote server's TPS.
+
+Classify each candidate before implementation:
+
+- **Shared/server simulation or data:** use the deterministic state/RNG harness below.
+  Shared classes, static RNG and helpers remain in this category unless the changed path is
+  proven isolated to the client. Client rendering math does not authorize shared fast math.
+- **Client-only with identical-output claim:** use controlled pixel comparisons below plus
+  focused interaction/compatibility checks.
+- **Client-only with intentional differences:** record what changes (culling, animation phase,
+  shading/rounding or another specific tradeoff), its config switch and default, then measure
+  the benefit. Compare captures to inspect intended differences and unintended missing geometry,
+  flicker, stale textures, labels and overlay damage; zero differing pixels is not required.
+  Do not change server-bound player-action semantics, movement physics/prediction, interaction
+  reach, inventory behavior or packet meaning/timing to manufacture a performance gain.
+
+For any client change, audit calls into shared simulation/RNG and networking. Use the state
+harness whenever integrated-server isolation could be affected. Validate relevant interactions
+against an unmodified vanilla server: movement/corrections, placement/breaking, inventories,
+entities, chunk streaming and dimension transitions as applicable. Release requires the full
+vanilla-server gate in `compat/checklist.md`; Carpet-only testing cannot substitute for it.
+Document visual limitations rather than silently accepting arbitrary rendering failures.
+Memory optimizations still require correct aliasing, mutation and serialization behavior.
+
+The deterministic harness and historical proofs below remain valid for their stated scope.
 
 ### Why a naive "run twice, compare" does not work
 
@@ -18,8 +49,8 @@ then compare mod-on vs mod-off under that determinism.
 
 ### Harness (implemented in 0.1; `tools/parity.sh <world-dir> [ticks] [--only <key>] [--vanilla]`)
 
-Runtime flags (all under `mixin/dev/*`, applied only when the matching `-Dliteoptimizer.<pkg>`
-property is set, never from the config file):
+Runtime flags (all under `mixin/dev/*`, applied only when the matching `liteoptimizer.<pkg>`
+property is set, never from the optimization config):
 
 | property | effect |
 |---|---|
@@ -29,11 +60,40 @@ property is set, never from the config file):
 | `liteoptimizer.nopause=1` | `Minecraft.displayInGameMenu` cancelled — an unfocused window would otherwise pause the integrated server and freeze the tick count |
 | `liteoptimizer.bench=<label>[,warmup_s[,seconds]]` (+ `.quit`) | `BenchRecorder`: frame durations + integrated MSPT → `<game dir>/bench/<label>.csv` |
 
-`tools/parity.sh` copies the world into the instance as `saves/_parity`, sets the JVM args in
-`instance.cfg`, writes `liteoptimizer.json` all-off / all-on (or `--only <key>`), launches the
-instance twice via `prismlauncher --launch`, diffs the two dumps, and restores everything (trap).
+`tools/parity.sh` requires the isolated Sway/WayVNC desktop and launches Prism through
+`/home/froyln/Dev/ai-desktop.sh exec`, so the game cannot appear on the host desktop. It copies the
+world into the instance as `saves/_parity`, writes run flags to `parity/run.properties` (the Mixin
+plugin loads them before applying dev mixins, so Prism's cached JVM args do not interfere), writes
+`liteoptimizer.json` all-off / all-on (or `--only <key>`), waits for the unique run label and dump,
+diffs the two dumps, and restores both config files and the temporary world (trap). Config updates
+use atomic replacement so disposable profiles that share a hard-linked settings file cannot
+change sibling profiles.
+`tools/bench.sh` also requires the isolated desktop and starts Prism through the same Sway wrapper.
+It writes the corresponding parity and bench flags to the same clone-local file, then waits for
+the target instance's Java process to exit before copying its CSV or starting the next mode. This
+prevents Prism's cached JVM arguments and an asynchronous game shutdown from silently invalidating
+a paired measurement.
 `--vanilla` runs off vs off — the determinism check that must pass before the harness means
 anything. Dumps land in `run/parity/`.
+
+The B1 storage smoke save failed this control on 2026-10-15: OFF/OFF already changed the final
+`World.rand` seed, with variable chunk-loading timing and RNG call counts. It is therefore a client
+benchmark/interaction fixture, not a valid strict-parity fixture. Keep the RNG gate intact and use
+the stable `test` save for cumulative parity; evidence is in
+`profiles/revision58-parity-2026-10-15/README.md`.
+
+Revision-93 runs on the stable `test` save at render distance 10 found intermittent OFF-side
+mismatches isolated to chunk `(-120, 44)`, even though ON and OFF controls matched on other runs.
+Verbose controls show transient chunk/entity load-count differences near tick 890; the precise
+block/light field remains unknown. Revision 94 then passed a direct 6,000-tick OFF/ON comparison
+plus OFF/OFF control with all dumps byte-identical at fixed render distance 2. Use that controlled
+setting for strict cumulative parity; keep the RD10 outliers as a documented fixture limitation.
+Evidence: `profiles/revision93-parity-diagnostic-2026-10-15/README.md` and
+`profiles/revision94-parity-render-distance-2/README.md`.
+
+Revision 101 reproduced the fixed-distance result on the latest release payload: OFF/OFF and
+OFF/ON each completed for 6,000 ticks on the stable `test` save, with all dumps matching at
+`9494ea25…`. Evidence: `profiles/revision101-parity-2026-10-16/README.md`.
 
 ### Isolated benchmark comparisons
 
@@ -93,7 +153,8 @@ does not suppress enchanted-tool glint. Save and restore these user settings.
 - **State hash.** Iterate loaded chunks in ascending `(x, z)`; for each chunk hash, in order:
   every `ExtendedBlockStorage` block data + palette, block light + sky light arrays, every
   `TileEntity.writeToNBT` (sorted by pos), every `Entity.writeToNBT` (sorted by entity id;
-  strip `UUIDMost/Least`, which come from an unseeded source, and `Pos` beyond 1e-9 rounding
+  canonicalize `EntityLivingBase.ActiveEffects` by id/amplifier because its backing hash map
+  serializes in process-dependent order; strip `UUIDMost/Least`, which come from an unseeded source, and `Pos` beyond 1e-9 rounding
   only if a documented float-order concern appears — default is exact). Also hash the
   scheduled tick list (`WorldServer.pendingTickListEntriesTreeSet`, in iteration order), the
   world time, and the `World.rand` internal seed (reflectively) — the last one catches an
@@ -102,10 +163,10 @@ does not suppress enchanted-tool glint. Save and restore these user settings.
   chunk* diverged.
 - **Runner.** `tools/parity.sh <world> <ticks>`: copies the world twice, runs the game with
   config all-off then all-on (or `--only <optimization>`), diffs the two dumps. Exit 0 = parity.
-- **Render parity.** For render optimizations: fixed pose, `F2` screenshot at tick N with
-  and without; `compare -metric AE` (ImageMagick) must be 0 for anything claiming
-  "identical output" (culling, batching, texture animation). Things that legitimately change
-  pixels (none planned) would need an explicit exception in the catalog.
+- **Render comparison.** Fixed pose, `F2` screenshot at tick N with and without;
+  `compare -metric AE` (ImageMagick) must be 0 for an identical-output claim. Intentional
+  client-only differences require cataloged tradeoffs and focused visual/interaction checks,
+  not an exception to server-state parity.
 
 ### What the harness proved (2026-09-17, world B3 "50 furnace Array", seed 1)
 
@@ -130,7 +191,7 @@ count) and the rand call-site histogram — diff those to name the culprit.
 - Threading: does anything move off the main thread? Then results must be consumed at the
   same point vanilla would have computed them.
 
-### Render parity (the Sodium pillar): same pixels, same mesh bytes
+### Render parity for identical-output claims: same pixels, same mesh bytes
 
 The render pillar cannot be checked with the world-state hash: its output is the frame. The
 check is a screenshot diff at a fixed pose, and it only works once everything that vanilla
@@ -211,22 +272,18 @@ each, report the median. A gain inside run-to-run noise (< 3%) counts as zero.
 
 `docs/catalog.md` is the single list. Every candidate goes in with: source (mod + module +
 license), what it changes, applies to 1.12.2 (`yes`/`no`/`partial` with the class names), parity
-risk (`none` = render or memory only, `low`, `med`, `high`), expected gain (which benchmark),
-effort (S/M/L), status.
+risk (client-only versus shared/server scope, intended visual changes, server/network boundary),
+expected gain (which benchmark), effort (S/M/L), status.
 
-Priority = expected gain × confidence ÷ (effort × parity risk). Work top-down in batches of
-3–5 related items per PLAN.md task. The order of batches is fixed by risk, not by gain:
+Follow PLAN.md: choose one candidate from a current profile, considering user-visible gain,
+implementation cost, client tradeoff and server/compatibility risk. Reuse infrastructure;
+do not impose feature batches. Prioritize client FPS/frame-time, chunk loading and retained
+heap for vanilla-server play. Integrated-server MSPT is a separate metric for shared logic.
 
-1. infrastructure (config plugin, BenchRecorder, parity harness, benchmark worlds)
-2. `render` — client only, parity risk none, proven by screenshot diff
-3. `memory` — parity risk none, proven by heap numbers
-4. `world` / `ai` — parity harness mandatory, one optimization per commit
-5. big rewrites (chunk render pipeline, tick scheduler data structure) — only if the numbers
-   from 2–4 leave them as the dominant remaining cost
-
-Per optimization: catalog row with parity argument → `/plan-task` → implement (one package,
-one config key) → `./gradlew build` → `tools/parity.sh` → benchmark → numbers into the row →
-`perf(<area>): <name>` commit. Anything that fails parity is reverted, not tuned.
+Per optimization: catalog scope/boundary argument and client tradeoff → PLAN.md task →
+implement (one package, one config key) → build → relevant server parity or client visual/
+interaction checks → benchmark → evidence in the row. A server-parity failure must be fixed
+or the candidate rejected; intended client differences do not waive that gate.
 
 ## Licensing
 

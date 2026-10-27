@@ -16,14 +16,16 @@ import me.jellysquid.mods.sodium.client.util.task.CancellationSource;
  */
 public class ChunkRenderEmptyBuildTask<T extends ChunkGraphicsState> extends ChunkRenderBuildTask<T> {
     private final ChunkRenderContainer<T> render;
+    private final long revision;
 
-    public ChunkRenderEmptyBuildTask(ChunkRenderContainer<T> render) {
+    public ChunkRenderEmptyBuildTask(ChunkRenderContainer<T> render, long revision) {
         this.render = render;
+        this.revision = revision;
     }
 
     @Override
     public ChunkBuildResult<T> performBuild(ChunkRenderCacheLocal cache, ChunkBuildBuffers buffers, CancellationSource cancellationSource) {
-        return new ChunkBuildResult<>(this.render, ChunkRenderData.EMPTY);
+        return new ChunkBuildResult<>(this.render, this.revision, ChunkRenderData.EMPTY);
     }
 
     @Override

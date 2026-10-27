@@ -1,0 +1,52 @@
+[09:29:27] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[09:29:27] [Server thread/INFO]: Loading properties
+[09:29:27] [Server thread/INFO]: Default game type: SURVIVAL
+[09:29:27] [Server thread/INFO]: Generating keypair
+[09:29:28] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[09:29:28] [Server thread/INFO]: Using epoll channel type
+[09:29:28] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[09:29:28] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[09:29:28] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[09:29:28] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[09:29:28] [Server thread/INFO]: Preparing level "world"
+[09:29:28] [Server thread/INFO]: Loaded 488 advancements
+[09:29:28] [Server thread/INFO]: Preparing start region for level 0
+[09:29:28] [Server thread/INFO]: Done (0.700s)! For help, type "help" or "?"
+[09:29:28] [Server thread/INFO]: Starting remote control listener
+[09:29:28] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25576
+[09:30:25] [Server thread/INFO]: Kisde[/127.0.0.1:55498] logged in with entity id 114 at (1793.5, 4.0, 550.9268905076594)
+[09:30:25] [Server thread/INFO]: Kisde joined the game
+[09:31:03] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[09:31:03] [RCON Client #2/INFO]: [Rcon: 20 blocks filled]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: 4 blocks filled]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: 4 blocks filled]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: 3 blocks filled]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: 3 blocks filled]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: Block placed]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: Successfully found the block at 1793, 4, 552]
+[09:31:03] [RCON Client #2/INFO]: [Rcon: Successfully found the block at 1794, 6, 552]
+[09:31:21] [Server thread/INFO]: Kisde has made the advancement [We Need to Go Deeper]
+[09:31:21] [Server thread/WARN]: Kisde moved too quickly! -1637.0,46.0,-479.3658826552261
+[09:31:39] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[09:31:39] [RCON Client #3/INFO]: [Rcon: Found Kisde]
+[09:31:39] [RCON Client #3/INFO]: [Rcon: Set score of potion_use for player Kisde to 0]
+[09:31:39] [RCON Client #3/INFO]: [Rcon: Replaced slot slot.hotbar.1 with 1 * [Potion of Swiftness]]
+[09:31:39] [RCON Client #3/INFO]: [Rcon: Found Kisde]
+[09:31:56] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[09:31:56] [RCON Client #4/INFO]: [Rcon: Score 1 is in range 1 to 999999]
+[09:31:56] [RCON Client #4/INFO]: [Rcon: Found Kisde]
+[09:31:56] [RCON Client #4/INFO]: [Rcon: Found Kisde]
+[09:31:56] [RCON Client #4/INFO]: [Rcon: Found Kisde]
+[09:32:17] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[09:32:17] [RCON Client #5/INFO]: [Rcon: Set score of trade for player Kisde to 0]
+[09:32:17] [RCON Client #5/INFO]: [Rcon: Replaced slot slot.hotbar.1 with 1 * [String]]
+[09:32:17] [RCON Client #5/INFO]: [Rcon: Teleported Kisde to 157.5, 50.0, 73.5]
+[09:32:17] [Server thread/WARN]: Kisde moved wrongly!
+[09:32:35] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[09:32:35] [RCON Client #6/INFO]: [Rcon: Teleported Kisde to 157.5625, 50.0, 73.5]
+[09:32:35] [RCON Client #6/INFO]: [Rcon: Found Kisde]
+[09:33:13] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[09:33:13] [RCON Client #7/INFO]: [Rcon: Found Kisde]
+[09:33:13] [RCON Client #7/INFO]: [Rcon: Score 1 is in range 1 to 999999]
+[09:33:13] [RCON Client #7/INFO]: [Rcon: Found Kisde]
+[09:33:13] [RCON Client #7/INFO]: [Rcon: Saved the world]

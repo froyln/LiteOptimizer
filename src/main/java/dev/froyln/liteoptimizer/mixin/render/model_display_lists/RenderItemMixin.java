@@ -40,11 +40,7 @@ public abstract class RenderItemMixin {
         ItemModelLists.end();
     }
 
-    // Only item-frame items (FIXED) are served from lists. The held item and GUI icons are lit
-    // through a scaled modelview where NVIDIA's display-list path rounds fixed-function lighting
-    // differently by 1/255 on some pixels (measured at B1); the item-frame pixels were identical,
-    // and those are where the time goes. Dropped items never come through renderItemModel
-    // (RenderEntityItem calls renderItem directly), so nothing else is gated in.
+    // Only item-frame items (FIXED) use lists. Other transforms showed lighting rounding differences.
     @Inject(method = "renderItemModel", at = @At("HEAD"))
     private void liteoptimizer$enterTransform(ItemStack stack, IBakedModel model, ItemCameraTransforms.TransformType transform, boolean leftHanded, CallbackInfo ci) {
         ItemModelLists.setEnabled(transform == ItemCameraTransforms.TransformType.FIXED);

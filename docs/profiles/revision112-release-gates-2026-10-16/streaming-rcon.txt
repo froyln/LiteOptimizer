@@ -1,0 +1,11 @@
+weather clear -> Changing to clear weather
+difficulty peaceful -> Set game difficulty to Peaceful
+gamemode 0 LiteOptTest -> 
+tp LiteOptTest 0.5 4 0.5 -90 0 -> Teleported LiteOptTest to 0.5, 4.0, 0.5
+scoreboard objectives add stream112 stat.walkOneCm -> Added new objective 'stream112' successfully
+scoreboard players set LiteOptTest stream112 0 -> Set score of stream112 for player LiteOptTest to 0
+scoreboard players test LiteOptTest stream112 1 * -> Score 28152 is in range 1 to 2147483647
+testfor LiteOptTest {Dimension:0} -> Found LiteOptTest
+scoreboard players test LiteOptTest stream112 1 * -> Score 35240 is in range 1 to 2147483647
+testfor LiteOptTest {Dimension:0} -> Found LiteOptTest
+save-all -> Saving...Saved the world

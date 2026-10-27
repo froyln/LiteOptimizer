@@ -1,0 +1,15 @@
+{
+  "built_revision": "39",
+  "built_sha256": "ca26dc7b6108f89bf80f01823c5119ec3c5e9d697ef44c2827b74b04ff807e04",
+  "installed_revision": "38",
+  "installed_sha256": "7371af8350f1f88d299fad47123e5bda7270bc52e41fc3120c13430162819395",
+  "built_entry_count": 726,
+  "installed_entry_count": 726,
+  "entries_only_in_built": [],
+  "entries_only_in_installed": [],
+  "different_entries": [
+    "litemod.json"
+  ],
+  "runtime_tested_revision": "38",
+  "revision_39_runtime_tested": false
+}

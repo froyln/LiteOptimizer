@@ -1,0 +1,10 @@
+{
+  "revision": "113",
+  "artifact_sha256": "115010902e5d6e711fe65a358da63c9c7de2928ebd31da80034c18846f84f7cd",
+  "nonmanifest_changes": [],
+  "source_differences": [],
+  "build_exit_code": 0,
+  "entry_set_equal": true,
+  "only_changed_entry": "litemod.json",
+  "only_changed_manifest_field": "revision"
+}

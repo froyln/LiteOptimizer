@@ -1,0 +1,36 @@
+[18:12:25] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[18:12:25] [Server thread/INFO]: Loading properties
+[18:12:25] [Server thread/INFO]: Default game type: CREATIVE
+[18:12:25] [Server thread/INFO]: Generating keypair
+[18:12:25] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25569
+[18:12:25] [Server thread/INFO]: Using epoll channel type
+[18:12:25] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[18:12:25] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[18:12:25] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[18:12:25] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[18:12:25] [Server thread/INFO]: Preparing level "gate-world"
+[18:12:25] [Server thread/INFO]: Loaded 488 advancements
+[18:12:26] [Server thread/INFO]: Preparing start region for level 0
+[18:12:26] [Server thread/INFO]: Done (0.519s)! For help, type "help" or "?"
+[18:12:26] [Server thread/INFO]: Starting remote control listener
+[18:12:26] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25577
+[18:12:51] [Server thread/INFO]: LiteOptTest[/127.0.0.1:42498] logged in with entity id 62 at (22.5, 20.0, 6.5)
+[18:12:51] [Server thread/INFO]: LiteOptTest joined the game
+[18:13:29] [Server thread/INFO]: Set LiteOptTest's game mode to Survival Mode
+[18:13:29] [Server thread/INFO]: Replaced slot slot.hotbar.0 with 1 * [Potion of Swiftness]
+[18:14:37] [Server thread/INFO]: Saving...
+[18:14:37] [Server thread/INFO]: Saved the world
+[18:14:57] [Server thread/INFO]: Stopping the server
+[18:14:57] [Server thread/INFO]: Stopping server
+[18:14:57] [Server thread/INFO]: Saving players
+[18:14:57] [Server thread/INFO]: LiteOptTest lost connection: Server closed
+[18:14:57] [Server thread/INFO]: LiteOptTest left the game
+[18:14:57] [Server thread/INFO]: Saving worlds
+[18:14:57] [Server thread/INFO]: Saving chunks for level 'gate-world'/overworld
+[18:14:57] [Server thread/INFO]: Saving chunks for level 'gate-world'/the_nether
+[18:14:57] [Server thread/INFO]: Saving chunks for level 'gate-world'/the_end
+[18:14:57] [Server Shutdown Thread/INFO]: Stopping server
+[18:14:57] [Server Shutdown Thread/INFO]: Saving players
+[18:14:57] [Server Shutdown Thread/INFO]: Saving worlds
+[18:14:57] [Server Shutdown Thread/INFO]: Saving chunks for level 'gate-world'/overworld
+[18:14:57] [Server Shutdown Thread/INFO]: Saving chunks for level 'gate-world'/the_nether

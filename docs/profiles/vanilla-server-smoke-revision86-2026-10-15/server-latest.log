@@ -1,0 +1,156 @@
+[07:34:40] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[07:34:40] [Server thread/INFO]: Loading properties
+[07:34:40] [Server thread/INFO]: Default game type: CREATIVE
+[07:34:40] [Server thread/INFO]: Generating keypair
+[07:34:40] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25567
+[07:34:41] [Server thread/INFO]: Using epoll channel type
+[07:34:41] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[07:34:41] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[07:34:41] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[07:34:41] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[07:34:41] [Server thread/INFO]: Preparing level "world"
+[07:34:41] [Server thread/INFO]: Loaded 488 advancements
+[07:34:41] [Server thread/INFO]: Preparing start region for level 0
+[07:34:41] [Server thread/INFO]: Done (0.499s)! For help, type "help" or "?"
+[07:34:41] [Server thread/INFO]: Starting remote control listener
+[07:34:41] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25575
+[07:35:42] [Server thread/INFO]: VanillaTester[/127.0.0.1:44280] logged in with entity id 118 at (768.5, 4.0, 768.5)
+[07:35:42] [Server thread/INFO]: VanillaTester joined the game
+[07:36:08] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:36:08] [RCON Client #2/INFO]: [Rcon: Killed Shepherd]
+[07:36:08] [RCON Client #2/INFO]: [Rcon: Teleported VanillaTester to 72.5, 4.0, 289.5]
+[07:36:08] [RCON Client #2/INFO]: [Rcon: Cleared the inventory of VanillaTester, removing 1 items]
+[07:36:08] [RCON Client #2/INFO]: [Rcon: Object successfully summoned]
+[07:36:42] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:36:42] [RCON Client #3/INFO]: [Rcon: Set VanillaTester's game mode to Survival Mode]
+[07:36:42] [RCON Client #3/INFO]: [Rcon: Given [Potion of Swiftness] * 1 to VanillaTester]
+[07:36:42] [RCON Client #3/INFO]: [Rcon: Added new objective 'potion_use' successfully]
+[07:36:42] [RCON Client #3/INFO]: [Rcon: Set score of potion_use for player VanillaTester to 0]
+[07:36:42] [RCON Client #3/INFO]: [Rcon: Teleported VanillaTester to 72.5, 4.0, 289.5]
+[07:37:14] [Server thread/INFO]: VanillaTester was slain by Zombie
+[07:37:19] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:37:19] [RCON Client #4/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]
+[07:37:19] [RCON Client #4/INFO]: [Rcon: Added new objective 'villager_talk' successfully]
+[07:37:19] [RCON Client #4/INFO]: [Rcon: Set score of villager_talk for player VanillaTester to 0]
+[07:37:19] [RCON Client #4/INFO]: [Rcon: Object successfully summoned]
+[07:37:34] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:37:34] [RCON Client #5/INFO]: [Rcon: Set game difficulty to Peaceful]
+[07:37:34] [RCON Client #5/INFO]: [Rcon: Set VanillaTester's game mode to Creative Mode]
+[07:37:34] [RCON Client #5/INFO]: [Rcon: Teleported VanillaTester to 72.5, 5.0, 288.5]
+[07:37:34] [RCON Client #5/INFO]: [Rcon: Object successfully summoned]
+[07:37:51] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:37:51] [RCON Client #6/INFO]: [Rcon: Teleported VanillaTester to 72.5, 5.0, 288.5]
+[07:37:51] [Server thread/WARN]: VanillaTester moved too quickly! -14.0,1.0,-8.0
+[07:38:10] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:38:29] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:38:29] [RCON Client #8/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]
+[07:38:29] [RCON Client #8/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]
+[07:38:29] [RCON Client #8/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[07:38:29] [RCON Client #8/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[07:38:29] [RCON Client #8/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[07:38:29] [RCON Client #8/INFO]: [Rcon: Saved the world]
+[07:38:39] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:38:39] [RCON Client #9/INFO]: [Rcon: Given [Wheat] * 20 to VanillaTester]
+[07:38:39] [RCON Client #9/INFO]: [Rcon: Added new objective 'villager_trade' successfully]
+[07:38:39] [RCON Client #9/INFO]: [Rcon: Set score of villager_trade for player VanillaTester to 0]
+[07:39:36] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:39:37] [RCON Client #10/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]
+[07:39:37] [RCON Client #10/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]
+[07:40:18] [Server thread/INFO]: VanillaTester lost connection: Disconnected
+[07:40:18] [Server thread/INFO]: VanillaTester left the game
+[07:40:35] [Server thread/INFO]: VanillaTester[/127.0.0.1:48688] logged in with entity id 879470 at (72.5, 4.0, 288.5)
+[07:40:35] [Server thread/INFO]: VanillaTester joined the game
+[07:41:16] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:41:41] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:41:54] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:41:54] [RCON Client #13/INFO]: [Rcon: Killed Farmer]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: Killed Farmer]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: 4 blocks filled]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: 4 blocks filled]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: 3 blocks filled]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: 3 blocks filled]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: Block placed]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: Successfully found the block at 73, 5, 293]
+[07:41:54] [RCON Client #13/INFO]: [Rcon: Teleported VanillaTester to 73.5, 4.0, 290.5]
+[07:43:52] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:43:52] [RCON Client #14/INFO]: [Rcon: Found VanillaTester]
+[07:44:05] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:44:05] [RCON Client #15/INFO]: [Rcon: Found VanillaTester]
+[07:44:05] [RCON Client #15/INFO]: [Rcon: Score 2126 is in range 1 to 2147483647]
+[07:44:15] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:44:15] [RCON Client #16/INFO]: [Rcon: Found VanillaTester]
+[07:44:53] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:44:53] [RCON Client #17/INFO]: [Rcon: Teleported VanillaTester to 73.5, 4.0, 293.0]
+[07:44:56] [Server thread/INFO]: VanillaTester has made the advancement [We Need to Go Deeper]
+[07:44:56] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3232ms behind, skipping 64 tick(s)
+[07:44:56] [Server thread/WARN]: VanillaTester moved too quickly! -65.0,28.0,-258.3999999985099
+[07:45:23] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:45:23] [RCON Client #18/ERROR]: Failed to save chunk
+java.util.ConcurrentModificationException: null
+	at java.util.TreeMap$PrivateEntryIterator.nextEntry(TreeMap.java:1521) ~[?:?]
+	at java.util.TreeMap$KeyIterator.next(TreeMap.java:1575) ~[?:?]
+	at oo.a(SourceFile:686) ~[server.jar:?]
+	at oo.a(SourceFile:669) ~[server.jar:?]
+	at aye.a(SourceFile:272) ~[server.jar:?]
+	at aye.a(SourceFile:116) ~[server.jar:?]
+	at on.c(SourceFile:147) ~[server.jar:?]
+	at on.a(SourceFile:166) ~[server.jar:?]
+	at oo.a(SourceFile:881) ~[server.jar:?]
+	at dc.a(SourceFile:41) ~[server.jar:?]
+	at bj.a(SourceFile:92) ~[server.jar:?]
+	at bj.a(SourceFile:70) ~[server.jar:?]
+	at nz.a_(SourceFile:618) ~[server.jar:?]
+	at qb.run(SourceFile:80) ~[server.jar:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+[07:45:23] [RCON Client #18/ERROR]: Failed to save chunk
+java.util.ConcurrentModificationException: null
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1095) ~[?:?]
+	at java.util.ArrayList$Itr.next(ArrayList.java:1049) ~[?:?]
+	at oo.a(SourceFile:686) ~[server.jar:?]
+	at oo.a(SourceFile:669) ~[server.jar:?]
+	at aye.a(SourceFile:272) ~[server.jar:?]
+	at aye.a(SourceFile:116) ~[server.jar:?]
+	at on.c(SourceFile:147) ~[server.jar:?]
+	at on.a(SourceFile:166) ~[server.jar:?]
+	at oo.a(SourceFile:881) ~[server.jar:?]
+	at dc.a(SourceFile:41) ~[server.jar:?]
+	at bj.a(SourceFile:92) ~[server.jar:?]
+	at bj.a(SourceFile:70) ~[server.jar:?]
+	at nz.a_(SourceFile:618) ~[server.jar:?]
+	at qb.run(SourceFile:80) ~[server.jar:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+[07:45:23] [RCON Client #18/ERROR]: Failed to save chunk
+java.util.ConcurrentModificationException: null
+	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1095) ~[?:?]
+	at java.util.ArrayList$Itr.next(ArrayList.java:1049) ~[?:?]
+	at oo.a(SourceFile:686) ~[server.jar:?]
+	at oo.a(SourceFile:669) ~[server.jar:?]
+	at aye.a(SourceFile:272) ~[server.jar:?]
+	at aye.a(SourceFile:116) ~[server.jar:?]
+	at on.c(SourceFile:147) ~[server.jar:?]
+	at on.a(SourceFile:166) ~[server.jar:?]
+	at oo.a(SourceFile:881) ~[server.jar:?]
+	at dc.a(SourceFile:41) ~[server.jar:?]
+	at bj.a(SourceFile:92) ~[server.jar:?]
+	at bj.a(SourceFile:70) ~[server.jar:?]
+	at nz.a_(SourceFile:618) ~[server.jar:?]
+	at qb.run(SourceFile:80) ~[server.jar:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+[07:45:23] [RCON Client #18/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[07:45:23] [RCON Client #18/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[07:45:23] [RCON Client #18/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[07:45:23] [RCON Client #18/INFO]: [Rcon: Saved the world]
+[07:46:12] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[07:46:12] [RCON Client #19/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[07:46:12] [RCON Client #19/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[07:46:12] [RCON Client #19/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[07:46:12] [RCON Client #19/INFO]: [Rcon: Saved the world]
+[07:46:12] [RCON Client #19/INFO]: [Rcon: Stopping the server]
+[07:46:12] [Server thread/INFO]: Stopping server
+[07:46:12] [Server thread/INFO]: Saving players
+[07:46:12] [Server thread/INFO]: Saving worlds
+[07:46:12] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[07:46:12] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[07:46:12] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[07:46:12] [Server Shutdown Thread/INFO]: Stopping server
+[07:46:12] [Server Shutdown Thread/INFO]: Saving players

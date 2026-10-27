@@ -1,0 +1,4 @@
+Vanilla server saved player NBT after using Potion of Swiftness
+Effect id: 1 (minecraft:speed)
+Amplifier: 0
+Remaining duration: 2078 ticks

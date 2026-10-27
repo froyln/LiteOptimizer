@@ -1,0 +1,18 @@
+Revision 111 vanilla-server portal transfer — 2026-10-16
+
+Client: exact revision-111 archive; installed archive SHA-256 matches build evidence.
+Server: unmodified Mojang Minecraft 1.12.2 dedicated server; disposable test world.
+Portal frame: server-created, valid Nether portal at x=109..112, y=4..8, z=110.
+
+RCON setup: `tp LiteOptTest 110.5 5.0 110.5` placed the test player in the portal field to avoid the obsidian base. This was fixture-assisted entry, not a natural walking approach.
+
+Server log:
+[12:50:26] Teleported LiteOptTest to 110.5, 5.0, 110.5
+[12:50:31] LiteOptTest has made the advancement [We Need to Go Deeper]
+[12:50:31] LiteOptTest moved too quickly! -84.0,20.0,-103.0
+
+RCON checks after the transition:
+`testfor @p {Dimension:-1}` -> Found LiteOptTest
+`testfor @p {Dimension:0}` -> LiteOptTest did not match the required data structure
+
+The client screenshot `portal-travel.png` shows the Nether portal transition effect and the vanilla advancement. The destination is server-confirmed. The server emitted a vanilla moved-too-quickly warning at the dimension-coordinate transition after the RCON setup teleport; this is not counted as a movement/correction pass. Natural client walking into the portal and exact-revision chunk streaming remain separate checks.

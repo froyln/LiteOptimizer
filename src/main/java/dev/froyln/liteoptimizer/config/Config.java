@@ -84,7 +84,14 @@ public final class Config {
             } else if (!entry.getValue().isJsonPrimitive() || !entry.getValue().getAsJsonPrimitive().isBoolean()) {
                 LOG.warn("[LiteOptimizer] config key '{}' is not a boolean; using default {}", key, option.defaultValue);
             } else {
-                VALUES.put(option, entry.getValue().getAsBoolean());
+                boolean enabled = entry.getValue().getAsBoolean();
+                if (enabled && !option.defaultValue && !allowBenchmarkOverride(option)) {
+                    LOG.warn("[LiteOptimizer] '{}' is not release-validated; forcing it off", key);
+                    VALUES.put(option, false);
+                    missing = true;
+                } else {
+                    VALUES.put(option, enabled);
+                }
             }
         }
         for (Option option : Option.values()) {
@@ -93,6 +100,12 @@ public final class Config {
             }
         }
         return missing;
+    }
+
+    // Focused bench pairs may opt in to one unvalidated key without changing its release default.
+    private static boolean allowBenchmarkOverride(Option option) {
+        return System.getProperty("liteoptimizer.bench") != null
+                && option.key.equals(System.getProperty("liteoptimizer.bench.unvalidated"));
     }
 
     private static void write(File file) {
@@ -122,19 +135,35 @@ public final class Config {
         f.delete();
         load(f);                                            // missing → defaults, file written
         assert f.isFile() : "defaults not written";
-        assert isEnabled(Option.WORLD) && isActive(Option.ITEM_MERGING);
+        assert isEnabled(Option.WORLD) && isActive(Option.HOPPER_ENTITY_LOOKUP);
+        assert !isActive(Option.ITEM_MERGING) : "unmeasured optimization must default off";
         Writer w = new FileWriter(f);
         w.write("{\"world\": false, \"item_merging\": true, \"bogus\": 1, \"render\": \"no\"}");
         w.close();
         load(f);
         assert !isEnabled(Option.WORLD) : "world should be off";
-        assert isEnabled(Option.ITEM_MERGING) && !isActive(Option.ITEM_MERGING) : "pillar off must deactivate";
+        assert !isEnabled(Option.ITEM_MERGING) && !isActive(Option.ITEM_MERGING)
+                : "unvalidated option must remain disabled";
+        String migrated = new String(java.nio.file.Files.readAllBytes(f.toPath()), "UTF-8");
+        assert !migrated.contains("\"item_merging\": true") : "legacy true must be rewritten off";
         assert isEnabled(Option.RENDER) : "non-boolean must fall back to default";
+        w = new FileWriter(f);
+        w.write("{\"entity_culling\": true, \"item_merging\": true}");
+        w.close();
+        System.setProperty("liteoptimizer.bench", "on");
+        System.setProperty("liteoptimizer.bench.unvalidated", "entity_culling");
+        load(f);
+        assert isActive(Option.ENTITY_CULLING) : "named bench candidate should be enabled";
+        assert !isActive(Option.ITEM_MERGING) : "bench override must not enable other candidates";
+        System.clearProperty("liteoptimizer.bench");
+        System.clearProperty("liteoptimizer.bench.unvalidated");
         w = new FileWriter(f);
         w.write("not json at all");
         w.close();
         load(f);
         assert isEnabled(Option.WORLD) : "malformed must reset to defaults";
+        assert !isActive(Option.ITEM_MERGING) : "malformed config must reset to release defaults";
+        assert !isActive(Option.ENTITY_CULLING) : "experimental option must default off";
         f.delete();
         System.out.println("Config self-check OK");
     }

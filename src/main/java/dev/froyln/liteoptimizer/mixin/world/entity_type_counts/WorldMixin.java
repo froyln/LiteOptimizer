@@ -23,7 +23,7 @@ import dev.froyln.liteoptimizer.world.ICountingWorld;
  * WorldEntitySpawner calls World.countEntities(class) once per creature type per tick — a full
  * scan of loadedEntityList with isAssignableFrom. The counts are maintained incrementally on
  * onEntityAdded / onEntityRemoved (the exact points where vanilla adds to / removes from
- * loadedEntityList) and when an EntityLiving's persistence flag flips to true.
+ * loadedEntityList) and whenever an EntityLiving's persistence flag changes.
  *
  * Parity: the counter equals what the scan would return at every point in time; the first call
  * for a class is the scan itself. Only the count is used by the caller; no RNG, no order.

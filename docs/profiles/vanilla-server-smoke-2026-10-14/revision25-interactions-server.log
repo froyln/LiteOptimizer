@@ -1,0 +1,100 @@
+[16:44:01] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[16:44:01] [Server thread/INFO]: Loading properties
+[16:44:01] [Server thread/INFO]: Default game type: CREATIVE
+[16:44:01] [Server thread/INFO]: Generating keypair
+[16:44:01] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25569
+[16:44:02] [Server thread/INFO]: Using epoll channel type
+[16:44:02] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[16:44:02] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[16:44:02] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[16:44:02] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[16:44:02] [Server thread/INFO]: Preparing level "disposable-world"
+[16:44:02] [Server thread/INFO]: Loaded 488 advancements
+[16:44:02] [Server thread/INFO]: Preparing start region for level 0
+[16:44:02] [Server thread/INFO]: Done (0.424s)! For help, type "help" or "?"
+[16:44:02] [Server thread/INFO]: Starting remote control listener
+[16:44:02] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25577
+[16:46:05] [Server thread/INFO]: LiteOptTest[/127.0.0.1:42966] logged in with entity id 51 at (206.5, 4.0, -284.5)
+[16:46:05] [Server thread/INFO]: LiteOptTest joined the game
+[16:48:09] [Server thread/INFO]: Set the time to 1000
+[16:48:09] [Server thread/INFO]: There are 1/2 players online:
+[16:48:09] [Server thread/INFO]: LiteOptTest
+[16:48:21] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:48:21] [Server thread/INFO]: Object successfully summoned
+[16:48:53] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:49:21] [Server thread/INFO]: Block placed
+[16:49:35] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:49:48] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:49:58] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:50:18] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:50:29] [Server thread/INFO]: The block at 206, 4, -282 is Air (expected: Stone)
+[16:50:39] [Server thread/INFO]: Replaced slot slot.hotbar.0 with 1 * [Stone]
+[16:50:50] [Server thread/INFO]: The block at 206, 4, -282 is Air (expected: Stone)
+[16:50:59] [Server thread/INFO]: The block at 206, 4, -283 is Air (expected: Stone)
+[16:50:59] [Server thread/INFO]: Successfully found the block at 206, 4, -281
+[16:50:59] [Server thread/INFO]: The block at 206, 4, -280 is Air (expected: Stone)
+[16:50:59] [Server thread/INFO]: The block at 205, 4, -282 is Air (expected: Stone)
+[16:50:59] [Server thread/INFO]: The block at 207, 4, -282 is Air (expected: Stone)
+[16:50:59] [Server thread/INFO]: Unknown command. Try /help for a list of commands
+[16:51:15] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:51:15] [Server thread/INFO]: Object successfully summoned
+[16:51:27] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:51:38] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:51:49] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:52:32] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:52:43] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:52:59] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:53:12] [Server thread/INFO]: Object successfully summoned
+[16:53:12] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:53:45] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 4.0, -284.5
+[16:53:49] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 4.0, -281.30000001192093
+[16:54:01] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:54:15] [Server thread/INFO]: Killed Farmer
+[16:54:15] [Server thread/INFO]: Killed Fletcher
+[16:54:15] [Server thread/INFO]: Killed Nitwit
+[16:54:15] [Server thread/INFO]: Killed Leatherworker
+[16:54:15] [Server thread/INFO]: Killed Fletcher
+[16:54:15] [Server thread/INFO]: Block placed
+[16:54:15] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:54:29] [Server thread/INFO]: The block at 206, 4, -282 is Stone (expected: Air)
+[16:54:54] [Server thread/INFO]: The block at 206, 4, -282 is Stone (expected: Air)
+[16:55:48] [Server thread/INFO]: Block placed
+[16:55:48] [Server thread/INFO]: Replaced slot slot.hotbar.0 with 1 * [Stone]
+[16:55:48] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:55:48] [Server thread/INFO]: Successfully found the block at 206, 4, -281
+[16:56:09] [Server thread/INFO]: The block at 206, 4, -282 is Stone (expected: Air)
+[16:56:26] [Server thread/INFO]: The block at 206, 4, -281 is Air (expected: Stone)
+[16:56:44] [Server thread/INFO]: Block placed
+[16:56:44] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 5.0, -284.5
+[16:56:44] [Server thread/INFO]: Successfully found the block at 206, 4, -281
+[16:57:01] [Server thread/INFO]: Successfully found the block at 206, 4, -281
+[16:57:01] [Server thread/INFO]: The block at 206, 4, -282 is Air (expected: Stone)
+[16:57:01] [Server thread/INFO]: The block at 206, 4, -283 is Air (expected: Stone)
+[16:57:25] [Server thread/INFO]: Successfully found the block at 206, 4, -281
+[16:57:42] [Server thread/INFO]: Object successfully summoned
+[16:57:42] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 4.0, -284.5
+[16:58:21] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 4.0, -284.5
+[16:59:30] [Server thread/INFO]: Set the time to 1000
+[16:59:30] [Server thread/INFO]: Teleported LiteOptTest to 206.5, 4.0, -284.5
+[16:59:30] [Server thread/WARN]: LiteOptTest moved too quickly! 4.368099351955806,0.0,-9.378046309405363
+[16:59:58] [Server thread/INFO]: 20 blocks filled
+[16:59:58] [Server thread/INFO]: 6 blocks filled
+[16:59:58] [Server thread/INFO]: Block placed
+[16:59:58] [Server thread/INFO]: Successfully found the block at 230, 5, -299
+[17:00:13] [Server thread/INFO]: Teleported LiteOptTest to 230.5, 5.0, -299.5
+[17:00:13] [Server thread/WARN]: LiteOptTest moved too quickly! 24.0,1.0,-15.0
+[17:03:57] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[17:03:57] [Server thread/INFO]: LiteOptTest left the game
+[17:04:32] [Server thread/INFO]: LiteOptTest[/127.0.0.1:57610] logged in with entity id 4327233 at (231.298151422504, 5.0, -299.9144285545679)
+[17:04:32] [Server thread/INFO]: LiteOptTest joined the game
+[17:05:00] [Server thread/INFO]: Teleported LiteOptTest to 228.5, 4.0, -298.5
+[17:10:11] [Server thread/INFO]: Stopping the server
+[17:10:11] [Server thread/INFO]: Stopping server
+[17:10:11] [Server thread/INFO]: Saving players
+[17:10:11] [Server thread/INFO]: Saving worlds
+[17:10:11] [Server thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[17:10:11] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_nether
+[17:10:11] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_end
+[17:10:11] [Server Shutdown Thread/INFO]: Stopping server
+[17:10:11] [Server Shutdown Thread/INFO]: Saving players
+[17:10:11] [Server Shutdown Thread/INFO]: LiteOptTest lost connection: Server closed

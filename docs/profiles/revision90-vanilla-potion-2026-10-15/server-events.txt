@@ -1,0 +1,6 @@
+[09:59:41] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[10:00:23] [Server thread/INFO]: VanillaTester[/127.0.0.1:56236] logged in with entity id 96 at (1000.5, 4.0, 1000.5)
+[10:00:24] [Server thread/INFO]: VanillaTester joined the game
+[10:01:30] [RCON Client #4/INFO]: [Rcon: Added new objective 'potion_use' successfully]
+[10:03:11] [RCON Client #8/INFO]: [Rcon: Given [Potion of Swiftness] * 1 to VanillaTester]
+[10:05:36] [RCON Client #11/INFO]: [Rcon: Score 1 is in range 1 to 2147483647]

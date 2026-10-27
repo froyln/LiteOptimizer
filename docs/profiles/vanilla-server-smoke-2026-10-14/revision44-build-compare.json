@@ -1,0 +1,27 @@
+{
+  "built_revision": "44",
+  "built_sha256": "813afcf58f88e2ab79bc8e934fb3acc2e14b2bb3687336a3d3a31d905441aba2",
+  "installed_revision": "38",
+  "installed_sha256": "7371af8350f1f88d299fad47123e5bda7270bc52e41fc3120c13430162819395",
+  "built_entry_count": 727,
+  "installed_entry_count": 726,
+  "entries_only_in_built": [
+    "dev/froyln/liteoptimizer/render/TweakerooCompat.class"
+  ],
+  "entries_only_in_installed": [],
+  "different_entries": [
+    "META-INF/fml_cache_class_versions.json",
+    "litemod.json",
+    "me/jellysquid/mods/sodium/client/render/chunk/ChunkRenderContainer.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/ChunkRenderManager.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/compile/ChunkBuildResult.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/compile/ChunkBuilder$WorkerRunnable.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/compile/ChunkBuilder$WrappedTask.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/compile/ChunkBuilder.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/tasks/ChunkRenderEmptyBuildTask.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/tasks/ChunkRenderRebuildTask.class",
+    "me/jellysquid/mods/sodium/client/render/chunk/tasks/ChunkRenderTranslucencySortTask.class"
+  ],
+  "runtime_tested_revision": "38",
+  "revision_44_runtime_tested": false
+}

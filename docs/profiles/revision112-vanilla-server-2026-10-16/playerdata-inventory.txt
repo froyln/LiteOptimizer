@@ -1,0 +1,6 @@
+Read-only decode of the vanilla server's saved player NBT after RCON `save-all` following the completed trade:
+Player file: world/playerdata/919c110b-25bc-37de-b02a-7772ab1d9cbf.dat
+Inventory entries:
+  Slot 0: minecraft:bread x1
+
+The player had been given one emerald for the selected 1-emerald -> 1-bread offer. No emerald was present in the saved inventory after the final output click; the `trade112` server statistic also reached 1.

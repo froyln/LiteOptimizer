@@ -1,0 +1,2 @@
+196:    "tweakChunkRenderOnMainThread": false,
+308:    "tweakChunkRenderOnMainThread": {

@@ -1,0 +1,51 @@
+No-LiteOptimizer control client: Minecraft 1.12.2 with LiteLoader only and an empty mods directory; unmodified Mojang server.
+The first login restored Kisde at an old Nether respawn above lava. The player died before this test and that attempt is excluded; after respawn, the control was run from a safe Overworld location.
+$ setblock 1209 3 517 minecraft:obsidian
+Block placed
+$ setblock 1209 4 517 minecraft:obsidian
+Block placed
+$ setblock 1209 5 517 minecraft:obsidian
+Block placed
+$ setblock 1209 6 517 minecraft:obsidian
+Block placed
+$ setblock 1209 7 517 minecraft:obsidian
+Block placed
+$ setblock 1212 3 517 minecraft:obsidian
+Block placed
+$ setblock 1212 4 517 minecraft:obsidian
+Block placed
+$ setblock 1212 5 517 minecraft:obsidian
+Block placed
+$ setblock 1212 6 517 minecraft:obsidian
+Block placed
+$ setblock 1212 7 517 minecraft:obsidian
+Block placed
+$ setblock 1210 3 517 minecraft:obsidian
+Block placed
+$ setblock 1210 7 517 minecraft:obsidian
+Block placed
+$ setblock 1211 3 517 minecraft:obsidian
+Block placed
+$ setblock 1211 7 517 minecraft:obsidian
+Block placed
+$ setblock 1210 4 517 minecraft:fire
+Block placed
+$ testforblock 1210 4 517 minecraft:portal
+Successfully found the block at 1210, 4, 517
+$ testforblock 1211 6 517 minecraft:portal
+Successfully found the block at 1211, 6, 517
+$ testfor Kisde {Dimension:0}
+Found Kisde
+$ scoreboard players test Kisde walkOneCm 0 *
+Score 113570 is in range 0 to 2147483647
+$ save-all
+Saving...Saved the world
+$ # Via isolated WayVNC input, walked forward into the activated portal; no teleport command or player correction was used.
+$ testfor Kisde {Dimension:-1}
+Found Kisde
+$ testfor Kisde {Dimension:0}
+Kisde did not match the required data structure
+$ scoreboard players test Kisde walkOneCm 113571 *
+Score 114004 is in range 113571 to 2147483647 (+434 cm)
+Server log: 13:26:34 Kisde moved too quickly! -1054.0,46.0,-444.3071588683141
+This no-gameplay-mod control reproduces the same warning class during natural portal dimension conversion as revision 111. It is a LiteLoader-only control, not a stock launcher profile.

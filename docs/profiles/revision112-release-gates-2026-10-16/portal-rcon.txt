@@ -1,0 +1,8 @@
+fill 268 3 -214 271 7 -214 minecraft:obsidian -> 20 blocks filled
+fill 269 4 -214 270 6 -214 minecraft:air -> 6 blocks filled
+setblock 269 4 -214 minecraft:fire -> Block placed
+testforblock 269 4 -214 minecraft:portal -> Successfully found the block at 269, 4, -214
+effect LiteOptTest fire_resistance 120 0 true -> Given Fire Resistance (ID 12) * 0 to LiteOptTest for 120 seconds
+tp LiteOptTest 269.5 4 -216.5 0 0 -> Teleported LiteOptTest to 269.5, 4.0, -216.5
+testfor LiteOptTest {Dimension:-1} -> Found LiteOptTest
+testfor LiteOptTest {Dimension:0} -> LiteOptTest did not match the required data structure

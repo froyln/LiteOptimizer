@@ -1,0 +1,18 @@
+Exact client artifact: revision 102, SHA-256 7209ca68471ce6944fae4cb179c2d75bd87e12e007150c5fa8ffba5711943abe
+Server: unmodified Mojang 1.12.2 jar, disposable world, 127.0.0.1:25565; RCON 127.0.0.1:25576
+
+Placement: before input, `testfor @p {playerGameType:0}` and the five-stone hotbar NBT selector both found Kisde; target `(1205,3,550)` was grass and above `(1205,4,550)` was air. After holding the startup-configured P use key:
+
+- `testforblock 1205 4 550 minecraft:stone` → found
+- `scoreboard players test Kisde stoneuse 1 999999` → score 1 in range
+- `testfor @p {Inventory:[{id:"minecraft:stone",Count:4b,Slot:0b}]}` → found
+
+The test stone was removed with `setblock 1205 4 550 minecraft:air`; RCON confirmed air and `save-all` completed.
+
+Potion: the use statistic reached 1; RCON matched a returned glass bottle and active effect id 1. The player remained in dimension -1.
+
+Portal: a 4×5 obsidian frame was built with RCON at x=1792..1795, y=3..7, z=552. A server-side fire block at `(1793,4,552)` caused vanilla portal blocks to form; RCON found portal blocks at `(1793,4,552)` and `(1794,6,552)`. The player walked through, the client showed `We Need to Go Deeper`, and `testfor Kisde {Dimension:-1}` found the player. The larger dimension transfer emitted the vanilla `moved too quickly` warning.
+
+Correction/chunk streaming: RCON teleported the player from x=1536.5 to x=1792.5 (16 chunk columns). After ten seconds, F3 showed XYZ 1792.500 / 4 / 550.500, chunk `(112,34)`, and `MultiplayerChunkCache: 225,225`; the client rendered the destination. A later 0.0625-block correction to `(157.5625,50,73.5)` matched player NBT exactly and F3 displayed x=157.563. The server log has no movement warning after that correction. A separate earlier teleport attempt did warn and is not counted as the correction pass.
+
+After these checks, RCON saved the disposable world; the server was stopped and the temporary client key binding was restored to right click after the game exited. A custom villager summon for a second trade test was rejected by the server and is not counted; revision-100 trade evidence covers the same code payload.

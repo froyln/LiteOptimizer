@@ -1,0 +1,10 @@
+{
+  "revision31_sha256": "9f1721dad769c00796c473473e42b33ff53c6111a848191b4ccef4be5af83c24",
+  "revision32_sha256": "f66fb6ef025a5bfc42667ba0504e128c83f7883a582503273e4607bc4aca4f8e",
+  "entry_count_revision31": 726,
+  "entry_count_revision32": 726,
+  "changed_entries": [
+    "litemod.json"
+  ],
+  "payload_identical_except_manifest_revision": true
+}

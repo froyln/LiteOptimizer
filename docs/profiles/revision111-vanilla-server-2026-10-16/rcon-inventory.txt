@@ -1,0 +1,12 @@
+Revision 111 inventory transfer on the unmodified vanilla 1.12.2 server, player Kisde.
+The GUI moved all three server-provided emeralds between hotbar slot 0 and main inventory slot 9. Each transfer was confirmed with the matching RCON selector; the final state is back in hotbar slot 0.
+
+$ testfor @p {Inventory:[{Slot:9b,id:"minecraft:emerald",Count:3b}]}
+Found Kisde
+$ testfor @p {Inventory:[{Slot:0b,id:"minecraft:emerald",Count:3b}]}
+Kisde did not match the required data structure
+
+$ testfor @p {Inventory:[{Slot:0b,id:"minecraft:emerald",Count:3b}]}
+Found Kisde
+$ testfor @p {Inventory:[{Slot:9b,id:"minecraft:emerald",Count:3b}]}
+Kisde did not match the required data structure

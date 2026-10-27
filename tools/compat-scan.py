@@ -45,6 +45,8 @@ def decode(value):
 
 rows = []
 for jar in sorted(glob.glob(os.path.join(INSTANCE, "*.litemod")) + glob.glob(os.path.join(INSTANCE, "*.jar"))):
+    if os.path.basename(jar).startswith("liteoptimizer-"):
+        continue
     z = zipfile.ZipFile(jar)
     names = z.namelist()
     refmaps = [n for n in names if n.endswith(".refmap.json")]

@@ -1,0 +1,35 @@
+# Revision 100 exact-artifact vanilla-server interactions
+
+Artifact: SHA-256 `af32613c211a13d7e89216809b6a2e0bfb360a193b7f967c4b777c2f9b5ee86f`.
+The installed archive hash matched. Startup logs confirm the full technical mod stack and
+release-default LiteOptimizer options.
+
+RCON kicked the client with a test reason. The client returned to the server list, rejoined the
+same unmodified server, and RCON reported `LiteOptTest` online again.
+
+Right-clicking the spawned vanilla Fletcher opened its trading GUI. After receiving the required
+string from RCON, the client completed the string-for-emerald trade; the vanilla server awarded
+`What a Deal!` and `stat.tradedWithVillager` reached 1. Evidence: `villager-trade.png` and
+`villager-trade-complete.png`.
+
+After resetting `stat.walkOneCm`, two seconds of forward input produced a server score delta of
+180 cm. In Survival, the client right-clicked with stone in hand; vanilla RCON confirmed the placed
+stone at `(110, 4, 112)` and `stat.useItem.minecraft.stone = 1`.
+
+An RCON correction to `(110.5625, 4.0, 110.5)` was reflected in the client's F3 coordinates as
+`110.563 / 4.000 / 110.500`. The vanilla server log has no movement warning at this correction;
+an earlier 10-block fixture teleport did produce a `moved too quickly` warning. See
+`correction.png` and `server.log`.
+
+For breaking, RCON first placed stone at `(110, 3, 113)` and confirmed that block. The client
+mined it with a diamond pickaxe; a subsequent RCON query confirmed air at that position. The
+screen capture `break-drops.png` shows the resulting cobblestone drops. This closes the exact-run
+breaking check. The disposable server world was used only for this test.
+
+The client also consumed a server-provided Swiftness potion in Survival. The potion-use statistic
+reached 1, RCON confirmed the potion was gone and a glass bottle remained, and the client showed
+the Speed effect. Evidence: `potion-used.png`.
+
+The client moved a 64-stick stack from hotbar slot 2 to the first main-inventory slot. Vanilla RCON
+matched the player's NBT at `Slot:9b` with 64 sticks and confirmed the former hotbar slot no longer
+held the stack. Evidence: `inventory-transfer.png`.

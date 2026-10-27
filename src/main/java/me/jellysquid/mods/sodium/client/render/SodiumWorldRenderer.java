@@ -1,5 +1,7 @@
 package me.jellysquid.mods.sodium.client.render;
 
+import dev.froyln.liteoptimizer.config.Config;
+import dev.froyln.liteoptimizer.config.Option;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -31,6 +33,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.profiler.Profiler;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
@@ -49,6 +52,8 @@ import java.util.Set;
  */
 public class SodiumWorldRenderer implements ChunkStatusListener {
     private static SodiumWorldRenderer instance;
+    private static final boolean DEBUG_ENTITY_CULLING = Boolean.getBoolean("liteoptimizer.debug.entity_culling");
+    private static int debugEntityId = Integer.MIN_VALUE;
 
     private final Minecraft client;
 
@@ -421,7 +426,13 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
      * @return True if the entity is visible, otherwise false
      */
     public boolean isEntityVisible(Entity entity) {
-        if (!this.useEntityCulling) {
+        if (!this.useEntityCulling && !Config.isActive(Option.ENTITY_CULLING)) {
+            return true;
+        }
+
+        // Modded renderers may draw outside entity bounds; unknown entity types fail open.
+        net.minecraft.util.ResourceLocation registryKey = EntityList.getKey(entity);
+        if (registryKey == null || !"minecraft".equals(registryKey.getNamespace())) {
             return true;
         }
 
@@ -450,17 +461,23 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
         int maxY = MathHelper.floor(box.maxY + 0.5D) >> 4;
         int maxZ = MathHelper.floor(box.maxZ + 0.5D) >> 4;
 
-        for (int x = minX; x <= maxX; x++) {
+        boolean visible = false;
+        for (int x = minX; x <= maxX && !visible; x++) {
             for (int z = minZ; z <= maxZ; z++) {
                 for (int y = minY; y <= maxY; y++) {
-                    if (this.chunkRenderManager.isChunkVisible(x, y, z)) {
-                        return true;
+                    boolean sectionVisible = Config.isActive(Option.ENTITY_CULLING)
+                            ? this.chunkRenderManager == null || this.chunkRenderManager.isEntitySectionVisible(x, y, z)
+                            : this.isChunkVisible(x, y, z);
+                    if (sectionVisible) {
+                        visible = true;
+                        break;
                     }
                 }
+                if (visible) break;
             }
         }
 
-        return false;
+        return visible;
     }
 
     /**
@@ -480,6 +497,10 @@ public class SodiumWorldRenderer implements ChunkStatusListener {
      */
     public boolean isChunkVisible(int x, int y, int z) {
         return this.chunkRenderManager == null || this.chunkRenderManager.isChunkVisible(x, y, z);
+    }
+
+    public boolean isEntitySectionVisible(int x, int y, int z) {
+        return this.chunkRenderManager == null || this.chunkRenderManager.isEntitySectionVisible(x, y, z);
     }
 
     public String getChunksDebugString() {

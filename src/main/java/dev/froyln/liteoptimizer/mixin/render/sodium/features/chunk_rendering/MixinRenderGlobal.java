@@ -1,6 +1,8 @@
 package dev.froyln.liteoptimizer.mixin.render.sodium.features.chunk_rendering;
 
 import me.jellysquid.mods.sodium.client.SodiumClientMod;
+import dev.froyln.liteoptimizer.config.Config;
+import dev.froyln.liteoptimizer.config.Option;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -13,6 +15,7 @@ import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.chunk.Chunk;
+import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -38,16 +41,37 @@ public abstract class MixinRenderGlobal {
      * @author embeddedt
      * @reason reimplement entity render loop because vanilla's relies on the renderInfos list
      */
+    // shortcut: unused mapping callback logs a fail-soft warning; replace if Mixin adds mapping-aware local capture.
+    // Development and obfuscated targets keep different locals alive at this point.
     @Inject(method = "renderEntities", at = @At(value = "FIELD", target = "Lnet/minecraft/client/renderer/RenderGlobal;renderInfos:Ljava/util/List;", ordinal = 0),
-            locals = org.spongepowered.asm.mixin.injection.callback.LocalCapture.CAPTURE_FAILHARD)
-    private void renderEntities(Entity renderViewEntity, ICamera camera, float partialTicks, CallbackInfo ci,
+            locals = org.spongepowered.asm.mixin.injection.callback.LocalCapture.CAPTURE_FAILSOFT)
+    private void renderEntitiesProductionLocals(Entity renderViewEntity, ICamera camera, float partialTicks, CallbackInfo ci,
                                 double renderViewX, double renderViewY, double renderViewZ, Entity viewEntity,
                                 List<Entity> outlineEntityList, List<Entity> multipassEntityList, BlockPos.PooledMutableBlockPos pooledPos) {
-        // Mixin 0.7: MixinExtras' @Local replaced by full local capture. The obfuscated class's LVT at
-        // this point holds d0,d1,d2, the view entity, list1, list2 and the pooled pos (d3..d5 and the
-        // loaded-entity list are already dead), so the entity list is re-read from the world.
+        // The production LVT drops the loaded-entity list here, so read the same world-owned list.
         List<Entity> loadedEntityList = this.world.getLoadedEntityList();
+        this.renderEntitiesSodium(renderViewEntity, camera, partialTicks, renderViewX, renderViewY, renderViewZ,
+                loadedEntityList, outlineEntityList, multipassEntityList);
+    }
+
+    @Inject(method = "renderEntities", at = @At(value = "FIELD", target = "Lnet/minecraft/client/renderer/RenderGlobal;renderInfos:Ljava/util/List;", ordinal = 0),
+            locals = org.spongepowered.asm.mixin.injection.callback.LocalCapture.CAPTURE_FAILSOFT)
+    private void renderEntitiesDevelopmentLocals(Entity renderViewEntity, ICamera camera, float partialTicks, CallbackInfo ci,
+                                double renderViewX, double renderViewY, double renderViewZ, Entity viewEntity,
+                                double entityX, double entityY, double entityZ, List<Entity> loadedEntityList,
+                                List<Entity> outlineEntityList, List<Entity> multipassEntityList, BlockPos.PooledMutableBlockPos pooledPos) {
+        this.renderEntitiesSodium(renderViewEntity, camera, partialTicks, renderViewX, renderViewY, renderViewZ,
+                loadedEntityList, outlineEntityList, multipassEntityList);
+    }
+
+    private void renderEntitiesSodium(Entity renderViewEntity, ICamera camera, float partialTicks,
+                                     double renderViewX, double renderViewY, double renderViewZ,
+                                     List<Entity> loadedEntityList, List<Entity> outlineEntityList,
+                                     List<Entity> multipassEntityList) {
         EntityPlayerSP player = this.mc.player;
+        SodiumWorldRenderer sodiumRenderer = SodiumWorldRenderer.getInstanceNullable();
+        boolean useEntityCulling = sodiumRenderer != null
+                && (SodiumClientMod.options().advanced.useEntityCulling || Config.isActive(Option.ENTITY_CULLING));
         BlockPos.MutableBlockPos entityBlockPos = new BlockPos.MutableBlockPos();
         // Apply entity distance scaling
         Entity.setRenderDistanceWeight(MathHelper.clamp((double)this.mc.gameSettings.renderDistanceChunks / 8.0D, 1.0D, 2.5D) * SodiumClientMod.options().quality.entityDistanceScaling);
@@ -58,6 +82,15 @@ public abstract class MixinRenderGlobal {
                 continue;
             }
 
+            boolean outlineActive = false;
+            if (useEntityCulling) {
+                outlineActive = this.isOutlineActive(entity, renderViewEntity, camera);
+                if (!outlineActive && entity != renderViewEntity && !entity.isRidingOrBeingRiddenBy(player)
+                        && !sodiumRenderer.isEntityVisible(entity)) {
+                    continue;
+                }
+            }
+
             boolean isSleeping = renderViewEntity instanceof EntityLivingBase && ((EntityLivingBase) renderViewEntity).isPlayerSleeping();
 
             if ((entity != renderViewEntity || this.mc.gameSettings.thirdPersonView != 0 || isSleeping)
@@ -66,7 +99,7 @@ public abstract class MixinRenderGlobal {
                 ++this.countEntitiesRendered;
                 this.renderManager.renderEntityStatic(entity, partialTicks, false);
 
-                if (this.isOutlineActive(entity, renderViewEntity, camera))
+                if (useEntityCulling ? outlineActive : this.isOutlineActive(entity, renderViewEntity, camera))
                 {
                     outlineEntityList.add(entity);
                 }

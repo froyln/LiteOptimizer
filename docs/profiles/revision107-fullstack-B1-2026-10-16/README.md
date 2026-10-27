@@ -1,0 +1,7 @@
+# Revision 107 full-stack B1 render regression — 2026-10-16
+
+Revision 106 built but crashed on the disposable `B1-rev102-compat-smoke` scene on its first Sodium chunk upload with `NoClassDefFoundError: me/jellysquid/mods/sodium/common/util/collections/FutureDequeDrain`. The class was present in the archive; the LiteLoader/Mixin classpath still failed to resolve it at runtime. Revision 107 removes that separate iterator and drains the futures into ChunkBuilder's existing upload queue, preserving cancellation handling and the existing stale-build filter.
+
+The exact revision-107 artifact SHA-256 is `f07639faabcf5bb567cf47a59a694d23633a2b804a38fc96e80b94082d3fb144`; the disposable Prism clone's installed file has the same hash. The Java 8 offline Gradle build exited 0. Revision 107 then loaded the same B1 world with the full set of 17 LiteLoader mods and rendered the technical storage scene; the updated client log has no `FATAL` or `NoClassDefFoundError` after the revision-107 launch. [`b1-rendered.png`](b1-rendered.png) is a WayVNC capture of the isolated desktop. [`client.log`](client.log) contains the previous revision-106 failure followed by the revision-107 successful launch.
+
+This verifies startup, world join, and Sodium chunk uploads in this scene only. No world blocks were edited. The full feature matrix is still open, and the vanilla-server interaction gate must be rerun on this changed artifact payload.

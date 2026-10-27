@@ -1,0 +1,4 @@
+Dimension: -1
+Pos: [261.5, 128.0, 0.5]
+enteredNetherPosition: {'x': 260.90000000596046, 'y': 4.0, 'z': 0.19999999552965164}
+Inventory: [{'Slot': 0, 'id': 'minecraft:stone', 'Count': 1, 'Damage': 0}]

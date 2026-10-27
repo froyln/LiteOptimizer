@@ -1,0 +1,120 @@
+[23:34:17] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[23:34:17] [Server thread/INFO]: Loading properties
+[23:34:17] [Server thread/INFO]: Default game type: SURVIVAL
+[23:34:17] [Server thread/INFO]: Generating keypair
+[23:34:17] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[23:34:17] [Server thread/INFO]: Using epoll channel type
+[23:34:17] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[23:34:17] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[23:34:17] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[23:34:17] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[23:34:17] [Server thread/INFO]: Preparing level "world"
+[23:34:17] [Server thread/INFO]: Loaded 488 advancements
+[23:34:17] [Server thread/INFO]: Preparing start region for level 0
+[23:34:18] [Server thread/INFO]: Done (0.641s)! For help, type "help" or "?"
+[23:34:18] [Server thread/INFO]: Starting remote control listener
+[23:34:18] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25575
+[23:35:07] [Server thread/INFO]: LiteOptTest[/127.0.0.1:53972] logged in with entity id 113 at (100.5, 4.0, 100.5)
+[23:35:07] [Server thread/INFO]: LiteOptTest joined the game
+[23:35:40] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:35:40] [RCON Client #2/INFO]: [Rcon: Set LiteOptTest's game mode to Survival Mode]
+[23:35:40] [RCON Client #2/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 5 * [Stone]]
+[23:35:40] [RCON Client #2/INFO]: [Rcon: Set score of stoneuse for player LiteOptTest to 0]
+[23:35:40] [RCON Client #2/INFO]: [Rcon: Teleported LiteOptTest to 100.5, 4.0, 100.5]
+[23:35:40] [RCON Client #2/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:36:14] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:36:14] [RCON Client #3/INFO]: [Rcon: Score 1 is in range 1 to 100]
+[23:36:14] [RCON Client #3/INFO]: [Rcon: Successfully found the block at 100, 4, 102]
+[23:37:37] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:37:37] [RCON Client #4/INFO]: [Rcon: Block placed]
+[23:37:37] [RCON Client #4/INFO]: [Rcon: Reset score stoneuse of player LiteOptTest]
+[23:37:40] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:37:59] [Server thread/INFO]: LiteOptTest lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[23:37:59] [Server thread/INFO]: LiteOptTest left the game
+[23:38:43] [Server thread/INFO]: LiteOptTest[/127.0.0.1:54696] logged in with entity id 119 at (100.5, 4.0, 100.5)
+[23:38:43] [Server thread/INFO]: LiteOptTest joined the game
+[23:39:11] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:39:11] [RCON Client #6/INFO]: [Rcon: Set LiteOptTest's game mode to Survival Mode]
+[23:39:11] [RCON Client #6/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 5 * [Stone]]
+[23:39:11] [RCON Client #6/INFO]: [Rcon: Reset score stoneuse of player LiteOptTest]
+[23:39:11] [RCON Client #6/INFO]: [Rcon: Teleported LiteOptTest to 100.5, 4.0, 100.5]
+[23:39:13] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:39:13] [RCON Client #7/INFO]: [Rcon: Successfully found the block at 100, 4, 102]
+[23:39:13] [RCON Client #7/INFO]: [Rcon: Score 1 is in range 1 to 100]
+[23:40:21] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:40:54] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:40:54] [RCON Client #9/INFO]: [Rcon: Successfully found the block at 100, 4, 102]
+[23:41:37] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:41:37] [RCON Client #10/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Diamond Pickaxe]]
+[23:41:41] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:41:41] [RCON Client #11/INFO]: [Rcon: Successfully found the block at 100, 4, 102]
+[23:42:13] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:42:13] [RCON Client #12/INFO]: [Rcon: Block placed]
+[23:42:13] [RCON Client #12/INFO]: [Rcon: Successfully found the block at 100, 2, 103]
+[23:42:18] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:42:18] [RCON Client #13/INFO]: [Rcon: Successfully found the block at 100, 2, 103]
+[23:43:01] [Server thread/INFO]: LiteOptTest lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[23:43:01] [Server thread/INFO]: LiteOptTest left the game
+[23:43:55] [Server thread/INFO]: LiteOptTest[/127.0.0.1:37062] logged in with entity id 133 at (100.5, 4.0, 100.5)
+[23:43:55] [Server thread/INFO]: LiteOptTest joined the game
+[23:44:27] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:44:27] [RCON Client #14/INFO]: [Rcon: Reset score walk of player LiteOptTest]
+[23:44:31] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:44:31] [RCON Client #15/INFO]: [Rcon: Score 180 is in range 1 to 1000000]
+[23:44:40] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:44:40] [RCON Client #16/INFO]: [Rcon: Successfully found the block at 100, 3, 102]
+[23:44:40] [RCON Client #16/INFO]: [Rcon: Successfully found the block at 100, 4, 102]
+[23:44:40] [RCON Client #16/INFO]: [Rcon: Successfully found the block at 100, 2, 103]
+[23:44:40] [RCON Client #16/INFO]: [Rcon: Successfully found the block at 100, 3, 103]
+[23:45:02] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:45:02] [RCON Client #17/INFO]: [Rcon: Set LiteOptTest's game mode to Survival Mode]
+[23:45:02] [RCON Client #17/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 5 * [Stone]]
+[23:45:02] [RCON Client #17/INFO]: [Rcon: Reset score stoneuse of player LiteOptTest]
+[23:45:02] [RCON Client #17/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 110.5]
+[23:45:02] [Server thread/WARN]: LiteOptTest moved too quickly! 10.0,0.0,8.200399804930456
+[23:45:04] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:45:04] [RCON Client #18/INFO]: [Rcon: Score 1 is in range 1 to 100]
+[23:45:04] [RCON Client #18/INFO]: [Rcon: Successfully found the block at 110, 4, 112]
+[23:45:12] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:45:12] [RCON Client #19/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Diamond Pickaxe]]
+[23:45:16] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:45:16] [RCON Client #20/INFO]: [Rcon: Successfully found the block at 110, 4, 112]
+[23:46:53] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:46:53] [RCON Client #21/INFO]: [Rcon: Teleported LiteOptTest to 110.5625, 4.0, 110.5]
+[23:47:23] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:47:23] [RCON Client #22/INFO]: [Rcon: Block placed]
+[23:47:23] [RCON Client #22/INFO]: [Rcon: Successfully found the block at 110, 3, 113]
+[23:47:27] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:47:27] [RCON Client #23/INFO]: [Rcon: Successfully found the block at 110, 3, 113]
+[23:48:48] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:48:48] [RCON Client #24/INFO]: [Rcon: Successfully found the block at 110, 3, 113]
+[23:48:48] [RCON Client #24/INFO]: [Rcon: Successfully found the block at 110, 4, 112]
+[23:48:48] [RCON Client #24/INFO]: [Rcon: Successfully found the block at 100, 4, 102]
+[23:50:50] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:50:50] [Server thread/INFO]: LiteOptTest lost connection: revision100 reconnect validation
+[23:50:50] [Server thread/INFO]: LiteOptTest left the game
+[23:50:50] [RCON Client #25/INFO]: [Rcon: Kicked LiteOptTest from the game: 'revision100 reconnect validation']
+[23:50:50] [Server thread/WARN]: handleDisconnection() called twice
+[23:51:12] [Server thread/INFO]: LiteOptTest[/127.0.0.1:36040] logged in with entity id 154 at (110.5625, 4.0, 110.5)
+[23:51:12] [Server thread/INFO]: LiteOptTest joined the game
+[23:51:38] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:52:09] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:52:09] [RCON Client #27/INFO]: [Rcon: Object successfully summoned]
+[23:52:09] [RCON Client #27/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 110.5]
+[23:52:30] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:52:30] [RCON Client #28/INFO]: [Rcon: Teleported LiteOptTest to 110.5, 4.0, 110.5]
+[23:53:24] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:53:24] [RCON Client #29/INFO]: [Rcon: Added new objective 'rev100trade' successfully]
+[23:53:24] [RCON Client #29/INFO]: [Rcon: Given [Stick] * 64 to LiteOptTest]
+[23:53:57] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:54:15] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:54:15] [RCON Client #31/INFO]: [Rcon: Given [String] * 64 to LiteOptTest]
+[23:54:37] [Server thread/INFO]: LiteOptTest has made the advancement [What a Deal!]
+[23:54:39] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:54:39] [RCON Client #32/INFO]: [Rcon: Score 1 is in range 1 to 100]
+[23:54:56] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:54:56] [RCON Client #33/INFO]: [Rcon: Added new objective 'rev100potion' successfully]
+[23:54:56] [RCON Client #33/INFO]: [Rcon: Replaced slot slot.hotbar.0 with 1 * [Potion of Swiftness]]
+[23:55:11] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:55:45] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[23:55:45] [RCON Client #35/INFO]: [Rcon: Score 1 is in range 1 to 100]

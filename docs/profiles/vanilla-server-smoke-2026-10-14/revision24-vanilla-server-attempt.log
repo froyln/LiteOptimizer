@@ -1,0 +1,55 @@
+[16:10:39] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[16:10:39] [Server thread/INFO]: Loading properties
+[16:10:39] [Server thread/INFO]: Default game type: CREATIVE
+[16:10:39] [Server thread/INFO]: Generating keypair
+[16:10:39] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25569
+[16:10:39] [Server thread/INFO]: Using epoll channel type
+[16:10:39] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[16:10:39] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[16:10:39] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[16:10:39] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[16:10:39] [Server thread/INFO]: Preparing level "disposable-world"
+[16:10:39] [Server thread/INFO]: Loaded 488 advancements
+[16:10:39] [Server thread/INFO]: Preparing start region for level 0
+[16:10:40] [Server thread/INFO]: Done (0.410s)! For help, type "help" or "?"
+[16:10:40] [Server thread/INFO]: Starting remote control listener
+[16:10:40] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25577
+[16:13:28] [Server thread/INFO]: There are 0/2 players online:
+[16:13:28] [Server thread/INFO]: 
+[16:15:23] [Server thread/INFO]: /127.0.0.1:55754 lost connection: Internal Exception: io.netty.handler.codec.DecoderException: The received string length is longer than maximum allowed (19 > 16)
+[16:15:43] [Server thread/INFO]: There are 0/2 players online:
+[16:15:43] [Server thread/INFO]: 
+[16:18:28] [Server thread/INFO]: TestBot[/127.0.0.1:53636] logged in with entity id 50 at (29.5, 25.875, -35.5)
+[16:18:28] [Server thread/INFO]: TestBot joined the game
+[16:18:50] [Server thread/INFO]: There are 1/2 players online:
+[16:18:50] [Server thread/INFO]: TestBot
+[16:19:15] [Server thread/INFO]: Teleported TestBot to 0.5, 100.0, 0.5
+[16:19:15] [Server thread/WARN]: TestBot moved too quickly! -29.0,74.125,36.0
+[16:19:55] [Server thread/INFO]: Teleported TestBot to 0.5, 64.0, 0.5
+[16:19:55] [Server thread/WARN]: TestBot moved too quickly! 0.0,-36.0,0.0
+[16:20:56] [Server thread/INFO]: TestBot fell out of the world
+[16:20:56] [Server thread/INFO]: Killed TestBot
+[16:21:40] [Server thread/INFO]: Set the time to 1000
+[16:22:38] [Server thread/INFO]: Given [Stone] * 64 to TestBot
+[16:22:38] [Server thread/INFO]: Teleported TestBot to 14.5, 5.0, 0.5
+[16:22:38] [Server thread/WARN]: TestBot moved too quickly! -176.0,1.0,261.0522130621426
+[16:23:43] [Server thread/INFO]: Block placed
+[16:23:43] [Server thread/INFO]: Block placed
+[16:25:55] [Server thread/INFO]: Block placed
+[16:25:55] [Server thread/INFO]: Teleported TestBot to 15.5, 5.0, 0.5
+[16:25:55] [Server thread/WARN]: TestBot moved too quickly! 0.08557143798155309,1.0,-21.383578979585273
+[16:29:41] [Server thread/INFO]: TestBot lost connection: Internal Exception: io.netty.channel.unix.Errors$NativeIoException: syscall:read(..) failed: Connection reset by peer
+[16:29:41] [Server thread/INFO]: TestBot left the game
+[16:30:03] [Server thread/INFO]: Stopping the server
+[16:30:03] [Server thread/INFO]: Stopping server
+[16:30:03] [Server thread/INFO]: Saving players
+[16:30:03] [Server thread/INFO]: Saving worlds
+[16:30:03] [Server thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[16:30:03] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_nether
+[16:30:03] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_end
+[16:30:03] [Server Shutdown Thread/INFO]: Stopping server
+[16:30:03] [Server Shutdown Thread/INFO]: Saving players
+[16:30:03] [Server Shutdown Thread/INFO]: Saving worlds
+[16:30:03] [Server Shutdown Thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[16:30:03] [Server Shutdown Thread/INFO]: Saving chunks for level 'disposable-world'/the_nether
+[16:30:03] [Server Shutdown Thread/INFO]: Saving chunks for level 'disposable-world'/the_end

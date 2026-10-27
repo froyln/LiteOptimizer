@@ -1,0 +1,2 @@
+testforblock -2001 70 699 air -> Successfully found the block at -2001, 70, 699
+testforblock -2000 70 699 air -> Successfully found the block at -2000, 70, 699

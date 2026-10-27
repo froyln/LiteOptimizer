@@ -1,0 +1,3 @@
+testforblock -2001 70 699 piston -> Successfully found the block at -2001, 70, 699
+testforblock -2001 70 699 piston 4 -> The block at -2001, 70, 699 had the data value of 5 (expected: 4)
+testforblock -2001 70 699 piston 5 -> Successfully found the block at -2001, 70, 699

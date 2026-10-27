@@ -1,0 +1,39 @@
+[09:57:26] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[09:57:26] [Server thread/INFO]: Loading properties
+[09:57:26] [Server thread/INFO]: Default game type: CREATIVE
+[09:57:26] [Server thread/INFO]: Generating keypair
+[09:57:27] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25567
+[09:57:27] [Server thread/INFO]: Using epoll channel type
+[09:57:27] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[09:57:27] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[09:57:27] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[09:57:27] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[09:57:27] [Server thread/INFO]: Preparing level "world"
+[09:57:27] [Server thread/INFO]: Loaded 488 advancements
+[09:57:27] [Server thread/INFO]: Preparing start region for level 0
+[09:57:27] [Server thread/INFO]: Done (0.450s)! For help, type "help" or "?"
+[09:57:27] [Server thread/INFO]: Starting remote control listener
+[09:57:27] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25575
+[10:00:01] [Server thread/INFO]: VanillaTester[/127.0.0.1:52272] logged in with entity id 115 at (1000.5, 4.0, 1000.5)
+[10:00:01] [Server thread/INFO]: VanillaTester joined the game
+[10:00:57] [Server thread/INFO]: Set VanillaTester's game mode to Survival Mode
+[10:00:57] [Server thread/INFO]: Given [Stone] * 8 to VanillaTester
+[10:00:57] [Server thread/INFO]: Given [Emerald] * 3 to VanillaTester
+[10:00:57] [Server thread/INFO]: Added new objective 'traded' successfully
+[10:00:57] [Server thread/INFO]: Object successfully summoned
+[10:00:57] [Server thread/INFO]: Teleported VanillaTester to 1000.5, 4.0, 1000.5
+[10:02:25] [Server thread/INFO]: No traded score for VanillaTester found
+[10:02:31] [Server thread/INFO]: Teleported VanillaTester to 1001.5, 4.0, 1000.5
+[10:02:31] [Server thread/WARN]: VanillaTester moved wrongly!
+[10:03:24] [Server thread/INFO]: No traded score for VanillaTester found
+[10:04:41] [Server thread/INFO]: Teleported VanillaTester to 1010.5, 4.0, 1000.5
+[10:04:41] [Server thread/WARN]: VanillaTester moved wrongly!
+[10:05:22] [Server thread/INFO]: The block at 1011, 4, 1000 is Air (expected: Stone)
+[10:05:33] [Server thread/INFO]: Teleported VanillaTester to 1010.5, 4.0, 1000.5
+[10:06:22] [Server thread/INFO]: Teleported VanillaTester to 1010.5, 4.0, 1000.5
+[10:07:19] [Server thread/INFO]: Successfully found the block at 1012, 4, 1000
+[10:07:55] [Server thread/INFO]: The block at 1012, 4, 1000 is Air (expected: Stone)
+[10:07:55] [Server thread/INFO]: The block at 1012, 3, 1000 is Air (expected: Grass Block)
+[10:07:55] [Server thread/INFO]: The block at 1013, 3, 1000 is Air (expected: Grass Block)
+[10:08:50] [Server thread/INFO]: VanillaTester lost connection: Disconnected
+[10:08:50] [Server thread/INFO]: VanillaTester left the game

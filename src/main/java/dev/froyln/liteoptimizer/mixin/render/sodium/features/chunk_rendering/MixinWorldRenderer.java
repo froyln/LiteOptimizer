@@ -2,6 +2,7 @@ package dev.froyln.liteoptimizer.mixin.render.sodium.features.chunk_rendering;
 
 import me.jellysquid.mods.sodium.client.gl.device.RenderDevice;
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
+import dev.froyln.liteoptimizer.render.TweakerooCompat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.*;
@@ -117,16 +118,18 @@ public abstract class MixinWorldRenderer {
      * @reason Redirect the terrain setup phase to our renderer
      * @author JellySquid
      */
-    @Overwrite
-    public void setupTerrain(Entity entity, double tick, ICamera camera, int frame, boolean spectator) {
+    @Inject(method = "setupTerrain", at = @At("HEAD"), cancellable = true)
+    public void setupTerrain(Entity entity, double tick, ICamera camera, int frame, boolean spectator, CallbackInfo ci) {
         RenderDevice.enterManagedCode();
 
         boolean hasForcedFrustum = false;
         try {
-            this.renderer.updateChunks((Frustum) camera, (float)tick, hasForcedFrustum, frame, spectator);
+            this.renderer.updateChunks((Frustum) camera, (float)tick, hasForcedFrustum, frame,
+                    spectator || TweakerooCompat.isFreeCameraSpectator());
         } finally {
             RenderDevice.exitManagedCode();
         }
+        ci.cancel();
     }
 
     /**
@@ -164,6 +167,7 @@ public abstract class MixinWorldRenderer {
     @Inject(method = "renderEntities", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/RenderHelper;enableStandardItemLighting()V", shift = At.Shift.AFTER, ordinal = 1), cancellable = true)
     public void sodium$renderTileEntities(Entity entity, ICamera camera, float partialTicks, CallbackInfo ci) {
         this.renderer.renderTileEntities(partialTicks, damagedBlocks);
+        dev.froyln.liteoptimizer.render.TileEntityFrustum.exit(); // this cancellation skips RenderGlobal.renderEntities' RETURN hook
 
         this.mc.entityRenderer.disableLightmap();
         this.mc.profiler.endSection();

@@ -1,5 +1,6 @@
 package me.jellysquid.mods.sodium.client.render.chunk;
 
+import dev.froyln.liteoptimizer.render.TweakerooCompat;
 import it.unimi.dsi.fastutil.ints.IntIterator;
 import it.unimi.dsi.fastutil.ints.IntList;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
@@ -30,7 +31,6 @@ import me.jellysquid.mods.sodium.client.util.math.MathChunkPos;
 import me.jellysquid.mods.sodium.client.world.ChunkStatusListener;
 import me.jellysquid.mods.sodium.common.util.DirectionUtil;
 import me.jellysquid.mods.sodium.common.util.IdTable;
-import me.jellysquid.mods.sodium.common.util.collections.FutureDequeDrain;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.tileentity.TileEntity;
@@ -488,11 +488,15 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
         return this.culler.isSectionVisible(x, y, z);
     }
 
+    public boolean isEntitySectionVisible(int x, int y, int z) {
+        return this.culler.isEntitySectionVisible(x, y, z);
+    }
+
     public void updateChunks() {
         this.builder.cleanupSectionCache();
 
         Deque<CompletableFuture<ChunkBuildResult<T>>> futures = new ArrayDeque<>();
-
+        boolean immediate = TweakerooCompat.forceChunkBuildsOnMainThread();
         int budget = this.builder.getSchedulingBudget();
         int submitted = 0;
 
@@ -504,7 +508,9 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
             }
             
             // Do not allow distant chunks to block rendering
-            if (this.alwaysDeferChunkUpdates || !this.isChunkPrioritized(render)) {
+            if (immediate) {
+                this.builder.scheduleRebuildTaskImmediate(render);
+            } else if (this.alwaysDeferChunkUpdates || !this.isChunkPrioritized(render)) {
                 this.builder.deferRebuild(render);
             } else {
                 futures.add(this.builder.scheduleRebuildTaskAsync(render));
@@ -513,14 +519,18 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
             this.dirty = true;
             submitted++;
             // Limit quantity of updates submitted if we are deferring all important builds
-            if (this.alwaysDeferChunkUpdates && submitted >= budget)
+            if (!immediate && this.alwaysDeferChunkUpdates && submitted >= budget)
                 break;
         }
 
-        while (submitted < budget && !this.rebuildQueue.isEmpty()) {
+        while ((immediate || submitted < budget) && !this.rebuildQueue.isEmpty()) {
             ChunkRenderContainer<T> render = this.rebuildQueue.dequeue();
 
-            this.builder.deferRebuild(render);
+            if (immediate) {
+                this.builder.scheduleRebuildTaskImmediate(render);
+            } else {
+                this.builder.deferRebuild(render);
+            }
             submitted++;
         }
 
@@ -544,7 +554,8 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
 
         if (!futures.isEmpty()) {
             this.dirty = true;
-            this.backend.upload(RenderDevice.INSTANCE.createCommandList(), this.builder.filterChunkBuilds(new FutureDequeDrain<>(futures)));
+            this.builder.enqueueFutureUploads(futures);
+            this.builder.performPendingUploads();
         }
     }
 
@@ -612,6 +623,7 @@ public class ChunkRenderManager<T extends ChunkGraphicsState> implements ChunkSt
             return;
         }
 
+        this.culler.invalidateCameraVisibility(x, y, z);
         ChunkRenderContainer<T> render = this.getRender(x, y, z);
 
         if (render != null) {

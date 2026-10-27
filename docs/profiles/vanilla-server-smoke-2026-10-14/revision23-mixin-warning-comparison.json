@@ -1,0 +1,32 @@
+{
+  "baseline_log": {
+    "file": "no-liteoptimizer-baseline.log",
+    "sha256": "295f4621f3a19cf51c618f9f1e5bf76c767e447ddff53c2eca2f3007accb0b5a"
+  },
+  "candidate_log": {
+    "file": "revision23-options-smoke.log",
+    "sha256": "27a9e538d77184cf525fba37b4ea3787db7d3e4d0d0550b5dd3f2554dfaf06b8"
+  },
+  "candidate_artifact_sha256": "94eb0764551a680937251133600c7c98993aef0096cfe87bb0725223a7a824a3",
+  "normalization": "deduplicate conflict/previously-written warning lines; replace generated handler suffixes after $ with $GENERATED",
+  "baseline_distinct": [
+    "@ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$GENERATED$GENERATED(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$GENERATED$GENERATED(I)I with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer->@Redirect::redirect$GENERATED$GENERATED(Laed;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityPlayer->@Redirect::redirect$GENERATED$GENERATED(Laed;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityRenderer->@Redirect::redirect$GENERATED$GENERATED(Lbud;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityRenderer->@Redirect::redirect$GENERATED$GENERATED(Lbud;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityLivingBase->@Redirect::redirect$GENERATED$GENERATED(Lamu;)Z with priority 990, already redirected by mixins.carpetclient.json:MixinEntityLivingBase->@Redirect::redirect$GENERATED$GENERATED(Lamu;)Z with priority 999",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityPlayerSP->@Redirect::redirect$GENERATED$GENERATED(Lblk;)Z with priority 990, already redirected by mixins.usefulmod.json:MixinEntityPlayerSP->@Redirect::redirect$GENERATED$GENERATED(Lblk;)Z with priority 1000",
+    "Method overwrite conflict for a in mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer, previously written by carpetclient.mixins.MixinEntityPlayer. Skipping method.",
+    "Method overwrite conflict for getTimer in mixins.carpetclient.json:IMixinMinecraft, previously written by com.mumfrey.liteloader.client.mixin.MixinMinecraft. Skipping method."
+  ],
+  "candidate_distinct": [
+    "@ModifyConstant conflict. Skipping mixins.tweakeroo.json:MixinTileEntityStructure->@ModifyConstant::constant$GENERATED$GENERATED(I)I with priority 999, already redirected by mixins.carpetclient.json:MixinTileEntityStructure->@ModifyConstant::constant$GENERATED$GENERATED(I)I with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer->@Redirect::redirect$GENERATED$GENERATED(Laed;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityPlayer->@Redirect::redirect$GENERATED$GENERATED(Laed;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityRenderer->@Redirect::redirect$GENERATED$GENERATED(Lbud;)Z with priority 1000, already redirected by mixins.carpetclient.json:MixinEntityRenderer->@Redirect::redirect$GENERATED$GENERATED(Lbud;)Z with priority 1000",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityLivingBase->@Redirect::redirect$GENERATED$GENERATED(Lamu;)Z with priority 990, already redirected by mixins.carpetclient.json:MixinEntityLivingBase->@Redirect::redirect$GENERATED$GENERATED(Lamu;)Z with priority 999",
+    "@Redirect conflict. Skipping mixins.tweakeroo.json:MixinEntityPlayerSP->@Redirect::redirect$GENERATED$GENERATED(Lblk;)Z with priority 990, already redirected by mixins.usefulmod.json:MixinEntityPlayerSP->@Redirect::redirect$GENERATED$GENERATED(Lblk;)Z with priority 1000",
+    "Method overwrite conflict for a in mixins.litetweaker.json:Tweaks.creativeNoClip.MixinEntityPlayer, previously written by carpetclient.mixins.MixinEntityPlayer. Skipping method.",
+    "Method overwrite conflict for getTimer in mixins.carpetclient.json:IMixinMinecraft, previously written by com.mumfrey.liteloader.client.mixin.MixinMinecraft. Skipping method."
+  ],
+  "added": [],
+  "removed": []
+}

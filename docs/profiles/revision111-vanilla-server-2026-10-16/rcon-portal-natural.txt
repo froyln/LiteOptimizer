@@ -1,0 +1,23 @@
+Revision 111 natural portal entry on the unmodified vanilla 1.12.2 server, player Kisde.
+No player teleport was used. At F3 position (1148.961, 4.0, 1661.300), a valid obsidian frame was built three blocks ahead in the disposable test world and ignited through server fixture setup. The player then walked into the active portal field through WayVNC.
+
+Frame placements at z=1664 (each returned “Block placed”): obsidian x=1147 and 1150, y=3..7; obsidian x=1148 and 1149, y=3 and 7.
+The 1.12.2 block name is minecraft:portal. Direct setblock portal attempts were removed as invalid until the valid frame was ignited. Igniting the frame with:
+$ setblock 1148 4 1664 minecraft:fire
+Block placed
+
+Portal verification:
+$ testforblock 1148 4 1664 minecraft:portal
+Successfully found the block at 1148, 4, 1664
+$ testforblock 1149 6 1664 minecraft:portal
+Successfully found the block at 1149, 6, 1664
+
+After the client walked into the field:
+$ testfor @p {Dimension:-1}
+Found Kisde
+$ testfor @p {Dimension:0}
+Kisde did not match the required data structure
+$ scoreboard players test Kisde walkOneCm 0 *
+Score 113498 is in range 0 to 2147483647
+
+The pre-approach score was 113133, so it rose by 365 cm through the approach and portal entry. The server log records one “moved too quickly” warning at the dimension-coordinate conversion (-994.335, 28.0, -1445.449); no warning occurred during the approach. This warning still needs comparison with a vanilla-client control before the correction boundary is considered clean. The screenshot `portal-natural.png` shows the exact artifact in the Nether with the portal transition effect. No new advancement message was recorded for Kisde in this session.

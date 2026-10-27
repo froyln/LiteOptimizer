@@ -15,23 +15,24 @@ public enum Option {
     // 0.3 Sodium I
     SODIUM("sodium", RENDER, true, "Sodium terrain renderer (ported Vintagium): chunk-graph culling, worker meshing, fixed-function terrain backend, particle culling"),
 
+    // New installs enable only candidates with recorded gain and parity/tradeoff evidence.
     // 0.2 Lithium I (keys exist before the code so the file is stable across versions)
-    TILE_ENTITY_REMOVAL("tile_entity_removal", WORLD, true, "O(n) instead of O(n*m) tile entity list removal"),
-    PENDING_TICKS_CHUNK_LOOKUP("pending_ticks_chunk_lookup", WORLD, true, "per-chunk index for scheduled ticks on chunk save/unload"),
-    ITEMSTACK_IS_EMPTY("itemstack_is_empty", MEMORY, true, "ItemStack.isEmpty without a map lookup"),
-    ENTITY_DATA_MANAGER("entity_data_manager", MEMORY, true, "array-backed, lock-free entity data manager"),
-    ENTITY_FLUID_CHECKS("entity_fluid_checks", WORLD, true, "skip water/lava scans in sections without fluids"),
-    BLOCK_COLLISIONS("block_collisions", WORLD, true, "per-chunk block collision box collection (masa)"),
-    HARD_HITBOX_ENTITY_LIST("hard_hitbox_entity_list", WORLD, true, "per-chunk list of collidable entities (boats, shulkers)"),
-    ITEM_MERGING("item_merging", WORLD, true, "skip merge search for full item stacks"),
-    EQUIPMENT_CHANGE_CHECK("equipment_change_check", WORLD, true, "cheap equipment change detection"),
-    CRAMMING_PREDICATE_CACHE("cramming_predicate_cache", WORLD, true, "cache team collision predicate and cramming rule"),
-    ENTITY_TYPE_COUNTS("entity_type_counts", WORLD, true, "per-type entity counters for mob spawning"),
-    FALLING_BLOCK_MOVEMENT("falling_block_movement", WORLD, true, "early-out movement for idle falling blocks / TNT"),
-    FURNACE_RECIPE_CACHE("furnace_recipe_cache", WORLD, true, "cache furnace recipe lookups"),
-    RAYTRACE_ALLOCATIONS("raytrace_allocations", WORLD, true, "allocation-free block ray tracing"),
-    BLOCKPOS_GARBAGE("blockpos_garbage", WORLD, true, "mutable positions in hot vanilla loops"),
-    NBT_TAG_POOLING("nbt_tag_pooling", MEMORY, true, "canonical instances for small NBT tags"),
+    TILE_ENTITY_REMOVAL("tile_entity_removal", WORLD, false, "O(n) instead of O(n*m) tile entity list removal"),
+    PENDING_TICKS_CHUNK_LOOKUP("pending_ticks_chunk_lookup", WORLD, false, "per-chunk index for scheduled ticks on chunk save/unload"),
+    ITEMSTACK_IS_EMPTY("itemstack_is_empty", MEMORY, false, "ItemStack.isEmpty without a map lookup"),
+    ENTITY_DATA_MANAGER("entity_data_manager", MEMORY, false, "array-backed, lock-free entity data manager"),
+    ENTITY_FLUID_CHECKS("entity_fluid_checks", WORLD, false, "skip water/lava scans in sections without fluids"),
+    BLOCK_COLLISIONS("block_collisions", WORLD, false, "per-chunk block collision box collection (masa)"),
+    HARD_HITBOX_ENTITY_LIST("hard_hitbox_entity_list", WORLD, false, "per-chunk list of collidable entities (boats, shulkers)"),
+    ITEM_MERGING("item_merging", WORLD, false, "skip merge search for full item stacks"),
+    EQUIPMENT_CHANGE_CHECK("equipment_change_check", WORLD, false, "cheap equipment change detection"),
+    CRAMMING_PREDICATE_CACHE("cramming_predicate_cache", WORLD, false, "cache team collision predicate and cramming rule"),
+    ENTITY_TYPE_COUNTS("entity_type_counts", WORLD, false, "per-type entity counters for mob spawning"),
+    FALLING_BLOCK_MOVEMENT("falling_block_movement", WORLD, false, "early-out movement for idle falling blocks / TNT"),
+    FURNACE_RECIPE_CACHE("furnace_recipe_cache", WORLD, false, "cache furnace recipe lookups"),
+    RAYTRACE_ALLOCATIONS("raytrace_allocations", WORLD, false, "allocation-free block ray tracing"),
+    BLOCKPOS_GARBAGE("blockpos_garbage", WORLD, false, "mutable positions in hot vanilla loops"),
+    NBT_TAG_POOLING("nbt_tag_pooling", MEMORY, false, "canonical instances for small NBT tags"),
     STRUCTURE_LOOKUP_INDEX("structure_lookup_index", WORLD, true, "per-chunk index for 'is this position inside a structure' (swamp hut / monument / fortress spawn checks)"),
 
     // 0.4 FerriteCore
@@ -40,6 +41,10 @@ public enum Option {
 
     // 0.6 Sodium II
     MODEL_DISPLAY_LISTS("model_display_lists", RENDER, true, "compile item-frame item and block model draws into display lists"),
+    TILE_ENTITY_FRUSTUM("tile_entity_frustum", RENDER, true, "skip block entities whose block box is outside the camera frustum"),
+    TILE_ENTITY_OCCLUSION("tile_entity_occlusion", RENDER, false, "skip vanilla block entities in Sodium-invisible chunk sections"),
+    ENTITY_CULLING("entity_culling", RENDER, false, "skip entities outside Sodium's visible chunk graph"),
+    CAMERA_VISGRAPH_CACHE("camera_visgraph_cache", RENDER, true, "reuse the camera section's visibility flood fill until that section changes"),
 
     // 0.5 Lithium II
     PROPERTY_HASHCODE_CACHE("property_hashcode_cache", WORLD, true, "cache IProperty.hashCode (hashed on every IBlockState.getValue)"),

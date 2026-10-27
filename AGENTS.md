@@ -4,9 +4,15 @@ Client-side optimization mod for Minecraft 1.12.2 on LiteLoader, aimed at the te
 community (Carpet servers, Litematica/MiniHUD/Tweakeroo clients). It ports the *ideas* of
 the modern optimization stack — Lithium (game logic), Sodium (rendering), FerriteCore (memory),
 Phosphor (lighting) — plus the 1.12.2 Forge optimization mods that are behavior-preserving, to
-a single dependency-free `.litemod`, licensed **LGPL-3.0**. **Hard rule: vanilla mechanics stay identical.** Every
-optimization must produce the same game state, same render output (modulo FPS), same RNG
-consumption and same update order as vanilla 1.12.2. If it can't, it doesn't ship.
+a single dependency-free `.litemod`, licensed **LGPL-3.0**. The primary target is an optimized
+client connecting to an **unmodified vanilla server**: no server installation is required.
+**Hard rule: server behavior stays vanilla; client-only behavior may change for performance.**
+Rendering, visual effects, client animation timing and presentation math may differ when the
+tradeoff is documented and configurable. Server simulation/state, server RNG consumption and
+update order remain identical, including singleplayer's integrated server. Preserve vanilla
+network compatibility and the meaning/timing of player actions; a client-side hook is not
+permission to alter movement, interaction reach, inventory actions or server-bound packets.
+Shared code/RNG must retain server parity or isolate the changed path to the client.
 
 > AI agents: `CLAUDE.md` imports this file and adds the working agreement. Task state is in
 > `PLAN.md`. Path-specific rules are in `.claude/rules/`. Research output lives in `docs/`.
@@ -56,8 +62,11 @@ JAVA_HOME=/usr/lib/jvm/java-8-openjdk ./gradlew build   # must exit 0
 
 Then, for every optimization that ships, the two evidence checks described in `docs/methodology.md`:
 
-1. **Parity:** the mod must not change game state. Run the parity harness (same world, same
-   seed, N ticks, with and without the mod → identical chunk/entity NBT hash).
+1. **Behavior boundary:** shared/server logic must pass the parity harness (same world,
+   seed, N ticks, with and without the mod → identical chunk/entity NBT hash). Client-only
+   changes must document their visual/behavior tradeoff and prove they do not affect server
+   simulation or player actions. Exact pixel equality is required only when claimed; otherwise
+   inspect the intended differences and test visibility, interactions and mod compatibility.
 2. **Gain:** a before/after measurement on the benchmark worlds (FPS, MSPT, heap). No number,
    no merge — an optimization that can't be measured is deleted.
 
@@ -65,6 +74,9 @@ In-game session: `./gradlew build && tools/test-in-game.sh` launches the PrismLa
 `1.12.2 test ai` (LiteLoader 1.12.2 + the full technical mod stack: litematica, malilib, minihud,
 tweakeroo, carpet client, newlight, litetweaker, ...) offline with the fresh litemod installed.
 Prefer it over `runClient`.
+Release checks also require connection and ordinary play on an unmodified vanilla 1.12.2
+server. The full-stack Carpet fixture remains useful compatibility evidence, not proof of
+vanilla-server compatibility. See `docs/methodology.md` for the client-change checks.
 
 ### Isolated in-game desktop workflow
 
@@ -172,7 +184,7 @@ Three pillars in one litemod, each a package with its own config keys and a mast
 
 | pillar | package | role | upstream code we port (all LGPL-3-compatible) |
 |--------|---------|------|-----------------------------------------------|
-| Sodium | `render/` | replaces the terrain render pipeline (`RenderGlobal.setupTerrain`/`renderBlockLayer`/`updateChunks`, `RenderChunk`, `ChunkRenderDispatcher`) with Sodium's chunk-graph culling, worker meshing, compact vertex formats, region VBOs, the vanilla fixed-function backend (legacy shader backends retained but excluded from production config); plus particle/entity culling, texture animation, model matrix | Vintagium (`~/Dev/references/Vintagium`, Sodium 0.4 on 1.12.2 Forge) de-Forged and ported to Mixin 0.7.5 |
+| Sodium | `render/` | terrain pipeline, worker meshing, buffers, culling, textures and client presentation; visual tradeoffs allowed after focused validation (current production config still excludes legacy shader backends/compact vertices) | Vintagium (`~/Dev/references/Vintagium`, Sodium 0.4 on 1.12.2 Forge) de-Forged and ported to Mixin 0.7.5 |
 | Lithium | `world/`, `ai/` | game-logic optimizations with bit-identical state: collisions, entity lookups, hoppers, tick scheduler, explosions, AI, block-entity ticking, chunk save | carpetmod112 helpers, TISCarpet113 ports, own code from `docs/vanilla-audit.md` |
 | FerriteCore | `memory/` | heap: blockstate tables, quad/model dedup, sprite frames, NBT canonicalization, `EntityDataManager`, `ItemStack.isEmpty` | FoamFix / VintageFix 1.12.2 code |
 
@@ -184,7 +196,8 @@ bisects a suspected parity bug, and how the Sodium pillar falls back to vanilla 
 without GL20/VAO.
 
 Each optimization = one package under `mixin/<pillar>/<name>/` + helpers under `<pillar>/` +
-one config key + one row in `docs/catalog.md` with its parity argument and measured gain.
+one config key + one row in `docs/catalog.md` with its server-parity/client-boundary argument,
+documented client tradeoff (if any), and measured gain.
 Optimizations never depend on each other, except that render batch items (culling, textures)
 hook Sodium's world renderer when the Sodium pillar is on and vanilla's when it is off.
 
@@ -195,18 +208,20 @@ conflict with it.
 ## Configuration
 
 - **Config file:** `<liteloader config dir>/liteoptimizer.json` — flat `{ "<optimization>": true|false }`.
-  Missing keys = enabled. Read once at startup; changes need a restart (mixins are classload-time).
+  Missing keys use the `Option` default. Only gain/parity-validated options default on; a `true`
+  value for an option still awaiting release evidence is normalized to `false`. Read once at
+  startup; changes need a restart (mixins are classload-time).
 - **Environment variables:** none.
 - **Secrets:** none.
 
 ## Compatibility invariants
 
-The owner's instance (`~/.local/share/PrismLauncher/instances/1.12.2 test ai`, 18 litemods:
+The owner's instance (`~/.local/share/PrismLauncher/instances/1.12.2 test ai`, 19 litemods:
 malilib, litematica, minihud, tweakeroo, itemscroller, Carpet Client ×2, newlight, litetweaker,
 UsefulMod, tellme, chatcalc, connect_to_1_12_x, voxelMap, worldeditcui, isorenders,
-schematicpreview, BBOutlineReloaded) **must keep working with every release**. Not a goal — a
+schematicpreview, BBOutlineReloaded, Model Gap Fix) **must keep working with every release**. Not a goal — a
 gate. `docs/compat/checklist.md` is the per-mod smoke list; `docs/compat/instance-mixins.md`
-(from `tools/compat-scan.py`) lists all 638 vanilla members those mods mixin into. Rules:
+(from `tools/compat-scan.py`) lists the vanilla members the other installed mods mixin into. Rules:
 
 - Grep the target class + method in `instance-mixins.md` before writing a mixin.
 - Never `@Overwrite` a method another installed mod injects into; `@Inject`+cancel instead.
@@ -224,9 +239,10 @@ config must fall back to defaults, never crash the game.
 
 ## Conventions
 
-- **Parity first.** Before writing a mixin, write the parity argument in `docs/catalog.md`:
-  why the output is bit-identical (same RNG calls in the same order, same iteration order,
-  same side effects). No argument → not an optimization for this mod.
+- **Boundary first.** Before writing a mixin, record whether it is client-only or shared/server
+  code in `docs/catalog.md`. Shared/server changes require identical state, RNG, order and
+  side effects. Client-only changes require explicit tradeoffs, server isolation, vanilla
+  protocol compatibility and unchanged player-action semantics. No argument → do not ship.
 - Prefer `@Inject`/`@Redirect` over `@Overwrite`. `@Overwrite` only for a whole-method rewrite,
   and then the vanilla method body is pasted as a comment above for diffing.
 - One optimization per package, one config key, same name in both, snake_case:
@@ -236,6 +252,8 @@ config must fall back to defaults, never crash the game.
 - Client-side only mod; but singleplayer's integrated server runs inside the client, so
   `world`/`ai` mixins do run there. They must be safe when the class is loaded on a dedicated
   server anyway (LiteLoader is client-only, so this is theoretical — don't add server code).
+  These existing optimizations may remain if behavior-preserving; new client behavior changes
+  must not leak into them. Pure rendering math may change, shared simulation math may not.
 - Compatibility rules above; `docs/compat/instance-mixins.md` is the lookup table.
 - Git and commit rules: see `.claude/rules/git.md`. Testing rules: `.claude/rules/testing.md`.
 

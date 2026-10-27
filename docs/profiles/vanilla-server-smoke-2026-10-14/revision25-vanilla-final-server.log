@@ -1,0 +1,57 @@
+[17:19:24] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[17:19:24] [Server thread/INFO]: Loading properties
+[17:19:24] [Server thread/INFO]: Default game type: CREATIVE
+[17:19:24] [Server thread/INFO]: Generating keypair
+[17:19:24] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25569
+[17:19:24] [Server thread/INFO]: Using epoll channel type
+[17:19:24] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[17:19:24] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[17:19:24] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[17:19:24] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[17:19:24] [Server thread/INFO]: Preparing level "disposable-world"
+[17:19:25] [Server thread/INFO]: Loaded 488 advancements
+[17:19:25] [Server thread/INFO]: Preparing start region for level 0
+[17:19:25] [Server thread/INFO]: Done (0.449s)! For help, type "help" or "?"
+[17:19:25] [Server thread/INFO]: Starting remote control listener
+[17:19:25] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25577
+[17:20:08] [Server thread/INFO]: LiteOptTest[/127.0.0.1:41642] logged in with entity id 52 at (229.69999998807907, 4.0, -298.5)
+[17:20:08] [Server thread/INFO]: LiteOptTest joined the game
+[17:21:21] [Server thread/INFO]: Teleported LiteOptTest to 0.5, 4.0, 0.5
+[17:21:21] [Server thread/WARN]: LiteOptTest moved too quickly! -229.19999998807907,0.0,299.0
+[17:21:56] [Server thread/INFO]: Object successfully summoned
+[17:22:27] [Server thread/INFO]: Set the time to 1000
+[17:23:00] [Server thread/INFO]: Found Villager
+[17:23:00] [Server thread/INFO]: Found Villager
+[17:23:38] [Server thread/INFO]: No blocks filled
+[17:23:38] [Server thread/INFO]: Teleported LiteOptTest to 0.5, 4.0, 0.5
+[17:24:18] [Server thread/INFO]: Object successfully summoned
+[17:24:18] [Server thread/INFO]: Teleported LiteOptTest to 0.5, 4.0, 0.5
+[17:25:00] [Server thread/INFO]: Invalid selector argument: 'limit=1'
+[17:25:00] [Server thread/INFO]: Teleported LiteOptTest to 0.5, 4.0, 0.5
+[17:25:11] [Server thread/INFO]: Teleported Villager to 0.5, 4.0, 2.5
+[17:27:40] [Server thread/INFO]: 4 blocks filled
+[17:27:40] [Server thread/INFO]: 4 blocks filled
+[17:27:40] [Server thread/INFO]: 3 blocks filled
+[17:27:40] [Server thread/INFO]: 3 blocks filled
+[17:27:40] [Server thread/INFO]: 6 blocks filled
+[17:27:40] [Server thread/INFO]: Teleported LiteOptTest to 11.5, 5.0, 8.5
+[17:27:40] [Server thread/WARN]: LiteOptTest moved too quickly! 11.0,1.0,8.0
+[17:29:54] [Server thread/INFO]: Failed to execute 'detect' as LiteOptTest
+[17:30:06] [Server thread/INFO]: Teleported LiteOptTest to 11.5, 5.0, 10.5
+[17:30:06] [Server thread/INFO]: [LiteOptTest] player_in_portal
+[17:30:07] [Server thread/INFO]: LiteOptTest has made the advancement [We Need to Go Deeper]
+[17:30:07] [Server thread/WARN]: LiteOptTest moved too quickly! 18.0,37.0,-38.0
+[17:32:13] [Server thread/INFO]: Stopping the server
+[17:32:13] [Server thread/INFO]: Stopping server
+[17:32:13] [Server thread/INFO]: Saving players
+[17:32:13] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[17:32:13] [Server thread/INFO]: LiteOptTest left the game
+[17:32:13] [Server thread/INFO]: Saving worlds
+[17:32:13] [Server thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[17:32:13] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_nether
+[17:32:13] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_end
+[17:32:13] [Server Shutdown Thread/INFO]: Stopping server
+[17:32:13] [Server Shutdown Thread/INFO]: Saving players
+[17:32:13] [Server Shutdown Thread/INFO]: Saving worlds
+[17:32:13] [Server Shutdown Thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[17:32:13] [Server Shutdown Thread/INFO]: Saving chunks for level 'disposable-world'/the_nether

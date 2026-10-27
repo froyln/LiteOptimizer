@@ -1,0 +1,7 @@
+# Revision 102 build
+
+`JAVA_HOME=/usr/lib/jvm/java-8-openjdk ./gradlew build --offline` exited 0 on 2026-10-16. The reobfuscated LiteLoader artifact is `liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod`, SHA-256 `7209ca68471ce6944fae4cb179c2d75bd87e12e007150c5fa8ffba5711943abe`, manifest revision `102`.
+
+Source self-checks passed before the build: audit regressions, Tweakeroo compatibility bridge present/absent, chunk-build revision filtering, Sodium options, and `git diff --check`. An archive comparison against the exact revision-101 artifact in the disposable full-stack Prism clone found all 729 entry names identical and every entry byte-identical except `litemod.json`'s `revision` field. Revision-101 parity and revision-100 vanilla-server runtime evidence therefore applies to the same code payload.
+
+The exact revision-102 SHA-matched artifact was installed in the disposable full-stack Prism clone and launched on 2026-10-16. LiteOptimizer initialized with its release-default options; the full technical mod/resource-pack stack reached the title screen and loaded/rendered a fresh `B1-rev102-compat-smoke` copy. Evidence: [`revision102-fullstack-B1-2026-10-16`](../revision102-fullstack-B1-2026-10-16/). The exact artifact also joined the unmodified vanilla 1.12.2 server and passed server-scored movement; see [`revision102-vanilla-server-2026-10-16`](../revision102-vanilla-server-2026-10-16/). This does not close the remaining vanilla interaction gate or the full per-mod feature matrix.

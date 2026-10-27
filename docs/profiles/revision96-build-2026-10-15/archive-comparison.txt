@@ -1,0 +1,1 @@
+Revision 96 compared with the exact revision-95 artifact previously installed in the disposable clone: all archive entries matched; only litemod.json changed (manifest revision 95 to 96). The exact revision-96 file was then installed byte-for-byte in the clone, loaded with the full technical mod stack, reached the Minecraft title screen, and exited cleanly.

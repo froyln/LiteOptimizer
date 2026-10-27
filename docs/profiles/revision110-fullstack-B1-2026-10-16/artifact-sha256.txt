@@ -1,0 +1,1 @@
+6a9c7a35bed4bbeff3d9582db4531f8b0d21b54e5d74a9501a1945e116894cb1  liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod

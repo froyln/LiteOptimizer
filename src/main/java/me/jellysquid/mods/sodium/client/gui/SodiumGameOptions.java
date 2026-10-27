@@ -134,7 +134,7 @@ public class SodiumGameOptions {
                 || config.performance == null || config.notifications == null) {
             config = new SodiumGameOptions();
         }
-        config.enforceParitySettings();
+        config.sanitize();
         config.configPath = path;
 
         try {
@@ -147,7 +147,12 @@ public class SodiumGameOptions {
         return config;
     }
 
-    private void enforceParitySettings() {
+    private void sanitize() {
+        if (this.quality.cloudQuality == null) this.quality.cloudQuality = GraphicsQuality.DEFAULT;
+        if (this.quality.weatherQuality == null) this.quality.weatherQuality = GraphicsQuality.DEFAULT;
+        if (this.quality.leavesQuality == null) this.quality.leavesQuality = GraphicsQuality.DEFAULT;
+        if (this.quality.smoothLighting == null) this.quality.smoothLighting = LightingQuality.HIGH;
+        if (this.performance.chunkBuilderThreads < 0) this.performance.chunkBuilderThreads = 0;
         // Saved upstream settings must not enable paths that change vanilla's rendered output.
         this.advanced.useEntityCulling = false;
         this.advanced.useChunkMultidraw = false;
@@ -158,7 +163,7 @@ public class SodiumGameOptions {
     }
 
     public void writeChanges() throws IOException {
-        this.enforceParitySettings();
+        this.sanitize();
         Path dir = this.configPath.getParent();
 
         if (!Files.exists(dir)) {

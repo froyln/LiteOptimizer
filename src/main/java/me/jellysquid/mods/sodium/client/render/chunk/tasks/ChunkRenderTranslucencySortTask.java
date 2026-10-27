@@ -32,11 +32,13 @@ public class ChunkRenderTranslucencySortTask<T extends ChunkGraphicsState> exten
     private static final BlockRenderPass[] NO_PASSES = new BlockRenderPass[0];
 
     private final ChunkRenderContainer<T> render;
+    private final long revision;
     private final BlockPos offset;
     private final Vec3d camera;
 
-    public ChunkRenderTranslucencySortTask(ChunkRenderContainer<T> render, BlockPos offset, Vec3d camera) {
+    public ChunkRenderTranslucencySortTask(ChunkRenderContainer<T> render, long revision, BlockPos offset, Vec3d camera) {
         this.render = render;
+        this.revision = revision;
         this.offset = offset;
         this.camera = camera;
 
@@ -85,7 +87,7 @@ public class ChunkRenderTranslucencySortTask<T extends ChunkGraphicsState> exten
             replacementMeshes = Collections.emptyMap();
         }
 
-        ChunkBuildResult<T> result = new ChunkBuildResult<>(this.render, data.copyAndReplaceMesh(replacementMeshes));
+        ChunkBuildResult<T> result = new ChunkBuildResult<>(this.render, this.revision, data.copyAndReplaceMesh(replacementMeshes));
         result.passesToUpload = replacementMeshes.keySet().toArray(NO_PASSES);
         return result;
     }

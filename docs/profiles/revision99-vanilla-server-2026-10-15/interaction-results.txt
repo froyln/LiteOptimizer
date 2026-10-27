@@ -1,0 +1,32 @@
+# Revision 99 exact-artifact vanilla-server smoke
+
+Artifact SHA-256: `5d987cfc17e42982ba786fca3d77f8ef11a5489028e014c52d5cab24c1f15820`.
+The installed clone archive hash matches. Startup log confirms LiteOptimizer initialized with the
+full technical stack; server log confirms join at `(100.8125, 4.0, 115.1711)`.
+
+After resetting the vanilla `stat.walkOneCm` objective, holding W for two seconds yielded:
+
+```text
+scoreboard players test LiteOptTest walk 1 1000000
+Score 876 is in range 1 to 1000000
+```
+
+The normal release-default configuration was restored before this run. Startup logs confirm these
+defaults enabled: Sodium, structure lookup, blockstate property storage, property hash cache,
+hopper entity lookup, model display lists, tile-entity frustum, and baked-quad dedup.
+
+In Survival, hotbar slot 0 was set to five stone and the client right-clicked the ground. Vanilla
+server RCON then confirmed both the placed block and the incremented item-use statistic:
+
+```text
+testforblock 100 4 102 minecraft:stone
+Successfully found the block at 100, 4, 102
+scoreboard players test LiteOptTest stoneuse 1 100
+Score 1 is in range 1 to 100
+```
+
+The visible result is saved as `placement-enabled.png`. This closes the current-artifact placement
+check. The settled position correction and block-breaking checks have not been repeated on the
+exact revision-99 manifest; revision 98 is byte-identical in every archive entry except
+`litemod.json` revision metadata, as documented in
+`../revision99-build-2026-10-15/archive-compare.json`.

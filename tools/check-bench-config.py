@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 
 root = Path(__file__).resolve().parent.parent
-writer = re.search(r"<<'PY'\n(.*?)\nPY", (root / 'tools/bench.sh').read_text(), re.S).group(1)
+writer = re.search(r"write_config\(\).*?<<'PY'\n(.*?)\nPY", (root / 'tools/bench.sh').read_text(), re.S).group(1)
 options = root / 'src/main/java/dev/froyln/liteoptimizer/config/Option.java'
 with tempfile.TemporaryDirectory(prefix='bench-config-check-') as d:
     config = Path(d) / 'config.json'
@@ -27,7 +27,7 @@ with tempfile.TemporaryDirectory(prefix='bench-config-check-') as d:
     assert all(run('on').values())
     only = run('on', only='model_display_lists')
     assert only['render'] and only['model_display_lists'] and not only['property_hashcode_cache']
-    ini_writer = re.findall(r"<<'PY'\n(.*?)\nPY", (root / 'tools/bench.sh').read_text(), re.S)[1]
+    ini_writer = re.search(r"python3 - \"\$CFG\" \"\$jvm\".*?<<'PY'\n(.*?)\nPY", (root / 'tools/bench.sh').read_text(), re.S).group(1)
     ini = Path(d) / 'instance.cfg'
     ini.write_text('[General]\nJvmArgs=old\nOverrideJavaArgs=false\n')
     args = '-Dliteoptimizer.bench.skiptesr=TileEntitySkull,TileEntityEnchantmentTable'
@@ -36,4 +36,9 @@ with tempfile.TemporaryDirectory(prefix='bench-config-check-') as d:
     assert value.startswith('"') and json.loads(value) == args
     assert sum(line.startswith('JvmArgs=') for line in ini.read_text().splitlines()) == 1
     assert 'OverrideJavaArgs=true' in ini.read_text().splitlines()
+    run_writer = re.search(r"python3 - \"\$RUN_CONFIG\".*?<<'PY'\n(.*?)\nPY", (root / 'tools/bench.sh').read_text(), re.S).group(1)
+    run_properties = Path(d) / 'run.properties'
+    for screenshot in ('0', '1'):
+        subprocess.run(['python3', '-', str(run_properties), 'fixture', '_bench', '30', '60', 'off', '0', '0', '0', '', screenshot], input=run_writer, text=True, check=True)
+        assert ('liteoptimizer.screenshot=' in run_properties.read_text()) == (screenshot == '1')
 print('Benchmark config check passed')

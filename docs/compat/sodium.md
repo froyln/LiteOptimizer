@@ -1,7 +1,7 @@
 # Sodium pillar × instance mods — compat matrix (task 0.3a)
 
 Inputs: Vintagium's 43 injection sites (`~/Dev/references/Vintagium/.../mixin`, extracted by
-regex) × `docs/compat/instance-mixins.md` (all 638 foreign hooks) × the decompiled mixins of
+regex) × `docs/compat/instance-mixins.md` (all 639 foreign hooks) × the decompiled mixins of
 Tweakeroo, Litematica (forgeflower) for exact `@At` anchors × every mod's `mixins*.json`
 (`priority`, `injectors.defaultRequire`).
 
@@ -11,9 +11,10 @@ Facts that shape every resolution:
   Carpet Client `EntityPlayerSP`, UsefulMod `GuiScreen` / `TileEntityPiston`. Newlight uses
   injects/redirects only (the earlier "Newlight overwrites lighting" note in the catalog was
   wrong — still off-limits for *our* code, but there is no two-overwrite crash risk).
-- All configs are `priority 1000`. Same priority ⇒ application order = config registration
-  order (LiteLoader mod load order, file name alphabetical: `liteoptimizer` < `litematica` <
-  `tweakeroo`), so **our overwrites land first and their injections are applied to our body**.
+- Most configs use `priority 1000`; Sodium's `MixinWorldRenderer` explicitly uses `priority 500`.
+  Lower-priority mixins are applied later, so that class can replace Tweakeroo's earlier
+  `RenderGlobal.setupTerrain` injections. Tweakeroo sets `defaultRequire=0`, so missing anchors are
+  skipped instead of crashing. Do not infer compatibility from successful startup alone.
 - `defaultRequire`: Tweakeroo **0** (missing anchors are skipped silently), Litematica /
   MiniHUD / malilib / tellme / connect / chatcalc / itemscroller / schematicpreview **1**
   (missing anchor = crash), Carpet Client / Newlight / UsefulMod / LiteTweaker / VoxelMap /
@@ -21,7 +22,7 @@ Facts that shape every resolution:
 
 | vanilla method Vintagium changes | how | foreign hooks on it | resolution |
 |---|---|---|---|
-| `RenderGlobal.setupTerrain` | **overwrite** | Tweakeroo: `@Inject` at `FIELD frustumUpdatePosX`, `@Inject` after `INVOKE ViewFrustum.updateChunkPositions`, `@Redirect RenderChunk.needsImmediateUpdate` (all inside the body); Tweakeroo `@Inject` after the *call* in `EntityRenderer.renderWorldPass` | body anchors vanish → Tweakeroo `require=0` ⇒ skipped, no crash. Those three implement `rebuildChunksAroundCamera` (free-camera chunk repositioning on vanilla `ViewFrustum`); Sodium positions its render regions from the render-view entity itself, so the feature is inherent. The call-site inject in `renderWorldPass` keeps working (method still called with the same descriptor). **Verify free camera in the checklist.** |
+| `RenderGlobal.setupTerrain` | HEAD inject + cancel | Tweakeroo: `@Inject` at `FIELD frustumUpdatePosX`, `@Inject` after `INVOKE ViewFrustum.updateChunkPositions`, `@Redirect RenderChunk.needsImmediateUpdate` (all inside the body); Tweakeroo `@Inject` around the call in `EntityRenderer.renderWorldPass` | Sodium uses `@Inject` + cancel instead of overwriting this hooked method. Tweakeroo's old/new perimeter rebuild uses vanilla `ViewFrustum` and is not needed by Sodium's absolute-coordinate section grid. Its spectator flag is needed, though: Free Camera sets `CameraUtils.setFreeCameraSpectator(true)` around `setupTerrain` so the camera can see through opaque blocks. An optional `@Pseudo` bridge tracks that flag and passes it to Sodium's culler; without it, the camera's visibility graph can stop inside an opaque section. Exact-artifact ON/OFF and camera movement/boundary checks remain required. Tweakeroo's `forceChunkRendersOnMainThread` redirect is separately bridged in `ChunkRenderManager`; when enabled, queued Sodium rebuilds execute synchronously on the render thread. Per-section build revisions reject late async results during upload filtering. |
 | `RenderGlobal.renderBlockLayer` | **overwrite** (same signature) | Litematica `@Inject` after each of the 4 *calls* in `EntityRenderer.renderWorldPass` (`require=1`) | calls remain in `renderWorldPass` (Vintagium doesn't touch it) ⇒ Litematica's schematic layer rendering fires exactly as before. |
 | `RenderGlobal.updateChunks`, `renderEntities` | untouched / inject at `FIELD renderInfos` | Litematica `@Inject` after the calls in `renderWorldPass`; UsefulMod `isOutlineActive`/`playEvent` members | unchanged. |
 | `RenderGlobal.markBlocksForUpdate` (private) | **overwrite** | none directly; Litematica `notifyBlockUpdate` RETURN, Newlight/Carpet/Tweakeroo `notifyLightSet` HEAD | those methods keep their bodies and call our `markBlocksForUpdate` ⇒ block/light updates reach Sodium's rebuild queue; foreign injects unaffected. |
@@ -46,13 +47,13 @@ Facts that shape every resolution:
 | `EntityRenderer.renderWorld` (HEAD inject), `renderRainSnow` (redirect `fancyGraphics`) | inject / redirect | Tweakeroo `renderWorld` HEAD/RETURN/after `getMouseOver`, `renderRainSnow` HEAD; Carpet/BBOutline/Litematica/malilib/LiteTweaker/VoxelMap/Tweakeroo on `renderWorldPass` | all injects; coexist. |
 | `GuiOverlayDebug.renderDebugInfoLeft/Right` | inject | Litematica `GuiOverlayDebug` call | coexist. |
 | `BlockColors`, `ItemColors` `<init>`/`register…` | inject | UsefulMod `BlockColors$4/$5` (anonymous handler mixins) | coexist. |
-| `TileEntityRendererDispatcher.render` | untouched by Vintagium; our `render/tile_entity_*` culling rows inject HEAD | Tweakeroo + UsefulMod inject there (Tweakeroo redirects `getMaxRenderDistanceSquared`) | all HEAD injects; order irrelevant (each may cancel). |
+| `TileEntityRendererDispatcher.render` | untouched by Vintagium; `tile_entity_frustum` injects HEAD and `tile_entity_occlusion` injects before the nested renderer call | Tweakeroo + UsefulMod inject there (Tweakeroo redirects `getMaxRenderDistanceSquared`; UsefulMod redirects `getDistanceSq`) | the occlusion hook runs after the range-check calls and does not cancel at HEAD; full-stack runtime smoke remains required. |
 
 Behaviour that changes under the Sodium pillar even though nothing crashes (write into the
 release notes; all restored by `"render": false`):
 
-1. Tweakeroo `rebuildChunksAroundCamera` hooks are inert — free camera must be re-verified.
-2. Tweakeroo `updateTransparencyLater`/`forceChunkRendersOnMainThread`-style tweaks are inert.
+1. Tweakeroo `rebuildChunksAroundCamera` body hooks are inert; its camera-spectator signal is bridged into Sodium's chunk culler. Free Camera movement and dirty-chunk behavior still need exact-artifact smoke tests.
+2. Tweakeroo `forceChunkRendersOnMainThread` now selects synchronous Sodium section builds, while `updateTransparencyLater` remains inert because Sodium replaces the vanilla dispatcher. Runtime checks are still required for the bridge; disable the Sodium pillar (`"render": false`) to restore vanilla dispatcher behavior.
 3. Litematica's *own* schematic renderer is untouched (it has its own `RenderGlobal`-like
    classes on its schematic world); only the real world's terrain goes through Sodium.
 
@@ -107,3 +108,19 @@ Performance (uncapped, `docs/bench/README.md`): B6 flight over ocean/islands at 
 1.66 → 1.06 ms (−36 %), 1 % low 8.22 → 6.00 ms (−27 %), client-thread root 1.35 → 0.73
 ms/frame; B1 base pose −2 % avg / −13 % 1 % low (block entities dominate);
 B3 (15 sections) unchanged.
+
+The exact revision-92 artifact was also measured on B6 flight at RD 16: Sodium off/on averaged
+2.77/0.96 ms per frame (−65.4%) and 1% low was 11.07/4.61 ms (−58.4%). This is one paired
+run and an aggregate pillar comparison, not isolated evidence for every Sodium feature; repeat
+before treating the magnitude as stable. See the [revision-92 profile](../profiles/revision92-sodium-B6-2026-10-15/README.md).
+
+### Shulker placement/removal scheduling fix (2026-10-17)
+
+Transparency sorts must not cancel a full rebuild whose result is awaiting upload, or copy its
+old block-entity list under a newer task revision. `ChunkRenderContainer` tracks the applied data
+revision, and both sort scheduling and submission reject sections with a pending build/newer
+rebuild request. The submission check also covers stale sort-queue entries. Sorting resumes
+after the latest result is applied. This changes only client render task ownership; no vanilla
+hooks, simulation, packets or player actions change. Focused failing-before/passing-after
+scheduler proof and packaged-mod placement/removal/movement smoke are recorded in
+[`shulker-render-updates-2026-10-17`](../profiles/shulker-render-updates-2026-10-17/README.md).

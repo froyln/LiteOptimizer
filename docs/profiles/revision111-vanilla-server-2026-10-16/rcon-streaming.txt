@@ -1,0 +1,16 @@
+Revision 111 vanilla-server movement and terrain-streaming check — 2026-10-16
+
+Client: exact revision-111 archive (SHA-256 in artifact-sha256.txt), installed archive hash matches.
+Server: unmodified Mojang Minecraft 1.12.2 dedicated server, disposable test world.
+Client profile: full 17-mod technical stack. Player: Kisde, Survival HUD visible.
+
+F3 start (streaming-start-2.png): XYZ 1170.326 / 4.000000 / 1406.193; chunk X=73, Z=87.
+F3 end (streaming-end-2.png): XYZ 1148.961 / 4.000000 / 1661.300; chunk X=71, Z=103.
+The client walked south through 16 chunk-column boundaries in Z. Plains terrain rendered at both ends; both frames show the full 17-mod client.
+
+Server scoreboard objective `walkOneCm`:
+- Start: 87049
+- Midpoint: 99959
+- End: 113133
+- Start-to-end delta: 26084 cm (260.84 m).
+RCON `testfor @p {Dimension:0}` found Kisde at midpoint and end. The server log has no movement warning during this paired 60-second interval.

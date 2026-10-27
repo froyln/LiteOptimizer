@@ -1,0 +1,1 @@
+4d2c3a44fe33751a96362a918a6023641b91a7461159110d75ff64b3ff593237  build/libs/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod

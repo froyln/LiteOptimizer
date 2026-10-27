@@ -1,0 +1,95 @@
+208:[22:28:08] [main/INFO]: [LiteOptimizer] world/tile_entity_removal: disabled
+209:[22:28:08] [main/INFO]: [LiteOptimizer] world/pending_ticks_chunk_lookup: disabled
+210:[22:28:08] [main/INFO]: [LiteOptimizer] memory/entity_data_manager: disabled
+211:[22:28:08] [main/INFO]: [LiteOptimizer] world/item_merging: disabled
+212:[22:28:08] [main/INFO]: [LiteOptimizer] world/block_collisions: disabled
+213:[22:28:08] [main/INFO]: [LiteOptimizer] world/furnace_recipe_cache: disabled
+214:[22:28:08] [main/INFO]: [LiteOptimizer] world/entity_fluid_checks: disabled
+215:[22:28:08] [main/INFO]: [LiteOptimizer] world/raytrace_allocations: disabled
+216:[22:28:08] [main/INFO]: [LiteOptimizer] world/structure_lookup_index: enabled
+217:[22:28:08] [main/INFO]: [LiteOptimizer] world/hard_hitbox_entity_list: disabled
+218:[22:28:08] [main/INFO]: [LiteOptimizer] world/entity_type_counts: disabled
+219:[22:28:08] [main/INFO]: [LiteOptimizer] memory/itemstack_is_empty: disabled
+220:[22:28:08] [main/INFO]: [LiteOptimizer] memory/blockstate_property_storage: enabled
+221:[22:28:08] [main/INFO]: [LiteOptimizer] world/property_hashcode_cache: enabled
+222:[22:28:08] [main/INFO]: [LiteOptimizer] world/hopper_entity_lookup: enabled
+223:[22:28:08] [main/INFO]: [LiteOptimizer] dev/parity: disabled
+224:[22:28:08] [main/INFO]: [LiteOptimizer] render/sodium: enabled
+225:[22:28:08] [main/INFO]: [LiteOptimizer] render/model_display_lists: enabled
+226:[22:28:08] [main/INFO]: [LiteOptimizer] render/tile_entity_frustum: enabled
+227:[22:28:08] [main/INFO]: [LiteOptimizer] memory/baked_quad_dedup: enabled
+228:[22:28:08] [main/INFO]: [LiteOptimizer] dev/bench: disabled
+229:[22:28:08] [main/INFO]: [LiteOptimizer] dev/nopause: disabled
+608:[22:28:13] [Client thread/INFO]: Loading mod from dev.froyln.liteoptimizer.LiteModLiteOptimizer
+609:[22:28:13] [Client thread/INFO]: Successfully added mod LiteOptimizer version 0.6.0-rc2
+611:[22:28:13] [Client thread/INFO]: Setting up "liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod" as mod resource pack with identifier "LiteOptimizer"
+629:[22:28:13] [Client thread/INFO]: Initialising mod LiteOptimizer version 0.6.0-rc2
+630:[22:28:13] [Client thread/INFO]: [LiteOptimizer] 0.6.0-rc2 loaded; disabled: tile_entity_removal, pending_ticks_chunk_lookup, itemstack_is_empty, entity_data_manager, entity_fluid_checks, block_collisions, hard_hitbox_entity_list, item_merging, equipment_change_check, cramming_predicate_cache, entity_type_counts, falling_block_movement, furnace_recipe_cache, raytrace_allocations, blockpos_garbage, nbt_tag_pooling
+635:[22:28:13] [Client thread/INFO]: Reloading ResourceManager: Default, LiteLoader, Carpet Client, Connect to 1.12.x, Item Scroller, Litematica, MiniHUD, WorldEditCUI, Newlight, Tweakeroo, UsefulMod, VoxelMap, BoundingBoxOutlineReloaded, MaLiLib, ChatCalc, LiteTweaker, IsoRenders, SchematicPreview, LiteOptimizer, FaihtfulMatuAddons 1.12, XeKr redstone display1.12.zip, 1.12_Gaemer_Tools_32x.zip
+846:[22:30:21] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+847:[22:30:22] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+848:[22:30:22] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+859:[22:31:05] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+860:[22:31:05] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+861:[22:31:05] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+865:[22:37:01] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+866:[22:37:01] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+867:[22:37:01] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+869:[22:37:15] [Server thread/INFO]: Stopping server
+875:[22:37:15] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+876:[22:37:15] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+877:[22:37:15] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+895:[22:39:55] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+896:[22:39:55] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+897:[22:39:55] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+901:[22:41:20] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+902:[22:41:20] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+903:[22:41:20] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+905:[22:43:39] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+906:[22:43:39] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+907:[22:43:39] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+909:[22:43:51] [Server thread/INFO]: Stopping server
+915:[22:43:51] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+916:[22:43:51] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+917:[22:43:51] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+935:[22:46:01] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+936:[22:46:01] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+937:[22:46:01] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+941:[22:47:37] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+942:[22:47:37] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+943:[22:47:37] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+945:[22:47:51] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+946:[22:47:51] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+947:[22:47:51] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+949:[22:48:11] [Server thread/INFO]: Stopping server
+955:[22:48:11] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+956:[22:48:11] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+957:[22:48:11] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+975:[22:48:58] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+976:[22:48:59] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+977:[22:48:59] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+982:[22:50:45] [Server thread/INFO]: [Kisde: Successfully found the block at -1968, 38, 700]
+984:[22:50:45] [Client thread/INFO]: [CHAT] [22:50:45] Successfully found the block at -1968, 38, 700
+985:[22:51:03] [Server thread/INFO]: [Kisde: Block placed]
+986:[22:51:03] [Client thread/INFO]: [CHAT] [22:51:03] Block placed
+988:[22:51:21] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+989:[22:51:21] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+990:[22:51:21] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+991:[22:52:21] [Server thread/INFO]: [Kisde: Successfully found the block at -1968, 38, 700]
+992:[22:52:21] [Client thread/INFO]: [CHAT] [22:52:21] Successfully found the block at -1968, 38, 700
+995:[22:52:40] [Client thread/INFO]: [CHAT] [22:52:40] [Debug]: Reloading all chunks
+996:[22:53:25] [Server thread/INFO]: [Kisde: Block placed]
+997:[22:53:25] [Client thread/INFO]: [CHAT] [22:53:25] Block placed
+1000:[22:53:45] [Client thread/INFO]: [CHAT] [22:53:45] [Debug]: Reloading all chunks
+1001:[22:54:01] [Server thread/INFO]: [Kisde: Successfully found the block at -1968, 38, 700]
+1002:[22:54:01] [Client thread/INFO]: [CHAT] [22:54:01] Successfully found the block at -1968, 38, 700
+1004:[22:54:53] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+1005:[22:54:53] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+1006:[22:54:53] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+1008:[22:55:12] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+1009:[22:55:12] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+1010:[22:55:12] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+1012:[22:55:31] [Server thread/INFO]: Stopping server
+1018:[22:55:31] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+1019:[22:55:31] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+1020:[22:55:31] [Server thread/INFO]: Saving chunks for level 'world'/the_end

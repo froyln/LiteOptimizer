@@ -1,0 +1,8 @@
+{
+  "previous_artifact_sha256": "fa9e65d623f53d1c44618b2721555511107537f011f25b83638c227e1ff9298c",
+  "current_artifact_sha256": "4a80a24fc6beb166872e30dcee58d982d8c6757c877220ad8d7e3fd639f71882",
+  "archive_entry_set_equal": true,
+  "changed_entries": ["litemod.json"],
+  "manifest_revision_previous": "96",
+  "manifest_revision_current": "97"
+}

@@ -1,0 +1,42 @@
+[22:07:23] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[22:07:23] [Server thread/INFO]: Loading properties
+[22:07:23] [Server thread/INFO]: Default game type: CREATIVE
+[22:07:23] [Server thread/INFO]: Generating keypair
+[22:07:23] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[22:07:23] [Server thread/INFO]: Using epoll channel type
+[22:07:23] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[22:07:23] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[22:07:23] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[22:07:23] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[22:07:23] [Server thread/INFO]: Preparing level "disposable-world"
+[22:07:23] [Server thread/INFO]: Loaded 488 advancements
+[22:07:23] [Server thread/INFO]: Preparing start region for level 0
+[22:07:23] [Server thread/INFO]: Done (0.348s)! For help, type "help" or "?"
+[22:07:23] [Server thread/INFO]: Starting remote control listener
+[22:07:23] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25570
+[22:07:33] [Server thread/INFO]: LiteOptTest[/127.0.0.1:34406] logged in with entity id 88 at (260.5, 4.0, 0.5)
+[22:07:33] [Server thread/INFO]: LiteOptTest joined the game
+[22:08:50] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[22:08:50] [RCON Client #2/INFO]: [Rcon: Object successfully summoned]
+[22:08:50] [RCON Client #2/INFO]: [Rcon: Teleported LiteOptTest to 260.5, 4.0, 0.5]
+[22:09:45] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[22:09:45] [RCON Client #3/INFO]: [Rcon: Object successfully summoned]
+[22:09:45] [RCON Client #3/INFO]: [Rcon: Teleported LiteOptTest to 260.5, 4.0, 0.5]
+[22:11:29] [Server thread/INFO]: LiteOptTest lost connection: Disconnected
+[22:11:29] [Server thread/INFO]: LiteOptTest left the game
+[22:11:48] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[22:11:48] [RCON Client #4/INFO]: ThreadedAnvilChunkStorage (disposable-world): All chunks are saved
+[22:11:48] [RCON Client #4/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22:11:48] [RCON Client #4/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22:11:48] [RCON Client #4/INFO]: [Rcon: Saved the world]
+[22:11:48] [RCON Client #4/INFO]: [Rcon: Stopping the server]
+[22:11:48] [Server thread/INFO]: Stopping server
+[22:11:48] [Server thread/INFO]: Saving players
+[22:11:48] [Server thread/INFO]: Saving worlds
+[22:11:48] [Server thread/INFO]: Saving chunks for level 'disposable-world'/overworld
+[22:11:48] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_nether
+[22:11:48] [Server thread/INFO]: Saving chunks for level 'disposable-world'/the_end
+[22:11:48] [Server Shutdown Thread/INFO]: Stopping server
+[22:11:48] [Server Shutdown Thread/INFO]: Saving players
+[22:11:48] [Server Shutdown Thread/INFO]: Saving worlds
+[22:11:48] [Server Shutdown Thread/INFO]: Saving chunks for level 'disposable-world'/overworld

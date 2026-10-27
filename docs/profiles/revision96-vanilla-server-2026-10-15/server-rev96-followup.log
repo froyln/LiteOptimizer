@@ -1,0 +1,39 @@
+[21:10:28] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[21:10:28] [Server thread/INFO]: Loading properties
+[21:10:28] [Server thread/INFO]: Default game type: SURVIVAL
+[21:10:28] [Server thread/INFO]: Generating keypair
+[21:10:29] [Server thread/INFO]: Starting Minecraft server on 127.0.0.1:25565
+[21:10:29] [Server thread/INFO]: Using epoll channel type
+[21:10:29] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[21:10:29] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[21:10:29] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[21:10:29] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[21:10:29] [Server thread/INFO]: Preparing level "world"
+[21:10:29] [Server thread/INFO]: Loaded 488 advancements
+[21:10:29] [Server thread/INFO]: Preparing start region for level 0
+[21:10:29] [Server thread/INFO]: Done (0.461s)! For help, type "help" or "?"
+[21:10:29] [Server thread/INFO]: Starting remote control listener
+[21:10:29] [RCON Listener #1/INFO]: RCON running on 127.0.0.1:25575
+[21:11:19] [Server thread/INFO]: Kisde[/127.0.0.1:57954] logged in with entity id 133 at (1206.5, 4.0, 500.5)
+[21:11:19] [Server thread/INFO]: Kisde joined the game
+[21:11:56] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[21:12:05] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[21:12:12] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[21:12:18] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[21:12:18] [RCON Client #5/INFO]: [Rcon: Added new objective 'rev96_walk' successfully]
+[21:12:18] [RCON Client #5/INFO]: [Rcon: Set score of rev96_walk for player Kisde to 0]
+[21:12:29] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[21:12:29] [RCON Client #6/INFO]: [Rcon: Score 1752 is in range 1 to 2147483647]
+[21:12:29] [RCON Client #6/INFO]: [Rcon: Teleported Kisde to 1207.7156964689493, 4.0, 517.7199007609129]
+[21:12:29] [RCON Client #6/INFO]: [Rcon: Teleported Kisde to 1207.7156964689493, 4.0, 517.7199007609129]
+[21:12:29] [Server thread/WARN]: Kisde moved wrongly!
+[21:12:57] [RCON Listener #1/INFO]: Rcon connection from: /127.0.0.1
+[21:12:57] [RCON Client #7/INFO]: [Rcon: Saved the world]
+[21:12:57] [RCON Client #7/INFO]: [Rcon: Stopping the server]
+[21:12:57] [Server thread/INFO]: Stopping server
+[21:12:57] [Server thread/INFO]: Saving players
+[21:12:57] [Server thread/INFO]: Saving worlds
+[21:12:57] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[21:12:57] [Server thread/INFO]: Saving chunks for level 'world'/the_nether
+[21:12:57] [Server thread/INFO]: Saving chunks for level 'world'/the_end
+[21:12:57] [Server Shutdown Thread/INFO]: Stopping server

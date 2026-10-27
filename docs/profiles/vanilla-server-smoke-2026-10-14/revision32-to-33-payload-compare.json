@@ -1,0 +1,10 @@
+{
+  "previous_revision": 32,
+  "previous_sha256": "f66fb6ef025a5bfc42667ba0504e128c83f7883a582503273e4607bc4aca4f8e",
+  "current_revision": 33,
+  "current_sha256": "66e5f1d20f6477ff96fbf719f989a148bcee8698311498ceb3b7ebd9facc9004",
+  "entries_previous": 726,
+  "entries_current": 726,
+  "different_entry_contents": ["litemod.json"],
+  "difference": "manifest revision changed from 32 to 33; all code and resources are byte-identical"
+}

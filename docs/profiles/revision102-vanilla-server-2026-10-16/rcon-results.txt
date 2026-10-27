@@ -1,0 +1,24 @@
+list (after join) => There are 1/20 players online:Kisde
+scoreboard objectives add walkOneCm stat.walkOneCm => Added new objective 'walkOneCm' successfully
+scoreboard players set Kisde walkOneCm 0 => Set score of walkOneCm for player Kisde to 0
+scoreboard players list Kisde (after ~2 s holding forward) => walkOneCm: 875
+
+Block breaking:
+- Client left-hold broke the grass block at (1204, 3, 545).
+- testforblock 1204 3 545 minecraft:air => Successfully found the block at 1204, 3, 545
+- setblock 1204 3 545 minecraft:grass => Block placed (restored the test fixture)
+- testforblock 1204 3 545 minecraft:grass => Successfully found the block at 1204, 3, 545
+
+Inventory:
+- Client moved 5 stone from hotbar slot 0 to main-inventory slot 9.
+- testfor Kisde {Inventory:[{Slot:9b,id:"minecraft:stone",Count:5b}]} => Found Kisde
+- testfor Kisde {Inventory:[{Slot:0b,id:"minecraft:stone",Count:5b}]} => Kisde did not match the required data structure
+
+Placement attempt:
+- scoreboard players set Kisde stoneuse 0 => Set score of stoneuse for player Kisde to 0
+- scoreboard players test Kisde stoneuse 1 * => Score 0 is NOT in range 1 to 2147483647
+- testforblock 1204 4 545 minecraft:air => Successfully found the block at 1204, 4, 545
+- Placement is not confirmed and does not count as a pass.
+
+save-all => Saving...Saved the world
+list (after disconnect) => There are 0/20 players online:
