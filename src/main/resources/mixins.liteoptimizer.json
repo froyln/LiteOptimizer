@@ -93,6 +93,7 @@
     "render.sodium.features.chunk_rendering.AccessorActiveRenderInfo",
     "render.sodium.features.chunk_rendering.AccessorEntityRenderer",
     "render.sodium.features.chunk_rendering.MixinBiomeColorHelper",
+    "render.sodium.features.chunk_rendering.MixinBlockShulkerBox",
     "render.sodium.features.chunk_rendering.MixinTweakerooCameraUtils",
     "render.sodium.features.chunk_rendering.MixinChunkBuilder",
     "render.sodium.features.chunk_rendering.MixinClientChunkManager",
