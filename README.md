@@ -113,7 +113,7 @@ export JAVA_HOME=/path/to/jdk8
 ./gradlew build
 ```
 
-Output: `build/libs/liteoptimizer-liteloader-1.12.2-0.6.0-rc2.litemod`.
+Output: `build/libs/liteoptimizer-liteloader-1.12.2-1.0.0.litemod`.
 Once dependencies are cached, use `./gradlew build --offline`. A fresh checkout needs network
 access to the legacy Forge/Sponge dependencies. Source targets Java 8, MCP `stable_39` and
 LiteLoader's Mixin 0.7.5 runtime. No MixinExtras or MaLiLib dependency is required.
